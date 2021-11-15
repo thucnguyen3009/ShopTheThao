@@ -76,12 +76,9 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="lblThietBiIcon" pref="40" max="32767" attributes="0"/>
-                              <Component id="lblPhongIcon" max="32767" attributes="0"/>
+                              <Component id="lblSanPhamIcon" pref="40" max="32767" attributes="0"/>
+                              <Component id="lblBanHangIcon" max="32767" attributes="0"/>
                               <Component id="lblKhachHangIcon" max="32767" attributes="0"/>
-                              <Component id="lblTienNuocIcon" max="32767" attributes="0"/>
-                              <Component id="lblTienDienIcon" max="32767" attributes="0"/>
-                              <Component id="lblHoaDonIcon" max="32767" attributes="0"/>
                               <Component id="lblThongKeIcon" max="32767" attributes="0"/>
                               <Component id="lblDangXuatIcon" max="32767" attributes="0"/>
                               <Component id="lblThoatIcon" max="32767" attributes="0"/>
@@ -90,12 +87,9 @@
                           <Group type="103" groupAlignment="1" attributes="0">
                               <Component id="lblDangXuat" alignment="0" max="32767" attributes="0"/>
                               <Component id="lblThongKe" alignment="0" max="32767" attributes="0"/>
-                              <Component id="lblHoaDon" alignment="0" max="32767" attributes="0"/>
-                              <Component id="lblTienDien" alignment="0" max="32767" attributes="0"/>
-                              <Component id="lblTienNuoc" alignment="0" max="32767" attributes="0"/>
                               <Component id="lblKhachHang" alignment="0" max="32767" attributes="0"/>
-                              <Component id="lblPhong" alignment="0" max="32767" attributes="0"/>
-                              <Component id="lblThietBi" max="32767" attributes="0"/>
+                              <Component id="lblBanHang" alignment="0" max="32767" attributes="0"/>
+                              <Component id="lblSanPham" max="32767" attributes="0"/>
                               <Component id="lblThoat" max="32767" attributes="0"/>
                           </Group>
                       </Group>
@@ -111,7 +105,7 @@
                           </Group>
                       </Group>
                   </Group>
-                  <EmptySpace max="-2" attributes="0"/>
+                  <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -136,33 +130,18 @@
                   </Group>
                   <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="lblThietBi" alignment="3" min="-2" pref="44" max="-2" attributes="0"/>
-                      <Component id="lblThietBiIcon" alignment="3" min="-2" pref="44" max="-2" attributes="0"/>
+                      <Component id="lblSanPham" alignment="3" min="-2" pref="44" max="-2" attributes="0"/>
+                      <Component id="lblSanPhamIcon" alignment="3" min="-2" pref="44" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="lblPhong" alignment="3" min="-2" pref="44" max="-2" attributes="0"/>
-                      <Component id="lblPhongIcon" alignment="3" min="-2" pref="44" max="-2" attributes="0"/>
+                      <Component id="lblBanHang" alignment="3" min="-2" pref="44" max="-2" attributes="0"/>
+                      <Component id="lblBanHangIcon" alignment="3" min="-2" pref="44" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="lblKhachHang" alignment="3" min="-2" pref="44" max="-2" attributes="0"/>
                       <Component id="lblKhachHangIcon" alignment="3" min="-2" pref="44" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="lblTienNuoc" alignment="3" min="-2" pref="44" max="-2" attributes="0"/>
-                      <Component id="lblTienNuocIcon" alignment="3" min="-2" pref="44" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="lblTienDien" alignment="3" min="-2" pref="44" max="-2" attributes="0"/>
-                      <Component id="lblTienDienIcon" alignment="3" min="-2" pref="44" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="lblHoaDon" alignment="3" min="-2" pref="44" max="-2" attributes="0"/>
-                      <Component id="lblHoaDonIcon" alignment="3" min="-2" pref="44" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -179,7 +158,7 @@
                       <Component id="lblThoat" alignment="3" min="-2" pref="44" max="-2" attributes="0"/>
                       <Component id="lblThoatIcon" alignment="3" min="-2" pref="44" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="53" max="32767" attributes="0"/>
+                  <EmptySpace pref="179" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -259,7 +238,7 @@
             <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblNhanVienIconMouseExited"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JLabel" name="lblThietBi">
+        <Component class="javax.swing.JLabel" name="lblSanPham">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="99" red="0" type="rgb"/>
@@ -270,16 +249,16 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Qu&#x1ea3;n L&#xed; Thi&#x1ebf;t B&#x1ecb;"/>
+            <Property name="text" type="java.lang.String" value="Qu&#x1ea3;n L&#xfd; S&#x1ea3;n Ph&#x1ea9;m"/>
             <Property name="opaque" type="boolean" value="true"/>
           </Properties>
           <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblThietBiMouseClicked"/>
-            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblThietBiMouseEntered"/>
-            <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblThietBiMouseExited"/>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblSanPhamMouseClicked"/>
+            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblSanPhamMouseEntered"/>
+            <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblSanPhamMouseExited"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JLabel" name="lblThietBiIcon">
+        <Component class="javax.swing.JLabel" name="lblSanPhamIcon">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="99" red="0" type="rgb"/>
@@ -291,12 +270,12 @@
             <Property name="opaque" type="boolean" value="true"/>
           </Properties>
           <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblThietBiIconMouseClicked"/>
-            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblThietBiIconMouseEntered"/>
-            <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblThietBiIconMouseExited"/>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblSanPhamIconMouseClicked"/>
+            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblSanPhamIconMouseEntered"/>
+            <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblSanPhamIconMouseExited"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JLabel" name="lblPhong">
+        <Component class="javax.swing.JLabel" name="lblBanHang">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="99" red="0" type="rgb"/>
@@ -307,16 +286,16 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Qu&#x1ea3;n L&#xed; Ph&#xf2;ng"/>
+            <Property name="text" type="java.lang.String" value="B&#xe1;n H&#xe0;ng"/>
             <Property name="opaque" type="boolean" value="true"/>
           </Properties>
           <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblPhongMouseClicked"/>
-            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblPhongMouseEntered"/>
-            <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblPhongMouseExited"/>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblBanHangMouseClicked"/>
+            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblBanHangMouseEntered"/>
+            <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblBanHangMouseExited"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JLabel" name="lblPhongIcon">
+        <Component class="javax.swing.JLabel" name="lblBanHangIcon">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="99" red="0" type="rgb"/>
@@ -328,9 +307,9 @@
             <Property name="opaque" type="boolean" value="true"/>
           </Properties>
           <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblPhongIconMouseClicked"/>
-            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblPhongIconMouseEntered"/>
-            <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblPhongIconMouseExited"/>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblBanHangIconMouseClicked"/>
+            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblBanHangIconMouseEntered"/>
+            <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblBanHangIconMouseExited"/>
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="lblKhachHangIcon">
@@ -370,80 +349,6 @@
             <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblKhachHangMouseExited"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JLabel" name="lblTienNuoc">
-          <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="99" red="0" type="rgb"/>
-            </Property>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Segoe UI" size="18" style="1"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Ti&#x1ec1;n N&#x1b0;&#x1edb;c"/>
-            <Property name="opaque" type="boolean" value="true"/>
-          </Properties>
-          <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblTienNuocMouseClicked"/>
-            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblTienNuocMouseEntered"/>
-            <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblTienNuocMouseExited"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JLabel" name="lblTienNuocIcon">
-          <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="99" red="0" type="rgb"/>
-            </Property>
-            <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/com/software/icon/TienNuoc.png"/>
-            </Property>
-            <Property name="opaque" type="boolean" value="true"/>
-          </Properties>
-          <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblTienNuocIconMouseClicked"/>
-            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblTienNuocIconMouseEntered"/>
-            <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblTienNuocIconMouseExited"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JLabel" name="lblTienDienIcon">
-          <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="99" red="0" type="rgb"/>
-            </Property>
-            <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/com/software/icon/TienDien.png"/>
-            </Property>
-            <Property name="opaque" type="boolean" value="true"/>
-          </Properties>
-          <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblTienDienIconMouseClicked"/>
-            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblTienDienIconMouseEntered"/>
-            <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblTienDienIconMouseExited"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JLabel" name="lblTienDien">
-          <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="99" red="0" type="rgb"/>
-            </Property>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Segoe UI" size="18" style="1"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Ti&#x1ec1;n &#x110;i&#x1ec7;n"/>
-            <Property name="opaque" type="boolean" value="true"/>
-          </Properties>
-          <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblTienDienMouseClicked"/>
-            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblTienDienMouseEntered"/>
-            <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblTienDienMouseExited"/>
-          </Events>
-        </Component>
         <Component class="javax.swing.JLabel" name="lblNhaTro">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -453,7 +358,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="NH&#xc0; TR&#x1ecc;"/>
+            <Property name="text" type="java.lang.String" value="SHOP TH&#x1ec2; THAO"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="lblTenNhaTro">
@@ -465,7 +370,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="THI&#x1ec6;N PHONG"/>
+            <Property name="text" type="java.lang.String" value="BING BONG"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="lblChao">
@@ -508,50 +413,13 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Th&#x1ed1;ng K&#xea;"/>
+            <Property name="text" type="java.lang.String" value="Xem Doanh Thu"/>
             <Property name="opaque" type="boolean" value="true"/>
           </Properties>
           <Events>
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblThongKeMouseClicked"/>
             <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblThongKeMouseEntered"/>
             <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblThongKeMouseExited"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JLabel" name="lblHoaDon">
-          <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="99" red="0" type="rgb"/>
-            </Property>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Segoe UI" size="18" style="1"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="H&#xf3;a &#x110;&#x1a1;n"/>
-            <Property name="opaque" type="boolean" value="true"/>
-          </Properties>
-          <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblHoaDonMouseClicked"/>
-            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblHoaDonMouseEntered"/>
-            <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblHoaDonMouseExited"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JLabel" name="lblHoaDonIcon">
-          <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="99" red="0" type="rgb"/>
-            </Property>
-            <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/com/software/icon/bill.png"/>
-            </Property>
-            <Property name="opaque" type="boolean" value="true"/>
-          </Properties>
-          <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblHoaDonIconMouseClicked"/>
-            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblHoaDonIconMouseEntered"/>
-            <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblHoaDonIconMouseExited"/>
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="lblDangXuat">
@@ -685,7 +553,7 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="66" red="33" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="NH&#xc0; TR&#x1ecc; V&#x102;N MINH - TH&#xc2;N THI&#x1ec6;N"/>
+            <Property name="text" type="java.lang.String" value="Ch&#x1ea5;t L&#x1b0;&#x1ee3;ng L&#xe0; Danh D&#x1ef1; - T&#x1ea5;t C&#x1ea3; V&#xec; Kh&#xe1;ch H&#xe0;ng"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="lblSdtTro">
@@ -708,12 +576,12 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Container class="javax.swing.JPanel" name="pnlTrangChu">
+    <Container class="javax.swing.JPanel" name="pnlChinh">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="33" green="0" red="ff" type="rgb"/>
         </Property>
-        <Property name="name" type="java.lang.String" value="TrangChu" noResource="true"/>
+        <Property name="name" type="java.lang.String" value="Chinh" noResource="true"/>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
@@ -722,6 +590,296 @@
       </Constraints>
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.DesignCardLayout"/>
+      <SubComponents>
+        <Container class="javax.swing.JPanel" name="pnlTrangChu">
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
+              <CardConstraints cardName="trangChu"/>
+            </Constraint>
+          </Constraints>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <EmptySpace min="0" pref="1079" max="32767" attributes="0"/>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <EmptySpace min="0" pref="560" max="32767" attributes="0"/>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+        </Container>
+        <Container class="javax.swing.JPanel" name="pnlNhanVien">
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
+              <CardConstraints cardName="nhanVien"/>
+            </Constraint>
+          </Constraints>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <EmptySpace min="0" pref="1079" max="32767" attributes="0"/>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <EmptySpace min="0" pref="560" max="32767" attributes="0"/>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+        </Container>
+        <Container class="javax.swing.JPanel" name="pnlSanPham">
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
+              <CardConstraints cardName="sanPham"/>
+            </Constraint>
+          </Constraints>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <EmptySpace min="0" pref="1079" max="32767" attributes="0"/>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <EmptySpace min="0" pref="560" max="32767" attributes="0"/>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+        </Container>
+        <Container class="javax.swing.JPanel" name="pnlBanHang">
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
+              <CardConstraints cardName="banHang"/>
+            </Constraint>
+          </Constraints>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <EmptySpace min="0" pref="1079" max="32767" attributes="0"/>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <EmptySpace min="0" pref="560" max="32767" attributes="0"/>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+        </Container>
+        <Container class="javax.swing.JPanel" name="pnlLapHoaDon">
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
+              <CardConstraints cardName="lapHoaDon"/>
+            </Constraint>
+          </Constraints>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <EmptySpace min="0" pref="1079" max="32767" attributes="0"/>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <EmptySpace min="0" pref="560" max="32767" attributes="0"/>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+        </Container>
+        <Container class="javax.swing.JPanel" name="pnlXemHoaDon">
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
+              <CardConstraints cardName="xemHoaDon"/>
+            </Constraint>
+          </Constraints>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <EmptySpace min="0" pref="1079" max="32767" attributes="0"/>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <EmptySpace min="0" pref="560" max="32767" attributes="0"/>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+        </Container>
+        <Container class="javax.swing.JPanel" name="pnlKhachHang">
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
+              <CardConstraints cardName="khachHang"/>
+            </Constraint>
+          </Constraints>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <EmptySpace min="0" pref="1079" max="32767" attributes="0"/>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <EmptySpace min="0" pref="560" max="32767" attributes="0"/>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+        </Container>
+        <Container class="javax.swing.JPanel" name="pnlDoanhThu">
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
+              <CardConstraints cardName="doanhThu"/>
+            </Constraint>
+          </Constraints>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <EmptySpace min="0" pref="1079" max="32767" attributes="0"/>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <EmptySpace min="0" pref="560" max="32767" attributes="0"/>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+        </Container>
+      </SubComponents>
+    </Container>
+    <Container class="javax.swing.JPanel" name="pnlMenuCon">
+      <Events>
+        <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="pnlMenuConMouseEntered"/>
+        <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="pnlMenuConMouseExited"/>
+      </Events>
+      <Constraints>
+        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+          <AbsoluteConstraints x="240" y="270" width="300" height="90"/>
+        </Constraint>
+      </Constraints>
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" attributes="0">
+                  <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <Component id="lblLapHoaDonIcon" pref="43" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                          <Component id="lblLapHoaDon" min="-2" pref="221" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <Component id="lblHoaDonDaThanhToanIcon" pref="43" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                          <Component id="lblHoaDonDaThanhToan" min="-2" pref="221" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="lblLapHoaDonIcon" min="-2" pref="44" max="-2" attributes="0"/>
+                      <Component id="lblLapHoaDon" min="-2" pref="44" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="lblHoaDonDaThanhToanIcon" alignment="0" min="-2" pref="44" max="-2" attributes="0"/>
+                      <Component id="lblHoaDonDaThanhToan" alignment="0" min="-2" pref="44" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JLabel" name="lblLapHoaDon">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="99" red="0" type="rgb"/>
+            </Property>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Segoe UI" size="18" style="1"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="L&#x1ead;p H&#xf3;a &#x110;&#x1a1;n"/>
+            <Property name="opaque" type="boolean" value="true"/>
+          </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblLapHoaDonMouseClicked"/>
+            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblLapHoaDonMouseEntered"/>
+            <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblLapHoaDonMouseExited"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblLapHoaDonIcon">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="99" red="0" type="rgb"/>
+            </Property>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/com/software/icon/tools.png"/>
+            </Property>
+            <Property name="opaque" type="boolean" value="true"/>
+          </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblLapHoaDonIconMouseClicked"/>
+            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblLapHoaDonIconMouseEntered"/>
+            <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblLapHoaDonIconMouseExited"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblHoaDonDaThanhToanIcon">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="99" red="0" type="rgb"/>
+            </Property>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/com/software/icon/tools.png"/>
+            </Property>
+            <Property name="opaque" type="boolean" value="true"/>
+          </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblHoaDonDaThanhToanIconMouseClicked"/>
+            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblHoaDonDaThanhToanIconMouseEntered"/>
+            <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblHoaDonDaThanhToanIconMouseExited"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblHoaDonDaThanhToan">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="99" red="0" type="rgb"/>
+            </Property>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Segoe UI" size="18" style="1"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="H&#xf3;a &#x110;&#x1a1;n &#x110;&#xe3; Thanh To&#xe1;n"/>
+            <Property name="opaque" type="boolean" value="true"/>
+          </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblHoaDonDaThanhToanMouseClicked"/>
+            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblHoaDonDaThanhToanMouseEntered"/>
+            <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblHoaDonDaThanhToanMouseExited"/>
+          </Events>
+        </Component>
+      </SubComponents>
     </Container>
     <Container class="javax.swing.JPanel" name="pnlSitatus">
       <Properties>
@@ -807,226 +965,6 @@
             </Property>
             <Property name="text" type="java.lang.String" value="T&#x1ed5;ng quan v&#x1ec1; h&#x1ec7; th&#x1ed1;ng"/>
           </Properties>
-        </Component>
-      </SubComponents>
-    </Container>
-    <Container class="javax.swing.JPanel" name="pnlMenuCon">
-      <Events>
-        <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="pnlMenuConMouseEntered"/>
-        <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="pnlMenuConMouseExited"/>
-      </Events>
-      <Constraints>
-        <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="240" y="270" width="310" height="180"/>
-        </Constraint>
-      </Constraints>
-
-      <Layout>
-        <DimensionLayout dim="0">
-          <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" attributes="0">
-                  <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
-                          <Component id="lblKhachHangIcon3" pref="50" max="32767" attributes="0"/>
-                          <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                          <Component id="lblKhachHang3" pref="220" max="32767" attributes="0"/>
-                      </Group>
-                      <Group type="102" attributes="0">
-                          <Component id="lblKhachHangIcon2" pref="49" max="32767" attributes="0"/>
-                          <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                          <Component id="lblKhachHang2" min="-2" pref="221" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="lblKhachHangIcon4" pref="50" max="32767" attributes="0"/>
-                          <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                          <Component id="lblKhachHang4" pref="220" max="32767" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="1" attributes="0">
-                          <Component id="lblKhachHangIcon5" pref="50" max="32767" attributes="0"/>
-                          <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                          <Component id="lblKhachHang5" pref="220" max="32767" attributes="0"/>
-                      </Group>
-                  </Group>
-              </Group>
-          </Group>
-        </DimensionLayout>
-        <DimensionLayout dim="1">
-          <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="lblKhachHang2" alignment="3" min="-2" pref="44" max="-2" attributes="0"/>
-                      <Component id="lblKhachHangIcon2" alignment="3" min="-2" pref="44" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="lblKhachHang3" alignment="3" min="-2" pref="44" max="-2" attributes="0"/>
-                      <Component id="lblKhachHangIcon3" alignment="3" min="-2" pref="44" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="lblKhachHang4" alignment="3" min="-2" pref="44" max="-2" attributes="0"/>
-                      <Component id="lblKhachHangIcon4" alignment="3" min="-2" pref="44" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="lblKhachHang5" alignment="3" min="-2" pref="44" max="-2" attributes="0"/>
-                      <Component id="lblKhachHangIcon5" alignment="3" min="-2" pref="44" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-              </Group>
-          </Group>
-        </DimensionLayout>
-      </Layout>
-      <SubComponents>
-        <Component class="javax.swing.JLabel" name="lblKhachHang2">
-          <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="99" red="0" type="rgb"/>
-            </Property>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Segoe UI" size="18" style="1"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Danh M&#x1ee5;c Kh&#xe1;ch H&#xe0;ng"/>
-            <Property name="opaque" type="boolean" value="true"/>
-          </Properties>
-          <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblKhachHang2MouseClicked"/>
-            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblKhachHang2MouseEntered"/>
-            <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblKhachHang2MouseExited"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JLabel" name="lblKhachHangIcon2">
-          <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="99" red="0" type="rgb"/>
-            </Property>
-            <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/com/software/icon/KhachHang.png"/>
-            </Property>
-            <Property name="opaque" type="boolean" value="true"/>
-          </Properties>
-          <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblKhachHangIcon2MouseClicked"/>
-            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblKhachHangIcon2MouseEntered"/>
-            <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblKhachHangIcon2MouseExited"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JLabel" name="lblKhachHang3">
-          <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="99" red="0" type="rgb"/>
-            </Property>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Segoe UI" size="18" style="1"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Danh M&#x1ee5;c Kh&#xe1;ch H&#xe0;ng"/>
-            <Property name="opaque" type="boolean" value="true"/>
-          </Properties>
-          <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblKhachHang3MouseClicked"/>
-            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblKhachHang3MouseEntered"/>
-            <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblKhachHang3MouseExited"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JLabel" name="lblKhachHangIcon3">
-          <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="99" red="0" type="rgb"/>
-            </Property>
-            <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/com/software/icon/KhachHang.png"/>
-            </Property>
-            <Property name="opaque" type="boolean" value="true"/>
-          </Properties>
-          <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblKhachHangIcon3MouseClicked"/>
-            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblKhachHangIcon3MouseEntered"/>
-            <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblKhachHangIcon3MouseExited"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JLabel" name="lblKhachHang4">
-          <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="99" red="0" type="rgb"/>
-            </Property>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Segoe UI" size="18" style="1"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Danh M&#x1ee5;c Kh&#xe1;ch H&#xe0;ng"/>
-            <Property name="opaque" type="boolean" value="true"/>
-          </Properties>
-          <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblKhachHang4MouseClicked"/>
-            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblKhachHang4MouseEntered"/>
-            <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblKhachHang4MouseExited"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JLabel" name="lblKhachHangIcon4">
-          <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="99" red="0" type="rgb"/>
-            </Property>
-            <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/com/software/icon/KhachHang.png"/>
-            </Property>
-            <Property name="opaque" type="boolean" value="true"/>
-          </Properties>
-          <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblKhachHangIcon4MouseClicked"/>
-            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblKhachHangIcon4MouseEntered"/>
-            <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblKhachHangIcon4MouseExited"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JLabel" name="lblKhachHang5">
-          <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="99" red="0" type="rgb"/>
-            </Property>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Segoe UI" size="18" style="1"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="Danh M&#x1ee5;c Kh&#xe1;ch H&#xe0;ng"/>
-            <Property name="opaque" type="boolean" value="true"/>
-          </Properties>
-          <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblKhachHang5MouseClicked"/>
-            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblKhachHang5MouseEntered"/>
-            <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblKhachHang5MouseExited"/>
-          </Events>
-        </Component>
-        <Component class="javax.swing.JLabel" name="lblKhachHangIcon5">
-          <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="99" red="0" type="rgb"/>
-            </Property>
-            <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/com/software/icon/KhachHang.png"/>
-            </Property>
-            <Property name="opaque" type="boolean" value="true"/>
-          </Properties>
-          <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblKhachHangIcon5MouseClicked"/>
-            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblKhachHangIcon5MouseEntered"/>
-            <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblKhachHangIcon5MouseExited"/>
-          </Events>
         </Component>
       </SubComponents>
     </Container>

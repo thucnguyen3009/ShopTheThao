@@ -34,9 +34,9 @@ public class MotelDialog extends javax.swing.JFrame {
 
     public void TrangThaiDanhMuc(JLabel icon, JLabel name, int chonKieu) {
         if (chonKieu == 1) {
-            icon.setBackground(new Color(204, 204, 255));
+            icon.setBackground(new Color(255,255,255));
             icon.setCursor(new Cursor(Cursor.HAND_CURSOR));
-            name.setBackground(new Color(204, 204, 255));
+            name.setBackground(new Color(255,255,255));
             name.setCursor(new Cursor(Cursor.HAND_CURSOR));
             name.setForeground(new Color(51, 153, 255));
             icon.setBorder(BorderFactory.createMatteBorder(0, 5, 0, 0, new Color(102, 102, 102)));
@@ -58,23 +58,17 @@ public class MotelDialog extends javax.swing.JFrame {
         lblTrangChuIcon = new javax.swing.JLabel();
         lblNhanVien = new javax.swing.JLabel();
         lblNhanVienIcon = new javax.swing.JLabel();
-        lblThietBi = new javax.swing.JLabel();
-        lblThietBiIcon = new javax.swing.JLabel();
-        lblPhong = new javax.swing.JLabel();
-        lblPhongIcon = new javax.swing.JLabel();
+        lblSanPham = new javax.swing.JLabel();
+        lblSanPhamIcon = new javax.swing.JLabel();
+        lblBanHang = new javax.swing.JLabel();
+        lblBanHangIcon = new javax.swing.JLabel();
         lblKhachHangIcon = new javax.swing.JLabel();
         lblKhachHang = new javax.swing.JLabel();
-        lblTienNuoc = new javax.swing.JLabel();
-        lblTienNuocIcon = new javax.swing.JLabel();
-        lblTienDienIcon = new javax.swing.JLabel();
-        lblTienDien = new javax.swing.JLabel();
         lblNhaTro = new javax.swing.JLabel();
         lblTenNhaTro = new javax.swing.JLabel();
         lblChao = new javax.swing.JLabel();
         lblThongKeIcon = new javax.swing.JLabel();
         lblThongKe = new javax.swing.JLabel();
-        lblHoaDon = new javax.swing.JLabel();
-        lblHoaDonIcon = new javax.swing.JLabel();
         lblDangXuat = new javax.swing.JLabel();
         lblDangXuatIcon = new javax.swing.JLabel();
         lblThoat = new javax.swing.JLabel();
@@ -84,20 +78,24 @@ public class MotelDialog extends javax.swing.JFrame {
         lblSilogan = new javax.swing.JLabel();
         lblSdtTro = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
+        pnlChinh = new javax.swing.JPanel();
         pnlTrangChu = new javax.swing.JPanel();
+        pnlNhanVien = new javax.swing.JPanel();
+        pnlSanPham = new javax.swing.JPanel();
+        pnlBanHang = new javax.swing.JPanel();
+        pnlLapHoaDon = new javax.swing.JPanel();
+        pnlXemHoaDon = new javax.swing.JPanel();
+        pnlKhachHang = new javax.swing.JPanel();
+        pnlDoanhThu = new javax.swing.JPanel();
+        pnlMenuCon = new javax.swing.JPanel();
+        lblLapHoaDon = new javax.swing.JLabel();
+        lblLapHoaDonIcon = new javax.swing.JLabel();
+        lblHoaDonDaThanhToanIcon = new javax.swing.JLabel();
+        lblHoaDonDaThanhToan = new javax.swing.JLabel();
         pnlSitatus = new javax.swing.JPanel();
         lblTime = new javax.swing.JLabel();
         lblDate = new javax.swing.JLabel();
         lblTongQuanHeThong = new javax.swing.JLabel();
-        pnlMenuCon = new javax.swing.JPanel();
-        lblKhachHang2 = new javax.swing.JLabel();
-        lblKhachHangIcon2 = new javax.swing.JLabel();
-        lblKhachHang3 = new javax.swing.JLabel();
-        lblKhachHangIcon3 = new javax.swing.JLabel();
-        lblKhachHang4 = new javax.swing.JLabel();
-        lblKhachHangIcon4 = new javax.swing.JLabel();
-        lblKhachHang5 = new javax.swing.JLabel();
-        lblKhachHangIcon5 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
@@ -175,69 +173,69 @@ public class MotelDialog extends javax.swing.JFrame {
             }
         });
 
-        lblThietBi.setBackground(new java.awt.Color(0, 153, 255));
-        lblThietBi.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lblThietBi.setForeground(new java.awt.Color(255, 255, 255));
-        lblThietBi.setText("Quản Lí Thiết Bị");
-        lblThietBi.setOpaque(true);
-        lblThietBi.addMouseListener(new java.awt.event.MouseAdapter() {
+        lblSanPham.setBackground(new java.awt.Color(0, 153, 255));
+        lblSanPham.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblSanPham.setForeground(new java.awt.Color(255, 255, 255));
+        lblSanPham.setText("Quản Lý Sản Phẩm");
+        lblSanPham.setOpaque(true);
+        lblSanPham.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lblThietBiMouseClicked(evt);
+                lblSanPhamMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                lblThietBiMouseEntered(evt);
+                lblSanPhamMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                lblThietBiMouseExited(evt);
+                lblSanPhamMouseExited(evt);
             }
         });
 
-        lblThietBiIcon.setBackground(new java.awt.Color(0, 153, 255));
-        lblThietBiIcon.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblThietBiIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/software/icon/tools.png"))); // NOI18N
-        lblThietBiIcon.setOpaque(true);
-        lblThietBiIcon.addMouseListener(new java.awt.event.MouseAdapter() {
+        lblSanPhamIcon.setBackground(new java.awt.Color(0, 153, 255));
+        lblSanPhamIcon.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblSanPhamIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/software/icon/tools.png"))); // NOI18N
+        lblSanPhamIcon.setOpaque(true);
+        lblSanPhamIcon.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lblThietBiIconMouseClicked(evt);
+                lblSanPhamIconMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                lblThietBiIconMouseEntered(evt);
+                lblSanPhamIconMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                lblThietBiIconMouseExited(evt);
+                lblSanPhamIconMouseExited(evt);
             }
         });
 
-        lblPhong.setBackground(new java.awt.Color(0, 153, 255));
-        lblPhong.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lblPhong.setForeground(new java.awt.Color(255, 255, 255));
-        lblPhong.setText("Quản Lí Phòng");
-        lblPhong.setOpaque(true);
-        lblPhong.addMouseListener(new java.awt.event.MouseAdapter() {
+        lblBanHang.setBackground(new java.awt.Color(0, 153, 255));
+        lblBanHang.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblBanHang.setForeground(new java.awt.Color(255, 255, 255));
+        lblBanHang.setText("Bán Hàng");
+        lblBanHang.setOpaque(true);
+        lblBanHang.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lblPhongMouseClicked(evt);
+                lblBanHangMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                lblPhongMouseEntered(evt);
+                lblBanHangMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                lblPhongMouseExited(evt);
+                lblBanHangMouseExited(evt);
             }
         });
 
-        lblPhongIcon.setBackground(new java.awt.Color(0, 153, 255));
-        lblPhongIcon.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblPhongIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/software/icon/room.png"))); // NOI18N
-        lblPhongIcon.setOpaque(true);
-        lblPhongIcon.addMouseListener(new java.awt.event.MouseAdapter() {
+        lblBanHangIcon.setBackground(new java.awt.Color(0, 153, 255));
+        lblBanHangIcon.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblBanHangIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/software/icon/room.png"))); // NOI18N
+        lblBanHangIcon.setOpaque(true);
+        lblBanHangIcon.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lblPhongIconMouseClicked(evt);
+                lblBanHangIconMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                lblPhongIconMouseEntered(evt);
+                lblBanHangIconMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                lblPhongIconMouseExited(evt);
+                lblBanHangIconMouseExited(evt);
             }
         });
 
@@ -274,81 +272,15 @@ public class MotelDialog extends javax.swing.JFrame {
             }
         });
 
-        lblTienNuoc.setBackground(new java.awt.Color(0, 153, 255));
-        lblTienNuoc.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lblTienNuoc.setForeground(new java.awt.Color(255, 255, 255));
-        lblTienNuoc.setText("Tiền Nước");
-        lblTienNuoc.setOpaque(true);
-        lblTienNuoc.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lblTienNuocMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                lblTienNuocMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                lblTienNuocMouseExited(evt);
-            }
-        });
-
-        lblTienNuocIcon.setBackground(new java.awt.Color(0, 153, 255));
-        lblTienNuocIcon.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblTienNuocIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/software/icon/TienNuoc.png"))); // NOI18N
-        lblTienNuocIcon.setOpaque(true);
-        lblTienNuocIcon.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lblTienNuocIconMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                lblTienNuocIconMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                lblTienNuocIconMouseExited(evt);
-            }
-        });
-
-        lblTienDienIcon.setBackground(new java.awt.Color(0, 153, 255));
-        lblTienDienIcon.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblTienDienIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/software/icon/TienDien.png"))); // NOI18N
-        lblTienDienIcon.setOpaque(true);
-        lblTienDienIcon.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lblTienDienIconMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                lblTienDienIconMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                lblTienDienIconMouseExited(evt);
-            }
-        });
-
-        lblTienDien.setBackground(new java.awt.Color(0, 153, 255));
-        lblTienDien.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lblTienDien.setForeground(new java.awt.Color(255, 255, 255));
-        lblTienDien.setText("Tiền Điện");
-        lblTienDien.setOpaque(true);
-        lblTienDien.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lblTienDienMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                lblTienDienMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                lblTienDienMouseExited(evt);
-            }
-        });
-
         lblNhaTro.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         lblNhaTro.setForeground(new java.awt.Color(255, 255, 255));
         lblNhaTro.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblNhaTro.setText("NHÀ TRỌ");
+        lblNhaTro.setText("SHOP THỂ THAO");
 
         lblTenNhaTro.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         lblTenNhaTro.setForeground(new java.awt.Color(255, 255, 255));
         lblTenNhaTro.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblTenNhaTro.setText("THIỆN PHONG");
+        lblTenNhaTro.setText("BING BONG");
 
         lblChao.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
         lblChao.setForeground(new java.awt.Color(255, 255, 255));
@@ -374,7 +306,7 @@ public class MotelDialog extends javax.swing.JFrame {
         lblThongKe.setBackground(new java.awt.Color(0, 153, 255));
         lblThongKe.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblThongKe.setForeground(new java.awt.Color(255, 255, 255));
-        lblThongKe.setText("Thống Kê");
+        lblThongKe.setText("Xem Doanh Thu");
         lblThongKe.setOpaque(true);
         lblThongKe.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -385,39 +317,6 @@ public class MotelDialog extends javax.swing.JFrame {
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 lblThongKeMouseExited(evt);
-            }
-        });
-
-        lblHoaDon.setBackground(new java.awt.Color(0, 153, 255));
-        lblHoaDon.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lblHoaDon.setForeground(new java.awt.Color(255, 255, 255));
-        lblHoaDon.setText("Hóa Đơn");
-        lblHoaDon.setOpaque(true);
-        lblHoaDon.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lblHoaDonMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                lblHoaDonMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                lblHoaDonMouseExited(evt);
-            }
-        });
-
-        lblHoaDonIcon.setBackground(new java.awt.Color(0, 153, 255));
-        lblHoaDonIcon.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblHoaDonIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/software/icon/bill.png"))); // NOI18N
-        lblHoaDonIcon.setOpaque(true);
-        lblHoaDonIcon.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lblHoaDonIconMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                lblHoaDonIconMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                lblHoaDonIconMouseExited(evt);
             }
         });
 
@@ -499,12 +398,9 @@ public class MotelDialog extends javax.swing.JFrame {
                 .addGroup(pnlMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnlMenuLayout.createSequentialGroup()
                         .addGroup(pnlMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(lblThietBiIcon, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
-                            .addComponent(lblPhongIcon, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(lblSanPhamIcon, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+                            .addComponent(lblBanHangIcon, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(lblKhachHangIcon, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(lblTienNuocIcon, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(lblTienDienIcon, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(lblHoaDonIcon, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(lblThongKeIcon, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(lblDangXuatIcon, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(lblThoatIcon, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -512,12 +408,9 @@ public class MotelDialog extends javax.swing.JFrame {
                         .addGroup(pnlMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(lblDangXuat, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(lblThongKe, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(lblHoaDon, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(lblTienDien, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(lblTienNuoc, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(lblKhachHang, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(lblPhong, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(lblThietBi, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(lblBanHang, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(lblSanPham, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(lblThoat, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(pnlMenuLayout.createSequentialGroup()
                         .addGroup(pnlMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -527,7 +420,7 @@ public class MotelDialog extends javax.swing.JFrame {
                         .addGroup(pnlMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblTrangChu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(lblNhanVien, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addContainerGap())
+                .addGap(0, 0, 0))
         );
         pnlMenuLayout.setVerticalGroup(
             pnlMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -548,28 +441,16 @@ public class MotelDialog extends javax.swing.JFrame {
                     .addComponent(lblNhanVienIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 0, 0)
                 .addGroup(pnlMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblThietBi, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblThietBiIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblSanPham, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblSanPhamIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 0, 0)
                 .addGroup(pnlMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblPhong, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblPhongIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblBanHang, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblBanHangIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 0, 0)
                 .addGroup(pnlMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblKhachHang, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblKhachHangIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 0, 0)
-                .addGroup(pnlMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblTienNuoc, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblTienNuocIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 0, 0)
-                .addGroup(pnlMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblTienDien, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblTienDienIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 0, 0)
-                .addGroup(pnlMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblHoaDon, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblHoaDonIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(0, 0, 0)
                 .addGroup(pnlMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblThongKe, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -582,7 +463,7 @@ public class MotelDialog extends javax.swing.JFrame {
                 .addGroup(pnlMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblThoat, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblThoatIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(53, Short.MAX_VALUE))
+                .addContainerGap(179, Short.MAX_VALUE))
         );
 
         getContentPane().add(pnlMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -593,7 +474,7 @@ public class MotelDialog extends javax.swing.JFrame {
 
         lblSilogan.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
         lblSilogan.setForeground(new java.awt.Color(51, 102, 255));
-        lblSilogan.setText("NHÀ TRỌ VĂN MINH - THÂN THIỆN");
+        lblSilogan.setText("Chất Lượng Là Danh Dự - Tất Cả Vì Khách Hàng");
 
         lblSdtTro.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
         lblSdtTro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/software/icon/Telephone.png"))); // NOI18N
@@ -626,10 +507,224 @@ public class MotelDialog extends javax.swing.JFrame {
         getContentPane().add(pnlThongTinTro, new org.netbeans.lib.awtextra.AbsoluteConstraints(279, 6, -1, -1));
         getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(279, 99, 1079, 12));
 
-        pnlTrangChu.setBackground(new java.awt.Color(255, 0, 51));
-        pnlTrangChu.setName("TrangChu"); // NOI18N
-        pnlTrangChu.setLayout(new java.awt.CardLayout());
-        getContentPane().add(pnlTrangChu, new org.netbeans.lib.awtextra.AbsoluteConstraints(279, 109, 1079, 560));
+        pnlChinh.setBackground(new java.awt.Color(255, 0, 51));
+        pnlChinh.setName("Chinh"); // NOI18N
+        pnlChinh.setLayout(new java.awt.CardLayout());
+
+        javax.swing.GroupLayout pnlTrangChuLayout = new javax.swing.GroupLayout(pnlTrangChu);
+        pnlTrangChu.setLayout(pnlTrangChuLayout);
+        pnlTrangChuLayout.setHorizontalGroup(
+            pnlTrangChuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1079, Short.MAX_VALUE)
+        );
+        pnlTrangChuLayout.setVerticalGroup(
+            pnlTrangChuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 560, Short.MAX_VALUE)
+        );
+
+        pnlChinh.add(pnlTrangChu, "trangChu");
+
+        javax.swing.GroupLayout pnlNhanVienLayout = new javax.swing.GroupLayout(pnlNhanVien);
+        pnlNhanVien.setLayout(pnlNhanVienLayout);
+        pnlNhanVienLayout.setHorizontalGroup(
+            pnlNhanVienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1079, Short.MAX_VALUE)
+        );
+        pnlNhanVienLayout.setVerticalGroup(
+            pnlNhanVienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 560, Short.MAX_VALUE)
+        );
+
+        pnlChinh.add(pnlNhanVien, "nhanVien");
+
+        javax.swing.GroupLayout pnlSanPhamLayout = new javax.swing.GroupLayout(pnlSanPham);
+        pnlSanPham.setLayout(pnlSanPhamLayout);
+        pnlSanPhamLayout.setHorizontalGroup(
+            pnlSanPhamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1079, Short.MAX_VALUE)
+        );
+        pnlSanPhamLayout.setVerticalGroup(
+            pnlSanPhamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 560, Short.MAX_VALUE)
+        );
+
+        pnlChinh.add(pnlSanPham, "sanPham");
+
+        javax.swing.GroupLayout pnlBanHangLayout = new javax.swing.GroupLayout(pnlBanHang);
+        pnlBanHang.setLayout(pnlBanHangLayout);
+        pnlBanHangLayout.setHorizontalGroup(
+            pnlBanHangLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1079, Short.MAX_VALUE)
+        );
+        pnlBanHangLayout.setVerticalGroup(
+            pnlBanHangLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 560, Short.MAX_VALUE)
+        );
+
+        pnlChinh.add(pnlBanHang, "banHang");
+
+        javax.swing.GroupLayout pnlLapHoaDonLayout = new javax.swing.GroupLayout(pnlLapHoaDon);
+        pnlLapHoaDon.setLayout(pnlLapHoaDonLayout);
+        pnlLapHoaDonLayout.setHorizontalGroup(
+            pnlLapHoaDonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1079, Short.MAX_VALUE)
+        );
+        pnlLapHoaDonLayout.setVerticalGroup(
+            pnlLapHoaDonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 560, Short.MAX_VALUE)
+        );
+
+        pnlChinh.add(pnlLapHoaDon, "lapHoaDon");
+
+        javax.swing.GroupLayout pnlXemHoaDonLayout = new javax.swing.GroupLayout(pnlXemHoaDon);
+        pnlXemHoaDon.setLayout(pnlXemHoaDonLayout);
+        pnlXemHoaDonLayout.setHorizontalGroup(
+            pnlXemHoaDonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1079, Short.MAX_VALUE)
+        );
+        pnlXemHoaDonLayout.setVerticalGroup(
+            pnlXemHoaDonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 560, Short.MAX_VALUE)
+        );
+
+        pnlChinh.add(pnlXemHoaDon, "xemHoaDon");
+
+        javax.swing.GroupLayout pnlKhachHangLayout = new javax.swing.GroupLayout(pnlKhachHang);
+        pnlKhachHang.setLayout(pnlKhachHangLayout);
+        pnlKhachHangLayout.setHorizontalGroup(
+            pnlKhachHangLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1079, Short.MAX_VALUE)
+        );
+        pnlKhachHangLayout.setVerticalGroup(
+            pnlKhachHangLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 560, Short.MAX_VALUE)
+        );
+
+        pnlChinh.add(pnlKhachHang, "khachHang");
+
+        javax.swing.GroupLayout pnlDoanhThuLayout = new javax.swing.GroupLayout(pnlDoanhThu);
+        pnlDoanhThu.setLayout(pnlDoanhThuLayout);
+        pnlDoanhThuLayout.setHorizontalGroup(
+            pnlDoanhThuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1079, Short.MAX_VALUE)
+        );
+        pnlDoanhThuLayout.setVerticalGroup(
+            pnlDoanhThuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 560, Short.MAX_VALUE)
+        );
+
+        pnlChinh.add(pnlDoanhThu, "doanhThu");
+
+        getContentPane().add(pnlChinh, new org.netbeans.lib.awtextra.AbsoluteConstraints(279, 109, 1079, 560));
+
+        pnlMenuCon.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                pnlMenuConMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                pnlMenuConMouseExited(evt);
+            }
+        });
+
+        lblLapHoaDon.setBackground(new java.awt.Color(0, 153, 255));
+        lblLapHoaDon.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblLapHoaDon.setForeground(new java.awt.Color(255, 255, 255));
+        lblLapHoaDon.setText("Lập Hóa Đơn");
+        lblLapHoaDon.setOpaque(true);
+        lblLapHoaDon.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblLapHoaDonMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lblLapHoaDonMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lblLapHoaDonMouseExited(evt);
+            }
+        });
+
+        lblLapHoaDonIcon.setBackground(new java.awt.Color(0, 153, 255));
+        lblLapHoaDonIcon.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblLapHoaDonIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/software/icon/tools.png"))); // NOI18N
+        lblLapHoaDonIcon.setOpaque(true);
+        lblLapHoaDonIcon.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblLapHoaDonIconMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lblLapHoaDonIconMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lblLapHoaDonIconMouseExited(evt);
+            }
+        });
+
+        lblHoaDonDaThanhToanIcon.setBackground(new java.awt.Color(0, 153, 255));
+        lblHoaDonDaThanhToanIcon.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblHoaDonDaThanhToanIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/software/icon/tools.png"))); // NOI18N
+        lblHoaDonDaThanhToanIcon.setOpaque(true);
+        lblHoaDonDaThanhToanIcon.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblHoaDonDaThanhToanIconMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lblHoaDonDaThanhToanIconMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lblHoaDonDaThanhToanIconMouseExited(evt);
+            }
+        });
+
+        lblHoaDonDaThanhToan.setBackground(new java.awt.Color(0, 153, 255));
+        lblHoaDonDaThanhToan.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblHoaDonDaThanhToan.setForeground(new java.awt.Color(255, 255, 255));
+        lblHoaDonDaThanhToan.setText("Hóa Đơn Đã Thanh Toán");
+        lblHoaDonDaThanhToan.setOpaque(true);
+        lblHoaDonDaThanhToan.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblHoaDonDaThanhToanMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lblHoaDonDaThanhToanMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lblHoaDonDaThanhToanMouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout pnlMenuConLayout = new javax.swing.GroupLayout(pnlMenuCon);
+        pnlMenuCon.setLayout(pnlMenuConLayout);
+        pnlMenuConLayout.setHorizontalGroup(
+            pnlMenuConLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlMenuConLayout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addGroup(pnlMenuConLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlMenuConLayout.createSequentialGroup()
+                        .addComponent(lblLapHoaDonIcon, javax.swing.GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE)
+                        .addGap(0, 0, 0)
+                        .addComponent(lblLapHoaDon, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(6, 6, 6))
+                    .addGroup(pnlMenuConLayout.createSequentialGroup()
+                        .addComponent(lblHoaDonDaThanhToanIcon, javax.swing.GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE)
+                        .addGap(0, 0, 0)
+                        .addComponent(lblHoaDonDaThanhToan, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(6, 6, 6))))
+        );
+        pnlMenuConLayout.setVerticalGroup(
+            pnlMenuConLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlMenuConLayout.createSequentialGroup()
+                .addGap(0, 0, 0)
+                .addGroup(pnlMenuConLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblLapHoaDonIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblLapHoaDon, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(pnlMenuConLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblHoaDonDaThanhToanIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblHoaDonDaThanhToan, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        getContentPane().add(pnlMenuCon, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 270, 300, 90));
 
         pnlSitatus.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 0, 0, 0, new java.awt.Color(0, 0, 0)));
 
@@ -674,195 +769,6 @@ public class MotelDialog extends javax.swing.JFrame {
         );
 
         getContentPane().add(pnlSitatus, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 674, 1370, -1));
-
-        pnlMenuCon.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                pnlMenuConMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                pnlMenuConMouseExited(evt);
-            }
-        });
-
-        lblKhachHang2.setBackground(new java.awt.Color(0, 153, 255));
-        lblKhachHang2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lblKhachHang2.setForeground(new java.awt.Color(255, 255, 255));
-        lblKhachHang2.setText("Danh Mục Khách Hàng");
-        lblKhachHang2.setOpaque(true);
-        lblKhachHang2.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lblKhachHang2MouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                lblKhachHang2MouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                lblKhachHang2MouseExited(evt);
-            }
-        });
-
-        lblKhachHangIcon2.setBackground(new java.awt.Color(0, 153, 255));
-        lblKhachHangIcon2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblKhachHangIcon2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/software/icon/KhachHang.png"))); // NOI18N
-        lblKhachHangIcon2.setOpaque(true);
-        lblKhachHangIcon2.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lblKhachHangIcon2MouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                lblKhachHangIcon2MouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                lblKhachHangIcon2MouseExited(evt);
-            }
-        });
-
-        lblKhachHang3.setBackground(new java.awt.Color(0, 153, 255));
-        lblKhachHang3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lblKhachHang3.setForeground(new java.awt.Color(255, 255, 255));
-        lblKhachHang3.setText("Danh Mục Khách Hàng");
-        lblKhachHang3.setOpaque(true);
-        lblKhachHang3.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lblKhachHang3MouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                lblKhachHang3MouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                lblKhachHang3MouseExited(evt);
-            }
-        });
-
-        lblKhachHangIcon3.setBackground(new java.awt.Color(0, 153, 255));
-        lblKhachHangIcon3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblKhachHangIcon3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/software/icon/KhachHang.png"))); // NOI18N
-        lblKhachHangIcon3.setOpaque(true);
-        lblKhachHangIcon3.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lblKhachHangIcon3MouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                lblKhachHangIcon3MouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                lblKhachHangIcon3MouseExited(evt);
-            }
-        });
-
-        lblKhachHang4.setBackground(new java.awt.Color(0, 153, 255));
-        lblKhachHang4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lblKhachHang4.setForeground(new java.awt.Color(255, 255, 255));
-        lblKhachHang4.setText("Danh Mục Khách Hàng");
-        lblKhachHang4.setOpaque(true);
-        lblKhachHang4.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lblKhachHang4MouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                lblKhachHang4MouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                lblKhachHang4MouseExited(evt);
-            }
-        });
-
-        lblKhachHangIcon4.setBackground(new java.awt.Color(0, 153, 255));
-        lblKhachHangIcon4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblKhachHangIcon4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/software/icon/KhachHang.png"))); // NOI18N
-        lblKhachHangIcon4.setOpaque(true);
-        lblKhachHangIcon4.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lblKhachHangIcon4MouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                lblKhachHangIcon4MouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                lblKhachHangIcon4MouseExited(evt);
-            }
-        });
-
-        lblKhachHang5.setBackground(new java.awt.Color(0, 153, 255));
-        lblKhachHang5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lblKhachHang5.setForeground(new java.awt.Color(255, 255, 255));
-        lblKhachHang5.setText("Danh Mục Khách Hàng");
-        lblKhachHang5.setOpaque(true);
-        lblKhachHang5.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lblKhachHang5MouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                lblKhachHang5MouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                lblKhachHang5MouseExited(evt);
-            }
-        });
-
-        lblKhachHangIcon5.setBackground(new java.awt.Color(0, 153, 255));
-        lblKhachHangIcon5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblKhachHangIcon5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/software/icon/KhachHang.png"))); // NOI18N
-        lblKhachHangIcon5.setOpaque(true);
-        lblKhachHangIcon5.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lblKhachHangIcon5MouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                lblKhachHangIcon5MouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                lblKhachHangIcon5MouseExited(evt);
-            }
-        });
-
-        javax.swing.GroupLayout pnlMenuConLayout = new javax.swing.GroupLayout(pnlMenuCon);
-        pnlMenuCon.setLayout(pnlMenuConLayout);
-        pnlMenuConLayout.setHorizontalGroup(
-            pnlMenuConLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlMenuConLayout.createSequentialGroup()
-                .addGap(40, 40, 40)
-                .addGroup(pnlMenuConLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnlMenuConLayout.createSequentialGroup()
-                        .addComponent(lblKhachHangIcon3, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
-                        .addGap(0, 0, 0)
-                        .addComponent(lblKhachHang3, javax.swing.GroupLayout.DEFAULT_SIZE, 220, Short.MAX_VALUE))
-                    .addGroup(pnlMenuConLayout.createSequentialGroup()
-                        .addComponent(lblKhachHangIcon2, javax.swing.GroupLayout.DEFAULT_SIZE, 49, Short.MAX_VALUE)
-                        .addGap(0, 0, 0)
-                        .addComponent(lblKhachHang2, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(pnlMenuConLayout.createSequentialGroup()
-                        .addComponent(lblKhachHangIcon4, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
-                        .addGap(0, 0, 0)
-                        .addComponent(lblKhachHang4, javax.swing.GroupLayout.DEFAULT_SIZE, 220, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlMenuConLayout.createSequentialGroup()
-                        .addComponent(lblKhachHangIcon5, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
-                        .addGap(0, 0, 0)
-                        .addComponent(lblKhachHang5, javax.swing.GroupLayout.DEFAULT_SIZE, 220, Short.MAX_VALUE))))
-        );
-        pnlMenuConLayout.setVerticalGroup(
-            pnlMenuConLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlMenuConLayout.createSequentialGroup()
-                .addGap(0, 0, 0)
-                .addGroup(pnlMenuConLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblKhachHang2, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblKhachHangIcon2, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 0, 0)
-                .addGroup(pnlMenuConLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblKhachHang3, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblKhachHangIcon3, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 0, 0)
-                .addGroup(pnlMenuConLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblKhachHang4, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblKhachHangIcon4, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 0, 0)
-                .addGroup(pnlMenuConLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblKhachHang5, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblKhachHangIcon5, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 0, 0))
-        );
-
-        getContentPane().add(pnlMenuCon, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 270, 310, 180));
 
         jMenuBar1.setMinimumSize(new java.awt.Dimension(70, 30));
 
@@ -909,39 +815,39 @@ public class MotelDialog extends javax.swing.JFrame {
         this.TrangThaiDanhMuc(lblNhanVienIcon, lblNhanVien, 2);
     }//GEN-LAST:event_lblNhanVienIconMouseExited
 
-    private void lblThietBiMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblThietBiMouseEntered
-        this.TrangThaiDanhMuc(lblThietBiIcon, lblThietBi, 1);
-    }//GEN-LAST:event_lblThietBiMouseEntered
+    private void lblSanPhamMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblSanPhamMouseEntered
+        this.TrangThaiDanhMuc(lblSanPhamIcon, lblSanPham, 1);
+    }//GEN-LAST:event_lblSanPhamMouseEntered
 
-    private void lblThietBiIconMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblThietBiIconMouseEntered
-        this.TrangThaiDanhMuc(lblThietBiIcon, lblThietBi, 1);
-    }//GEN-LAST:event_lblThietBiIconMouseEntered
+    private void lblSanPhamIconMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblSanPhamIconMouseEntered
+        this.TrangThaiDanhMuc(lblSanPhamIcon, lblSanPham, 1);
+    }//GEN-LAST:event_lblSanPhamIconMouseEntered
 
-    private void lblThietBiMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblThietBiMouseExited
-        this.TrangThaiDanhMuc(lblThietBiIcon, lblThietBi, 2);
-    }//GEN-LAST:event_lblThietBiMouseExited
+    private void lblSanPhamMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblSanPhamMouseExited
+        this.TrangThaiDanhMuc(lblSanPhamIcon, lblSanPham, 2);
+    }//GEN-LAST:event_lblSanPhamMouseExited
 
-    private void lblThietBiIconMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblThietBiIconMouseExited
-        this.TrangThaiDanhMuc(lblThietBiIcon, lblThietBi, 2);
-    }//GEN-LAST:event_lblThietBiIconMouseExited
+    private void lblSanPhamIconMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblSanPhamIconMouseExited
+        this.TrangThaiDanhMuc(lblSanPhamIcon, lblSanPham, 2);
+    }//GEN-LAST:event_lblSanPhamIconMouseExited
 
-    private void lblPhongMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPhongMouseEntered
-        this.TrangThaiDanhMuc(lblPhongIcon, lblPhong, 1);
+    private void lblBanHangMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblBanHangMouseEntered
+        this.TrangThaiDanhMuc(lblBanHangIcon, lblBanHang, 1);
         pnlMenuCon.setVisible(true);
-    }//GEN-LAST:event_lblPhongMouseEntered
+    }//GEN-LAST:event_lblBanHangMouseEntered
 
-    private void lblPhongIconMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPhongIconMouseEntered
-        this.TrangThaiDanhMuc(lblPhongIcon, lblPhong, 1);
-    }//GEN-LAST:event_lblPhongIconMouseEntered
+    private void lblBanHangIconMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblBanHangIconMouseEntered
+        this.TrangThaiDanhMuc(lblBanHangIcon, lblBanHang, 1);
+    }//GEN-LAST:event_lblBanHangIconMouseEntered
 
-    private void lblPhongMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPhongMouseExited
-        this.TrangThaiDanhMuc(lblPhongIcon, lblPhong, 2);
+    private void lblBanHangMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblBanHangMouseExited
+        this.TrangThaiDanhMuc(lblBanHangIcon, lblBanHang, 2);
         pnlMenuCon.setVisible(false);
-    }//GEN-LAST:event_lblPhongMouseExited
+    }//GEN-LAST:event_lblBanHangMouseExited
 
-    private void lblPhongIconMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPhongIconMouseExited
-        this.TrangThaiDanhMuc(lblPhongIcon, lblPhong, 2);
-    }//GEN-LAST:event_lblPhongIconMouseExited
+    private void lblBanHangIconMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblBanHangIconMouseExited
+        this.TrangThaiDanhMuc(lblBanHangIcon, lblBanHang, 2);
+    }//GEN-LAST:event_lblBanHangIconMouseExited
 
     private void lblKhachHangMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblKhachHangMouseEntered
         this.TrangThaiDanhMuc(lblKhachHangIcon, lblKhachHang, 1);
@@ -959,65 +865,9 @@ public class MotelDialog extends javax.swing.JFrame {
         this.TrangThaiDanhMuc(lblKhachHangIcon, lblKhachHang, 2);
     }//GEN-LAST:event_lblKhachHangIconMouseExited
 
-    private void lblTienNuocMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblTienNuocMouseEntered
-        this.TrangThaiDanhMuc(lblTienNuocIcon, lblTienNuoc, 1);
-    }//GEN-LAST:event_lblTienNuocMouseEntered
-
-    private void lblTienNuocIconMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblTienNuocIconMouseEntered
-        this.TrangThaiDanhMuc(lblTienNuocIcon, lblTienNuoc, 1);
-    }//GEN-LAST:event_lblTienNuocIconMouseEntered
-
-    private void lblTienNuocMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblTienNuocMouseExited
-        this.TrangThaiDanhMuc(lblTienNuocIcon, lblTienNuoc, 2);
-    }//GEN-LAST:event_lblTienNuocMouseExited
-
-    private void lblTienNuocIconMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblTienNuocIconMouseExited
-        this.TrangThaiDanhMuc(lblTienNuocIcon, lblTienNuoc, 2);
-    }//GEN-LAST:event_lblTienNuocIconMouseExited
-
-    private void lblTienDienMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblTienDienMouseEntered
-        this.TrangThaiDanhMuc(lblTienDienIcon, lblTienDien, 1);
-    }//GEN-LAST:event_lblTienDienMouseEntered
-
-    private void lblTienDienIconMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblTienDienIconMouseEntered
-        this.TrangThaiDanhMuc(lblTienDienIcon, lblTienDien, 1);
-    }//GEN-LAST:event_lblTienDienIconMouseEntered
-
-    private void lblTienDienMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblTienDienMouseExited
-        this.TrangThaiDanhMuc(lblTienDienIcon, lblTienDien, 2);
-    }//GEN-LAST:event_lblTienDienMouseExited
-
-    private void lblTienDienIconMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblTienDienIconMouseExited
-        this.TrangThaiDanhMuc(lblTienDienIcon, lblTienDien, 2);
-    }//GEN-LAST:event_lblTienDienIconMouseExited
-
-    private void lblHoaDonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblHoaDonMouseEntered
-        this.TrangThaiDanhMuc(lblHoaDonIcon, lblHoaDon, 1);
-    }//GEN-LAST:event_lblHoaDonMouseEntered
-
-    private void lblHoaDonIconMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblHoaDonIconMouseEntered
-        this.TrangThaiDanhMuc(lblHoaDonIcon, lblHoaDon, 1);
-    }//GEN-LAST:event_lblHoaDonIconMouseEntered
-
-    private void lblHoaDonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblHoaDonMouseExited
-        this.TrangThaiDanhMuc(lblHoaDonIcon, lblHoaDon, 2);
-    }//GEN-LAST:event_lblHoaDonMouseExited
-
-    private void lblHoaDonIconMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblHoaDonIconMouseExited
-        this.TrangThaiDanhMuc(lblHoaDonIcon, lblHoaDon, 2);
-    }//GEN-LAST:event_lblHoaDonIconMouseExited
-
-    private void lblThongKeMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblThongKeMouseEntered
-        this.TrangThaiDanhMuc(lblThongKeIcon, lblThongKe, 1);
-    }//GEN-LAST:event_lblThongKeMouseEntered
-
     private void lblThongKeIconMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblThongKeIconMouseEntered
         this.TrangThaiDanhMuc(lblThongKeIcon, lblThongKe, 1);
     }//GEN-LAST:event_lblThongKeIconMouseEntered
-
-    private void lblThongKeMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblThongKeMouseExited
-        this.TrangThaiDanhMuc(lblThongKeIcon, lblThongKe, 2);
-    }//GEN-LAST:event_lblThongKeMouseExited
 
     private void lblThongKeIconMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblThongKeIconMouseExited
         this.TrangThaiDanhMuc(lblThongKeIcon, lblThongKe, 2);
@@ -1071,21 +921,21 @@ public class MotelDialog extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_lblNhanVienMouseClicked
 
-    private void lblThietBiIconMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblThietBiIconMouseClicked
+    private void lblSanPhamIconMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblSanPhamIconMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_lblThietBiIconMouseClicked
+    }//GEN-LAST:event_lblSanPhamIconMouseClicked
 
-    private void lblThietBiMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblThietBiMouseClicked
+    private void lblSanPhamMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblSanPhamMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_lblThietBiMouseClicked
+    }//GEN-LAST:event_lblSanPhamMouseClicked
 
-    private void lblPhongIconMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPhongIconMouseClicked
+    private void lblBanHangIconMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblBanHangIconMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_lblPhongIconMouseClicked
+    }//GEN-LAST:event_lblBanHangIconMouseClicked
 
-    private void lblPhongMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblPhongMouseClicked
+    private void lblBanHangMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblBanHangMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_lblPhongMouseClicked
+    }//GEN-LAST:event_lblBanHangMouseClicked
 
     private void lblKhachHangIconMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblKhachHangIconMouseClicked
         // TODO add your handling code here:
@@ -1095,37 +945,9 @@ public class MotelDialog extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_lblKhachHangMouseClicked
 
-    private void lblTienNuocIconMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblTienNuocIconMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_lblTienNuocIconMouseClicked
-
-    private void lblTienNuocMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblTienNuocMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_lblTienNuocMouseClicked
-
-    private void lblTienDienIconMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblTienDienIconMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_lblTienDienIconMouseClicked
-
-    private void lblTienDienMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblTienDienMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_lblTienDienMouseClicked
-
-    private void lblHoaDonIconMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblHoaDonIconMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_lblHoaDonIconMouseClicked
-
-    private void lblHoaDonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblHoaDonMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_lblHoaDonMouseClicked
-
     private void lblThongKeIconMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblThongKeIconMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_lblThongKeIconMouseClicked
-
-    private void lblThongKeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblThongKeMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_lblThongKeMouseClicked
 
     private void lblDangXuatIconMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblDangXuatIconMouseClicked
         // TODO add your handling code here:
@@ -1145,107 +967,89 @@ public class MotelDialog extends javax.swing.JFrame {
 
     private void pnlMenuConMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlMenuConMouseEntered
         pnlMenuCon.setVisible(true);
+        this.TrangThaiDanhMuc(lblBanHangIcon, lblBanHang, 1);
     }//GEN-LAST:event_pnlMenuConMouseEntered
 
     private void pnlMenuConMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnlMenuConMouseExited
         pnlMenuCon.setVisible(false);
+        this.TrangThaiDanhMuc(lblBanHangIcon, lblBanHang, 2);
     }//GEN-LAST:event_pnlMenuConMouseExited
 
-    private void lblKhachHang2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblKhachHang2MouseClicked
+    private void lblLapHoaDonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblLapHoaDonMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_lblKhachHang2MouseClicked
+    }//GEN-LAST:event_lblLapHoaDonMouseClicked
 
-    private void lblKhachHang2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblKhachHang2MouseEntered
-        // TODO add your handling code here:
-    }//GEN-LAST:event_lblKhachHang2MouseEntered
+    private void lblLapHoaDonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblLapHoaDonMouseEntered
+        pnlMenuCon.setVisible(true);
+        this.TrangThaiDanhMuc(lblLapHoaDonIcon, lblLapHoaDon, 1);
+        this.TrangThaiDanhMuc(lblBanHangIcon, lblBanHang, 1);
+    }//GEN-LAST:event_lblLapHoaDonMouseEntered
 
-    private void lblKhachHang2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblKhachHang2MouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_lblKhachHang2MouseExited
+    private void lblLapHoaDonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblLapHoaDonMouseExited
+        pnlMenuCon.setVisible(false);
+        this.TrangThaiDanhMuc(lblLapHoaDonIcon, lblLapHoaDon, 2);
+        this.TrangThaiDanhMuc(lblBanHangIcon, lblBanHang, 2);
+    }//GEN-LAST:event_lblLapHoaDonMouseExited
 
-    private void lblKhachHangIcon2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblKhachHangIcon2MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_lblKhachHangIcon2MouseClicked
+    private void lblThongKeMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblThongKeMouseExited
+        this.TrangThaiDanhMuc(lblThongKeIcon, lblThongKe, 2);
+    }//GEN-LAST:event_lblThongKeMouseExited
 
-    private void lblKhachHangIcon2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblKhachHangIcon2MouseEntered
-        // TODO add your handling code here:
-    }//GEN-LAST:event_lblKhachHangIcon2MouseEntered
+    private void lblThongKeMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblThongKeMouseEntered
+        this.TrangThaiDanhMuc(lblThongKeIcon, lblThongKe, 1);
+    }//GEN-LAST:event_lblThongKeMouseEntered
 
-    private void lblKhachHangIcon2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblKhachHangIcon2MouseExited
+    private void lblThongKeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblThongKeMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_lblKhachHangIcon2MouseExited
+    }//GEN-LAST:event_lblThongKeMouseClicked
 
-    private void lblKhachHang3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblKhachHang3MouseClicked
+    private void lblLapHoaDonIconMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblLapHoaDonIconMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_lblKhachHang3MouseClicked
+    }//GEN-LAST:event_lblLapHoaDonIconMouseClicked
 
-    private void lblKhachHang3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblKhachHang3MouseEntered
-        // TODO add your handling code here:
-    }//GEN-LAST:event_lblKhachHang3MouseEntered
+    private void lblLapHoaDonIconMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblLapHoaDonIconMouseEntered
+        pnlMenuCon.setVisible(true);
+        this.TrangThaiDanhMuc(lblLapHoaDonIcon, lblLapHoaDon, 1);
+        this.TrangThaiDanhMuc(lblBanHangIcon, lblBanHang, 1);
+    }//GEN-LAST:event_lblLapHoaDonIconMouseEntered
 
-    private void lblKhachHang3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblKhachHang3MouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_lblKhachHang3MouseExited
+    private void lblLapHoaDonIconMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblLapHoaDonIconMouseExited
+        pnlMenuCon.setVisible(false);
+        this.TrangThaiDanhMuc(lblLapHoaDonIcon, lblLapHoaDon, 2);
+        this.TrangThaiDanhMuc(lblBanHangIcon, lblBanHang, 2);
+    }//GEN-LAST:event_lblLapHoaDonIconMouseExited
 
-    private void lblKhachHangIcon3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblKhachHangIcon3MouseClicked
+    private void lblHoaDonDaThanhToanIconMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblHoaDonDaThanhToanIconMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_lblKhachHangIcon3MouseClicked
+    }//GEN-LAST:event_lblHoaDonDaThanhToanIconMouseClicked
 
-    private void lblKhachHangIcon3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblKhachHangIcon3MouseEntered
-        // TODO add your handling code here:
-    }//GEN-LAST:event_lblKhachHangIcon3MouseEntered
+    private void lblHoaDonDaThanhToanIconMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblHoaDonDaThanhToanIconMouseEntered
+        pnlMenuCon.setVisible(true);
+        this.TrangThaiDanhMuc(lblHoaDonDaThanhToanIcon, lblHoaDonDaThanhToan, 1);
+        this.TrangThaiDanhMuc(lblBanHangIcon, lblBanHang, 1);
+    }//GEN-LAST:event_lblHoaDonDaThanhToanIconMouseEntered
 
-    private void lblKhachHangIcon3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblKhachHangIcon3MouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_lblKhachHangIcon3MouseExited
+    private void lblHoaDonDaThanhToanIconMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblHoaDonDaThanhToanIconMouseExited
+        pnlMenuCon.setVisible(false);
+        this.TrangThaiDanhMuc(lblHoaDonDaThanhToanIcon, lblHoaDonDaThanhToan, 2);
+        this.TrangThaiDanhMuc(lblBanHangIcon, lblBanHang, 2);
+    }//GEN-LAST:event_lblHoaDonDaThanhToanIconMouseExited
 
-    private void lblKhachHang4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblKhachHang4MouseClicked
+    private void lblHoaDonDaThanhToanMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblHoaDonDaThanhToanMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_lblKhachHang4MouseClicked
+    }//GEN-LAST:event_lblHoaDonDaThanhToanMouseClicked
 
-    private void lblKhachHang4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblKhachHang4MouseEntered
-        // TODO add your handling code here:
-    }//GEN-LAST:event_lblKhachHang4MouseEntered
+    private void lblHoaDonDaThanhToanMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblHoaDonDaThanhToanMouseEntered
+        pnlMenuCon.setVisible(true);
+        this.TrangThaiDanhMuc(lblHoaDonDaThanhToanIcon, lblHoaDonDaThanhToan, 1);
+        this.TrangThaiDanhMuc(lblBanHangIcon, lblBanHang, 1);
+    }//GEN-LAST:event_lblHoaDonDaThanhToanMouseEntered
 
-    private void lblKhachHang4MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblKhachHang4MouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_lblKhachHang4MouseExited
-
-    private void lblKhachHangIcon4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblKhachHangIcon4MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_lblKhachHangIcon4MouseClicked
-
-    private void lblKhachHangIcon4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblKhachHangIcon4MouseEntered
-        // TODO add your handling code here:
-    }//GEN-LAST:event_lblKhachHangIcon4MouseEntered
-
-    private void lblKhachHangIcon4MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblKhachHangIcon4MouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_lblKhachHangIcon4MouseExited
-
-    private void lblKhachHang5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblKhachHang5MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_lblKhachHang5MouseClicked
-
-    private void lblKhachHang5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblKhachHang5MouseEntered
-        // TODO add your handling code here:
-    }//GEN-LAST:event_lblKhachHang5MouseEntered
-
-    private void lblKhachHang5MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblKhachHang5MouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_lblKhachHang5MouseExited
-
-    private void lblKhachHangIcon5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblKhachHangIcon5MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_lblKhachHangIcon5MouseClicked
-
-    private void lblKhachHangIcon5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblKhachHangIcon5MouseEntered
-        // TODO add your handling code here:
-    }//GEN-LAST:event_lblKhachHangIcon5MouseEntered
-
-    private void lblKhachHangIcon5MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblKhachHangIcon5MouseExited
-        // TODO add your handling code here:
-    }//GEN-LAST:event_lblKhachHangIcon5MouseExited
+    private void lblHoaDonDaThanhToanMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblHoaDonDaThanhToanMouseExited
+        pnlMenuCon.setVisible(false);
+        this.TrangThaiDanhMuc(lblHoaDonDaThanhToanIcon, lblHoaDonDaThanhToan, 2);
+        this.TrangThaiDanhMuc(lblBanHangIcon, lblBanHang, 2);
+    }//GEN-LAST:event_lblHoaDonDaThanhToanMouseExited
 
     /**
      * @param args the command line arguments
@@ -1285,49 +1089,47 @@ public class MotelDialog extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JLabel lblBanHang;
+    private javax.swing.JLabel lblBanHangIcon;
     private javax.swing.JLabel lblChao;
     private javax.swing.JLabel lblDangXuat;
     private javax.swing.JLabel lblDangXuatIcon;
     private javax.swing.JLabel lblDate;
     private javax.swing.JLabel lblDiaChiTro;
-    private javax.swing.JLabel lblHoaDon;
-    private javax.swing.JLabel lblHoaDonIcon;
+    private javax.swing.JLabel lblHoaDonDaThanhToan;
+    private javax.swing.JLabel lblHoaDonDaThanhToanIcon;
     private javax.swing.JLabel lblKhachHang;
-    private javax.swing.JLabel lblKhachHang2;
-    private javax.swing.JLabel lblKhachHang3;
-    private javax.swing.JLabel lblKhachHang4;
-    private javax.swing.JLabel lblKhachHang5;
     private javax.swing.JLabel lblKhachHangIcon;
-    private javax.swing.JLabel lblKhachHangIcon2;
-    private javax.swing.JLabel lblKhachHangIcon3;
-    private javax.swing.JLabel lblKhachHangIcon4;
-    private javax.swing.JLabel lblKhachHangIcon5;
+    private javax.swing.JLabel lblLapHoaDon;
+    private javax.swing.JLabel lblLapHoaDonIcon;
     private javax.swing.JLabel lblNhaTro;
     private javax.swing.JLabel lblNhanVien;
     private javax.swing.JLabel lblNhanVienIcon;
-    private javax.swing.JLabel lblPhong;
-    private javax.swing.JLabel lblPhongIcon;
+    private javax.swing.JLabel lblSanPham;
+    private javax.swing.JLabel lblSanPhamIcon;
     private javax.swing.JLabel lblSdtTro;
     private javax.swing.JLabel lblSilogan;
     private javax.swing.JLabel lblTenNhaTro;
-    private javax.swing.JLabel lblThietBi;
-    private javax.swing.JLabel lblThietBiIcon;
     private javax.swing.JLabel lblThoat;
     private javax.swing.JLabel lblThoatIcon;
     private javax.swing.JLabel lblThongKe;
     private javax.swing.JLabel lblThongKeIcon;
-    private javax.swing.JLabel lblTienDien;
-    private javax.swing.JLabel lblTienDienIcon;
-    private javax.swing.JLabel lblTienNuoc;
-    private javax.swing.JLabel lblTienNuocIcon;
     private javax.swing.JLabel lblTime;
     private javax.swing.JLabel lblTongQuanHeThong;
     private javax.swing.JLabel lblTrangChu;
     private javax.swing.JLabel lblTrangChuIcon;
+    private javax.swing.JPanel pnlBanHang;
+    private javax.swing.JPanel pnlChinh;
+    private javax.swing.JPanel pnlDoanhThu;
+    private javax.swing.JPanel pnlKhachHang;
+    private javax.swing.JPanel pnlLapHoaDon;
     private javax.swing.JPanel pnlMenu;
     private javax.swing.JPanel pnlMenuCon;
+    private javax.swing.JPanel pnlNhanVien;
+    private javax.swing.JPanel pnlSanPham;
     private javax.swing.JPanel pnlSitatus;
     private javax.swing.JPanel pnlThongTinTro;
     private javax.swing.JPanel pnlTrangChu;
+    private javax.swing.JPanel pnlXemHoaDon;
     // End of variables declaration//GEN-END:variables
 }
