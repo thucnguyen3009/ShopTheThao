@@ -14,11 +14,11 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-public class MotelDialog extends javax.swing.JFrame {
+public class MainInterfaceDialog extends javax.swing.JFrame {
 
     public int manHinhHienThi = 0;
 
-    public MotelDialog() {
+    public MainInterfaceDialog() {
         initComponents();
         this.Init();
     }
@@ -62,7 +62,6 @@ public class MotelDialog extends javax.swing.JFrame {
     }
 
     public void ManHinhHienThi() {
-        System.out.println(manHinhHienThi);
         if (manHinhHienThi == 0) {
             TrangThaiDanhMuc(lblTrangChuIcon, lblTrangChu, 1);
         } else {
@@ -82,14 +81,12 @@ public class MotelDialog extends javax.swing.JFrame {
             TrangThaiDanhMuc(lblBanHangIcon, lblBanHang, 1);
             TrangThaiDanhMuc(lblLapHoaDonIcon, lblLapHoaDon, 1);
         } else {
-            TrangThaiDanhMuc(lblBanHangIcon, lblBanHang, 2);
             TrangThaiDanhMuc(lblLapHoaDonIcon, lblLapHoaDon, 2);
         }
         if (manHinhHienThi == 4) {
             TrangThaiDanhMuc(lblBanHangIcon, lblBanHang, 1);
             TrangThaiDanhMuc(lblHoaDonDaThanhToanIcon, lblHoaDonDaThanhToan, 1);
         } else {
-            TrangThaiDanhMuc(lblBanHangIcon, lblBanHang, 2);
             TrangThaiDanhMuc(lblHoaDonDaThanhToanIcon, lblHoaDonDaThanhToan, 2);
         }
         if (manHinhHienThi == 3 || manHinhHienThi == 4) {
@@ -250,13 +247,12 @@ public class MotelDialog extends javax.swing.JFrame {
                     .addGroup(pnlMenuConLayout.createSequentialGroup()
                         .addComponent(lblLapHoaDonIcon, javax.swing.GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE)
                         .addGap(0, 0, 0)
-                        .addComponent(lblLapHoaDon, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(6, 6, 6))
+                        .addComponent(lblLapHoaDon, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(pnlMenuConLayout.createSequentialGroup()
                         .addComponent(lblHoaDonDaThanhToanIcon, javax.swing.GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE)
                         .addGap(0, 0, 0)
-                        .addComponent(lblHoaDonDaThanhToan, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(6, 6, 6))))
+                        .addComponent(lblHoaDonDaThanhToan, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(6, 6, 6))
         );
         pnlMenuConLayout.setVerticalGroup(
             pnlMenuConLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -583,8 +579,7 @@ public class MotelDialog extends javax.swing.JFrame {
                         .addGap(0, 0, 0)
                         .addGroup(pnlMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblTrangChu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(lblNhanVien, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addGap(0, 0, 0))
+                            .addComponent(lblNhanVien, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
         );
         pnlMenuLayout.setVerticalGroup(
             pnlMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1059,6 +1054,7 @@ public class MotelDialog extends javax.swing.JFrame {
     private void lblLapHoaDonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblLapHoaDonMouseClicked
         this.TrieuHoiCard(pnlChinh, "lapHoaDon");
         pnlMenuCon.setVisible(false);
+        pnlMenuCon.setVisible(true);
         manHinhHienThi = 3;
         this.ManHinhHienThi();
     }//GEN-LAST:event_lblLapHoaDonMouseClicked
@@ -1094,6 +1090,7 @@ public class MotelDialog extends javax.swing.JFrame {
     private void lblLapHoaDonIconMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblLapHoaDonIconMouseClicked
         this.TrieuHoiCard(pnlChinh, "lapHoaDon");
         pnlMenuCon.setVisible(false);
+        pnlMenuCon.setVisible(true);
         manHinhHienThi = 3;
         this.ManHinhHienThi();
     }//GEN-LAST:event_lblLapHoaDonIconMouseClicked
@@ -1114,6 +1111,7 @@ public class MotelDialog extends javax.swing.JFrame {
     private void lblHoaDonDaThanhToanIconMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblHoaDonDaThanhToanIconMouseClicked
         this.TrieuHoiCard(pnlChinh, "xemHoaDon");
         pnlMenuCon.setVisible(false);
+        pnlMenuCon.setVisible(true);
         manHinhHienThi = 4;
         this.ManHinhHienThi();
     }//GEN-LAST:event_lblHoaDonDaThanhToanIconMouseClicked
@@ -1134,6 +1132,7 @@ public class MotelDialog extends javax.swing.JFrame {
     private void lblHoaDonDaThanhToanMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblHoaDonDaThanhToanMouseClicked
         this.TrieuHoiCard(pnlChinh, "xemHoaDon");
         pnlMenuCon.setVisible(false);
+        pnlMenuCon.setVisible(true);
         manHinhHienThi = 4;
         this.ManHinhHienThi();
     }//GEN-LAST:event_lblHoaDonDaThanhToanMouseClicked
@@ -1168,18 +1167,18 @@ public class MotelDialog extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(MotelDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MainInterfaceDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(MotelDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MainInterfaceDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(MotelDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MainInterfaceDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(MotelDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MainInterfaceDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         java.awt.EventQueue.invokeLater(new Runnable() {
             @Override
             public void run() {
-                new MotelDialog().setVisible(true);
+                new MainInterfaceDialog().setVisible(true);
             }
         });
     }
