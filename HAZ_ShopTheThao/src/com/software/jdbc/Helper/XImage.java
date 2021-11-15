@@ -1,3 +1,7 @@
+//* Coder: NGUYEN DOAN CHI THUC
+//* Date of writing code: 15/10/2021
+//* MSSV: PC01573
+//* Class: IT16301
 package com.software.jdbc.Helper;
 
 import java.awt.Image;

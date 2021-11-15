@@ -1,8 +1,11 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+//* Responsible: HAZ TEAM
+//* First coder: NGUYEN DOAN CHI THUC - PC01573
+//* Second coder: BUI TRONG NHAN - PC01721
+//* Third coder: HUYNH VAN DAT - PC01684
+//* Date of writing code: 15/11/2021
+//* Last edited:. . .
+//* Class: IT16301
+//* Version: 1.0.0
 package com.software.ui;
 
 import com.software.jdbc.Helper.XImage;
@@ -16,18 +19,18 @@ import javax.swing.JPanel;
 
 public class MainInterfaceDialog extends javax.swing.JFrame {
 
-    public int manHinhHienThi = 0;
+    public int manHinhHienThi = 0; //Biến dùng để nhận biết đang ở màn hình tương tác nào.
 
     public MainInterfaceDialog() {
         initComponents();
         this.Init();
     }
 
-    /*Các hàm sử dụng chung cho menu chức năng:
+    /*1. Các hàm sử dụng chung cho menu chức năng:
         Init();
-        TrieuHoiCard(JPanel pnlJPanel, String cardName);
-        TrangThaiDanhMuc(JLabel icon, JLabel name, int chonKieu);
-        ManHinhHienThi();*/
+        TrieuHoiCard(); - Chịu trách nhiệm: NGUYEN DOAN CHI THUC
+        TrangThaiDanhMuc(); - Chịu trách nhiệm: NGUYEN DOAN CHI THUC
+        ManHinhHienThi(); - Chịu trách nhiệm: NGUYEN DOAN CHI THUC*/
     @SuppressWarnings("static-access")
     public void Init() {
         this.ManHinhHienThi();
