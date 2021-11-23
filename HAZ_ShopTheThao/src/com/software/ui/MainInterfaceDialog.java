@@ -240,7 +240,7 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
 
         lblLapHoaDonIcon.setBackground(new java.awt.Color(0, 153, 255));
         lblLapHoaDonIcon.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblLapHoaDonIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/software/icon/tools.png"))); // NOI18N
+        lblLapHoaDonIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/software/icon/bill.png"))); // NOI18N
         lblLapHoaDonIcon.setOpaque(true);
         lblLapHoaDonIcon.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -256,7 +256,7 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
 
         lblHoaDonDaThanhToanIcon.setBackground(new java.awt.Color(0, 153, 255));
         lblHoaDonDaThanhToanIcon.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblHoaDonDaThanhToanIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/software/icon/tools.png"))); // NOI18N
+        lblHoaDonDaThanhToanIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/software/icon/paid.png"))); // NOI18N
         lblHoaDonDaThanhToanIcon.setOpaque(true);
         lblHoaDonDaThanhToanIcon.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -1122,7 +1122,7 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
                                     .addComponent(jTextField13, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addComponent(jLabel17, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jScrollPane5, javax.swing.GroupLayout.Alignment.LEADING)))
-                        .addContainerGap(18, Short.MAX_VALUE))))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         pnlXemHoaDonLayout.setVerticalGroup(
             pnlXemHoaDonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
