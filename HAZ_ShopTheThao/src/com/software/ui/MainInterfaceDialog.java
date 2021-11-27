@@ -14,6 +14,8 @@ import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
@@ -24,7 +26,7 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
 
     public int manHinhHienThi = 0; //Biến dùng để nhận biết đang ở màn hình tương tác nào.
     public int indexSlideShow = 0; //Biến nhận biết hình ảnh slideshow.
-    public Timer runSlide, hienAn;
+    public Timer runSlide, hienAn, time;
     public int kiemTraHienAn = 0;
 
     public MainInterfaceDialog() {
@@ -41,6 +43,7 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
     public void Init() {
         //        this.setExtendedState(JFrame.MAXIMIZED_BOTH);
         this.ManHinhHienThi();
+        this.GioNgayThangNam();
         this.setTitle("Shop Thể Thao BingBong");
         this.setLocationRelativeTo(null);
         this.setIconImage(XImage.getAppIcon());
@@ -49,7 +52,7 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
         this.TrieuHoiCard(pnlChinh, "trangChu");
         lblPreSlideShow.setBackground(new java.awt.Color(0, 0, 0, 1));
         lblNextSlideShow.setBackground(new java.awt.Color(0, 0, 0, 1));
-        this.RunSlideShow();
+        this.RunSlideShow(); 
     }
 
     public void TrieuHoiCard(JPanel pnlJPanel, String cardName) {
@@ -193,6 +196,18 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
             }
         });
         hienAn.start();
+    }
+
+    public void GioNgayThangNam() {
+        time = new Timer(1000, (e) -> {
+            Date gio = new Date();
+            Date ngay = new Date();
+            SimpleDateFormat dinhDangGio = new SimpleDateFormat("hh:mm:ss a");
+            SimpleDateFormat dinhDangNgay = new SimpleDateFormat("dd-MM-YYYY");
+            lblDate.setText("Date: " + dinhDangNgay.format(ngay));
+            lblTime.setText("Time: " + dinhDangGio.format(gio));
+        });
+        time.start();
     }
 
     /*========================================================================*/
@@ -586,6 +601,7 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
 
         pnlMenu.setBackground(new java.awt.Color(0, 153, 255));
         pnlMenu.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 0, 0, new java.awt.Color(0, 0, 0)));
+        pnlMenu.setForeground(new java.awt.Color(0, 153, 255));
 
         lblTrangChu.setBackground(new java.awt.Color(0, 153, 255));
         lblTrangChu.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -1000,7 +1016,7 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
                 lblNextSlideShowMouseExited(evt);
             }
         });
-        pnlTrangChu.add(lblNextSlideShow, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 0, 50, 590));
+        pnlTrangChu.add(lblNextSlideShow, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 0, 50, 580));
 
         lblPreSlideShow.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblPreSlideShow.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/software/icon/pre.png"))); // NOI18N
@@ -1016,13 +1032,13 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
                 lblPreSlideShowMouseExited(evt);
             }
         });
-        pnlTrangChu.add(lblPreSlideShow, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 50, 590));
+        pnlTrangChu.add(lblPreSlideShow, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 50, 580));
 
         lblSlideShow.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblSlideShow.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/software/icon/NenManHinhChao.png"))); // NOI18N
-        lblSlideShow.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblSlideShow.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         lblSlideShow.setOpaque(true);
-        pnlTrangChu.add(lblSlideShow, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1100, 590));
+        pnlTrangChu.add(lblSlideShow, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1100, 580));
 
         pnlChinh.add(pnlTrangChu, "trangChu");
 
@@ -2863,6 +2879,7 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
         lblTongQuanHeThong.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
         lblTongQuanHeThong.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/software/icon/info.png"))); // NOI18N
         lblTongQuanHeThong.setText("Tổng quan về hệ thống");
+        lblTongQuanHeThong.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         javax.swing.GroupLayout pnlSitatusLayout = new javax.swing.GroupLayout(pnlSitatus);
         pnlSitatus.setLayout(pnlSitatusLayout);
@@ -2871,19 +2888,20 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
             .addGroup(pnlSitatusLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(lblTongQuanHeThong)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 872, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 833, Short.MAX_VALUE)
                 .addComponent(lblDate, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lblTime, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(23, 23, 23))
+                .addComponent(lblTime, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(16, 16, 16))
         );
         pnlSitatusLayout.setVerticalGroup(
             pnlSitatusLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlSitatusLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(pnlSitatusLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblDate, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblTime, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(pnlSitatusLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(lblTime, javax.swing.GroupLayout.DEFAULT_SIZE, 33, Short.MAX_VALUE)
+                        .addComponent(lblDate, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(lblTongQuanHeThong, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
