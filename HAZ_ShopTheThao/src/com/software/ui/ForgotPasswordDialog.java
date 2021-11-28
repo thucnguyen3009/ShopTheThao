@@ -93,6 +93,11 @@ public class ForgotPasswordDialog extends javax.swing.JFrame {
         lblBack.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/software/icon/back.png"))); // NOI18N
         lblBack.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblBack.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblBackMouseClicked(evt);
+            }
+        });
         getContentPane().add(lblBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 228, 36, 36));
 
         lblConfirm.setBackground(new java.awt.Color(51, 102, 255));
@@ -102,6 +107,11 @@ public class ForgotPasswordDialog extends javax.swing.JFrame {
         lblConfirm.setText("CONFIRM");
         lblConfirm.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lblConfirm.setOpaque(true);
+        lblConfirm.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblConfirmMouseClicked(evt);
+            }
+        });
         getContentPane().add(lblConfirm, new org.netbeans.lib.awtextra.AbsoluteConstraints(372, 220, 120, 43));
 
         lblClose.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -124,6 +134,16 @@ public class ForgotPasswordDialog extends javax.swing.JFrame {
     private void lblCloseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCloseMouseClicked
         System.exit(0);
     }//GEN-LAST:event_lblCloseMouseClicked
+
+    private void lblConfirmMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblConfirmMouseClicked
+        this.dispose();
+        new OTPDialog().setVisible(true);
+    }//GEN-LAST:event_lblConfirmMouseClicked
+
+    private void lblBackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblBackMouseClicked
+        this.dispose();
+        new LoginDialog().setVisible(true);
+    }//GEN-LAST:event_lblBackMouseClicked
 
     /**
      * @param args the command line arguments
@@ -154,6 +174,7 @@ public class ForgotPasswordDialog extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 new ForgotPasswordDialog().setVisible(true);
             }

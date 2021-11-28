@@ -17,6 +17,7 @@ public class OTPDialog extends javax.swing.JFrame {
     public OTPDialog() {
         initComponents();
         this.setLocationRelativeTo(null);
+        lblTitle.requestFocus();
     }
 
     /**
@@ -54,6 +55,11 @@ public class OTPDialog extends javax.swing.JFrame {
         lblConfirm.setText("CONFIRM");
         lblConfirm.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lblConfirm.setOpaque(true);
+        lblConfirm.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblConfirmMouseClicked(evt);
+            }
+        });
         getContentPane().add(lblConfirm, new org.netbeans.lib.awtextra.AbsoluteConstraints(372, 220, 120, 43));
 
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -69,6 +75,11 @@ public class OTPDialog extends javax.swing.JFrame {
         lblBack.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/software/icon/back.png"))); // NOI18N
         lblBack.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblBack.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblBackMouseClicked(evt);
+            }
+        });
         getContentPane().add(lblBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 228, 36, 36));
 
         lblTitle.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
@@ -150,6 +161,16 @@ public class OTPDialog extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_jLabel6MouseClicked
 
+    private void lblBackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblBackMouseClicked
+        this.dispose();
+        new ForgotPasswordDialog().setVisible(true);
+    }//GEN-LAST:event_lblBackMouseClicked
+
+    private void lblConfirmMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblConfirmMouseClicked
+        this.dispose();
+        new ChangePassDialog().setVisible(true);
+    }//GEN-LAST:event_lblConfirmMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -179,6 +200,7 @@ public class OTPDialog extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 new OTPDialog().setVisible(true);
             }

@@ -3139,11 +3139,13 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
     }//GEN-LAST:event_lblThongKeIconMouseClicked
 
     private void lblDangXuatIconMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblDangXuatIconMouseClicked
-        // TODO add your handling code here:
+        this.dispose();
+        new LoginDialog().setVisible(true);
     }//GEN-LAST:event_lblDangXuatIconMouseClicked
 
     private void lblDangXuatMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblDangXuatMouseClicked
-        // TODO add your handling code here:
+        this.dispose();
+        new LoginDialog().setVisible(true);
     }//GEN-LAST:event_lblDangXuatMouseClicked
 
     private void lblThoatIconMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblThoatIconMouseClicked

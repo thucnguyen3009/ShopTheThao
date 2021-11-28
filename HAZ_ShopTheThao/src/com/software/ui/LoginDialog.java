@@ -72,6 +72,11 @@ public class LoginDialog extends javax.swing.JFrame {
         lblQuenMatKhau.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lblQuenMatKhau.setText("Forgot password ?");
         lblQuenMatKhau.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblQuenMatKhau.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblQuenMatKhauMouseClicked(evt);
+            }
+        });
         getContentPane().add(lblQuenMatKhau, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 250, -1, -1));
 
         lblLogin.setBackground(new java.awt.Color(51, 102, 255));
@@ -81,6 +86,11 @@ public class LoginDialog extends javax.swing.JFrame {
         lblLogin.setText("Login");
         lblLogin.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lblLogin.setOpaque(true);
+        lblLogin.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblLoginMouseClicked(evt);
+            }
+        });
         getContentPane().add(lblLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 280, 129, 44));
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -175,6 +185,16 @@ public class LoginDialog extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_lblCloseMouseClicked
 
+    private void lblLoginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblLoginMouseClicked
+        this.dispose();
+        new MainInterfaceDialog().setVisible(true);
+    }//GEN-LAST:event_lblLoginMouseClicked
+
+    private void lblQuenMatKhauMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblQuenMatKhauMouseClicked
+        this.dispose();
+        new ForgotPasswordDialog().setVisible(true);
+    }//GEN-LAST:event_lblQuenMatKhauMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -204,6 +224,7 @@ public class LoginDialog extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 new LoginDialog().setVisible(true);
             }
