@@ -8,7 +8,7 @@
 //* Version: 1.0.0
 package com.software.ui;
 
-import com.software.jdbc.Helper.XImage;
+import com.software.jdbcHelper.XImage;
 import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Cursor;
