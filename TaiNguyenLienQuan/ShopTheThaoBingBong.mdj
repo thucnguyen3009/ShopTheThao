@@ -1111,7 +1111,7 @@
 											"top": 471,
 											"width": 142.57470703125,
 											"height": 13,
-											"text": "-thanhTien: String",
+											"text": "-thanhTien: Double",
 											"horizontalAlignment": 0
 										}
 									],
@@ -5038,7 +5038,7 @@
 							},
 							"name": "thanhTien",
 							"visibility": "private",
-							"type": "String"
+							"type": "Double"
 						}
 					]
 				},
