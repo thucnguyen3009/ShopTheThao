@@ -1,8 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+//* Coder: NGUYEN DOAN CHI THUC - HUYNH VAN DAT
+//* Date of writing code: 29/11/2021
+//* Class: IT16301
 package com.software.ui;
 
 /**
