@@ -4,6 +4,9 @@
 package com.software.ui;
 
 import com.software.jdbcHelper.XImage;
+import java.awt.Color;
+import javax.swing.BorderFactory;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -153,6 +156,12 @@ public class ChangePassDialog extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lblConfirmMouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lblConfirmMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lblConfirmMouseExited(evt);
+            }
         });
         getContentPane().add(lblConfirm, new org.netbeans.lib.awtextra.AbsoluteConstraints(372, 220, 120, 43));
 
@@ -162,6 +171,12 @@ public class ChangePassDialog extends javax.swing.JFrame {
         lblClose.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lblCloseMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lblCloseMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lblCloseMouseExited(evt);
             }
         });
         getContentPane().add(lblClose, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 0, 30, 30));
@@ -186,6 +201,22 @@ public class ChangePassDialog extends javax.swing.JFrame {
         this.dispose();
         new OTPDialog().setVisible(true);
     }//GEN-LAST:event_lblBackMouseClicked
+
+    private void lblCloseMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCloseMouseEntered
+        lblClose.setIcon(new ImageIcon(getClass().getResource("/com/software/icon/closeHower.png")));
+    }//GEN-LAST:event_lblCloseMouseEntered
+
+    private void lblCloseMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCloseMouseExited
+        lblClose.setIcon(new ImageIcon(getClass().getResource("/com/software/icon/close.png")));
+    }//GEN-LAST:event_lblCloseMouseExited
+
+    private void lblConfirmMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblConfirmMouseEntered
+        lblConfirm.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, new Color(51, 255, 51)));
+    }//GEN-LAST:event_lblConfirmMouseEntered
+
+    private void lblConfirmMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblConfirmMouseExited
+        lblConfirm.setBorder(null);
+    }//GEN-LAST:event_lblConfirmMouseExited
 
     /**
      * @param args the command line arguments

@@ -4,6 +4,9 @@
 package com.software.ui;
 
 import com.software.jdbcHelper.XImage;
+import java.awt.Color;
+import javax.swing.BorderFactory;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -21,6 +24,7 @@ public class LoginDialog extends javax.swing.JFrame {
         txtPass.setBackground(new java.awt.Color(0, 0, 0, 1));
         lblTitle.requestFocus();
         this.setIconImage(XImage.getAppIcon());
+        txtPass.setEchoChar((char) 0);
     }
 
     /**
@@ -59,7 +63,7 @@ public class LoginDialog extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblGioiThieu1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        lblGioiThieu1.setForeground(new java.awt.Color(255, 255, 255));
+        lblGioiThieu1.setForeground(new java.awt.Color(255, 153, 0));
         lblGioiThieu1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblGioiThieu1.setText("© 2021 Bing Bong Login From | Design by HAZ");
         getContentPane().add(lblGioiThieu1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 310, 390, 20));
@@ -71,11 +75,18 @@ public class LoginDialog extends javax.swing.JFrame {
         getContentPane().add(lblTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 68, 470, 40));
 
         lblQuenMatKhau.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lblQuenMatKhau.setText("Forgot password ?");
+        lblQuenMatKhau.setForeground(new java.awt.Color(102, 102, 102));
+        lblQuenMatKhau.setText("Forgot password?");
         lblQuenMatKhau.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lblQuenMatKhau.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lblQuenMatKhauMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lblQuenMatKhauMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lblQuenMatKhauMouseExited(evt);
             }
         });
         getContentPane().add(lblQuenMatKhau, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 250, -1, -1));
@@ -90,6 +101,12 @@ public class LoginDialog extends javax.swing.JFrame {
         lblLogin.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lblLoginMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lblLoginMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lblLoginMouseExited(evt);
             }
         });
         getContentPane().add(lblLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 280, 129, 44));
@@ -173,6 +190,12 @@ public class LoginDialog extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lblCloseMouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lblCloseMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lblCloseMouseExited(evt);
+            }
         });
         getContentPane().add(lblClose, new org.netbeans.lib.awtextra.AbsoluteConstraints(847, 0, 30, 30));
 
@@ -195,6 +218,32 @@ public class LoginDialog extends javax.swing.JFrame {
         this.dispose();
         new ForgotPasswordDialog().setVisible(true);
     }//GEN-LAST:event_lblQuenMatKhauMouseClicked
+
+    private void lblCloseMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCloseMouseEntered
+        lblClose.setIcon(new ImageIcon(getClass().getResource("/com/software/icon/closeHower.png")));
+    }//GEN-LAST:event_lblCloseMouseEntered
+
+    private void lblCloseMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCloseMouseExited
+        lblClose.setIcon(new ImageIcon(getClass().getResource("/com/software/icon/close.png")));
+    }//GEN-LAST:event_lblCloseMouseExited
+
+    private void lblLoginMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblLoginMouseEntered
+        lblLogin.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, new Color(51, 255, 51)));
+    }//GEN-LAST:event_lblLoginMouseEntered
+
+    private void lblLoginMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblLoginMouseExited
+        lblLogin.setBorder(null);
+    }//GEN-LAST:event_lblLoginMouseExited
+
+    private void lblQuenMatKhauMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblQuenMatKhauMouseEntered
+        lblQuenMatKhau.setForeground(new Color(0, 102, 0));
+        lblQuenMatKhau.setText("<html><u>Forgot password?</u></html>");
+    }//GEN-LAST:event_lblQuenMatKhauMouseEntered
+
+    private void lblQuenMatKhauMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblQuenMatKhauMouseExited
+        lblQuenMatKhau.setForeground(new Color(102, 102, 102));
+        lblQuenMatKhau.setText("Forgot password?");
+    }//GEN-LAST:event_lblQuenMatKhauMouseExited
 
     /**
      * @param args the command line arguments

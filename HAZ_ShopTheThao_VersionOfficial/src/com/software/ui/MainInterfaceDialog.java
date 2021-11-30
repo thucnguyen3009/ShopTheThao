@@ -52,7 +52,7 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
         this.TrieuHoiCard(pnlChinh, "trangChu");
         lblPreSlideShow.setBackground(new java.awt.Color(0, 0, 0, 1));
         lblNextSlideShow.setBackground(new java.awt.Color(0, 0, 0, 1));
-        this.RunSlideShow(); 
+        this.RunSlideShow();
     }
 
     public void TrieuHoiCard(JPanel pnlJPanel, String cardName) {
@@ -260,7 +260,7 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
         pnlDanhMucNV = new javax.swing.JPanel();
         jScrollPane6 = new javax.swing.JScrollPane();
         tblNhanVienNV = new javax.swing.JTable();
-        lblLo = new javax.swing.JPanel();
+        pnlThongTinNhanVien = new javax.swing.JPanel();
         lblAvatarNV = new javax.swing.JLabel();
         lblChonAvatarNV = new javax.swing.JLabel();
         lblMaNV = new javax.swing.JLabel();
@@ -477,7 +477,6 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
         lblTongQuanHeThong = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-        jMenu2 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1370, 874));
@@ -1130,8 +1129,8 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
         });
         jScrollPane6.setViewportView(tblNhanVienNV);
 
-        lblLo.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        lblLo.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        pnlThongTinNhanVien.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        pnlThongTinNhanVien.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         lblAvatarNV.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
@@ -1139,6 +1138,7 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
         lblChonAvatarNV.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblChonAvatarNV.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/software/icon/photo.png"))); // NOI18N
         lblChonAvatarNV.setText("Chọn Ảnh");
+        lblChonAvatarNV.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         lblMaNV.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lblMaNV.setText("Mã Nhân Viên");
@@ -1179,39 +1179,75 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
         lblSoDienThoaiNV.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lblSoDienThoaiNV.setText("Số Điện Thoại");
 
+        lblThemNV.setBackground(new java.awt.Color(0, 153, 255));
+        lblThemNV.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblThemNV.setForeground(new java.awt.Color(255, 255, 255));
         lblThemNV.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblThemNV.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/software/icon/add-user.png"))); // NOI18N
         lblThemNV.setText("Thêm NV");
         lblThemNV.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         lblThemNV.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblThemNV.setOpaque(true);
+        lblThemNV.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lblThemNVMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lblThemNVMouseExited(evt);
+            }
+        });
 
+        lblSuaNV.setBackground(new java.awt.Color(0, 153, 255));
+        lblSuaNV.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblSuaNV.setForeground(new java.awt.Color(255, 255, 255));
         lblSuaNV.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblSuaNV.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/software/icon/update.png"))); // NOI18N
         lblSuaNV.setText("Sửa NV");
         lblSuaNV.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         lblSuaNV.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblSuaNV.setOpaque(true);
+        lblSuaNV.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lblSuaNVMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lblSuaNVMouseExited(evt);
+            }
+        });
 
+        lblXoaNV.setBackground(new java.awt.Color(0, 153, 255));
+        lblXoaNV.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblXoaNV.setForeground(new java.awt.Color(255, 255, 255));
         lblXoaNV.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblXoaNV.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/software/icon/delete.png"))); // NOI18N
         lblXoaNV.setText("Xóa NV");
         lblXoaNV.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         lblXoaNV.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblXoaNV.setOpaque(true);
+        lblXoaNV.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lblXoaNVMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lblXoaNVMouseExited(evt);
+            }
+        });
 
         lblResetNV.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblResetNV.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/software/icon/refresh.png"))); // NOI18N
         lblResetNV.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-        javax.swing.GroupLayout lblLoLayout = new javax.swing.GroupLayout(lblLo);
-        lblLo.setLayout(lblLoLayout);
-        lblLoLayout.setHorizontalGroup(
-            lblLoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(lblLoLayout.createSequentialGroup()
+        javax.swing.GroupLayout pnlThongTinNhanVienLayout = new javax.swing.GroupLayout(pnlThongTinNhanVien);
+        pnlThongTinNhanVien.setLayout(pnlThongTinNhanVienLayout);
+        pnlThongTinNhanVienLayout.setHorizontalGroup(
+            pnlThongTinNhanVienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlThongTinNhanVienLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(lblLoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(pnlThongTinNhanVienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(lblAvatarNV, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(lblChonAvatarNV, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(32, 32, 32)
-                .addGroup(lblLoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(pnlThongTinNhanVienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(lblDiaChiNV, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(lblMaNV, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel25, javax.swing.GroupLayout.DEFAULT_SIZE, 127, Short.MAX_VALUE)
@@ -1221,31 +1257,31 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
                     .addComponent(lblSoDienThoaiNV, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(lblGmailNV, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(lblCmndNV, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGroup(lblLoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(lblLoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(lblLoLayout.createSequentialGroup()
+                .addGroup(pnlThongTinNhanVienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlThongTinNhanVienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(pnlThongTinNhanVienLayout.createSequentialGroup()
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 357, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, lblLoLayout.createSequentialGroup()
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, pnlThongTinNhanVienLayout.createSequentialGroup()
                             .addGap(4, 4, 4)
                             .addComponent(lblXoaNV, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(18, 18, 18)
                             .addComponent(lblSuaNV, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(18, 18, 18)
                             .addComponent(lblThemNV, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(lblLoLayout.createSequentialGroup()
+                    .addGroup(pnlThongTinNhanVienLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(lblLoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(lblLoLayout.createSequentialGroup()
-                                .addGroup(lblLoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(lblLoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(lblLoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(pnlThongTinNhanVienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(pnlThongTinNhanVienLayout.createSequentialGroup()
+                                .addGroup(pnlThongTinNhanVienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(pnlThongTinNhanVienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(pnlThongTinNhanVienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(txtGmailNV, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 355, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addGroup(lblLoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(pnlThongTinNhanVienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                 .addComponent(txtSoDienThoaiNV, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 355, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGroup(lblLoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addGroup(pnlThongTinNhanVienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                     .addComponent(txtCmndNV, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 355, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addGroup(lblLoLayout.createSequentialGroup()
+                                                    .addGroup(pnlThongTinNhanVienLayout.createSequentialGroup()
                                                         .addComponent(rdoNamNV)
                                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                         .addComponent(rdoNuNV))
@@ -1253,68 +1289,68 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
                                         .addComponent(txtTenNV, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 355, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addComponent(txtHoVaTenDemNV, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 355, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(0, 87, Short.MAX_VALUE))
-                            .addGroup(lblLoLayout.createSequentialGroup()
+                            .addGroup(pnlThongTinNhanVienLayout.createSequentialGroup()
                                 .addComponent(txtMaNV, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(lblResetNV)))))
                 .addContainerGap())
         );
-        lblLoLayout.setVerticalGroup(
-            lblLoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(lblLoLayout.createSequentialGroup()
-                .addGroup(lblLoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(lblLoLayout.createSequentialGroup()
+        pnlThongTinNhanVienLayout.setVerticalGroup(
+            pnlThongTinNhanVienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnlThongTinNhanVienLayout.createSequentialGroup()
+                .addGroup(pnlThongTinNhanVienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlThongTinNhanVienLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(lblAvatarNV, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(lblChonAvatarNV, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(lblLoLayout.createSequentialGroup()
-                        .addGroup(lblLoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(lblLoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addGroup(pnlThongTinNhanVienLayout.createSequentialGroup()
+                        .addGroup(pnlThongTinNhanVienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(pnlThongTinNhanVienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(lblMaNV, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(txtMaNV, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(lblResetNV))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(lblLoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(pnlThongTinNhanVienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel25, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtHoVaTenDemNV, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(lblLoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(pnlThongTinNhanVienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lblTenNV, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtTenNV, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(lblLoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(lblLoLayout.createSequentialGroup()
+                        .addGroup(pnlThongTinNhanVienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(pnlThongTinNhanVienLayout.createSequentialGroup()
                                 .addComponent(lblGioiTinhNV, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(lblLoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addGroup(pnlThongTinNhanVienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(lblChucVuNV, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(cboChucVuNV, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(lblLoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addGroup(pnlThongTinNhanVienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(lblSoDienThoaiNV, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(txtGmailNV, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(lblLoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addGroup(pnlThongTinNhanVienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(txtSoDienThoaiNV, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(lblGmailNV, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(lblLoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addGroup(pnlThongTinNhanVienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(txtCmndNV, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(lblCmndNV, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(lblLoLayout.createSequentialGroup()
+                            .addGroup(pnlThongTinNhanVienLayout.createSequentialGroup()
                                 .addGap(8, 8, 8)
-                                .addGroup(lblLoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(pnlThongTinNhanVienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(rdoNuNV, javax.swing.GroupLayout.DEFAULT_SIZE, 26, Short.MAX_VALUE)
                                     .addComponent(rdoNamNV, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(lblLoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(lblLoLayout.createSequentialGroup()
+                .addGroup(pnlThongTinNhanVienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pnlThongTinNhanVienLayout.createSequentialGroup()
                         .addComponent(lblDiaChiNV, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 112, Short.MAX_VALUE))
                     .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 146, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(lblLoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(pnlThongTinNhanVienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblSuaNV, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblXoaNV, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblThemNV, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -1334,7 +1370,7 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
             pnlDanhMucNVLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlDanhMucNVLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lblLo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(pnlThongTinNhanVien, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(pnlDanhMucNVLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1349,7 +1385,7 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
             .addGroup(pnlDanhMucNVLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(pnlDanhMucNVLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblLo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(pnlThongTinNhanVien, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(pnlDanhMucNVLayout.createSequentialGroup()
                         .addGroup(pnlDanhMucNVLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtTimNV, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1404,25 +1440,61 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
         lblMoTaCV.setText("Mô Tả");
         pnlThongTinChucVu.add(lblMoTaCV, new org.netbeans.lib.awtextra.AbsoluteConstraints(42, 168, 126, 31));
 
+        lblXoaCV.setBackground(new java.awt.Color(0, 153, 255));
+        lblXoaCV.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblXoaCV.setForeground(new java.awt.Color(255, 255, 255));
         lblXoaCV.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblXoaCV.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/software/icon/delete.png"))); // NOI18N
         lblXoaCV.setText("Xóa CV");
         lblXoaCV.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         lblXoaCV.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblXoaCV.setOpaque(true);
+        lblXoaCV.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lblXoaCVMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lblXoaCVMouseExited(evt);
+            }
+        });
         pnlThongTinChucVu.add(lblXoaCV, new org.netbeans.lib.awtextra.AbsoluteConstraints(174, 359, 107, 40));
 
+        lblSuaCV.setBackground(new java.awt.Color(0, 153, 255));
+        lblSuaCV.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblSuaCV.setForeground(new java.awt.Color(255, 255, 255));
         lblSuaCV.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblSuaCV.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/software/icon/update.png"))); // NOI18N
         lblSuaCV.setText("Sửa CV");
         lblSuaCV.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         lblSuaCV.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblSuaCV.setOpaque(true);
+        lblSuaCV.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lblSuaCVMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lblSuaCVMouseExited(evt);
+            }
+        });
         pnlThongTinChucVu.add(lblSuaCV, new org.netbeans.lib.awtextra.AbsoluteConstraints(299, 359, 107, 40));
 
+        lblThemCV.setBackground(new java.awt.Color(0, 153, 255));
+        lblThemCV.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblThemCV.setForeground(new java.awt.Color(255, 255, 255));
         lblThemCV.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblThemCV.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/software/icon/add.png"))); // NOI18N
         lblThemCV.setText("Thêm CV");
         lblThemCV.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         lblThemCV.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblThemCV.setOpaque(true);
+        lblThemCV.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lblThemCVMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lblThemCVMouseExited(evt);
+            }
+        });
         pnlThongTinChucVu.add(lblThemCV, new org.netbeans.lib.awtextra.AbsoluteConstraints(424, 359, 107, 40));
 
         lblTitleThongTinChucVu.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
@@ -1532,25 +1604,61 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
         pnlThongTinTaiKhoan.add(lblConfirmPassTK, new org.netbeans.lib.awtextra.AbsoluteConstraints(44, 240, 126, 31));
         pnlThongTinTaiKhoan.add(txtConfirmPassTK, new org.netbeans.lib.awtextra.AbsoluteConstraints(176, 240, 357, 31));
 
+        lblXoaTK.setBackground(new java.awt.Color(0, 153, 255));
+        lblXoaTK.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblXoaTK.setForeground(new java.awt.Color(255, 255, 255));
         lblXoaTK.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblXoaTK.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/software/icon/delete.png"))); // NOI18N
         lblXoaTK.setText("Xóa TK");
         lblXoaTK.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         lblXoaTK.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblXoaTK.setOpaque(true);
+        lblXoaTK.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lblXoaTKMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lblXoaTKMouseExited(evt);
+            }
+        });
         pnlThongTinTaiKhoan.add(lblXoaTK, new org.netbeans.lib.awtextra.AbsoluteConstraints(176, 357, 107, 40));
 
+        lblSuaTK.setBackground(new java.awt.Color(0, 153, 255));
+        lblSuaTK.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblSuaTK.setForeground(new java.awt.Color(255, 255, 255));
         lblSuaTK.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblSuaTK.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/software/icon/update.png"))); // NOI18N
         lblSuaTK.setText("Sửa TK");
         lblSuaTK.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         lblSuaTK.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblSuaTK.setOpaque(true);
+        lblSuaTK.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lblSuaTKMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lblSuaTKMouseExited(evt);
+            }
+        });
         pnlThongTinTaiKhoan.add(lblSuaTK, new org.netbeans.lib.awtextra.AbsoluteConstraints(301, 357, 107, 40));
 
+        lblThemTK.setBackground(new java.awt.Color(0, 153, 255));
+        lblThemTK.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblThemTK.setForeground(new java.awt.Color(255, 255, 255));
         lblThemTK.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblThemTK.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/software/icon/add.png"))); // NOI18N
         lblThemTK.setText("Thêm TK");
         lblThemTK.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         lblThemTK.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblThemTK.setOpaque(true);
+        lblThemTK.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lblThemTKMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lblThemTKMouseExited(evt);
+            }
+        });
         pnlThongTinTaiKhoan.add(lblThemTK, new org.netbeans.lib.awtextra.AbsoluteConstraints(426, 357, 107, 40));
 
         lblTitleThongTinTaiKhoan.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
@@ -1726,23 +1834,59 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
         lblDonGiaSP.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lblDonGiaSP.setText("Đơn Giá");
 
+        lblThemSP.setBackground(new java.awt.Color(0, 153, 255));
+        lblThemSP.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblThemSP.setForeground(new java.awt.Color(255, 255, 255));
         lblThemSP.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblThemSP.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/software/icon/add-user.png"))); // NOI18N
         lblThemSP.setText("Thêm SP");
         lblThemSP.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         lblThemSP.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblThemSP.setOpaque(true);
+        lblThemSP.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lblThemSPMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lblThemSPMouseExited(evt);
+            }
+        });
 
+        lblSuaSP.setBackground(new java.awt.Color(0, 153, 255));
+        lblSuaSP.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblSuaSP.setForeground(new java.awt.Color(255, 255, 255));
         lblSuaSP.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblSuaSP.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/software/icon/update.png"))); // NOI18N
         lblSuaSP.setText("Sửa SP");
         lblSuaSP.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         lblSuaSP.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblSuaSP.setOpaque(true);
+        lblSuaSP.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lblSuaSPMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lblSuaSPMouseExited(evt);
+            }
+        });
 
+        lblXoaSP.setBackground(new java.awt.Color(0, 153, 255));
+        lblXoaSP.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblXoaSP.setForeground(new java.awt.Color(255, 255, 255));
         lblXoaSP.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblXoaSP.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/software/icon/delete.png"))); // NOI18N
         lblXoaSP.setText("Xóa SP");
         lblXoaSP.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         lblXoaSP.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblXoaSP.setOpaque(true);
+        lblXoaSP.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lblXoaSPMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lblXoaSPMouseExited(evt);
+            }
+        });
 
         lblResetSP.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblResetSP.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/software/icon/refresh.png"))); // NOI18N
@@ -1891,23 +2035,59 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
         lblMoTa.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lblMoTa.setText("Mô Tả");
 
+        lblThemLoai.setBackground(new java.awt.Color(0, 153, 255));
+        lblThemLoai.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblThemLoai.setForeground(new java.awt.Color(255, 255, 255));
         lblThemLoai.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblThemLoai.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/software/icon/add-user.png"))); // NOI18N
         lblThemLoai.setText("Thêm");
         lblThemLoai.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         lblThemLoai.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblThemLoai.setOpaque(true);
+        lblThemLoai.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lblThemLoaiMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lblThemLoaiMouseExited(evt);
+            }
+        });
 
+        lblSuaLoai.setBackground(new java.awt.Color(0, 153, 255));
+        lblSuaLoai.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblSuaLoai.setForeground(new java.awt.Color(255, 255, 255));
         lblSuaLoai.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblSuaLoai.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/software/icon/update.png"))); // NOI18N
         lblSuaLoai.setText("Sửa");
         lblSuaLoai.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         lblSuaLoai.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblSuaLoai.setOpaque(true);
+        lblSuaLoai.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lblSuaLoaiMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lblSuaLoaiMouseExited(evt);
+            }
+        });
 
+        lblXoaLoai.setBackground(new java.awt.Color(0, 153, 255));
+        lblXoaLoai.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblXoaLoai.setForeground(new java.awt.Color(255, 255, 255));
         lblXoaLoai.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblXoaLoai.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/software/icon/delete.png"))); // NOI18N
         lblXoaLoai.setText("Xóa");
         lblXoaLoai.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         lblXoaLoai.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblXoaLoai.setOpaque(true);
+        lblXoaLoai.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lblXoaLoaiMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lblXoaLoaiMouseExited(evt);
+            }
+        });
 
         lblResetLoai.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblResetLoai.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/software/icon/refresh.png"))); // NOI18N
@@ -2052,23 +2232,59 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
         lblMoTaDV.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lblMoTaDV.setText("Mô Tả");
 
+        lblThemDV.setBackground(new java.awt.Color(0, 153, 255));
+        lblThemDV.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblThemDV.setForeground(new java.awt.Color(255, 255, 255));
         lblThemDV.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblThemDV.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/software/icon/add-user.png"))); // NOI18N
         lblThemDV.setText("Thêm ĐV");
         lblThemDV.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         lblThemDV.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblThemDV.setOpaque(true);
+        lblThemDV.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lblThemDVMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lblThemDVMouseExited(evt);
+            }
+        });
 
+        lblSuaDV.setBackground(new java.awt.Color(0, 153, 255));
+        lblSuaDV.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblSuaDV.setForeground(new java.awt.Color(255, 255, 255));
         lblSuaDV.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblSuaDV.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/software/icon/update.png"))); // NOI18N
         lblSuaDV.setText("Sửa ĐV");
         lblSuaDV.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         lblSuaDV.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblSuaDV.setOpaque(true);
+        lblSuaDV.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lblSuaDVMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lblSuaDVMouseExited(evt);
+            }
+        });
 
+        lblXoaDV.setBackground(new java.awt.Color(0, 153, 255));
+        lblXoaDV.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblXoaDV.setForeground(new java.awt.Color(255, 255, 255));
         lblXoaDV.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblXoaDV.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/software/icon/delete.png"))); // NOI18N
         lblXoaDV.setText("Xóa ĐV");
         lblXoaDV.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         lblXoaDV.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblXoaDV.setOpaque(true);
+        lblXoaDV.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lblXoaDVMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lblXoaDVMouseExited(evt);
+            }
+        });
 
         lblResetDV.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblResetDV.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/software/icon/refresh.png"))); // NOI18N
@@ -2311,17 +2527,41 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
         lblResetHD.setToolTipText("Reset Hóa Đơn");
         lblResetHD.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
+        lblThanhToan.setBackground(new java.awt.Color(0, 153, 255));
+        lblThanhToan.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblThanhToan.setForeground(new java.awt.Color(255, 255, 255));
         lblThanhToan.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblThanhToan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/software/icon/pay.png"))); // NOI18N
         lblThanhToan.setText("THANH TOÁN");
         lblThanhToan.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(153, 153, 153)));
         lblThanhToan.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblThanhToan.setOpaque(true);
+        lblThanhToan.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lblThanhToanMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lblThanhToanMouseExited(evt);
+            }
+        });
 
+        lblInHD.setBackground(new java.awt.Color(0, 153, 255));
+        lblInHD.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblInHD.setForeground(new java.awt.Color(255, 255, 255));
         lblInHD.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblInHD.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/software/icon/printbill.png"))); // NOI18N
         lblInHD.setText("IN HÓA ĐƠN");
         lblInHD.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(153, 153, 153)));
         lblInHD.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblInHD.setOpaque(true);
+        lblInHD.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lblInHDMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lblInHDMouseExited(evt);
+            }
+        });
 
         javax.swing.GroupLayout pnlThongTinHoaDonTamLayout = new javax.swing.GroupLayout(pnlThongTinHoaDonTam);
         pnlThongTinHoaDonTam.setLayout(pnlThongTinHoaDonTamLayout);
@@ -2510,17 +2750,41 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
 
         txtTenThuNganHDCT.setEditable(false);
 
+        lblInHDCT.setBackground(new java.awt.Color(0, 153, 255));
+        lblInHDCT.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblInHDCT.setForeground(new java.awt.Color(255, 255, 255));
         lblInHDCT.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblInHDCT.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/software/icon/printbill.png"))); // NOI18N
         lblInHDCT.setText("IN HÓA ĐƠN");
         lblInHDCT.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(153, 153, 153)));
         lblInHDCT.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblInHDCT.setOpaque(true);
+        lblInHDCT.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lblInHDCTMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lblInHDCTMouseExited(evt);
+            }
+        });
 
+        lblXoaHDCT.setBackground(new java.awt.Color(0, 153, 255));
+        lblXoaHDCT.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblXoaHDCT.setForeground(new java.awt.Color(255, 255, 255));
         lblXoaHDCT.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblXoaHDCT.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/software/icon/paper-bin.png"))); // NOI18N
         lblXoaHDCT.setText("XÓA HÓA ĐƠN");
         lblXoaHDCT.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 1, 1, new java.awt.Color(153, 153, 153)));
         lblXoaHDCT.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblXoaHDCT.setOpaque(true);
+        lblXoaHDCT.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lblXoaHDCTMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lblXoaHDCTMouseExited(evt);
+            }
+        });
 
         javax.swing.GroupLayout pnlXemHoaDonLayout = new javax.swing.GroupLayout(pnlXemHoaDon);
         pnlXemHoaDon.setLayout(pnlXemHoaDonLayout);
@@ -2634,23 +2898,59 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
         lblSdtKH.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lblSdtKH.setText("Số Điện Thoại");
 
+        lblThemKH.setBackground(new java.awt.Color(0, 153, 255));
+        lblThemKH.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblThemKH.setForeground(new java.awt.Color(255, 255, 255));
         lblThemKH.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblThemKH.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/software/icon/add-user.png"))); // NOI18N
         lblThemKH.setText("Thêm KH");
         lblThemKH.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         lblThemKH.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblThemKH.setOpaque(true);
+        lblThemKH.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lblThemKHMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lblThemKHMouseExited(evt);
+            }
+        });
 
+        lblSuaKH.setBackground(new java.awt.Color(0, 153, 255));
+        lblSuaKH.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblSuaKH.setForeground(new java.awt.Color(255, 255, 255));
         lblSuaKH.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblSuaKH.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/software/icon/update.png"))); // NOI18N
         lblSuaKH.setText("Sửa KH");
         lblSuaKH.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         lblSuaKH.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblSuaKH.setOpaque(true);
+        lblSuaKH.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lblSuaKHMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lblSuaKHMouseExited(evt);
+            }
+        });
 
+        lblXoaKH.setBackground(new java.awt.Color(0, 153, 255));
+        lblXoaKH.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        lblXoaKH.setForeground(new java.awt.Color(255, 255, 255));
         lblXoaKH.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblXoaKH.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/software/icon/delete.png"))); // NOI18N
         lblXoaKH.setText("Xóa KH");
         lblXoaKH.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         lblXoaKH.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblXoaKH.setOpaque(true);
+        lblXoaKH.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lblXoaKHMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lblXoaKHMouseExited(evt);
+            }
+        });
 
         lblResetKH.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblResetKH.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/software/icon/refresh.png"))); // NOI18N
@@ -2909,11 +3209,10 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
 
         jMenuBar1.setMinimumSize(new java.awt.Dimension(70, 30));
 
-        jMenu1.setText("File");
+        jMenu1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/software/icon/fitness.png"))); // NOI18N
+        jMenu1.setText("QuanLyShopTheThaoBingBong");
+        jMenu1.setEnabled(false);
         jMenuBar1.add(jMenu1);
-
-        jMenu2.setText("Edit");
-        jMenuBar1.add(jMenu2);
 
         setJMenuBar(jMenuBar1);
 
@@ -3375,6 +3674,206 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
         lblPreSlideShow.setIcon(new ImageIcon(getClass().getResource("/com/software/icon/pre.png")));
     }//GEN-LAST:event_lblPreSlideShowMouseExited
 
+    private void lblXoaNVMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblXoaNVMouseEntered
+        lblXoaNV.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, new Color(51, 255, 51)));
+    }//GEN-LAST:event_lblXoaNVMouseEntered
+
+    private void lblSuaNVMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblSuaNVMouseEntered
+        lblSuaNV.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, new Color(51, 255, 51)));
+    }//GEN-LAST:event_lblSuaNVMouseEntered
+
+    private void lblThemNVMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblThemNVMouseEntered
+        lblThemNV.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, new Color(51, 255, 51)));
+    }//GEN-LAST:event_lblThemNVMouseEntered
+
+    private void lblXoaNVMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblXoaNVMouseExited
+        lblXoaNV.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, new Color(0, 0, 0)));
+    }//GEN-LAST:event_lblXoaNVMouseExited
+
+    private void lblSuaNVMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblSuaNVMouseExited
+        lblSuaNV.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, new Color(0, 0, 0)));
+    }//GEN-LAST:event_lblSuaNVMouseExited
+
+    private void lblThemNVMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblThemNVMouseExited
+        lblThemNV.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, new Color(0, 0, 0)));
+    }//GEN-LAST:event_lblThemNVMouseExited
+
+    private void lblXoaCVMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblXoaCVMouseEntered
+        lblXoaCV.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, new Color(51, 255, 51)));
+    }//GEN-LAST:event_lblXoaCVMouseEntered
+
+    private void lblSuaCVMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblSuaCVMouseEntered
+        lblSuaCV.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, new Color(51, 255, 51)));
+    }//GEN-LAST:event_lblSuaCVMouseEntered
+
+    private void lblThemCVMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblThemCVMouseEntered
+        lblThemCV.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, new Color(51, 255, 51)));
+    }//GEN-LAST:event_lblThemCVMouseEntered
+
+    private void lblXoaCVMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblXoaCVMouseExited
+        lblXoaCV.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, new Color(0, 0, 0)));
+    }//GEN-LAST:event_lblXoaCVMouseExited
+
+    private void lblSuaCVMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblSuaCVMouseExited
+        lblSuaCV.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, new Color(0, 0, 0)));
+    }//GEN-LAST:event_lblSuaCVMouseExited
+
+    private void lblThemCVMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblThemCVMouseExited
+        lblThemCV.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, new Color(0, 0, 0)));
+    }//GEN-LAST:event_lblThemCVMouseExited
+
+    private void lblXoaTKMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblXoaTKMouseEntered
+         lblXoaTK.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, new Color(51, 255, 51)));
+    }//GEN-LAST:event_lblXoaTKMouseEntered
+
+    private void lblSuaTKMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblSuaTKMouseEntered
+        lblSuaTK.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, new Color(51, 255, 51)));
+    }//GEN-LAST:event_lblSuaTKMouseEntered
+
+    private void lblThemTKMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblThemTKMouseEntered
+        lblThemTK.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, new Color(51, 255, 51)));
+    }//GEN-LAST:event_lblThemTKMouseEntered
+
+    private void lblXoaTKMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblXoaTKMouseExited
+        lblXoaTK.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, new Color(0, 0, 0)));
+    }//GEN-LAST:event_lblXoaTKMouseExited
+
+    private void lblSuaTKMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblSuaTKMouseExited
+        lblSuaTK.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, new Color(0, 0, 0)));
+    }//GEN-LAST:event_lblSuaTKMouseExited
+
+    private void lblThemTKMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblThemTKMouseExited
+        lblThemTK.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, new Color(0, 0, 0)));
+    }//GEN-LAST:event_lblThemTKMouseExited
+
+    private void lblXoaSPMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblXoaSPMouseEntered
+        lblXoaSP.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, new Color(51, 255, 51)));
+    }//GEN-LAST:event_lblXoaSPMouseEntered
+
+    private void lblSuaSPMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblSuaSPMouseEntered
+        lblSuaSP.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, new Color(51, 255, 51)));
+    }//GEN-LAST:event_lblSuaSPMouseEntered
+
+    private void lblThemSPMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblThemSPMouseEntered
+        lblThemSP.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, new Color(51, 255, 51)));
+    }//GEN-LAST:event_lblThemSPMouseEntered
+
+    private void lblXoaSPMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblXoaSPMouseExited
+        lblXoaSP.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, new Color(0, 0, 0)));
+    }//GEN-LAST:event_lblXoaSPMouseExited
+
+    private void lblSuaSPMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblSuaSPMouseExited
+        lblSuaSP.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, new Color(0, 0, 0)));
+    }//GEN-LAST:event_lblSuaSPMouseExited
+
+    private void lblThemSPMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblThemSPMouseExited
+        lblThemSP.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, new Color(0, 0, 0)));
+    }//GEN-LAST:event_lblThemSPMouseExited
+
+    private void lblXoaLoaiMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblXoaLoaiMouseEntered
+        lblXoaLoai.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, new Color(51, 255, 51)));
+    }//GEN-LAST:event_lblXoaLoaiMouseEntered
+
+    private void lblSuaLoaiMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblSuaLoaiMouseEntered
+        lblSuaLoai.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, new Color(51, 255, 51)));
+    }//GEN-LAST:event_lblSuaLoaiMouseEntered
+
+    private void lblThemLoaiMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblThemLoaiMouseEntered
+        lblThemLoai.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, new Color(51, 255, 51)));
+    }//GEN-LAST:event_lblThemLoaiMouseEntered
+
+    private void lblXoaLoaiMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblXoaLoaiMouseExited
+        lblXoaLoai.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, new Color(0, 0, 0)));
+    }//GEN-LAST:event_lblXoaLoaiMouseExited
+
+    private void lblSuaLoaiMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblSuaLoaiMouseExited
+        lblSuaLoai.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, new Color(0, 0, 0)));
+    }//GEN-LAST:event_lblSuaLoaiMouseExited
+
+    private void lblThemLoaiMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblThemLoaiMouseExited
+        lblThemLoai.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, new Color(0, 0, 0)));
+    }//GEN-LAST:event_lblThemLoaiMouseExited
+
+    private void lblXoaDVMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblXoaDVMouseEntered
+        lblXoaDV.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, new Color(51, 255, 51)));
+    }//GEN-LAST:event_lblXoaDVMouseEntered
+
+    private void lblSuaDVMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblSuaDVMouseEntered
+        lblSuaDV.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, new Color(51, 255, 51)));
+    }//GEN-LAST:event_lblSuaDVMouseEntered
+
+    private void lblThemDVMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblThemDVMouseEntered
+        lblThemDV.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, new Color(51, 255, 51)));
+    }//GEN-LAST:event_lblThemDVMouseEntered
+
+    private void lblXoaDVMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblXoaDVMouseExited
+        lblXoaDV.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, new Color(0, 0, 0)));
+    }//GEN-LAST:event_lblXoaDVMouseExited
+
+    private void lblSuaDVMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblSuaDVMouseExited
+        lblSuaDV.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, new Color(0, 0, 0)));
+    }//GEN-LAST:event_lblSuaDVMouseExited
+
+    private void lblThemDVMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblThemDVMouseExited
+        lblThemDV.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, new Color(0, 0, 0)));
+    }//GEN-LAST:event_lblThemDVMouseExited
+
+    private void lblThanhToanMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblThanhToanMouseEntered
+        lblThanhToan.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, new Color(51, 255, 51)));
+    }//GEN-LAST:event_lblThanhToanMouseEntered
+
+    private void lblInHDMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblInHDMouseEntered
+        lblInHD.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, new Color(51, 255, 51)));
+    }//GEN-LAST:event_lblInHDMouseEntered
+
+    private void lblThanhToanMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblThanhToanMouseExited
+        lblThanhToan.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, new Color(153,153,153)));
+    }//GEN-LAST:event_lblThanhToanMouseExited
+
+    private void lblInHDMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblInHDMouseExited
+        lblInHD.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, new Color(153,153,153)));
+    }//GEN-LAST:event_lblInHDMouseExited
+
+    private void lblInHDCTMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblInHDCTMouseEntered
+        lblInHDCT.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, new Color(51, 255, 51)));
+    }//GEN-LAST:event_lblInHDCTMouseEntered
+
+    private void lblXoaHDCTMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblXoaHDCTMouseEntered
+        lblXoaHDCT.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, new Color(51, 255, 51)));
+    }//GEN-LAST:event_lblXoaHDCTMouseEntered
+
+    private void lblInHDCTMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblInHDCTMouseExited
+        lblInHDCT.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, new Color(153,153,153)));
+    }//GEN-LAST:event_lblInHDCTMouseExited
+
+    private void lblXoaHDCTMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblXoaHDCTMouseExited
+        lblXoaHDCT.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, new Color(153,153,153)));
+    }//GEN-LAST:event_lblXoaHDCTMouseExited
+
+    private void lblThemKHMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblThemKHMouseEntered
+        lblThemKH.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, new Color(51, 255, 51)));
+    }//GEN-LAST:event_lblThemKHMouseEntered
+
+    private void lblSuaKHMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblSuaKHMouseEntered
+        lblSuaKH.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, new Color(51, 255, 51)));
+    }//GEN-LAST:event_lblSuaKHMouseEntered
+
+    private void lblXoaKHMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblXoaKHMouseEntered
+        lblXoaKH.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, new Color(51, 255, 51)));
+    }//GEN-LAST:event_lblXoaKHMouseEntered
+
+    private void lblThemKHMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblThemKHMouseExited
+        lblThemKH.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, new Color(0, 0, 0)));
+    }//GEN-LAST:event_lblThemKHMouseExited
+
+    private void lblSuaKHMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblSuaKHMouseExited
+        lblSuaKH.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, new Color(0, 0, 0)));
+    }//GEN-LAST:event_lblSuaKHMouseExited
+
+    private void lblXoaKHMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblXoaKHMouseExited
+        lblXoaKH.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, new Color(0, 0, 0)));
+    }//GEN-LAST:event_lblXoaKHMouseExited
+
     /**
      * @param args the command line arguments
      */
@@ -3421,7 +3920,6 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cboTrangThaiSP;
     private javax.swing.JLabel jLabel25;
     private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane10;
@@ -3474,7 +3972,6 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
     private javax.swing.JLabel lblKhachHangIcon;
     private javax.swing.JLabel lblLapHoaDon;
     private javax.swing.JLabel lblLapHoaDonIcon;
-    private javax.swing.JPanel lblLo;
     private javax.swing.JLabel lblLoaiSP;
     private javax.swing.JLabel lblMaChucVuCV;
     private javax.swing.JLabel lblMaDonViDV;
@@ -3605,6 +4102,7 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
     private javax.swing.JPanel pnlThongTinHoaDonTam;
     private javax.swing.JPanel pnlThongTinKH;
     private javax.swing.JPanel pnlThongTinLoaiSanPham;
+    private javax.swing.JPanel pnlThongTinNhanVien;
     private javax.swing.JPanel pnlThongTinSanPham;
     private javax.swing.JPanel pnlThongTinShop;
     private javax.swing.JPanel pnlThongTinTaiKhoan;

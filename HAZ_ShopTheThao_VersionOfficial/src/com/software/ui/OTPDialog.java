@@ -5,6 +5,9 @@
 package com.software.ui;
 
 import com.software.jdbcHelper.XImage;
+import java.awt.Color;
+import javax.swing.BorderFactory;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -32,7 +35,7 @@ public class OTPDialog extends javax.swing.JFrame {
     private void initComponents() {
 
         lblConfirm = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
+        lblClose = new javax.swing.JLabel();
         lblBack = new javax.swing.JLabel();
         lblTitle = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
@@ -61,18 +64,30 @@ public class OTPDialog extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lblConfirmMouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lblConfirmMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lblConfirmMouseExited(evt);
+            }
         });
         getContentPane().add(lblConfirm, new org.netbeans.lib.awtextra.AbsoluteConstraints(372, 220, 120, 43));
 
-        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/software/icon/close.png"))); // NOI18N
-        jLabel6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jLabel6.addMouseListener(new java.awt.event.MouseAdapter() {
+        lblClose.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblClose.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/software/icon/close.png"))); // NOI18N
+        lblClose.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblClose.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel6MouseClicked(evt);
+                lblCloseMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lblCloseMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lblCloseMouseExited(evt);
             }
         });
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 0, 30, 30));
+        getContentPane().add(lblClose, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 0, 30, 30));
 
         lblBack.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/software/icon/back.png"))); // NOI18N
@@ -140,10 +155,18 @@ public class OTPDialog extends javax.swing.JFrame {
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 500, -1));
 
         lblResendCode.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        lblResendCode.setForeground(new java.awt.Color(153, 153, 153));
+        lblResendCode.setForeground(new java.awt.Color(102, 102, 102));
         lblResendCode.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblResendCode.setText("Resend Code");
         lblResendCode.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblResendCode.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lblResendCodeMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lblResendCodeMouseExited(evt);
+            }
+        });
         getContentPane().add(lblResendCode, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 160, -1, 29));
 
         lblTime.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -159,9 +182,9 @@ public class OTPDialog extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
+    private void lblCloseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCloseMouseClicked
         System.exit(0);
-    }//GEN-LAST:event_jLabel6MouseClicked
+    }//GEN-LAST:event_lblCloseMouseClicked
 
     private void lblBackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblBackMouseClicked
         this.dispose();
@@ -172,6 +195,32 @@ public class OTPDialog extends javax.swing.JFrame {
         this.dispose();
         new ChangePassDialog().setVisible(true);
     }//GEN-LAST:event_lblConfirmMouseClicked
+
+    private void lblCloseMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCloseMouseEntered
+        lblClose.setIcon(new ImageIcon(getClass().getResource("/com/software/icon/closeHower.png")));
+    }//GEN-LAST:event_lblCloseMouseEntered
+
+    private void lblCloseMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCloseMouseExited
+        lblClose.setIcon(new ImageIcon(getClass().getResource("/com/software/icon/close.png")));
+    }//GEN-LAST:event_lblCloseMouseExited
+
+    private void lblConfirmMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblConfirmMouseEntered
+        lblConfirm.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, new Color(51, 255, 51)));
+    }//GEN-LAST:event_lblConfirmMouseEntered
+
+    private void lblConfirmMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblConfirmMouseExited
+        lblConfirm.setBorder(null);
+    }//GEN-LAST:event_lblConfirmMouseExited
+
+    private void lblResendCodeMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblResendCodeMouseEntered
+        lblResendCode.setForeground(new Color(0, 102, 0));
+        lblResendCode.setText("<html><u>Resend Code</u></html>");
+    }//GEN-LAST:event_lblResendCodeMouseEntered
+
+    private void lblResendCodeMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblResendCodeMouseExited
+        lblResendCode.setForeground(new Color(102, 102, 102));
+        lblResendCode.setText("Resend Code");
+    }//GEN-LAST:event_lblResendCodeMouseExited
 
     /**
      * @param args the command line arguments
@@ -210,9 +259,9 @@ public class OTPDialog extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lblBack;
+    private javax.swing.JLabel lblClose;
     private javax.swing.JLabel lblConfirm;
     private javax.swing.JLabel lblNen;
     private javax.swing.JLabel lblResendCode;
