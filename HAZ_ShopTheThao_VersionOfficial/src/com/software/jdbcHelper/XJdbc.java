@@ -1,6 +1,6 @@
-//* Coder: BUI TRONG NHAN
-//* Date of writing code: 29/11/2021
-//* MSSV: PC01721
+//* Coder: NGUYEN DOAN CHI THUC
+//* Date of writing code: 04/10/2021
+//* MSSV: PC01573
 //* Class: IT16301
 package com.software.jdbcHelper;
 
@@ -10,69 +10,57 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-/**
- *
- * @author user
- */
-@SuppressWarnings({"UseSpecificCatch", "StaticNonFinalUsedInInitialization"})
+@SuppressWarnings("StaticNonFinalUsedInInitialization")
 public class XJdbc {
 
+    static Connection connection;
     static String driver = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
-    static String dburl = "jdbc:sqlserver://localhost:1433;databaseName=EDUSYS";
-    static String user = "sa";
-    static String pass = "123";
+    static String url = "jdbc:sqlserver://localhost; database = QuanLyShopTheThaoPingPong";//sai dấu 2 chấm thành 1 chấm :))
+    public static String useSql = "sa";
+    public static String passSql = "123";
 
     static {
         try {
             Class.forName(driver);
-        } catch (Exception e) {
-            throw new RuntimeException(e);
+        } catch (ClassNotFoundException ex) {
         }
     }
 
-    public static PreparedStatement getStmt(String sql, Object... args) throws SQLException {
-        Connection conn = DriverManager.getConnection(dburl, user, pass);
-        PreparedStatement stmt;
+    public static PreparedStatement getStmt(String sql, Object... args) throws SQLException{
+        connection = DriverManager.getConnection(url, useSql, passSql);
+        PreparedStatement statement;
         if (sql.trim().startsWith("{")) {
-            stmt = conn.prepareCall(sql);
+            statement = connection.prepareCall(sql);
         } else {
-            stmt = conn.prepareStatement(sql);
+            statement = connection.prepareStatement(sql);
         }
         for (int i = 0; i < args.length; i++) {
-            stmt.setObject(i + 1, args[i]);
+            statement.setObject(i + 1, args[i]);
         }
-        return stmt;
+        return statement;
     }
 
-    public static int update(String sql, Object... args) throws SQLException {
+    public static int update(String sql, Object... args) throws SQLException{
+        PreparedStatement statement = XJdbc.getStmt(sql, args);
         try {
-            PreparedStatement stmt = XJdbc.getStmt(sql, args);
-            try {
-                return stmt.executeUpdate();
-            } finally {
-                stmt.getConnection().close();
-            }
-        } catch (Exception e) {
-            throw new RuntimeException(e);
+            return statement.executeUpdate();
+        } finally {
+            statement.getConnection().close();
         }
     }
 
-    public static ResultSet query(String sql, Object... args) throws SQLException {
-        PreparedStatement stmt = XJdbc.getStmt(sql, args);
-        return stmt.executeQuery();
+    public static ResultSet query(String sql, Object... args) throws SQLException{
+        PreparedStatement statement = XJdbc.getStmt(sql, args);
+        return statement.executeQuery();
     }
 
     @SuppressWarnings("UseOfIndexZeroInJDBCResultSet")
-    public static Object value(String sql, Object... args) {
-        try {
-            ResultSet result = XJdbc.query(sql, args);
-            if (result.next()) {
-                return result.getObject(0);
-            }
-            result.getStatement().getConnection().close();
-            return null;
-        } catch (Exception e) {
-            throw new RuntimeException(e);
+    public static Object values(String sql, Object... args) throws SQLException{
+        ResultSet resultSet = XJdbc.query(sql, args);
+        if (resultSet.next()) {
+            return resultSet.getObject(0);
         }
+        resultSet.getStatement().getConnection().close();
+        return null;
     }
 }

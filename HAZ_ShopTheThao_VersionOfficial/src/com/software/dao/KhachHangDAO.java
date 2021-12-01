@@ -64,20 +64,22 @@ public class KhachHangDAO extends SoftwareDAO<KhachHang, Integer> {
     @Override
     public List<KhachHang> SelectBySQL(String sql, Object... args) {
         List<KhachHang> list = new ArrayList<>();
+        ResultSet resultSet;
         try {
-            ResultSet rs = XJdbc.query(sql, args);
-            while (rs.next()) {
+            resultSet = XJdbc.query(sql, args);
+            while (resultSet.next()) {
                 KhachHang kh = new KhachHang();
-                kh.setMaKhachHang(rs.getInt("MaKH"));
-                kh.setTenKhachHang(rs.getString("TenKH"));
-                kh.setSoDT(rs.getString("SoDT"));
+                kh.setMaKhachHang(resultSet.getInt("MaKH"));
+                kh.setTenKhachHang(resultSet.getString("TenKH"));
+                kh.setSoDT(resultSet.getString("SoDT"));
+                list.add(kh);
             }
-            rs.getStatement().getConnection().close();
-            return list;
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
+            resultSet.getStatement().getConnection().close();
+        } catch (SQLException ex) {
         }
+        return list;
     }
+    
     public List<KhachHang> selectByKeyWord(String keyword) {
         String sql = "SELECT * FROM KhachHang WHERE MaKH LIKE ? OR TenKH LIKE ?";
         return SelectBySQL(sql, "%" + keyword + "%", "%" + keyword + "%");
