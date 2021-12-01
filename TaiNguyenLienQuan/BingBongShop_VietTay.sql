@@ -12,6 +12,7 @@ CREATE TABLE NhanVien (
     GioiTinh bit NOT NULL,
     MaChucVu nvarchar(20) NOT NULL,
     Gmail nvarchar(100) NOT NULL UNIQUE,
+	PathAnh nvarchar(max) NULL,
     PRIMARY KEY (MaNV)
 );
 GO
