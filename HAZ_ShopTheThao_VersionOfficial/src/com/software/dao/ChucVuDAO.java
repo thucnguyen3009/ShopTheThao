@@ -67,10 +67,11 @@ public class ChucVuDAO extends SoftwareDAO<ChucVu, String> {
         try {
             ResultSet rs = XJdbc.query(sql, args);
             while (rs.next()) {
-                ChucVu chucVu = new ChucVu();
-                chucVu.setMaChucVu(rs.getString("MaChucVu"));
-                chucVu.setTenChucVu(rs.getString("TenChucVu"));
-                chucVu.setMoTa(rs.getString("MoTa"));
+                ChucVu cv = new ChucVu();
+                cv.setMaChucVu(rs.getString(1));
+                cv.setTenChucVu(rs.getString(2));
+                cv.setMoTa(rs.getString(3));
+                list.add(cv);
             }
             rs.getStatement().getConnection().close();
             return list;

@@ -6,86 +6,102 @@ package com.software.entity;
 
 public class NhanVien {
 
-    String MANV;
-    String HONV;
-    String TENNV;
-    boolean GIOITINH = false;
-    String CHUCVU;
-    String SDT;
-    String GMAIL;
-    String CMND;
-    String DIACHI;
+    String maNV;
+    String tenNV;
+    String soDienThoai;
+    String diaChi;
+    String cmnd;
+    boolean gioiTinh;
+    String maChucVu;
+    String gmail;
+    String path;
 
-    public String getMANV() {
-        return MANV;
+    public NhanVien() {
+
     }
 
-    public void setMANV(String MANV) {
-        this.MANV = MANV;
+    public NhanVien(String maNV, String tenNV, String soDienThoai, String diaChi, String cmnd, boolean gioiTinh, String maChucVu, String gmail, String path) {
+        this.maNV = maNV;
+        this.tenNV = tenNV;
+        this.soDienThoai = soDienThoai;
+        this.diaChi = diaChi;
+        this.cmnd = cmnd;
+        this.gioiTinh = gioiTinh;
+        this.maChucVu = maChucVu;
+        this.gmail = gmail;
+        this.path = path;
     }
 
-    public String getHONV() {
-        return HONV;
+    public String getMaNV() {
+        return maNV;
     }
 
-    public void setHONV(String HONV) {
-        this.HONV = HONV;
+    public void setMaNV(String maNV) {
+        this.maNV = maNV;
     }
 
-    public String getTENNV() {
-        return TENNV;
+    public String getTenNV() {
+        return tenNV;
     }
 
-    public void setTENNV(String TENNV) {
-        this.TENNV = TENNV;
+    public void setTenNV(String tenNV) {
+        this.tenNV = tenNV;
     }
 
-    public boolean isGIOITINH() {
-        return GIOITINH;
+    public String getSoDienThoai() {
+        return soDienThoai;
     }
 
-    public void setGIOITINH(boolean GIOITINH) {
-        this.GIOITINH = GIOITINH;
+    public void setSoDienThoai(String soDienThoai) {
+        this.soDienThoai = soDienThoai;
     }
 
-    public String getCHUCVU() {
-        return CHUCVU;
+    public String getDiaChi() {
+        return diaChi;
     }
 
-    public void setCHUCVU(String CHUCVU) {
-        this.CHUCVU = CHUCVU;
+    public void setDiaChi(String diaChi) {
+        this.diaChi = diaChi;
     }
 
-    public String getSDT() {
-        return SDT;
+    public String getCmnd() {
+        return cmnd;
     }
 
-    public void setSDT(String SDT) {
-        this.SDT = SDT;
+    public void setCmnd(String cmnd) {
+        this.cmnd = cmnd;
     }
 
-    public String getGMAIL() {
-        return GMAIL;
+    public boolean isGioiTinh() {
+        return gioiTinh;
     }
 
-    public void setGMAIL(String GMAIL) {
-        this.GMAIL = GMAIL;
+    public void setGioiTinh(boolean gioiTinh) {
+        this.gioiTinh = gioiTinh;
     }
 
-    public String getCMND() {
-        return CMND;
+    public String getMaChucVu() {
+        return maChucVu;
     }
 
-    public void setCMND(String CMND) {
-        this.CMND = CMND;
+    public void setMaChucVu(String maChucVu) {
+        this.maChucVu = maChucVu;
     }
 
-    public String getDIACHI() {
-        return DIACHI;
+    public String getGmail() {
+        return gmail;
     }
 
-    public void setDIACHI(String DIACHI) {
-        this.DIACHI = DIACHI;
+    public void setGmail(String gmail) {
+        this.gmail = gmail;
+    }
+
+    public String getPath() {
+        return path;
+    }
+
+    public void setPath(String path) {
+        this.path = path;
     }
 
 }

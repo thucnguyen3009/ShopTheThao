@@ -1075,7 +1075,7 @@
                                               <Group type="102" attributes="0">
                                                   <EmptySpace max="-2" attributes="0"/>
                                                   <Component id="txtMaNV" min="-2" pref="210" max="-2" attributes="0"/>
-                                                  <EmptySpace pref="208" max="32767" attributes="0"/>
+                                                  <EmptySpace pref="218" max="32767" attributes="0"/>
                                                   <Component id="lblResetNV" min="-2" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
@@ -1090,31 +1090,26 @@
                                               <Component id="lblGmailNV" alignment="0" max="32767" attributes="0"/>
                                               <Component id="lblCmndNV" alignment="0" max="32767" attributes="0"/>
                                           </Group>
+                                          <EmptySpace max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="jScrollPane7" min="-2" pref="357" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <EmptySpace max="-2" attributes="0"/>
-                                                  <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="jScrollPane7" alignment="0" min="-2" pref="357" max="-2" attributes="0"/>
+                                              <Group type="103" alignment="0" groupAlignment="0" attributes="0">
+                                                  <Group type="103" alignment="0" groupAlignment="0" attributes="0">
+                                                      <Component id="txtGmailNV" alignment="1" min="-2" pref="355" max="-2" attributes="0"/>
                                                       <Group type="103" alignment="0" groupAlignment="0" attributes="0">
-                                                          <Component id="txtGmailNV" alignment="1" min="-2" pref="355" max="-2" attributes="0"/>
+                                                          <Component id="txtSoDienThoaiNV" alignment="1" min="-2" pref="355" max="-2" attributes="0"/>
                                                           <Group type="103" alignment="0" groupAlignment="0" attributes="0">
-                                                              <Component id="txtSoDienThoaiNV" alignment="1" min="-2" pref="355" max="-2" attributes="0"/>
-                                                              <Group type="103" alignment="0" groupAlignment="0" attributes="0">
-                                                                  <Component id="txtCmndNV" alignment="1" min="-2" pref="355" max="-2" attributes="0"/>
-                                                                  <Group type="102" alignment="0" attributes="0">
-                                                                      <Component id="rdoNamNV" min="-2" max="-2" attributes="0"/>
-                                                                      <EmptySpace max="-2" attributes="0"/>
-                                                                      <Component id="rdoNuNV" min="-2" max="-2" attributes="0"/>
-                                                                  </Group>
-                                                                  <Component id="cboChucVuNV" min="-2" pref="210" max="-2" attributes="0"/>
+                                                              <Component id="txtCmndNV" alignment="1" min="-2" pref="355" max="-2" attributes="0"/>
+                                                              <Group type="102" alignment="0" attributes="0">
+                                                                  <Component id="rdoNamNV" min="-2" max="-2" attributes="0"/>
+                                                                  <EmptySpace max="-2" attributes="0"/>
+                                                                  <Component id="rdoNuNV" min="-2" max="-2" attributes="0"/>
                                                               </Group>
+                                                              <Component id="cboChucVuNV" min="-2" pref="210" max="-2" attributes="0"/>
                                                           </Group>
                                                       </Group>
-                                                      <Component id="txtTenNV" alignment="1" min="-2" pref="355" max="-2" attributes="0"/>
                                                   </Group>
+                                                  <Component id="txtTenNV" alignment="1" min="-2" pref="355" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
                                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
@@ -2429,7 +2424,7 @@
                                           </Group>
                                       </Group>
                                   </Group>
-                                  <EmptySpace pref="66" max="32767" attributes="0"/>
+                                  <EmptySpace pref="76" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -2796,7 +2791,7 @@
                                               </Group>
                                               <Component id="jScrollPane16" max="32767" attributes="0"/>
                                           </Group>
-                                          <EmptySpace min="0" pref="60" max="32767" attributes="0"/>
+                                          <EmptySpace min="0" pref="70" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
@@ -3133,7 +3128,7 @@
                                       </Group>
                                       <Component id="jScrollPane14" max="32767" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="66" max="32767" attributes="0"/>
+                                  <EmptySpace pref="76" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -3496,18 +3491,12 @@
             </Container>
             <Component class="javax.swing.JTextField" name="txtTimKhachHangHD">
               <Properties>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="cc" green="cc" red="cc" type="rgb"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="Nh&#x1ead;p S&#x110;T KH. . ."/>
                 <Property name="toolTipText" type="java.lang.String" value="T&#xec;m Kh&#xe1;ch H&#xe0;ng"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txtTimSanPhamHD">
               <Properties>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="cc" green="cc" red="cc" type="rgb"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="Nh&#x1ead;p M&#xe3; ho&#x1eb7;c T&#xea;n SP. . ."/>
                 <Property name="toolTipText" type="java.lang.String" value="T&#xec;m SP"/>
               </Properties>
@@ -3527,7 +3516,7 @@
                       <Group type="102" attributes="0">
                           <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jScrollPane3" pref="588" max="32767" attributes="0"/>
+                              <Component id="jScrollPane3" pref="598" max="32767" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="1" max="-2" attributes="0">
                                       <Component id="lblTenKhachHangHD" max="32767" attributes="0"/>
@@ -3646,11 +3635,13 @@
                               </Group>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="lblPhanTramGiamHD" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
-                              <Component id="lblTienGiamHD" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
-                              <Component id="txtPhanTramGiam" min="-2" pref="29" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="lblThanhTienGiamHD" alignment="1" min="-2" pref="29" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="lblPhanTramGiamHD" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
+                                  <Component id="lblTienGiamHD" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
+                                  <Component id="txtPhanTramGiam" min="-2" pref="29" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -4419,7 +4410,7 @@
                               </Group>
                               <Component id="txtSdtKH" alignment="0" max="32767" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="75" max="32767" attributes="0"/>
+                          <EmptySpace pref="85" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -4668,7 +4659,7 @@
                               <Component id="lblNamDT" min="-2" pref="54" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="cboNamDT" min="-2" pref="133" max="-2" attributes="0"/>
-                              <EmptySpace min="0" pref="463" max="32767" attributes="0"/>
+                              <EmptySpace min="0" pref="473" max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>

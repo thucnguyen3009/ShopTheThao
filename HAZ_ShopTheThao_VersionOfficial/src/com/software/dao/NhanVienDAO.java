@@ -13,8 +13,8 @@ import java.util.List;
 
 public class NhanVienDAO extends SoftwareDAO<NhanVien, String> {
 
-    String INSERT_SQL = "INSERT INTO NHANVIEN(MANV, HONV, TENNV, ,GIOITINH, CHUCVU, SDT, GMAIL, CMND, DIACHI) VALUES ( ?, ?, ?, ?, ?, ?, ? , ? , ?)";
-    String UPDATE_SQL = "UPDATE NHANVIEN SET  HONV =?, TENNV =?, GIOITINH = ?, CHUCVU = ?, SDT = ?, GMAIL = ?, CMND = ?, DIACHI = ? WHERE MANV =?";
+    String INSERT_SQL = "INSERT INTO NHANVIEN(MaNV, TenNV, SoDienThoai, DiaChi, CMND, GioiTinh, MaChucVu, Gmail, PathAnh) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    String UPDATE_SQL = "UPDATE NHANVIEN SET  TenNV = ?, SoDienThoai = ?, DiaChi = ?, CMND = ?, GioiTinh = ?, MaChucVu = ?, Gmail = ?, PathAnh = ? WHERE MANV =?";
     String DELETE_SQL = "DELETE FROM NHANVIEN WHERE MANV = ?";
     String SELECT_ALL_SQL = "SELECT * FROM NHANVIEN";
     String SELECT_BY_ID_SQL = "SELECT * FROM NHANVIEN WHERE MANV = ?";
@@ -22,8 +22,15 @@ public class NhanVienDAO extends SoftwareDAO<NhanVien, String> {
     @Override
     public void insert(NhanVien entity) {
         try {
-            XJdbc.update(INSERT_SQL, entity.getMANV(), entity.getHONV(), entity.getTENNV(), entity.isGIOITINH(),
-                    entity.getCHUCVU(), entity.getSDT(), entity.getGMAIL(), entity.getCMND(), entity.getDIACHI());
+            XJdbc.update(INSERT_SQL, entity.getMaNV(),
+                    entity.getTenNV(),
+                    entity.getSoDienThoai(),
+                    entity.getDiaChi(),
+                    entity.getCmnd(),
+                    entity.isGioiTinh(),
+                    entity.getMaChucVu(),
+                    entity.getGmail(),
+                    entity.getPath());
         } catch (SQLException ex) {
             throw new RuntimeException(ex);
         }
@@ -32,8 +39,15 @@ public class NhanVienDAO extends SoftwareDAO<NhanVien, String> {
     @Override
     public void update(NhanVien entity) {
         try {
-            XJdbc.update(UPDATE_SQL, entity.getMANV(), entity.getHONV(), entity.getTENNV(), entity.isGIOITINH(),
-                    entity.getCHUCVU(), entity.getSDT(), entity.getGMAIL(), entity.getCMND(), entity.getDIACHI());
+            XJdbc.update(UPDATE_SQL, entity.getTenNV(),
+                    entity.getSoDienThoai(),
+                    entity.getDiaChi(),
+                    entity.getCmnd(),
+                    entity.isGioiTinh(),
+                    entity.getMaChucVu(),
+                    entity.getGmail(),
+                    entity.getPath(),
+                    entity.getMaNV());
         } catch (SQLException ex) {
             throw new RuntimeException(ex);
         }
@@ -75,15 +89,15 @@ public class NhanVienDAO extends SoftwareDAO<NhanVien, String> {
             ResultSet result = XJdbc.query(sql, args);
             while (result.next()) {
                 NhanVien entity = new NhanVien();
-                entity.setMANV(result.getString("MANV"));
-                entity.setHONV(result.getString("HONV"));
-                entity.setTENNV(result.getString("TENNV"));
-                entity.setGIOITINH(result.getBoolean("GIOITINH"));
-                entity.setCHUCVU(result.getString("CHUCVU"));
-                entity.setSDT(result.getString("SDT"));
-                entity.setGMAIL(result.getString("GMAIL"));
-                entity.setCMND(result.getString("CMND"));
-                entity.setDIACHI(result.getString("DIACHI"));
+                entity.setMaNV(result.getString("MaNV"));
+                entity.setTenNV(result.getString("TenNV"));
+                entity.setSoDienThoai(result.getString("SoDienThoai"));
+                entity.setDiaChi(result.getString("DiaChi"));
+                entity.setCmnd(result.getString("CMND"));
+                entity.setGioiTinh(result.getBoolean("GioiTinh"));
+                entity.setMaChucVu(result.getString("MaChucVu"));
+                entity.setGmail(result.getString("Gmail"));
+                entity.setPath(result.getString("PathAnh"));
                 list.add(entity);
             }
             result.getStatement().getConnection().close();
