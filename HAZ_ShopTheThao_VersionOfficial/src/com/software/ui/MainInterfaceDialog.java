@@ -333,7 +333,7 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
     }
 
     public boolean KiemTraNhapSoLuongHD() {
-        boolean kiemTra;
+        boolean kiemTra = true;
         try {
             if (txtSoLuongHD.getText().isEmpty()) {
                 MsgBox.alert(this, "Vui lòng nhập số lượng!!!");
@@ -349,6 +349,8 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
                     MsgBox.alert(this, "Vui lòng nhập số lượng lớn hơn hoặc bằng 0!!!");
                     txtSoLuongHD.requestFocus();
                     return kiemTra = false;
+                } else if (slThuc == 0) {
+                    return kiemTra = true;
                 } else {
                     return kiemTra = true;
                 }
@@ -375,15 +377,23 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
         soLuongNew = Integer.valueOf(txtSoLuongHD.getText());
         if (soLuongNew == 0) {
             model.removeRow(indexHD);
+            indexHD = tblHoaDon.getSelectedRow();
+            int tongSL = (int) tblChonSP.getValueAt(indexSanPhamCanTim, 1) + soLuong;
+            tblChonSP.setValueAt(tongSL - soLuongNew, indexSanPhamCanTim, 1);
+            txtSoLuongHD.setText(null);
+            txtSoLuongHD.setEditable(false);
+            this.TienPhaiTra();
         } else if (soLuongNew > listSPHD.get(indexSanPhamCanTim).getSoLuong()) {
+            txtSoLuongHD.setText(String.valueOf(soLuong));
             MsgBox.alert(this, "Số lượng sản phẩm không đủ!!!");
+            this.TienPhaiTra();
         } else {
             int tongSL = (int) tblChonSP.getValueAt(indexSanPhamCanTim, 1) + soLuong;
             tblChonSP.setValueAt(tongSL - soLuongNew, indexSanPhamCanTim, 1);
             tblHoaDon.setValueAt(soLuongNew, indexHD, 2);
+            this.TinhTienTungSP();
+            this.TienPhaiTra();
         }
-        this.TinhTienTungSP();
-        this.TinhTienHD();
         txtSoLuongHD.setText(null);
         soLuong = 0;
         soLuongNew = 0;
@@ -449,8 +459,8 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
         txtMaKhachHangHD.setText(null);
         txtTenKhachHangHD.setText(null);
         txtSdtKhachHangHD.setText(null);
-        lblThanhTienGiamHD.setText("0đ");
-        lblTongTienHD.setText("0 VND");
+        lblThanhTienGiamHD.setText("0 đ");
+        lblTongTienHD.setText("0 đ");
         this.FillTableKHHD();
         this.FillTableSPHD();
     }
@@ -461,7 +471,6 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
             ketQua = String.valueOf(tien.intValue());
         } else {
             ketQua = String.valueOf(tien);
-
         }
         return ketQua;
     }
@@ -473,16 +482,73 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
         tblHoaDon.setValueAt(decimalFormat.format(sl * donGia), indexHD, 4);
     }
 
-    public void TinhTienHD() {
+    public Double TinhTongTienHD() {
         Double tongTien = 0.0;
         for (int i = 0; i < tblHoaDon.getRowCount(); i++) {
             Double tien = Double.valueOf((String) tblHoaDon.getValueAt(i, 4));
             tongTien += tien;
         }
+        return tongTien;
+    }
+
+    public Double TinhTienGiam() {
+        Double tongTien = TinhTongTienHD();
+        Double giam = 0.0;
+        try {
+            giam = Double.valueOf(txtPhanTramGiam.getText());
+        } catch (NumberFormatException e) {
+            giam = 0.0;
+        }
+        Double tienDuocGiam = tongTien * giam / 100;
         Locale localeVN = new Locale("vi", "VN");
         NumberFormat currencyFormat = NumberFormat.getCurrencyInstance(localeVN);
-        String str = currencyFormat.format(tongTien);
+        String str = currencyFormat.format(tienDuocGiam);
+        lblThanhTienGiamHD.setText(str);
+        return tienDuocGiam;
+    }
+
+    public Double TienPhaiTra() {
+        Double tienGiam = TinhTienGiam();
+        Double tongTien = TinhTongTienHD();
+        Double tienPhaiTra = tongTien - tienGiam;
+        Locale localeVN = new Locale("vi", "VN");
+        NumberFormat currencyFormat = NumberFormat.getCurrencyInstance(localeVN);
+        String str = currencyFormat.format(tienPhaiTra);
         lblTongTienHD.setText(str);
+        return tienPhaiTra;
+    }
+
+    public boolean KiemTraNhapGiamGia() {
+        boolean kiemTra = true;
+        try {
+            if (txtPhanTramGiam.getText().isEmpty()) {
+                txtPhanTramGiam.setText("0");
+                lblThanhTienGiamHD.setText("0 đ");
+                kiemTra = true;
+            } else {
+                Double phanTramGiam = Double.valueOf(txtPhanTramGiam.getText());
+                if (phanTramGiam != phanTramGiam.intValue()) {
+                    MsgBox.alert(this, "Vui lòng nhập số nguyên!!!");
+                    txtPhanTramGiam.setText("0");
+                    kiemTra = true;
+                } else if (Double.valueOf(txtPhanTramGiam.getText()) < 0 || Double.valueOf(txtPhanTramGiam.getText()) > 100) {
+                    MsgBox.alert(this, "Phần trăm giảm hợp lệ 0 - 100!!!");
+                    txtPhanTramGiam.setText("0");
+                    kiemTra = true;
+                } else if (!txtPhanTramGiam.getText().matches("[0-9]{0,}")) {
+                    MsgBox.alert(this, "Vui lòng nhập số!!!");
+                    txtPhanTramGiam.setText("0");
+                    kiemTra = true;
+                } else {
+                }
+            }
+        } catch (NumberFormatException e) {
+            MsgBox.alert(this, "Vui lòng nhập số!!!");
+            txtPhanTramGiam.setText("0");
+            txtPhanTramGiam.requestFocus();
+            kiemTra = true;
+        }
+        return kiemTra;
     }
 
     /*========================================================================*/
@@ -2805,8 +2871,18 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
         lblNgayLapHD.setText("Ngày Lập HD");
 
         txtNgayLapHD.setEditable(false);
+        txtNgayLapHD.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNgayLapHDActionPerformed(evt);
+            }
+        });
 
         lblPhanTramGiamHD.setText("Phần Trăm Giảm Giá");
+        lblPhanTramGiamHD.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                lblPhanTramGiamHDFocusGained(evt);
+            }
+        });
 
         tblHoaDon.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         tblHoaDon.setModel(new javax.swing.table.DefaultTableModel(
@@ -2904,14 +2980,10 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
 
         txtTenNhanVienHD.setEditable(false);
 
+        txtSoLuongHD.setEditable(false);
         txtSoLuongHD.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 txtSoLuongHDFocusLost(evt);
-            }
-        });
-        txtSoLuongHD.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                txtSoLuongHDKeyReleased(evt);
             }
         });
 
@@ -2936,6 +3008,18 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
         lblTC.setText("Tiền Cần Thanh Toán: ");
 
         txtPhanTramGiam.setText("0");
+        txtPhanTramGiam.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtPhanTramGiamFocusLost(evt);
+            }
+        });
+        txtPhanTramGiam.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtPhanTramGiamKeyReleased(evt);
+            }
+        });
+
+        lblThanhTienGiamHD.setForeground(new java.awt.Color(255, 51, 51));
 
         javax.swing.GroupLayout pnlThongTinHoaDonTamLayout = new javax.swing.GroupLayout(pnlThongTinHoaDonTam);
         pnlThongTinHoaDonTam.setLayout(pnlThongTinHoaDonTamLayout);
@@ -4393,7 +4477,7 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
     private void tblChonSPMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblChonSPMouseClicked
         if (evt.getClickCount() == 2) {
             this.chonSP();
-            this.TinhTienHD();
+            this.TienPhaiTra();
         }
     }//GEN-LAST:event_tblChonSPMouseClicked
 
@@ -4434,26 +4518,14 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
     }//GEN-LAST:event_tblDanhSachHDCTMouseEntered
 
     private void lblGhiMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblGhiMouseClicked
-        if (indexHD == -1) {
-            MsgBox.alert(this, "Vui lòng chọn sản phẩm để chỉnh sửa số lượng!!!");
-        } else {
+        if (indexHD != -1) {
             if (KiemTraNhapSoLuongHD() == true) {
                 this.CapNhatSoLuongTamThoiTBLHD();
             }
+        } else {
+            MsgBox.alert(this, "Vui lòng chọn sản phẩm để chỉnh sửa số lượng!!!");
         }
     }//GEN-LAST:event_lblGhiMouseClicked
-
-    private void txtSoLuongHDKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSoLuongHDKeyReleased
-        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
-            if (indexHD == -1) {
-                MsgBox.alert(this, "Vui lòng chọn sản phẩm để chỉnh sửa số lượng!!!");
-            } else {
-                if (KiemTraNhapSoLuongHD() == true) {
-                    this.CapNhatSoLuongTamThoiTBLHD();
-                }
-            }
-        }
-    }//GEN-LAST:event_txtSoLuongHDKeyReleased
 
     private void txtSoLuongHDFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtSoLuongHDFocusLost
         if (indexHD != -1) {
@@ -4462,6 +4534,27 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_txtSoLuongHDFocusLost
+
+    private void txtPhanTramGiamFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtPhanTramGiamFocusLost
+        if (KiemTraNhapGiamGia() == true) {
+            this.TinhTienGiam();
+            this.TienPhaiTra();
+        }
+    }//GEN-LAST:event_txtPhanTramGiamFocusLost
+
+    private void lblPhanTramGiamHDFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_lblPhanTramGiamHDFocusGained
+        
+    }//GEN-LAST:event_lblPhanTramGiamHDFocusGained
+
+    private void txtPhanTramGiamKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtPhanTramGiamKeyReleased
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            lblPhanTramGiamHD.requestFocus();
+        }
+    }//GEN-LAST:event_txtPhanTramGiamKeyReleased
+
+    private void txtNgayLapHDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNgayLapHDActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNgayLapHDActionPerformed
 
     /**
      * @param args the command line arguments
@@ -4480,13 +4573,17 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(MainInterfaceDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MainInterfaceDialog.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(MainInterfaceDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MainInterfaceDialog.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(MainInterfaceDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MainInterfaceDialog.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(MainInterfaceDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MainInterfaceDialog.class
+                    .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         java.awt.EventQueue.invokeLater(new Runnable() {
             @Override
