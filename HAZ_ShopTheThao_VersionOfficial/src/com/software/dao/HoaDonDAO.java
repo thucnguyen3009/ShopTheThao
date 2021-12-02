@@ -13,7 +13,7 @@ import java.util.List;
 
 public class HoaDonDAO extends SoftwareDAO<HoaDon, Integer> {
 
-    String INSERT_SQL = "INSERT INTO HDBan (MaHD, MaNV, MaKH, PhanTramGiam, NgayLapHD, TrangThai, GiaGiam, ThanhTien) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    String INSERT_SQL = "INSERT INTO HDBan (MaHD, MaNV, MaKH, PhanTramGiam, NgayLapHD, TrangThai, GiaGiam, ThanhTien) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
     String UPDATE_SQL = "UPDATE HDBan SET MaNV = ?, MaKH = ?,  PhanTramGiam = ?, NgayLapHD = ?, TrangThai = ?, GiaGiam = ?, ThanhTien = ? WHERE MaHD = ?";
     String DELETE_SQL = "DELETE FROM HDBan WHERE MaHD = ? WHERE MaHD NOT IN (SELECT MaHD FROM ChiTietHoaDon)";
     String SELECT_ALL_SQL = "SELECT * FROM HDBan";
@@ -81,11 +81,12 @@ public class HoaDonDAO extends SoftwareDAO<HoaDon, Integer> {
                 hd.setMaHD(rs.getInt("MaHD"));
                 hd.setMaNV(rs.getString("MaNV"));
                 hd.setMaKH(rs.getInt("MaKH"));
-                hd.setPhanTramGiam(rs.getDouble("PhanTramGiam"));
+                hd.setPhanTramGiam(rs.getInt("PhanTramGiam"));
                 hd.setNgayLapHD(rs.getString("NgaylapHD"));
                 hd.setTrangThai(rs.getString("TrangThai"));
                 hd.setGiaGiam(rs.getDouble("GiaGiam"));
                 hd.setThanhTien(rs.getDouble("ThanhTien"));
+                list.add(hd);
             }
             rs.getStatement().getConnection().close();
             return list;

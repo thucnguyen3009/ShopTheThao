@@ -9,7 +9,7 @@ public class HoaDon {
     private Integer maHD;
     private String maNV;
     private Integer maKH;
-    private Double phanTramGiam;
+    private Integer phanTramGiam;
     private Double giaGiam;
     private String ngayLapHD;
     private String trangThai;
@@ -19,7 +19,7 @@ public class HoaDon {
 
     }
 
-    public HoaDon(Integer maHD, String maNV, Integer maKH, Double phanTramGiam, Double giaGiam, String ngayLapHD, String trangThai, Double thanhTien) {
+    public HoaDon(Integer maHD, String maNV, Integer maKH, Integer phanTramGiam, Double giaGiam, String ngayLapHD, String trangThai, Double thanhTien) {
         this.maHD = maHD;
         this.maNV = maNV;
         this.maKH = maKH;
@@ -54,11 +54,11 @@ public class HoaDon {
         this.maKH = maKH;
     }
 
-    public Double getPhanTramGiam() {
+    public Integer getPhanTramGiam() {
         return phanTramGiam;
     }
 
-    public void setPhanTramGiam(Double phanTramGiam) {
+    public void setPhanTramGiam(Integer phanTramGiam) {
         this.phanTramGiam = phanTramGiam;
     }
 

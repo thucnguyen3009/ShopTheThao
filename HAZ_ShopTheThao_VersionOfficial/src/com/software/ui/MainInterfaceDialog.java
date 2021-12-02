@@ -8,30 +8,32 @@
 //* Version: 1.0.0
 package com.software.ui;
 
-import com.software.dao.ChucVuDAO;
+import com.software.dao.HoaDonChiTietDAO;
+import com.software.dao.HoaDonDAO;
 import com.software.dao.KhachHangDAO;
-import com.software.dao.NhanVienDAO;
 import com.software.dao.SanPhamDAO;
-import com.software.entity.ChucVu;
+import com.software.entity.HoaDon;
+import com.software.entity.HoaDonChiTiet;
 import com.software.entity.KhachHang;
-import com.software.entity.NhanVien;
 import com.software.entity.SanPham;
 import com.software.jdbcHelper.MsgBox;
 import com.software.jdbcHelper.XImage;
+import com.software.jdbcHelper.XJdbc;
 import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
+import java.sql.SQLException;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 import javax.swing.BorderFactory;
-import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -48,13 +50,13 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
     public MainInterfaceDialog() {
         initComponents();
         this.Init();
-        FillCboChucVuNhanVien();
     }
 
     /*1. Các hàm sử dụng chung cho menu chức năng:*/
     @SuppressWarnings("static-access")
     public void Init() {
         //        this.setExtendedState(JFrame.MAXIMIZED_BOTH);
+//        this.setSize(1370, 630);
         this.ManHinhHienThi();
         this.GioNgayThangNam();
         this.setTitle("Shop Thể Thao BingBong");
@@ -279,23 +281,7 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
 
     /*========================================================================*/
  /*2. Các hàm sử dụng chung cho NhanVien:*/
-    NhanVienDAO daoCV = new NhanVienDAO();
-    List<NhanVien> list;
-
-    public void FillCboChucVuNhanVien() {
-        DefaultComboBoxModel model = (DefaultComboBoxModel) cboChucVuNV.getModel();
-        model.removeAllElements();
-        list = daoCV.SelectAll();
-
-        if (list.isEmpty()) {
-            model.addElement("--Chưa có chức vụ--");
-        } else {
-            for (int i = 0; i < list.size(); i++) {
-                cboChucVuNV.addItem(list.get(i).getTenNV());
-            }
-        }
-    }
-    /*========================================================================*/
+ /*========================================================================*/
  /*3. Các hàm sử dụng chung cho ChucVu:*/
  /*========================================================================*/
  /*4. Các hàm sử dụng chung cho TaiKhoan:*/
@@ -311,8 +297,11 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
     List<KhachHang> listKHHD;
     SanPhamDAO sanPhamHD = new SanPhamDAO();
     List<SanPham> listSPHD;
+    HoaDonDAO hoaDonHD = new HoaDonDAO();
+    HoaDonChiTietDAO hoaDonChiTietHD = new HoaDonChiTietDAO();
     int indexKHHD = -1, indexSPHD = -1, indexSanPhamTrung = -1, indexHD = -1;
     int soLuong = 0, soLuongNew = 0;
+    int maHoaDonHD = 0, maHoaDonChiTietHD = 0;
 
     public void FillTableKHHD() {
         DefaultTableModel model = (DefaultTableModel) tblChonKH.getModel();
@@ -431,6 +420,11 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
         DecimalFormat decimalFormat = new DecimalFormat("#.##");
         listSPHD = sanPhamHD.SelectAll();
         indexSPHD = tblChonSP.getSelectedRow();
+        Integer kiemSL = (Integer) tblChonSP.getValueAt(indexSPHD, 1);
+        if (kiemSL == 0) {
+            MsgBox.alert(this, "Sản Phẩm Hiện Đã Hết Hàng!!!");
+            return;
+        }
         @SuppressWarnings("MismatchedReadAndWriteOfArray")
         Object rowData[] = new Object[5];
         if (KiemTraSanPhamDaCo() == true) {
@@ -484,6 +478,8 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
         lblThanhTienGiamHD.setText("0 đ");
         lblTongTienHD.setText("0 đ");
         txtPhanTramGiam.setText("0");
+        maHoaDonChiTietHD = 0;
+        maHoaDonHD = 0;
         this.FillTableKHHD();
         this.FillTableSPHD();
     }
@@ -572,6 +568,105 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
             kiemTra = true;
         }
         return kiemTra;
+    }
+
+    public Integer TaoMaHoaDon() {
+        Integer maHoaDon = 0;
+        List<HoaDon> list = new ArrayList<>();
+        list = hoaDonHD.SelectAll();
+        if (list.isEmpty()) {
+            maHoaDon = 1;
+        } else {
+            maHoaDon = list.size() + 1;
+        }
+        return maHoaDon;
+    }
+
+    @SuppressWarnings({"BoxingBoxedValue", "BoxedValueEquality", "NumberEquality"})
+    public Integer TaoMaHoaDonChiTiet() {
+        Integer maHoaDonCT = 0;
+        List<HoaDonChiTiet> list = new ArrayList<>();
+        list = hoaDonChiTietHD.FindIdMax();
+        if (list.isEmpty()) {
+            maHoaDonCT = 1;
+        } else {
+            maHoaDonCT = list.get(list.size() - 1).getMaHDCT() + 1;
+        }
+
+        return maHoaDonCT;
+    }
+
+    public HoaDon getFormHoaDonHD() {
+        HoaDon hd = new HoaDon();
+        hd.setMaHD(maHoaDonHD);
+        hd.setMaNV("1");
+        hd.setMaKH(Integer.valueOf(txtMaKhachHangHD.getText()));
+        hd.setPhanTramGiam(Integer.valueOf(txtPhanTramGiam.getText()));
+        hd.setGiaGiam(TinhTienGiam());
+        hd.setNgayLapHD(txtNgayLapHD.getText());
+        hd.setTrangThai("Đã thanh toán");
+        hd.setThanhTien(TienPhaiTra());
+        return hd;
+    }
+
+    public void insertHoaDonHD() {
+        HoaDon hd = getFormHoaDonHD();
+        if (true) {
+            hoaDonHD.insert(hd);
+            MsgBox.alert(this, "Thêm hóa đơn thành công!!!");
+        }
+    }
+
+    public void insertHoaDonChiTietHD() throws SQLException {
+        HoaDonChiTiet hdct;
+        DefaultTableModel model = (DefaultTableModel) tblHoaDon.getModel();
+        for (int i = 0; i < model.getRowCount(); i++) {
+            String maSP = (String) model.getValueAt(i, 0);
+            Integer sl = (Integer) model.getValueAt(i, 2);
+            String donGia = (String) model.getValueAt(i, 3);
+            hdct = new HoaDonChiTiet();
+            hdct.setMaHD(maHoaDonHD);
+            hdct.setMaHDCT(maHoaDonChiTietHD);
+            hdct.setMaSP(maSP);
+            hdct.setSoLuong(sl);
+            hdct.setDonGia(Double.valueOf(donGia));
+            hoaDonChiTietHD.insert(hdct);
+            int index = 0;
+            listSPHD = sanPhamHD.SelectAll();
+            for (int j = 0; j < listSPHD.size(); j++) {
+                if (listSPHD.get(j).getMaSanPham().equals(maSP)) {
+                    index = j;
+                    break;
+                }
+            }
+            Integer soLuongTon = listSPHD.get(index).getSoLuong();
+            Integer ketQua = soLuongTon - sl;
+            XJdbc.update("UPDATE SanPham SET SoLuong = ? WHERE MaSP = ?", ketQua, maSP);
+        }
+    }
+
+    public boolean KiemTraThanhToanHD() {
+        boolean kiemTra = true;
+        if (txtMaKhachHangHD.getText().isEmpty()) {
+            MsgBox.alert(this, "Vui lòng chọn khách hàng!!!");
+            kiemTra = false;
+        } else if (tblHoaDon.getRowCount() == 0) {
+            MsgBox.alert(this, "Vui lòng chọn sản phẩm!!!");
+            kiemTra = false;
+        } else {
+            kiemTra = true;
+        }
+        return kiemTra;
+    }
+
+    public void ThanhToanHoaDonHD() throws SQLException {
+        if (KiemTraThanhToanHD() == true) {
+            maHoaDonHD = TaoMaHoaDon();
+            maHoaDonChiTietHD = TaoMaHoaDonChiTiet();
+            this.insertHoaDonHD();
+            this.insertHoaDonChiTietHD();
+            this.ResetHD();
+        }
     }
 
     /*========================================================================*/
@@ -857,7 +952,8 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
         jMenu1 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(1370, 874));
+        setMaximumSize(new java.awt.Dimension(1370, 774));
+        setMinimumSize(new java.awt.Dimension(1370, 774));
         setUndecorated(true);
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -1332,7 +1428,7 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
                 .addGroup(pnlMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblThoat, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblThoatIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(211, Short.MAX_VALUE))
+                .addGap(211, 211, 211))
         );
 
         getContentPane().add(pnlMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 700));
@@ -2900,9 +2996,16 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
                 "Mã Sản Phẩm", "Tên SP", "SL", "Đơn Giá", "Thành Tiền"
             }
         ) {
+            Class[] types = new Class [] {
+                java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.String.class, java.lang.Object.class
+            };
             boolean[] canEdit = new boolean [] {
                 false, false, false, false, false
             };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
@@ -2953,6 +3056,9 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
         lblThanhToan.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lblThanhToan.setOpaque(true);
         lblThanhToan.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblThanhToanMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 lblThanhToanMouseEntered(evt);
             }
@@ -2971,6 +3077,9 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
         lblInHD.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lblInHD.setOpaque(true);
         lblInHD.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblInHDMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 lblInHDMouseEntered(evt);
             }
@@ -2982,6 +3091,7 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
         lblMaNhanVienHD.setText("Mã NV");
 
         txtMaNhanVienHD.setEditable(false);
+        txtMaNhanVienHD.setText("1");
 
         lblTenThuNgan.setText("Nhân Viên");
 
@@ -3133,7 +3243,7 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
                     .addComponent(lblSoLuongHD, javax.swing.GroupLayout.DEFAULT_SIZE, 29, Short.MAX_VALUE)
                     .addComponent(txtSoLuongHD, javax.swing.GroupLayout.DEFAULT_SIZE, 29, Short.MAX_VALUE)
                     .addComponent(lblGhi, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(16, 16, 16)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(pnlThongTinHoaDonTamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -4563,6 +4673,18 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
     private void txtNgayLapHDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNgayLapHDActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNgayLapHDActionPerformed
+
+    private void lblThanhToanMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblThanhToanMouseClicked
+        lblThanhToan.requestFocus();
+        try {
+            this.ThanhToanHoaDonHD();
+        } catch (SQLException ex) {
+        }
+    }//GEN-LAST:event_lblThanhToanMouseClicked
+
+    private void lblInHDMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblInHDMouseClicked
+        lblInHD.requestFocus();
+    }//GEN-LAST:event_lblInHDMouseClicked
 
     /**
      * @param args the command line arguments

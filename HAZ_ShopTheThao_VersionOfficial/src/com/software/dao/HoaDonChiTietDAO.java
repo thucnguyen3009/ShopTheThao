@@ -18,6 +18,7 @@ public class HoaDonChiTietDAO extends SoftwareDAO<HoaDonChiTiet, Integer> {
     String DELETE_SQL = "DELETE FROM ChiTietHoaDon WHERE MaHDCT = ? AND MaSP = ? AND MaHD= ?";
     String SELECT_ALL_SQL = "SELECT * FROM ChiTietHoaDon";
     String SELECT_BY_ID_SQL = "SELECT * FROM ChiTietHoaDon WHERE MaHDCT = ?";
+    String FIND_MAHDCT_MAX ="SELECT * FROM ChiTietHoaDon ORDER BY MaHDCT ASC";
 
     @Override
     public void insert(HoaDonChiTiet entity) {
@@ -79,11 +80,15 @@ public class HoaDonChiTietDAO extends SoftwareDAO<HoaDonChiTiet, Integer> {
                 hdct.setMaSP(rs.getString("MaSP"));
                 hdct.setSoLuong(rs.getInt("SoLuong"));
                 hdct.setDonGia(rs.getDouble("DonGia"));
+                list.add(hdct);
             }
             rs.getStatement().getConnection().close();
             return list;
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+    }
+    public List<HoaDonChiTiet> FindIdMax() {
+        return this.SelectBySQL(FIND_MAHDCT_MAX);
     }
 }
