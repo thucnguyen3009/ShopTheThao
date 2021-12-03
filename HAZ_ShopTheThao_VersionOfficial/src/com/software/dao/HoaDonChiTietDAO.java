@@ -15,10 +15,11 @@ public class HoaDonChiTietDAO extends SoftwareDAO<HoaDonChiTiet, Integer> {
 
     String INSERT_SQL = "INSERT INTO ChiTietHoaDon (MaHDCT, MaHD, MaSP, SoLuong, DonGia) VALUES (?, ?, ?, ?, ?)";
     String UPDATE_SQL = "UPDATE ChiTietHoaDon SET MaSP = ?, SoLuong = ? WHERE MaHDCT = ? AND MaSP = ?";
-    String DELETE_SQL = "DELETE FROM ChiTietHoaDon WHERE MaHDCT = ? AND MaSP = ? AND MaHD= ?";
+    String DELETE_SQL = "DELETE FROM ChiTietHoaDon WHERE MaHD = ? AND MaHDCT= ?";
     String SELECT_ALL_SQL = "SELECT * FROM ChiTietHoaDon";
     String SELECT_BY_ID_SQL = "SELECT * FROM ChiTietHoaDon WHERE MaHDCT = ?";
-    String FIND_MAHDCT_MAX ="SELECT * FROM ChiTietHoaDon ORDER BY MaHDCT ASC";
+    String FIND_MAHDCT_MAX = "SELECT * FROM ChiTietHoaDon ORDER BY MaHDCT ASC";
+//    String SELECT_BY_KEYWORD = "SELECT * FROM ChiTietHoaDon WHERE MaHDCT = ?, ";
 
     @Override
     public void insert(HoaDonChiTiet entity) {
@@ -47,9 +48,9 @@ public class HoaDonChiTietDAO extends SoftwareDAO<HoaDonChiTiet, Integer> {
     public void delete(Integer ID) {
     }
 
-    public void delete(HoaDonChiTiet E) {
+    public void delete(Integer maHD, Integer maHDCT) {
         try {
-            XJdbc.update(DELETE_SQL, E.getMaHDCT(), E.getMaSP(), E.getMaHD());
+            XJdbc.update(DELETE_SQL, maHD, maHDCT);
         } catch (SQLException ex) {
         }
     }
@@ -88,7 +89,25 @@ public class HoaDonChiTietDAO extends SoftwareDAO<HoaDonChiTiet, Integer> {
             throw new RuntimeException(e);
         }
     }
+
     public List<HoaDonChiTiet> FindIdMax() {
         return this.SelectBySQL(FIND_MAHDCT_MAX);
+    }
+
+    public List<HoaDonChiTiet> SelectByIDS(Integer ID) {
+        List<HoaDonChiTiet> list = this.SelectBySQL(SELECT_BY_ID_SQL, ID);
+        if (list.isEmpty()) {
+            return null;
+        }
+        return list;
+    }
+
+    public List<HoaDonChiTiet> SelectByMaHD(Integer ID) {
+        String SQL = "select * from ChiTietHoaDon where MaHD = ?";
+        List<HoaDonChiTiet> list = this.SelectBySQL(SQL, ID);
+        if (list.isEmpty()) {
+            return null;
+        }
+        return list;
     }
 }

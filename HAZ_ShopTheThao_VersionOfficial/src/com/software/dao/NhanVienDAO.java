@@ -106,4 +106,11 @@ public class NhanVienDAO extends SoftwareDAO<NhanVien, String> {
             throw new RuntimeException(e);
         }
     }
+    public List<NhanVien> SelectByIDS(String ID) {
+        List<NhanVien> list = this.SelectBySQL(SELECT_BY_ID_SQL, ID);
+        if (list.isEmpty()) {
+            return null;
+        }
+        return list;
+    }
 }

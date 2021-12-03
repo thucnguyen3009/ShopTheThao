@@ -15,9 +15,10 @@ public class HoaDonDAO extends SoftwareDAO<HoaDon, Integer> {
 
     String INSERT_SQL = "INSERT INTO HDBan (MaHD, MaNV, MaKH, PhanTramGiam, NgayLapHD, TrangThai, GiaGiam, ThanhTien) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
     String UPDATE_SQL = "UPDATE HDBan SET MaNV = ?, MaKH = ?,  PhanTramGiam = ?, NgayLapHD = ?, TrangThai = ?, GiaGiam = ?, ThanhTien = ? WHERE MaHD = ?";
-    String DELETE_SQL = "DELETE FROM HDBan WHERE MaHD = ? WHERE MaHD NOT IN (SELECT MaHD FROM ChiTietHoaDon)";
-    String SELECT_ALL_SQL = "SELECT * FROM HDBan";
+    String DELETE_SQL = "DELETE FROM HDBan WHERE MaHD = ? AND MaHD NOT IN (SELECT MaHD FROM ChiTietHoaDon)";
+    String SELECT_ALL_SQL = "select hd.MaHD, hd.MaNV, hd.MaKH, hd.PhanTramGiam, hd.NgayLapHD, hd.TrangThai, hd.GiaGiam, hd.ThanhTien from HDBan hd inner join KhachHang kh  on hd.MaKH = kh.MaKH inner join NhanVien nv on hd.MaNV = nv.MaNV";
     String SELECT_BY_ID_SQL = "SELECT * FROM HDBan WHERE MaHD = ?";
+    String SELECT_BY_KEYWORD = "SELECT hd.MaHD, hd.MaNV, hd.MaKH, hd.PhanTramGiam, hd.NgayLapHD, hd.TrangThai, hd.GiaGiam, hd.ThanhTien from HDBan hd inner join KhachHang kh  on hd.MaKH = kh.MaKH inner join NhanVien nv on hd.MaNV = nv.MaNV where hd.MaHD LIKE ? OR kh.SoDT LIKE ?";
 
     @Override
     public void insert(HoaDon entity) {
@@ -93,5 +94,18 @@ public class HoaDonDAO extends SoftwareDAO<HoaDon, Integer> {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public List<HoaDon> selectByKeyWord(String keyword) {
+//        String sql = "SELECT * FROM HDBan WHERE MaHDCT LIKE ? OR  LIKE ? OR SoDT LIKE ?";
+        return SelectBySQL(SELECT_BY_KEYWORD, "%" + keyword + "%", "%" + keyword + "%");
+    }
+
+    public List<HoaDon> SelectByIDS(Integer ID) {
+        List<HoaDon> list = this.SelectBySQL(SELECT_BY_ID_SQL, ID);
+        if (list.isEmpty()) {
+            return null;
+        }
+        return list;
     }
 }
