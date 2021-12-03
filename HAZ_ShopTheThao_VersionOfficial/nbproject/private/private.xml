@@ -3,8 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/Users/DELL/Documents/DuAnPhanMemQuanLyShopTheThao/ShopTheThao/HAZ_ShopTheThao_VersionOfficial/src/com/software/entity/HoaDon.java</file>
+            <file>file:/C:/Users/DELL/Documents/DuAnPhanMemQuanLyShopTheThao/ShopTheThao/HAZ_ShopTheThao_VersionOfficial/src/com/software/dao/SanPhamDAO.java</file>
+            <file>file:/C:/Users/DELL/Documents/DuAnPhanMemQuanLyShopTheThao/ShopTheThao/HAZ_ShopTheThao_VersionOfficial/src/com/software/dao/HoaDonDAO.java</file>
             <file>file:/C:/Users/DELL/Documents/DuAnPhanMemQuanLyShopTheThao/ShopTheThao/HAZ_ShopTheThao_VersionOfficial/src/com/software/ui/MainInterfaceDialog.java</file>
-            <file>file:/C:/Users/DELL/Documents/DuAnPhanMemQuanLyShopTheThao/ShopTheThao/HAZ_ShopTheThao_VersionOfficial/src/com/software/dao/NhanVienDAO.java</file>
+            <file>file:/C:/Users/DELL/Documents/DuAnPhanMemQuanLyShopTheThao/ShopTheThao/HAZ_ShopTheThao_VersionOfficial/src/com/software/jdbcHelper/XJdbc.java</file>
+            <file>file:/C:/Users/DELL/Documents/DuAnPhanMemQuanLyShopTheThao/ShopTheThao/HAZ_ShopTheThao_VersionOfficial/src/com/software/dao/HoaDonChiTietDAO.java</file>
         </group>
     </open-files>
 </project-private>

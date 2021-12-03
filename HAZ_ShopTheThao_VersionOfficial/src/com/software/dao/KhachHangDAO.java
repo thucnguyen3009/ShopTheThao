@@ -81,7 +81,7 @@ public class KhachHangDAO extends SoftwareDAO<KhachHang, Integer> {
     }
     
     public List<KhachHang> selectByKeyWord(String keyword) {
-        String sql = "SELECT * FROM KhachHang WHERE MaKH LIKE ? OR TenKH LIKE ?";
-        return SelectBySQL(sql, "%" + keyword + "%", "%" + keyword + "%");
+        String sql = "SELECT * FROM KhachHang WHERE MaKH LIKE ? OR TenKH LIKE ? OR SoDT LIKE ?";
+        return SelectBySQL(sql, "%" + keyword + "%", "%" + keyword + "%", "%" + keyword + "%");
     }
 }
