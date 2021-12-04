@@ -3527,79 +3527,80 @@
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
-                          <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jScrollPane3" pref="598" max="32767" attributes="0"/>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                      <Component id="lblTenKhachHangHD" max="32767" attributes="0"/>
-                                      <Component id="lblTenThuNgan" pref="81" max="32767" attributes="0"/>
-                                      <Component id="lblSdtKhachHangHD" alignment="0" max="32767" attributes="0"/>
-                                  </Group>
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="txtSdtKhachHangHD" pref="216" max="32767" attributes="0"/>
-                                      <Component id="txtTenKhachHangHD" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="txtTenNhanVienHD" alignment="0" max="32767" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace max="32767" attributes="0"/>
+                              <Group type="102" attributes="0">
+                                  <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" alignment="1" attributes="0">
-                                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                          <Component id="lblInHD" alignment="1" min="-2" pref="138" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="lblThanhToan" alignment="1" min="-2" pref="138" max="-2" attributes="0"/>
-                                      </Group>
                                       <Group type="102" alignment="0" attributes="0">
                                           <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                              <Component id="lblMaNhanVienHD" max="32767" attributes="0"/>
-                                              <Component id="lblMaKhachHangHD" max="32767" attributes="0"/>
-                                              <Component id="lblNgayLapHD" max="32767" attributes="0"/>
+                                              <Component id="lblTenKhachHangHD" max="32767" attributes="0"/>
+                                              <Component id="lblTenThuNgan" pref="81" max="32767" attributes="0"/>
+                                              <Component id="lblSdtKhachHangHD" alignment="0" max="32767" attributes="0"/>
                                           </Group>
+                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                              <Component id="txtSdtKhachHangHD" pref="216" max="32767" attributes="0"/>
+                                              <Component id="txtTenKhachHangHD" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="txtTenNhanVienHD" alignment="0" max="32767" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace max="32767" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="txtNgayLapHD" max="32767" attributes="0"/>
-                                              <Group type="102" attributes="0">
-                                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                                      <Component id="txtMaKhachHangHD" pref="128" max="32767" attributes="0"/>
-                                                      <Component id="txtMaNhanVienHD" max="32767" attributes="0"/>
+                                              <Group type="102" alignment="1" attributes="0">
+                                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                                  <Component id="lblInHD" alignment="1" min="-2" pref="138" max="-2" attributes="0"/>
+                                                  <EmptySpace max="-2" attributes="0"/>
+                                                  <Component id="lblThanhToan" alignment="1" min="-2" pref="138" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                                      <Component id="lblMaNhanVienHD" max="32767" attributes="0"/>
+                                                      <Component id="lblMaKhachHangHD" max="32767" attributes="0"/>
+                                                      <Component id="lblNgayLapHD" max="32767" attributes="0"/>
                                                   </Group>
-                                                  <EmptySpace max="32767" attributes="0"/>
-                                                  <Component id="lblResetHD" min="-2" max="-2" attributes="0"/>
+                                                  <Group type="103" groupAlignment="0" attributes="0">
+                                                      <Component id="txtNgayLapHD" max="32767" attributes="0"/>
+                                                      <Group type="102" attributes="0">
+                                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                                              <Component id="txtMaKhachHangHD" pref="128" max="32767" attributes="0"/>
+                                                              <Component id="txtMaNhanVienHD" max="32767" attributes="0"/>
+                                                          </Group>
+                                                          <EmptySpace max="32767" attributes="0"/>
+                                                          <Component id="lblResetHD" min="-2" max="-2" attributes="0"/>
+                                                      </Group>
+                                                  </Group>
                                               </Group>
                                           </Group>
                                       </Group>
-                                  </Group>
-                              </Group>
-                              <Group type="102" alignment="1" attributes="0">
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" attributes="0">
+                                      <Group type="102" alignment="1" attributes="0">
                                           <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
                                           <Component id="lblPhanTramGiamHD" min="-2" pref="118" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Component id="lblSoLuongHD" alignment="0" min="-2" pref="107" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                      <Component id="txtSoLuongHD" pref="179" max="32767" attributes="0"/>
-                                      <Component id="txtPhanTramGiam" max="32767" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Component id="lblGhi" min="-2" pref="71" max="-2" attributes="0"/>
-                                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                                          <Component id="txtPhanTramGiam" min="-2" pref="179" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
                                           <Component id="lblTienGiamHD" max="32767" attributes="0"/>
                                           <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                                           <Component id="lblThanhTienGiamHD" min="-2" pref="205" max="-2" attributes="0"/>
                                       </Group>
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                          <Component id="lblTC" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="lblTongTienHD" min="-2" max="-2" attributes="0"/>
+                                      </Group>
                                   </Group>
                               </Group>
-                              <Group type="102" alignment="1" attributes="0">
-                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                  <Component id="lblTC" min="-2" max="-2" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="lblTongTienHD" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jSeparator2" max="32767" attributes="0"/>
+                              </Group>
+                              <Component id="jScrollPane3" max="32767" attributes="0"/>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="lblSoLuongHD" min="-2" pref="101" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="32767" attributes="0"/>
+                                  <Component id="txtSoLuongHD" min="-2" pref="174" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="lblGhi" min="-2" pref="71" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="218" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
@@ -3657,14 +3658,18 @@
                               </Group>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jSeparator2" min="-2" pref="10" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="lblSoLuongHD" alignment="0" pref="29" max="32767" attributes="0"/>
-                              <Component id="txtSoLuongHD" alignment="0" pref="29" max="32767" attributes="0"/>
-                              <Component id="lblGhi" alignment="0" max="32767" attributes="0"/>
+                              <Component id="lblSoLuongHD" alignment="0" max="32767" attributes="0"/>
+                              <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                                  <Component id="txtSoLuongHD" alignment="3" pref="29" max="32767" attributes="0"/>
+                                  <Component id="lblGhi" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
-                          <EmptySpace min="-2" max="-2" attributes="0"/>
-                          <Component id="jScrollPane3" min="-2" pref="280" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jScrollPane3" min="-2" pref="268" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Component id="lblTongTienHD" pref="27" max="32767" attributes="0"/>
                               <Component id="lblTC" max="32767" attributes="0"/>
@@ -3974,6 +3979,8 @@
                     </Property>
                   </Properties>
                 </Component>
+                <Component class="javax.swing.JSeparator" name="jSeparator2">
+                </Component>
               </SubComponents>
             </Container>
           </SubComponents>
@@ -4069,10 +4076,6 @@
                                       <Component id="lblMaThuNganHDCT1" min="-2" pref="78" max="-2" attributes="0"/>
                                       <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                                       <Component id="txtMaHoaDonHDCT" min="-2" pref="209" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="lblMaThuNganHDCT2" min="-2" pref="78" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="txtMaHoaDonChiTietHDCT" min="-2" pref="198" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
@@ -4101,18 +4104,11 @@
                                   <Group type="102" alignment="1" attributes="0">
                                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="103" alignment="1" groupAlignment="3" attributes="0">
-                                              <Component id="lblMaThuNganHDCT2" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
-                                              <Component id="txtMaHoaDonChiTietHDCT" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Group type="103" alignment="1" groupAlignment="0" attributes="0">
-                                              <Component id="txtMaHoaDonHDCT" alignment="0" min="-2" pref="29" max="-2" attributes="0"/>
-                                              <Component id="lblMaThuNganHDCT1" alignment="0" min="-2" pref="29" max="-2" attributes="0"/>
-                                          </Group>
+                                          <Component id="txtMaHoaDonHDCT" alignment="0" min="-2" pref="29" max="-2" attributes="0"/>
+                                          <Component id="lblMaThuNganHDCT1" alignment="0" min="-2" pref="29" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
-                              <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
                                       <Group type="103" groupAlignment="3" attributes="0">
@@ -4441,16 +4437,6 @@
             <Component class="javax.swing.JTextField" name="txtMaHoaDonHDCT">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JTextField" name="txtMaHoaDonChiTietHDCT">
-              <Properties>
-                <Property name="editable" type="boolean" value="false"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="lblMaThuNganHDCT2">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="M&#xe3; HDCT"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="txtPhanTramGiamHDCT">

@@ -750,6 +750,7 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
     /*========================================================================*/
 
  /*9. Các hàm sử dụng chung cho XemHoaDon:*/
+    int maHDCT = -1;
     HoaDonDAO hoaDonHDCT = new HoaDonDAO();
     List<HoaDon> listDanhSachHDCT;
     KhachHangDAO khachHangHDCT = new KhachHangDAO();
@@ -790,7 +791,7 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
         }
     }
 
-    public void ChonHoaDon() {
+    public void ChonHoaDon() {        
         DefaultTableModel modelHDCT = (DefaultTableModel) tblThongTinHDCT.getModel();
         modelHDCT.setRowCount(0);
         DecimalFormat decimalFormat = new DecimalFormat("#.##");
@@ -807,7 +808,7 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
         listNhanVienHDCT = nhanVienHDCT.SelectByIDS(txtMaThuNganHDCT.getText());
         txtTenThuNganHDCT.setText(listNhanVienHDCT.get(0).getTenNV());
         listHoaDonChiTietHDCT = hoaDonChiTietHDCT.SelectByMaHD(maHD);
-        txtMaHoaDonChiTietHDCT.setText(String.valueOf(listHoaDonChiTietHDCT.get(0).getMaHDCT()));
+        maHDCT = listHoaDonChiTietHDCT.get(0).getMaHDCT();
         listHoaDonChiTietHDCT = hoaDonChiTietHDCT.SelectByMaHD(maHD);
         Double tienPhaiTra = 0.0, tienDcGiam = 0.0, tongTien = 0.0;
         Object rowData[] = new Object[5];
@@ -840,24 +841,22 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
         txtTenKhachHangHDCT.setText(null);
         txtSdtKhachHangHDCT.setText(null);
         txtTenThuNganHDCT.setText(null);
-        txtMaHoaDonChiTietHDCT.setText(null);
         lblTienDcGiamHDCT.setText("0 đ");
         lblTienPhaiTraHDCT.setText("0 đ");
         model.setRowCount(0);
+        maHDCT = 0;
         txtTimKiemHDCT.setText("Tìm hóa đơn. . .");
         txtTimKiemHDCT.nextFocus();
         this.FillDanhSachHDCT(1);
     }
-
-//    public void UpdateSoLuongChoSP() {
-//        
-//    }
+    
     public void XoaHoaDon() throws SQLException {
         if (tblThongTinHDCT.getRowCount() != 0) {
             boolean chon = MsgBox.confirm(this, "Bạn chắn chắn muốn xóa HD này?");
             if (chon == true) {
                 Integer maHD = Integer.valueOf(txtMaHoaDonHDCT.getText());
-                Integer maHDCT = Integer.valueOf(txtMaHoaDonChiTietHDCT.getText());
+                @SuppressWarnings("UnnecessaryBoxing")
+                Integer maHDCT = Integer.valueOf(this.maHDCT);
                 String maSP = null;
                 int sl = 0;
                 listSanPhamHDCT = sanPhamHDCT.SelectAll();
@@ -1103,6 +1102,7 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
         lblTC = new javax.swing.JLabel();
         txtPhanTramGiam = new javax.swing.JTextField();
         lblThanhTienGiamHD = new javax.swing.JLabel();
+        jSeparator2 = new javax.swing.JSeparator();
         pnlXemHoaDon = new javax.swing.JPanel();
         jScrollPane4 = new javax.swing.JScrollPane();
         tblDanhSachHDCT = new javax.swing.JTable();
@@ -1128,8 +1128,6 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
         lblXoaHDCT = new javax.swing.JLabel();
         lblMaThuNganHDCT1 = new javax.swing.JLabel();
         txtMaHoaDonHDCT = new javax.swing.JTextField();
-        txtMaHoaDonChiTietHDCT = new javax.swing.JTextField();
-        lblMaThuNganHDCT2 = new javax.swing.JLabel();
         txtPhanTramGiamHDCT = new javax.swing.JTextField();
         lblTienDcGiamHDCT = new javax.swing.JLabel();
         lblTienPhaiTraHDCT = new javax.swing.JLabel();
@@ -3384,62 +3382,65 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
         pnlThongTinHoaDonTamLayout.setHorizontalGroup(
             pnlThongTinHoaDonTamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlThongTinHoaDonTamLayout.createSequentialGroup()
-                .addGap(6, 6, 6)
                 .addGroup(pnlThongTinHoaDonTamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 598, Short.MAX_VALUE)
                     .addGroup(pnlThongTinHoaDonTamLayout.createSequentialGroup()
-                        .addGroup(pnlThongTinHoaDonTamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(lblTenKhachHangHD, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(lblTenThuNgan, javax.swing.GroupLayout.DEFAULT_SIZE, 81, Short.MAX_VALUE)
-                            .addComponent(lblSdtKhachHangHD, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGroup(pnlThongTinHoaDonTamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtSdtKhachHangHD, javax.swing.GroupLayout.DEFAULT_SIZE, 216, Short.MAX_VALUE)
-                            .addComponent(txtTenKhachHangHD)
-                            .addComponent(txtTenNhanVienHD))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(6, 6, 6)
                         .addGroup(pnlThongTinHoaDonTamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlThongTinHoaDonTamLayout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(lblInHD, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(lblThanhToan, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(pnlThongTinHoaDonTamLayout.createSequentialGroup()
                                 .addGroup(pnlThongTinHoaDonTamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(lblMaNhanVienHD, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(lblMaKhachHangHD, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(lblNgayLapHD, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addComponent(lblTenKhachHangHD, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(lblTenThuNgan, javax.swing.GroupLayout.DEFAULT_SIZE, 81, Short.MAX_VALUE)
+                                    .addComponent(lblSdtKhachHangHD, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGroup(pnlThongTinHoaDonTamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(txtSdtKhachHangHD, javax.swing.GroupLayout.DEFAULT_SIZE, 216, Short.MAX_VALUE)
+                                    .addComponent(txtTenKhachHangHD)
+                                    .addComponent(txtTenNhanVienHD))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGroup(pnlThongTinHoaDonTamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtNgayLapHD)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlThongTinHoaDonTamLayout.createSequentialGroup()
+                                        .addGap(0, 0, Short.MAX_VALUE)
+                                        .addComponent(lblInHD, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(lblThanhToan, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(pnlThongTinHoaDonTamLayout.createSequentialGroup()
-                                        .addGroup(pnlThongTinHoaDonTamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(txtMaKhachHangHD, javax.swing.GroupLayout.DEFAULT_SIZE, 128, Short.MAX_VALUE)
-                                            .addComponent(txtMaNhanVienHD))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(lblResetHD))))))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlThongTinHoaDonTamLayout.createSequentialGroup()
-                        .addGroup(pnlThongTinHoaDonTamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(pnlThongTinHoaDonTamLayout.createSequentialGroup()
+                                        .addGroup(pnlThongTinHoaDonTamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                            .addComponent(lblMaNhanVienHD, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(lblMaKhachHangHD, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(lblNgayLapHD, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addGroup(pnlThongTinHoaDonTamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(txtNgayLapHD)
+                                            .addGroup(pnlThongTinHoaDonTamLayout.createSequentialGroup()
+                                                .addGroup(pnlThongTinHoaDonTamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                    .addComponent(txtMaKhachHangHD, javax.swing.GroupLayout.DEFAULT_SIZE, 128, Short.MAX_VALUE)
+                                                    .addComponent(txtMaNhanVienHD))
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(lblResetHD))))))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlThongTinHoaDonTamLayout.createSequentialGroup()
                                 .addGap(1, 1, 1)
-                                .addComponent(lblPhanTramGiamHD, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(lblSoLuongHD, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, 0)
-                        .addGroup(pnlThongTinHoaDonTamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(txtSoLuongHD, javax.swing.GroupLayout.DEFAULT_SIZE, 179, Short.MAX_VALUE)
-                            .addComponent(txtPhanTramGiam))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(pnlThongTinHoaDonTamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(pnlThongTinHoaDonTamLayout.createSequentialGroup()
-                                .addComponent(lblGhi, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addGroup(pnlThongTinHoaDonTamLayout.createSequentialGroup()
+                                .addComponent(lblPhanTramGiamHD, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, 0)
+                                .addComponent(txtPhanTramGiam, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(lblTienGiamHD, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGap(0, 0, 0)
-                                .addComponent(lblThanhTienGiamHD, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(lblThanhTienGiamHD, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlThongTinHoaDonTamLayout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(lblTC)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(lblTongTienHD))))
+                    .addGroup(pnlThongTinHoaDonTamLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jSeparator2))
+                    .addComponent(jScrollPane3)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlThongTinHoaDonTamLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(lblTC)
+                        .addContainerGap()
+                        .addComponent(lblSoLuongHD, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, Short.MAX_VALUE)
+                        .addComponent(txtSoLuongHD, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lblTongTienHD)))
+                        .addComponent(lblGhi, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(218, 218, 218)))
                 .addContainerGap())
         );
         pnlThongTinHoaDonTamLayout.setVerticalGroup(
@@ -3480,13 +3481,16 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
                         .addComponent(lblTienGiamHD, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(txtPhanTramGiam, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(pnlThongTinHoaDonTamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(lblSoLuongHD, javax.swing.GroupLayout.DEFAULT_SIZE, 29, Short.MAX_VALUE)
-                    .addComponent(txtSoLuongHD, javax.swing.GroupLayout.DEFAULT_SIZE, 29, Short.MAX_VALUE)
-                    .addComponent(lblGhi, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(lblSoLuongHD, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(pnlThongTinHoaDonTamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(txtSoLuongHD, javax.swing.GroupLayout.DEFAULT_SIZE, 29, Short.MAX_VALUE)
+                        .addComponent(lblGhi, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addGroup(pnlThongTinHoaDonTamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(lblTongTienHD, javax.swing.GroupLayout.DEFAULT_SIZE, 27, Short.MAX_VALUE)
                     .addComponent(lblTC, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -3684,10 +3688,6 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
 
         txtMaHoaDonHDCT.setEditable(false);
 
-        txtMaHoaDonChiTietHDCT.setEditable(false);
-
-        lblMaThuNganHDCT2.setText("Mã HDCT");
-
         txtPhanTramGiamHDCT.setEditable(false);
 
         lblTienDcGiamHDCT.setForeground(new java.awt.Color(255, 51, 51));
@@ -3772,11 +3772,7 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
                             .addGroup(pnlXemHoaDonLayout.createSequentialGroup()
                                 .addComponent(lblMaThuNganHDCT1, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(0, 0, 0)
-                                .addComponent(txtMaHoaDonHDCT, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(lblMaThuNganHDCT2, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtMaHoaDonChiTietHDCT, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(txtMaHoaDonHDCT, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -3797,13 +3793,8 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlXemHoaDonLayout.createSequentialGroup()
                                 .addGap(0, 0, Short.MAX_VALUE)
                                 .addGroup(pnlXemHoaDonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlXemHoaDonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(lblMaThuNganHDCT2, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(txtMaHoaDonChiTietHDCT, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlXemHoaDonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(txtMaHoaDonHDCT, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(lblMaThuNganHDCT1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(txtMaHoaDonHDCT, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lblMaThuNganHDCT1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGroup(pnlXemHoaDonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(pnlXemHoaDonLayout.createSequentialGroup()
                                 .addGroup(pnlXemHoaDonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -5170,6 +5161,7 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
     private javax.swing.JLabel lblAvatarNV;
     private javax.swing.JLabel lblBanHang;
     private javax.swing.JLabel lblBanHangIcon;
@@ -5215,7 +5207,6 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
     private javax.swing.JLabel lblMaSanPhamSP;
     private javax.swing.JLabel lblMaThuNganHDCT;
     private javax.swing.JLabel lblMaThuNganHDCT1;
-    private javax.swing.JLabel lblMaThuNganHDCT2;
     private javax.swing.JLabel lblMoTa;
     private javax.swing.JLabel lblMoTaCV;
     private javax.swing.JLabel lblMoTaDV;
@@ -5372,7 +5363,6 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
     private javax.swing.JTextField txtGmailNV;
     private javax.swing.JTextField txtMaChucVuCV;
     private javax.swing.JTextField txtMaDonViDV;
-    private javax.swing.JTextField txtMaHoaDonChiTietHDCT;
     private javax.swing.JTextField txtMaHoaDonHDCT;
     private javax.swing.JTextField txtMaKH;
     private javax.swing.JTextField txtMaKhachHangHD;
