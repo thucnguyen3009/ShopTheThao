@@ -3576,7 +3576,7 @@
                                           <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                                           <Component id="txtPhanTramGiam" min="-2" pref="179" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="lblTienGiamHD" max="32767" attributes="0"/>
+                                          <Component id="lblTienGiamHD" pref="77" max="32767" attributes="0"/>
                                           <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                                           <Component id="lblThanhTienGiamHD" min="-2" pref="205" max="-2" attributes="0"/>
                                       </Group>
@@ -3591,8 +3591,8 @@
                               <Component id="jScrollPane3" max="32767" attributes="0"/>
                               <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="lblSoLuongHD" min="-2" pref="101" max="-2" attributes="0"/>
-                                  <EmptySpace type="separate" max="32767" attributes="0"/>
+                                  <Component id="lblSoLuongHD" max="32767" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Component id="txtSoLuongHD" min="-2" pref="174" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="lblGhi" min="-2" pref="71" max="-2" attributes="0"/>
@@ -3966,6 +3966,7 @@
                 <Component class="javax.swing.JTextField" name="txtPhanTramGiam">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="0"/>
+                    <Property name="toolTipText" type="java.lang.String" value="Gi&#x1ea3;m gi&#xe1; cho to&#xe0;n h&#xf3;a &#x111;&#x1a1;n"/>
                   </Properties>
                   <Events>
                     <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="txtPhanTramGiamFocusLost"/>

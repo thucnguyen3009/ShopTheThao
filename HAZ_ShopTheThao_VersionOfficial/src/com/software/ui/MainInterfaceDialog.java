@@ -3364,6 +3364,7 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
         lblTC.setText("Tiền Cần Thanh Toán: ");
 
         txtPhanTramGiam.setText("0");
+        txtPhanTramGiam.setToolTipText("Giảm giá cho toàn hóa đơn");
         txtPhanTramGiam.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 txtPhanTramGiamFocusLost(evt);
@@ -3424,7 +3425,7 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
                                 .addGap(0, 0, 0)
                                 .addComponent(txtPhanTramGiam, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(lblTienGiamHD, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(lblTienGiamHD, javax.swing.GroupLayout.DEFAULT_SIZE, 77, Short.MAX_VALUE)
                                 .addGap(0, 0, 0)
                                 .addComponent(lblThanhTienGiamHD, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlThongTinHoaDonTamLayout.createSequentialGroup()
@@ -3435,8 +3436,8 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
                     .addComponent(jScrollPane3)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlThongTinHoaDonTamLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(lblSoLuongHD, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, Short.MAX_VALUE)
+                        .addComponent(lblSoLuongHD, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(18, 18, 18)
                         .addComponent(txtSoLuongHD, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(lblGhi, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
