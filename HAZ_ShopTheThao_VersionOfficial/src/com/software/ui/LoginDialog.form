@@ -170,7 +170,7 @@
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jLabel3" max="32767" attributes="0"/>
                               <Group type="102" attributes="0">
-                                  <Component id="txtPass" pref="282" max="32767" attributes="0"/>
+                                  <Component id="pwdPass" pref="282" max="32767" attributes="0"/>
                                   <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                                   <Component id="lblAnHienPass" min="-2" pref="47" max="-2" attributes="0"/>
                               </Group>
@@ -197,7 +197,7 @@
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                       <Component id="lblAnHienPass" alignment="0" max="32767" attributes="0"/>
                       <Component id="lblPass" max="32767" attributes="0"/>
-                      <Component id="txtPass" alignment="0" min="-2" pref="36" max="-2" attributes="0"/>
+                      <Component id="pwdPass" alignment="0" min="-2" pref="36" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -222,6 +222,10 @@
               </Border>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="txtUserFocusGained"/>
+            <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="txtUserFocusLost"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="lblUser">
           <Properties>
@@ -248,6 +252,9 @@
               <Color id="Hand Cursor"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblAnHienPassMouseClicked"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="lblPass">
           <Properties>
@@ -257,7 +264,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JPasswordField" name="txtPass">
+        <Component class="javax.swing.JPasswordField" name="pwdPass">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="14" style="0"/>
@@ -274,6 +281,11 @@
               </Border>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="pwdPassFocusGained"/>
+            <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="pwdPassFocusLost"/>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="pwdPassMouseClicked"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel2">
         </Component>

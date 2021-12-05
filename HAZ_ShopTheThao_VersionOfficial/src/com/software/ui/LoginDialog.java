@@ -3,8 +3,14 @@
 //* Class: IT16301
 package com.software.ui;
 
+import com.software.dao.NhanVienDAO;
+import com.software.dao.TaiKhoanDAO;
+import com.software.entity.NhanVien;
+import com.software.entity.TaiKhoan;
+import com.software.jdbcHelper.MsgBox;
 import com.software.jdbcHelper.XImage;
 import java.awt.Color;
+import java.util.List;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 
@@ -17,16 +23,123 @@ public class LoginDialog extends javax.swing.JFrame {
     /**
      * Creates new form LoginDialog
      */
+    static String phoneLogin = null;
+    static String positionLogin = null;
+    NhanVienDAO nhanVienDAO = new NhanVienDAO();
+    TaiKhoanDAO taiKhoanDAO = new TaiKhoanDAO();
+    List<NhanVien> listNhanVien;
+    List<TaiKhoan> listTaiKhoan;
+    int dem = 0;
+    int clickFirst = 0;
+
     public LoginDialog() {
         initComponents();
         this.setLocationRelativeTo(null);
         txtUser.setBackground(new java.awt.Color(0, 0, 0, 1));
-        txtPass.setBackground(new java.awt.Color(0, 0, 0, 1));
+        pwdPass.setBackground(new java.awt.Color(0, 0, 0, 1));
         lblTitle.requestFocus();
         this.setIconImage(XImage.getAppIcon());
-        txtPass.setEchoChar((char) 0);
+        pwdPass.setEchoChar((char) 0);
+        lblAnHienPass.setEnabled(false);
     }
 
+    public boolean ValidateFormLogin() {
+        String isPhone = "^[0]+[3_5_7-9]+[0-9]{8}";
+        String isPassWord = "^[a-zA-Z_0-9]{8,}";
+        if (txtUser.getText().equals("Số Điện Thoại") || txtUser.getText().isEmpty()) {
+            MsgBox.alert(this, "Vui lòng nhập Username");
+            return false;
+        } else if (pwdPass.getText().equals("Mật Khẩu") || pwdPass.getText().isEmpty()) {
+            MsgBox.alert(this, "Vui lòng nhập Password");
+            return false;
+        } else if (!txtUser.getText().matches(isPhone)) {
+            MsgBox.alert(this, "Số điện thoại không hợp lệ!");
+            return false;
+        } else if (!pwdPass.getText().matches(isPassWord)) {
+            MsgBox.alert(this, "Mật khẩu không hợp lệ!\nMật khẩu ít nhất 8 ký tự");
+        }
+        return true;
+    }
+
+    public void Login() {
+        listTaiKhoan = taiKhoanDAO.SelectAll();
+        listNhanVien = nhanVienDAO.SelectAll();
+        int check = 0;
+        String phone = null;
+        String pass = null;
+        String position = null;
+        for (int i = 0; i < listNhanVien.size(); i++) {
+            if (txtUser.getText().equals(listNhanVien.get(i).getSoDienThoai())) {
+                check = 1;
+                phone = txtUser.getText();
+                position = listNhanVien.get(i).getMaChucVu();
+                break;
+            }
+        }
+        if (check == 0) {
+            MsgBox.alert(this, "Số điện thoại hoặc mật khẩu không đúng!\nVui lòng kiểm tra lại!");
+            reset();
+        } else {
+            check = 0;
+            for (int i = 0; i < listTaiKhoan.size(); i++) {
+                if (phone.equals(listTaiKhoan.get(i).getSoDienThoai())) {
+                    check = 1;
+                    pass = listTaiKhoan.get(i).getMatKhau();
+                    break;
+                }
+            }
+            if (check == 1) {
+                if (pwdPass.getText().equals(pass)) {
+                    MsgBox.alert(this, "Đăng nhập thành công!");
+                    phoneLogin = phone;
+                    positionLogin = position;
+                    this.dispose();
+                    new MainInterfaceDialog().setVisible(true);
+                } else {
+                    MsgBox.alert(this, "Số điện thoại hoặc mật khẩu không đúng!\nVui lòng kiểm tra lại!");
+                    reset();
+                }
+            } else {
+                MsgBox.alert(this, "Số điện thoại hoặc mật khẩu không đúng!\nVui lòng kiểm tra lại!");
+                reset();
+            }
+        }
+    }
+
+    public void clickPassword() {
+        if (clickFirst == 0) {
+            pwdPass.setText("");
+            lblAnHienPass.setIcon(new ImageIcon(getClass().getResource("/com/software/icon/hidden.png")));
+            lblAnHienPass.setEnabled(true);
+            pwdPass.setEchoChar('●');
+            dem = 0;
+        }
+        clickFirst ++;
+    }
+    
+    public void clickHidePass() {
+        if (!pwdPass.getText().equals("Mật Khẩu")) {
+            if (dem % 2 != 0) {
+                lblAnHienPass.setIcon(new ImageIcon(getClass().getResource("/com/software/icon/hidden.png")));
+                pwdPass.setEchoChar('●');
+            } else {
+                lblAnHienPass.setIcon(new ImageIcon(getClass().getResource("/com/software/icon/view.png")));
+                pwdPass.setEchoChar((char) 0);
+            }
+            dem++;
+        }
+    }
+    
+    public void reset() {
+        dem = 0;
+        clickFirst = 0;
+        txtUser.setText("Số Điện Thoại");
+        pwdPass.setText("Mật Khẩu");
+        lblAnHienPass.setIcon(new ImageIcon(getClass().getResource("/com/software/icon/view.png")));
+        pwdPass.setEchoChar((char) 0);
+        lblAnHienPass.setEnabled(false);
+        lblLogin.requestFocus();
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -47,7 +160,7 @@ public class LoginDialog extends javax.swing.JFrame {
         lblUser = new javax.swing.JLabel();
         lblAnHienPass = new javax.swing.JLabel();
         lblPass = new javax.swing.JLabel();
-        txtPass = new javax.swing.JPasswordField();
+        pwdPass = new javax.swing.JPasswordField();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         lblClose = new javax.swing.JLabel();
@@ -121,6 +234,14 @@ public class LoginDialog extends javax.swing.JFrame {
         txtUser.setForeground(new java.awt.Color(153, 153, 153));
         txtUser.setText("Số Điện Thoại");
         txtUser.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 4, 0, new java.awt.Color(0, 51, 255)));
+        txtUser.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtUserFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtUserFocusLost(evt);
+            }
+        });
 
         lblUser.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblUser.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/software/icon/steward (1).png"))); // NOI18N
@@ -129,14 +250,32 @@ public class LoginDialog extends javax.swing.JFrame {
         lblAnHienPass.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/software/icon/view.png"))); // NOI18N
         lblAnHienPass.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 4, 0, new java.awt.Color(0, 51, 255)));
         lblAnHienPass.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblAnHienPass.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblAnHienPassMouseClicked(evt);
+            }
+        });
 
         lblPass.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblPass.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/software/icon/smartphone.png"))); // NOI18N
 
-        txtPass.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        txtPass.setForeground(new java.awt.Color(153, 153, 153));
-        txtPass.setText("Mật Khẩu");
-        txtPass.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 4, 0, new java.awt.Color(0, 51, 255)));
+        pwdPass.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        pwdPass.setForeground(new java.awt.Color(153, 153, 153));
+        pwdPass.setText("Mật Khẩu");
+        pwdPass.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 4, 0, new java.awt.Color(0, 51, 255)));
+        pwdPass.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                pwdPassFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                pwdPassFocusLost(evt);
+            }
+        });
+        pwdPass.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                pwdPassMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -157,7 +296,7 @@ public class LoginDialog extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(txtPass, javax.swing.GroupLayout.DEFAULT_SIZE, 282, Short.MAX_VALUE)
+                                .addComponent(pwdPass, javax.swing.GroupLayout.DEFAULT_SIZE, 282, Short.MAX_VALUE)
                                 .addGap(0, 0, 0)
                                 .addComponent(lblAnHienPass, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addGap(14, 14, 14))
@@ -177,7 +316,7 @@ public class LoginDialog extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(lblAnHienPass, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(lblPass, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(txtPass, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(pwdPass, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
@@ -210,8 +349,10 @@ public class LoginDialog extends javax.swing.JFrame {
     }//GEN-LAST:event_lblCloseMouseClicked
 
     private void lblLoginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblLoginMouseClicked
-        this.dispose();
-        new MainInterfaceDialog().setVisible(true);
+        lblLogin.requestFocus();
+        if (ValidateFormLogin() == true) {
+            Login();
+        }
     }//GEN-LAST:event_lblLoginMouseClicked
 
     private void lblQuenMatKhauMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblQuenMatKhauMouseClicked
@@ -244,6 +385,43 @@ public class LoginDialog extends javax.swing.JFrame {
         lblQuenMatKhau.setForeground(new Color(102, 102, 102));
         lblQuenMatKhau.setText("Forgot password?");
     }//GEN-LAST:event_lblQuenMatKhauMouseExited
+
+    private void txtUserFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtUserFocusGained
+        if (txtUser.getText().equals("Số Điện Thoại")) {
+            txtUser.setText(null);
+        }
+    }//GEN-LAST:event_txtUserFocusGained
+
+    private void txtUserFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtUserFocusLost
+        if (txtUser.getText().isEmpty()) {
+            txtUser.setText("Số Điện Thoại");
+        }
+    }//GEN-LAST:event_txtUserFocusLost
+
+    private void pwdPassFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_pwdPassFocusGained
+        clickPassword();
+        if (pwdPass.getText().equals("Mật Khẩu")) {
+            pwdPass.setText(null);
+        }
+    }//GEN-LAST:event_pwdPassFocusGained
+
+    private void pwdPassFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_pwdPassFocusLost
+        if (pwdPass.getText().isEmpty()) {
+            pwdPass.setText("Mật Khẩu");
+            lblAnHienPass.setIcon(new ImageIcon(getClass().getResource("/com/software/icon/view.png")));
+            pwdPass.setEchoChar((char) 0);
+            dem = 0;
+            clickFirst = 0;
+        }
+    }//GEN-LAST:event_pwdPassFocusLost
+
+    private void pwdPassMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pwdPassMouseClicked
+        clickPassword();
+    }//GEN-LAST:event_pwdPassMouseClicked
+
+    private void lblAnHienPassMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblAnHienPassMouseClicked
+        clickHidePass();
+    }//GEN-LAST:event_lblAnHienPassMouseClicked
 
     /**
      * @param args the command line arguments
@@ -296,7 +474,7 @@ public class LoginDialog extends javax.swing.JFrame {
     private javax.swing.JLabel lblQuenMatKhau;
     private javax.swing.JLabel lblTitle;
     private javax.swing.JLabel lblUser;
-    private javax.swing.JPasswordField txtPass;
+    private javax.swing.JPasswordField pwdPass;
     private javax.swing.JTextField txtUser;
     // End of variables declaration//GEN-END:variables
 }

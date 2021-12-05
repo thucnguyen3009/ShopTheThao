@@ -16,7 +16,7 @@ public class TaiKhoanDAO extends SoftwareDAO<TaiKhoan, String>{
     String INSERT_SQL = "INSERT INTO TaiKhoan (SoDienThoai, Pass) VALUES (?, ?)";
     String UPDATE_SQL = "UPDATE TaiKhoan SET Pass = ? WHERE SoDienThoai = ?";
     String DELETE_SQL = "DELETE FROM TaiKhoan WHERE SoDienThoai = ?";
-    String SELECT_ALL_SQL = "SELECT * FROM DonViTinh";
+    String SELECT_ALL_SQL = "SELECT * FROM TaiKhoan";
     String SELECT_BY_ID_SQL = "SELECT * FROM TaiKhoan WHERE SoDienThoai = ?";
     @Override
     public void insert(TaiKhoan entity) {
@@ -64,9 +64,10 @@ public class TaiKhoanDAO extends SoftwareDAO<TaiKhoan, String>{
         try {
             ResultSet rs = XJdbc.query(sql, args);
             while (rs.next()) {
-                TaiKhoan donVi = new TaiKhoan();
-                donVi.setSoDienThoai(rs.getString("SoDienThoai"));
-                donVi.setMatKhau(rs.getString("Pass"));
+                TaiKhoan taiKhoan = new TaiKhoan();
+                taiKhoan.setSoDienThoai(rs.getString("SoDienThoai"));
+                taiKhoan.setMatKhau(rs.getString("Pass"));
+                list.add(taiKhoan);
             }
             rs.getStatement().getConnection().close();
             return list;
