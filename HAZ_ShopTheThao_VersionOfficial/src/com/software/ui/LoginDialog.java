@@ -61,6 +61,7 @@ public class LoginDialog extends javax.swing.JFrame {
         return true;
     }
 
+    @SuppressWarnings("null")
     public void Login() {
         listTaiKhoan = taiKhoanDAO.SelectAll();
         listNhanVien = nhanVienDAO.SelectAll();

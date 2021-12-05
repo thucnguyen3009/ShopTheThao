@@ -15,7 +15,7 @@ public class HoaDonChiTietDAO extends SoftwareDAO<HoaDonChiTiet, Integer> {
 
     String INSERT_SQL = "INSERT INTO ChiTietHoaDon (MaHDCT, MaHD, MaSP, SoLuong, DonGia) VALUES (?, ?, ?, ?, ?)";
     String UPDATE_SQL = "UPDATE ChiTietHoaDon SET MaSP = ?, SoLuong = ? WHERE MaHDCT = ? AND MaSP = ?";
-    String DELETE_SQL = "DELETE FROM ChiTietHoaDon WHERE MaHD = ? AND MaHDCT= ?";
+    String DELETE_SQL = "DELETE FROM ChiTietHoaDon WHERE MaHD = ?";
     String SELECT_ALL_SQL = "SELECT * FROM ChiTietHoaDon";
     String SELECT_BY_ID_SQL = "SELECT * FROM ChiTietHoaDon WHERE MaHDCT = ?";
     String FIND_MAHDCT_MAX = "SELECT * FROM ChiTietHoaDon ORDER BY MaHDCT ASC";
@@ -48,9 +48,9 @@ public class HoaDonChiTietDAO extends SoftwareDAO<HoaDonChiTiet, Integer> {
     public void delete(Integer ID) {
     }
 
-    public void delete(Integer maHD, Integer maHDCT) {
+    public void deletes(Integer maHD) {
         try {
-            XJdbc.update(DELETE_SQL, maHD, maHDCT);
+            XJdbc.update(DELETE_SQL, maHD);
         } catch (SQLException ex) {
         }
     }
