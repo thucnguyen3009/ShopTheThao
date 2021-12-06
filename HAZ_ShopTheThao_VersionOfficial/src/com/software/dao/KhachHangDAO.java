@@ -81,8 +81,8 @@ public class KhachHangDAO extends SoftwareDAO<KhachHang, Integer> {
     }
     
     public List<KhachHang> selectByKeyWord(String keyword) {
-        String sql = "SELECT * FROM KhachHang WHERE MaKH LIKE ? OR TenKH LIKE ? OR SoDT LIKE ?";
-        return SelectBySQL(sql, "%" + keyword + "%", "%" + keyword + "%", "%" + keyword + "%");
+        String sql = "SELECT * FROM KhachHang WHERE TenKH LIKE ? OR SoDT = ?";
+        return SelectBySQL(sql, "%" + keyword + "%", "%" + keyword + "%");
     }
     public List<KhachHang> SelectByIDS(Integer ID) {
         List<KhachHang> list = this.SelectBySQL(SELECT_BY_ID_SQL, ID);

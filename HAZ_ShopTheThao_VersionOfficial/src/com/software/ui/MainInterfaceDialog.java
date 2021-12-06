@@ -885,7 +885,7 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
             listKH = daoKH.SelectAll();
         }
         if (chon == 2) {
-            listKH = daoKH.selectByKeyWord(txtTimKiemDV.getText());
+            listKH = daoKH.selectByKeyWord(txtTimKiemKH.getText());
         }
         Object rowData[] = new Object[3];
         for (int i = 0; i < listKH.size(); i++) {
@@ -940,6 +940,7 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
             this.ResetKH();
             MsgBox.alert(this, "Thêm khách hàng mới thành công!");
         }
+        lblThemKH.requestFocus();
     }
 
     public void UpdateKH() {
@@ -949,6 +950,7 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
             this.FillTableKH(1);
             MsgBox.alert(this, "Chỉnh sửa khách hàng " + txtMaKH.getText() + " thành công!");
         }
+        lblSuaKH.requestFocus();
     }
 
     public void DeleteKH() {
@@ -975,6 +977,7 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
                 MsgBox.alert(this, "Khách hàng đã được lập hóa đơn!\nKhông được xóa khách hàng này!");
             }
         }
+        lblXoaKH.requestFocus();
     }
 
     public void ResetKH() {
@@ -985,6 +988,7 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
         txtTenKhachHangKH.setText("");
         txtSdtKH.setText("");
         this.UpdateStatusKH();
+        lblResetKH.requestFocus();
     }
 
     public void EditKH() {
@@ -4149,6 +4153,19 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
 
         txtTimKiemKH.setForeground(new java.awt.Color(204, 204, 204));
         txtTimKiemKH.setText("Tìm Kiếm . . .");
+        txtTimKiemKH.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtTimKiemKHFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtTimKiemKHFocusLost(evt);
+            }
+        });
+        txtTimKiemKH.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtTimKiemKHKeyReleased(evt);
+            }
+        });
 
         lblTimKiemKH.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTimKiemKH.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/software/icon/searching.png"))); // NOI18N
@@ -5289,6 +5306,22 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
     private void lblResetKHMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblResetKHMouseClicked
         this.ResetKH();
     }//GEN-LAST:event_lblResetKHMouseClicked
+
+    private void txtTimKiemKHKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTimKiemKHKeyReleased
+        this.TimKhachHangKH();
+    }//GEN-LAST:event_txtTimKiemKHKeyReleased
+
+    private void txtTimKiemKHFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtTimKiemKHFocusGained
+        if (txtTimKiemKH.getText().equals("Tìm Kiếm . . .")) {
+            txtTimKiemKH.setText(null);
+        }
+    }//GEN-LAST:event_txtTimKiemKHFocusGained
+
+    private void txtTimKiemKHFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtTimKiemKHFocusLost
+        if (txtTimKiemKH.getText().isEmpty()) {
+            txtTimKiemKH.setText("Tìm Kiếm . . .");
+        }
+    }//GEN-LAST:event_txtTimKiemKHFocusLost
 
     /**
      * @param args the command line arguments

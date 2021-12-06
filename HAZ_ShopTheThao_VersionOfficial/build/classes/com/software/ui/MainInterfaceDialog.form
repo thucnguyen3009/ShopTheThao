@@ -4789,6 +4789,11 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="T&#xec;m Ki&#x1ebf;m . . ."/>
               </Properties>
+              <Events>
+                <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="txtTimKiemKHFocusGained"/>
+                <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="txtTimKiemKHFocusLost"/>
+                <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtTimKiemKHKeyReleased"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="lblTimKiemKH">
               <Properties>
