@@ -874,7 +874,160 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
 
     /*========================================================================*/
  /*10. Các hàm sử dụng chung cho KH:*/
- /*========================================================================*/
+    KhachHangDAO daoKH = new KhachHangDAO();
+    int indexKH = -1;
+    List<KhachHang> listKH = daoKH.SelectAll();
+
+    public void FillTableKH(int chon) {
+        DefaultTableModel model = (DefaultTableModel) tblThongTinKH.getModel();
+        model.setRowCount(0);
+        if (chon == 1) {
+            listKH = daoKH.SelectAll();
+        }
+        if (chon == 2) {
+            listKH = daoKH.selectByKeyWord(txtTimKiemDV.getText());
+        }
+        Object rowData[] = new Object[3];
+        for (int i = 0; i < listKH.size(); i++) {
+            rowData[0] = listKH.get(i).getMaKhachHang();
+            rowData[1] = listKH.get(i).getTenKhachHang();
+            rowData[2] = listKH.get(i).getSoDT();
+            model.addRow(rowData);
+        }
+        this.UpdateStatusKH();
+    }
+
+    public void TimKhachHangKH() {
+        if (txtTimKiemKH.getText().isEmpty() || txtTimKiemKH.getText().equals("Tìm Kiếm. . .")) {
+            this.FillTableKH(1);
+        } else {
+            this.FillTableKH(2);
+        }
+    }
+
+    public void SetFormKH(KhachHang kh) {
+        txtMaKH.setText(String.valueOf(kh.getMaKhachHang()));
+        txtTenKhachHangKH.setText(kh.getTenKhachHang());
+        txtSdtKH.setText(kh.getSoDT());
+    }
+
+    public KhachHang GetFormKH() {
+        KhachHang kh = new KhachHang();
+        kh.setMaKhachHang(Integer.valueOf(txtMaKH.getText()));
+        kh.setTenKhachHang(txtTenKhachHangKH.getText());
+        kh.setSoDT(txtSdtKH.getText());
+        return kh;
+    }
+
+    public Integer TaoMaKhachHang() {
+        Integer maKhachHang = 0;
+        KhachHangDAO dao = new KhachHangDAO();
+        List<KhachHang> list = new ArrayList<>();
+        list = dao.SelectAll();
+        if (list.isEmpty()) {
+            maKhachHang = 1;
+        } else {
+            maKhachHang = list.get(list.size() - 1).getMaKhachHang() + 1;
+        }
+        return maKhachHang;
+    }
+
+    public void InsertKH() {
+        KhachHang kh = GetFormKH();
+        if (CheckKH(1) == true) {
+            daoKH.insert(kh);
+            this.FillTableKH(1);
+            this.ResetKH();
+            MsgBox.alert(this, "Thêm khách hàng mới thành công!");
+        }
+    }
+
+    public void UpdateKH() {
+        KhachHang dvt = GetFormKH();
+        if (CheckKH(0) == true) {
+            daoKH.update(dvt);
+            this.FillTableKH(1);
+            MsgBox.alert(this, "Chỉnh sửa khách hàng " + txtMaKH.getText() + " thành công!");
+        }
+    }
+
+    public void DeleteKH() {
+        if (indexKH == -1) {
+            MsgBox.alert(this, "Vui lòng chọn khách hàng!");
+        } else {
+            Integer maKhachHang = Integer.valueOf(String.valueOf(tblThongTinKH.getValueAt(indexKH, 0)));
+            listKH = daoKH.selectByKhachHanngInHoaDon(maKhachHang);
+            if (listKH.isEmpty()) {
+                if (maKhachHang == 1) {
+                    MsgBox.alert(this, "Thông Tin Khách Hàng Mặc Định!\nKhông Được Xóa Thông Tin Này!");
+                } else {
+                    boolean n = MsgBox.confirm(this, "Bạn chắc chắn muốn xóa khách hàng này không???");
+                    if (n == true) {
+                        daoKH.delete(maKhachHang);
+                        this.FillTableKH(1);
+                        this.ResetKH();
+                        MsgBox.alert(this, "Xóa thành công khách hàng " + maKhachHang + " !");
+                    } else {
+                        MsgBox.alert(this, "Đã hoàn tác lệnh xóa!");
+                    }
+                }
+            } else {
+                MsgBox.alert(this, "Khách hàng đã được lập hóa đơn!\nKhông được xóa khách hàng này!");
+            }
+        }
+    }
+
+    public void ResetKH() {
+        KhachHang kh = new KhachHang();
+        this.SetFormKH(kh);
+        this.indexKH = -1;
+        txtMaKH.setText(String.valueOf(TaoMaKhachHang()));
+        txtTenKhachHangKH.setText("");
+        txtSdtKH.setText("");
+        this.UpdateStatusKH();
+    }
+
+    public void EditKH() {
+        Integer maKH = Integer.valueOf(String.valueOf(tblThongTinKH.getValueAt(this.indexKH, 0)));
+        KhachHang kh = daoKH.SelectByID(maKH);
+        this.SetFormKH(kh);
+        txtMaKH.setEnabled(false);
+    }
+
+    public void UpdateStatusKH() {
+        if (indexKH == -1) {
+            lblSuaKH.setEnabled(false);
+            lblThemKH.setEnabled(true);
+        } else {
+            lblSuaKH.setEnabled(true);
+            lblThemKH.setEnabled(false);
+        }
+    }
+
+    public boolean CheckKH(int mucDich) {
+        boolean kiemTraKH = true;
+        listKH = daoKH.SelectAll();
+        String sdt = txtSdtKH.getText();
+        if (txtTenKhachHangKH.getText().trim().isEmpty()) {
+            MsgBox.alert(this, "Vui lòng nhập tên khách hàng!");
+            kiemTraKH = false;
+        } else if (txtSdtKH.getText().isEmpty()) {
+            MsgBox.alert(this, "Vui lòng nhập số điện thoại!");
+            kiemTraKH = false;
+        } else {
+            for (int i = 0; i < listKH.size(); i++) {
+                if (mucDich == 1) {
+                    if (sdt.equals(listKH.get(i).getSoDT())) {
+                        MsgBox.alert(this, "Số điện thoại khách hàng đã tồn tại!");
+                        kiemTraKH = false;
+                    }
+                }
+            }
+        }
+        return kiemTraKH;
+    }
+
+    /*========================================================================*/
  /*11. Các hàm sử dụng chung cho DoanhThu:*/
  /*========================================================================*/
     @SuppressWarnings("unchecked")
@@ -3832,6 +3985,9 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
         lblMaKH.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lblMaKH.setText("Mã Khách Hàng");
 
+        txtMaKH.setEditable(false);
+        txtMaKH.setEnabled(false);
+
         lblTenKhachHangKH.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lblTenKhachHangKH.setText("Tên Khách Hàng");
 
@@ -3848,6 +4004,9 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
         lblThemKH.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lblThemKH.setOpaque(true);
         lblThemKH.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblThemKHMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 lblThemKHMouseEntered(evt);
             }
@@ -3866,6 +4025,9 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
         lblSuaKH.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lblSuaKH.setOpaque(true);
         lblSuaKH.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblSuaKHMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 lblSuaKHMouseEntered(evt);
             }
@@ -3884,6 +4046,9 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
         lblXoaKH.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lblXoaKH.setOpaque(true);
         lblXoaKH.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblXoaKHMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 lblXoaKHMouseEntered(evt);
             }
@@ -3895,6 +4060,11 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
         lblResetKH.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblResetKH.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/software/icon/refresh.png"))); // NOI18N
         lblResetKH.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblResetKH.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblResetKHMouseClicked(evt);
+            }
+        });
 
         lblTitleThongTinKH.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         lblTitleThongTinKH.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -3968,6 +4138,11 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
+            }
+        });
+        tblThongTinKH.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblThongTinKHMouseClicked(evt);
             }
         });
         jScrollPane15.setViewportView(tblThongTinKH);
@@ -4394,6 +4569,8 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
             this.TrieuHoiCard(pnlChinh, "khachHang");
             manHinhHienThi = 5;
             this.ManHinhHienThi();
+            this.FillTableKH(1);
+            this.TaoMaKhachHang();
         }
     }//GEN-LAST:event_lblKhachHangIconMouseClicked
 
@@ -4402,6 +4579,8 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
             this.TrieuHoiCard(pnlChinh, "khachHang");
             manHinhHienThi = 5;
             this.ManHinhHienThi();
+            this.FillTableKH(1);
+            txtMaKH.setText(String.valueOf(TaoMaKhachHang()));
         }
     }//GEN-LAST:event_lblKhachHangMouseClicked
 
@@ -5086,6 +5265,30 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
     private void lblResetHDCTMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblResetHDCTMouseClicked
         this.ResetHoaDonDangXem();
     }//GEN-LAST:event_lblResetHDCTMouseClicked
+
+    private void lblThemKHMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblThemKHMouseClicked
+        this.InsertKH();
+    }//GEN-LAST:event_lblThemKHMouseClicked
+
+    private void lblSuaKHMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblSuaKHMouseClicked
+        this.UpdateKH();
+    }//GEN-LAST:event_lblSuaKHMouseClicked
+
+    private void lblXoaKHMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblXoaKHMouseClicked
+        this.DeleteKH();
+    }//GEN-LAST:event_lblXoaKHMouseClicked
+
+    private void tblThongTinKHMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblThongTinKHMouseClicked
+        if (evt.getClickCount() == 2) {
+            indexKH = tblThongTinKH.getSelectedRow();
+            this.EditKH();
+            this.UpdateStatusKH();
+        }
+    }//GEN-LAST:event_tblThongTinKHMouseClicked
+
+    private void lblResetKHMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblResetKHMouseClicked
+        this.ResetKH();
+    }//GEN-LAST:event_lblResetKHMouseClicked
 
     /**
      * @param args the command line arguments

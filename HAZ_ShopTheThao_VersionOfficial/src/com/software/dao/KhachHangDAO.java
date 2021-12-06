@@ -91,4 +91,8 @@ public class KhachHangDAO extends SoftwareDAO<KhachHang, Integer> {
         }
         return list;
     }
+    public List<KhachHang> selectByKhachHanngInHoaDon(Integer maKH) {
+        String sql = "SELECT * FROM KhachHang WHERE MaKH = ? and MaKH in (SELECT MaKH FROM HDBan)";
+        return this.SelectBySQL(sql, maKH);
+    }
 }
