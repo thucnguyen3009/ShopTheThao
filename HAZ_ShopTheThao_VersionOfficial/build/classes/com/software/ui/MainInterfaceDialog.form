@@ -532,7 +532,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="Xin Ch&#xe0;o, Nguy&#x1ec5;n &#x110;o&#xe0;n Ch&#xed; Th&#x1ee9;c!!!"/>
+            <Property name="text" type="java.lang.String" value="Xin Ch&#xe0;o, !!"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="lblThongKeIcon">
@@ -3898,7 +3898,6 @@
                 <Component class="javax.swing.JTextField" name="txtMaNhanVienHD">
                   <Properties>
                     <Property name="editable" type="boolean" value="false"/>
-                    <Property name="text" type="java.lang.String" value="1"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="lblTenThuNgan">
@@ -4073,7 +4072,7 @@
                                               <Component id="txtMaHoaDonHDCT" min="-2" pref="209" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
-                                      <EmptySpace min="0" pref="10" max="32767" attributes="0"/>
+                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                               <EmptySpace min="-2" max="-2" attributes="0"/>

@@ -18,6 +18,7 @@ public class NhanVienDAO extends SoftwareDAO<NhanVien, String> {
     String DELETE_SQL = "DELETE FROM NHANVIEN WHERE MANV = ?";
     String SELECT_ALL_SQL = "SELECT * FROM NHANVIEN";
     String SELECT_BY_ID_SQL = "SELECT * FROM NHANVIEN WHERE MANV = ?";
+    String SELECT_BY_SDT_SQL = "SELECT * FROM NHANVIEN WHERE SoDienThoai = ?";
 
     @Override
     public void insert(NhanVien entity) {
@@ -108,6 +109,13 @@ public class NhanVienDAO extends SoftwareDAO<NhanVien, String> {
     }
     public List<NhanVien> SelectByIDS(String ID) {
         List<NhanVien> list = this.SelectBySQL(SELECT_BY_ID_SQL, ID);
+        if (list.isEmpty()) {
+            return null;
+        }
+        return list;
+    }
+    public List<NhanVien> SelectBySDT(String SDT) {
+        List<NhanVien> list = this.SelectBySQL(SELECT_BY_SDT_SQL, SDT);
         if (list.isEmpty()) {
             return null;
         }

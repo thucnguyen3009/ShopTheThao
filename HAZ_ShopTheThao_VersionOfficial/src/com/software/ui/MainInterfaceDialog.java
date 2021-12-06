@@ -48,6 +48,8 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
     public int indexSlideShow = 0; //Biến nhận biết hình ảnh slideshow.
     public Timer runSlide, hienAn, time;
     public int kiemTraHienAn = 0;
+    NhanVienDAO nhanVienDangNhapDAO = new NhanVienDAO();
+    List<NhanVien> nhanVienDangNhap;
 
     public MainInterfaceDialog() {
         initComponents();
@@ -70,6 +72,8 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
         lblPreSlideShow.setBackground(new java.awt.Color(0, 0, 0, 1));
         lblNextSlideShow.setBackground(new java.awt.Color(0, 0, 0, 1));
         this.RunSlideShow();
+        this.NhanVienDangNhap();
+        this.FillThongTinThuNgan();
     }
 
     public void TrieuHoiCard(JPanel pnlJPanel, String cardName) {
@@ -275,13 +279,19 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
             SimpleDateFormat dinhDangNgay = new SimpleDateFormat("dd-MM-YYYY");
             lblDate.setText("Date: " + dinhDangNgay.format(ngay));
             lblTime.setText("Time: " + dinhDangGio.format(gio));
-            SimpleDateFormat dinhDangNgayTxt = new SimpleDateFormat("YYYY-MM-dd");
-            String ngayLapHD = dinhDangNgayTxt.format(ngay);
+            String ngayLapHD = dinhDangNgay.format(ngay);
             txtNgayLapHD.setText(ngayLapHD);
         });
         time.start();
     }
 
+    public List<NhanVien> NhanVienDangNhap() {
+        nhanVienDangNhap = nhanVienDangNhapDAO.SelectBySDT(LoginDialog.phoneLogin);
+        if (nhanVienDangNhap.isEmpty()) {
+            return null;
+        }
+        return nhanVienDangNhap;
+    }
     /*========================================================================*/
  /*2. Các hàm sử dụng chung cho NhanVien:*/
  /*========================================================================*/
@@ -338,20 +348,10 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
         }
     }
 
-    public List<HoaDonChiTiet> HoaDonChiTietTemp() {
-        List<HoaDonChiTiet> list = new ArrayList<>();
-        HoaDonChiTiet hdct = new HoaDonChiTiet();
-        for (int i = 0; i < tblHoaDon.getRowCount(); i++) {
-            String maSp = (String) tblHoaDon.getValueAt(i, 0);
-            Integer sl = (Integer) tblHoaDon.getValueAt(i, 2);
-            hdct.setMaHD(null);
-            hdct.setMaHDCT(null);
-            hdct.setMaSP(maSp);
-            hdct.setSoLuong(sl);
-            hdct.setDonGia(0.0);
-            list.add(hdct);
-        }
-        return list;
+    public void FillThongTinThuNgan() {
+        lblChao.setText("Xin Chào, " + nhanVienDangNhap.get(0).getTenNV() + "!!!");
+        txtMaNhanVienHD.setText(nhanVienDangNhap.get(0).getMaNV());
+        txtTenNhanVienHD.setText(nhanVienDangNhap.get(0).getTenNV());
     }
 
     public void FillTableSPHD(int mucDich) {
@@ -359,34 +359,30 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
         if (tblHoaDon.getRowCount() == 0) {
             model.setRowCount(0);
             if (mucDich == 1) {
-                listSPHD = sanPhamHD.SelectAll();
+                listSPHD = sanPhamHD.SelectSanPhamDangKinhDoanh();
             }
             if (mucDich == 2) {
                 listSPHD = sanPhamHD.selectByKeyWord(txtTimSanPhamHD.getText());
             }
             Object rowData[] = new Object[2];
             for (int i = 0; i < listSPHD.size(); i++) {
-                if (listSPHD.get(i).getTrangThai().equals("Đang Kinh Doanh")) {
-                    rowData[0] = listSPHD.get(i).getTenSanPham();
-                    rowData[1] = listSPHD.get(i).getSoLuong();
-                    model.addRow(rowData);
-                }
+                rowData[0] = listSPHD.get(i).getTenSanPham();
+                rowData[1] = listSPHD.get(i).getSoLuong();
+                model.addRow(rowData);
             }
         } else {
             model.setRowCount(0);
             if (mucDich == 1) {
-                listSPHD = sanPhamHD.SelectAll();
+                listSPHD = sanPhamHD.SelectSanPhamDangKinhDoanh();
             }
             if (mucDich == 2) {
                 listSPHD = sanPhamHD.selectByKeyWord(txtTimSanPhamHD.getText());
             }
             Object rowData[] = new Object[2];
             for (int i = 0; i < listSPHD.size(); i++) {
-                if (listSPHD.get(i).getTrangThai().equals("Đang Kinh Doanh")) {
-                    rowData[0] = listSPHD.get(i).getTenSanPham();
-                    rowData[1] = listSPHD.get(i).getSoLuong();
-                    model.addRow(rowData);
-                }
+                rowData[0] = listSPHD.get(i).getTenSanPham();
+                rowData[1] = listSPHD.get(i).getSoLuong();
+                model.addRow(rowData);
             }
             for (int i = 0; i < listSPHD.size(); i++) {
                 for (int j = 0; j < tblHoaDon.getRowCount(); j++) {
@@ -453,7 +449,7 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
         int indexSanPhamCanTim = -1;
         indexHD = tblHoaDon.getSelectedRow();
         String maSP = (String) tblHoaDon.getValueAt(indexHD, 0);
-        listSPHD = sanPhamHD.SelectAll();
+        listSPHD = sanPhamHD.SelectSanPhamDangKinhDoanh();
         for (int i = 0; i < listSPHD.size(); i++) {
             if (listSPHD.get(i).getMaSanPham().equals(maSP)) {
                 indexSanPhamCanTim = i;
@@ -672,7 +668,7 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
     public HoaDon getFormHoaDonHD() {
         HoaDon hd = new HoaDon();
         hd.setMaHD(maHoaDonHD);
-        hd.setMaNV("1");
+        hd.setMaNV(nhanVienDangNhap.get(0).getMaNV());
         hd.setMaKH(Integer.valueOf(txtMaKhachHangHD.getText()));
         hd.setPhanTramGiam(Integer.valueOf(txtPhanTramGiam.getText()));
         hd.setGiaGiam(TinhTienGiam());
@@ -706,7 +702,7 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
             hdct.setDonGia(Double.valueOf(donGia));
             hoaDonChiTietHD.insert(hdct);
             int index = 0;
-            listSPHD = sanPhamHD.SelectAll();
+            listSPHD = sanPhamHD.SelectSanPhamDangKinhDoanh();
             for (int j = 0; j < listSPHD.size(); j++) {
                 if (listSPHD.get(j).getMaSanPham().equals(maSP)) {
                     index = j;
@@ -1464,7 +1460,7 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
         lblChao.setFont(new java.awt.Font("Segoe UI", 2, 14)); // NOI18N
         lblChao.setForeground(new java.awt.Color(255, 255, 255));
         lblChao.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblChao.setText("Xin Chào, Nguyễn Đoàn Chí Thức!!!");
+        lblChao.setText("Xin Chào, !!");
 
         lblThongKeIcon.setBackground(new java.awt.Color(0, 153, 255));
         lblThongKeIcon.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -3322,7 +3318,6 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
         lblMaNhanVienHD.setText("Mã NV");
 
         txtMaNhanVienHD.setEditable(false);
-        txtMaNhanVienHD.setText("1");
 
         lblTenThuNgan.setText("Nhân Viên");
 
@@ -3766,7 +3761,7 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
                                         .addComponent(lblMaThuNganHDCT1, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(0, 0, 0)
                                         .addComponent(txtMaHoaDonHDCT, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(0, 10, Short.MAX_VALUE)))
+                                .addGap(0, 0, Short.MAX_VALUE)))
                         .addContainerGap())
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlXemHoaDonLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
@@ -4479,6 +4474,8 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
             }
             this.FillTableKHHD(1);
             this.FillTableSPHD(1);
+            this.FillThongTinThuNgan();
+            this.FillThongTinThuNgan();
         }
     }//GEN-LAST:event_lblLapHoaDonMouseClicked
 
@@ -4533,6 +4530,7 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
             }
             this.FillTableKHHD(1);
             this.FillTableSPHD(1);
+            this.FillThongTinThuNgan();
         }
     }//GEN-LAST:event_lblLapHoaDonIconMouseClicked
 

@@ -18,6 +18,7 @@ public class SanPhamDAO extends SoftwareDAO<SanPham, String> {
     String DELETE_SQL = "DELETE FROM SanPham WHERE MaSP = ?";
     String SELECT_ALL_SQL = "SELECT * FROM SanPham";
     String SELECT_BY_ID_SQL = "SELECT * FROM SanPham WHERE MaSP = ?";
+    String SELECT_SP_DANGKINHDOANH = "SELECT * FROM SanPham WHERE TrangThai = N'Đang Kinh Doanh'";
 
     @Override
     public void insert(SanPham entity) {
@@ -103,5 +104,10 @@ public class SanPhamDAO extends SoftwareDAO<SanPham, String> {
             return null;
         }
         return list;
+    } 
+    
+    public List<SanPham> SelectSanPhamDangKinhDoanh() {
+        return this.SelectBySQL(SELECT_SP_DANGKINHDOANH);
     }
+    
 }
