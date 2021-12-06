@@ -539,8 +539,6 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
     public void ResetHD() {
         DefaultTableModel model = (DefaultTableModel) tblHoaDon.getModel();
         model.setRowCount(0);
-        txtMaNhanVienHD.setText(null);
-        txtTenNhanVienHD.setText(null);
         txtMaKhachHangHD.setText(null);
         txtTenKhachHangHD.setText(null);
         txtSdtKhachHangHD.setText(null);
