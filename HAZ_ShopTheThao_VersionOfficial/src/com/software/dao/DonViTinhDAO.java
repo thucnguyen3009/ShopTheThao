@@ -71,6 +71,7 @@ public class DonViTinhDAO extends SoftwareDAO<DonViTinh, String> {
                 donVi.setMaDonVi(rs.getString("MaDonVi"));
                 donVi.setTenDonVi(rs.getString("TenDonVi"));
                 donVi.setMoTa(rs.getString("MoTa"));
+                list.add(donVi);
             }
             rs.getStatement().getConnection().close();
             return list;
@@ -82,5 +83,10 @@ public class DonViTinhDAO extends SoftwareDAO<DonViTinh, String> {
     public List<DonViTinh> selectByKeyWord(String keyword) {
         String sql = "SELECT * FROM DonViTinh WHERE MaDonVi LIKE ? OR TenDonVi LIKE ?";
         return SelectBySQL(sql, "%" + keyword + "%", "%" + keyword + "%");
+    }
+    
+    public List<DonViTinh> selectByDonViInSanPham(String maDVT) {
+        String sql = "SELECT * FROM DonViTinh WHERE MaDonVi = ? and MaDonVi in (select DonViTinh from SanPham)";
+        return this.SelectBySQL(sql, maDVT);
     }
 }

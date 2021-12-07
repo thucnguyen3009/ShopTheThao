@@ -8,14 +8,18 @@
 //* Version: 1.0.0
 package com.software.ui;
 
+import com.software.dao.DonViTinhDAO;
 import com.software.dao.HoaDonChiTietDAO;
 import com.software.dao.HoaDonDAO;
 import com.software.dao.KhachHangDAO;
+import com.software.dao.LoaiSanPhamDAO;
 import com.software.dao.NhanVienDAO;
 import com.software.dao.SanPhamDAO;
+import com.software.entity.DonViTinh;
 import com.software.entity.HoaDon;
 import com.software.entity.HoaDonChiTiet;
 import com.software.entity.KhachHang;
+import com.software.entity.LoaiSanPham;
 import com.software.entity.NhanVien;
 import com.software.entity.SanPham;
 import com.software.jdbcHelper.MsgBox;
@@ -36,6 +40,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 import javax.swing.BorderFactory;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -290,11 +295,498 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
  /*4. Các hàm sử dụng chung cho TaiKhoan:*/
  /*========================================================================*/
  /*5. Các hàm sử dụng chung cho SanPham:*/
- /*========================================================================*/
+    SanPhamDAO daoSP = new SanPhamDAO();
+    int indexSP = -1;
+    List<SanPham> listSP = daoSP.SelectAll();
+
+    LoaiSanPhamDAO daoLoaiSP = new LoaiSanPhamDAO();
+    List<LoaiSanPham> listLoaiSP = daoLoaiSP.SelectAll();
+
+    DonViTinhDAO daoDonViTinh = new DonViTinhDAO();
+    List<DonViTinh> listDonViTinh = daoDonViTinh.SelectAll();
+
+    int indexCboLoai = -1;
+    int indexCboDonVi = -1;
+
+    public void FillTableSP(int chon) {
+        DefaultTableModel model = (DefaultTableModel) tblSanPhamSP.getModel();
+        model.setRowCount(0);
+        if (chon == 1) {
+            listSP = daoSP.SelectAll();
+        }
+        if (chon == 2) {
+            listSP = daoSP.selectByKeyWord(txtTimKiemSanPhamSP.getText());
+        }
+        Object rowData[] = new Object[4];
+        for (int i = 0; i < listSP.size(); i++) {
+            rowData[0] = listSP.get(i).getMaSanPham();
+            rowData[1] = listSP.get(i).getTenSanPham();
+            rowData[2] = listSP.get(i).getSoLuong();
+            rowData[3] = listSP.get(i).getTrangThai();
+            model.addRow(rowData);
+        }
+        this.UpdateStatusSP();
+    }
+
+    public void TimSP() {
+        if (txtTimKiemSanPhamSP.getText().isEmpty() || txtTimKiemSanPhamSP.getText().equals("Tìm Kiếm. . .")) {
+            this.FillTableSP(1);
+        } else {
+            this.FillTableSP(2);
+        }
+    }
+
+    public void FillCboDVT() {
+        DefaultComboBoxModel model = (DefaultComboBoxModel) cboDonViTinhSP.getModel();
+        model.removeAllElements();
+        List<DonViTinh> list = daoDVT.SelectAll();
+        if (list.isEmpty()) {
+            model.addElement("--Chọn đơn vị--");
+        } else {
+            for (int i = 0; i < list.size(); i++) {
+                String dvt = list.get(i).getTenDonVi();
+                model.addElement(dvt);
+            }
+        }
+    }
+
+    public void FillCboL() {
+        DefaultComboBoxModel model = (DefaultComboBoxModel) cboLoaiSP.getModel();
+        model.removeAllElements();
+        List<LoaiSanPham> list = daoLSP.SelectAll();
+        if (list.isEmpty()) {
+            model.addElement("--Chọn loại--");
+        } else {
+            for (int i = 0; i < list.size(); i++) {
+                String lsp = list.get(i).getTenLoai();
+                model.addElement(lsp);
+            }
+        }
+    }
+
+    public void SetFormSP(SanPham sp) {
+        listDonViTinh = daoDonViTinh.SelectAll();
+        listLoaiSP = daoLoaiSP.SelectAll();
+        indexCboDonVi = 0;
+        indexCboLoai = 0;
+        txtTenSanPhamSP.setText(sp.getTenSanPham());
+        txtMaSanPhamSP.setText(sp.getMaSanPham());
+        txtSoLuongSP.setText(String.valueOf(sp.getSoLuong()));
+        txtDonGiaSP.setText(String.valueOf(sp.getGia()));
+        for (int i = 0; i < listDonViTinh.size(); i++) {
+            if (listDonViTinh.get(i).getMaDonVi().equals(sp.getDonViTinh())) {
+                indexCboDonVi = i;
+                break;
+            }
+        }
+        for (int i = 0; i < listLoaiSP.size(); i++) {
+            if (listLoaiSP.get(i).getMaLoai().equals(sp.getLoaiSanPham())) {
+                indexCboLoai = i;
+                break;
+            }
+        }
+        cboDonViTinhSP.setSelectedIndex(indexCboDonVi);
+        cboLoaiSP.setSelectedIndex(indexCboLoai);
+        if (sp.getTrangThai().equals("Đang Kinh Doanh")) {
+            cboTrangThaiSP.setSelectedIndex(0);
+        } else {
+            cboTrangThaiSP.setSelectedIndex(1);
+        }
+    }
+
+    public SanPham GetFormSP() {
+        SanPham sp = new SanPham();
+        listDonViTinh = daoDonViTinh.SelectAll();
+        listLoaiSP = daoLoaiSP.SelectAll();
+        indexCboDonVi = cboDonViTinhSP.getSelectedIndex();
+        indexCboLoai = cboLoaiSP.getSelectedIndex();
+        sp.setMaSanPham(txtMaSanPhamSP.getText());
+        sp.setTenSanPham(txtTenSanPhamSP.getText());
+        sp.setSoLuong(Integer.valueOf(txtSoLuongSP.getText()));
+        sp.setLoaiSanPham(listLoaiSP.get(indexCboLoai).getMaLoai());
+        sp.setDonViTinh(listDonViTinh.get(indexCboDonVi).getMaDonVi());
+        sp.setGia(Double.valueOf(txtDonGiaSP.getText()));
+        sp.setTrangThai(String.valueOf(cboTrangThaiSP.getSelectedItem()));
+        return sp;
+    }
+
+    public void InsertSP() {
+        SanPham sp = GetFormSP();
+        if (CheckSP(1) == true) {
+            daoSP.insert(sp);
+            this.FillTableSP(1);
+            this.ResetSP();
+            MsgBox.alert(this, "Thêm sản phẩm thành công!");
+        }
+    }
+
+    public void UpdateSP() {
+        SanPham sp = GetFormSP();
+        if (CheckSP(0) == true) {
+            daoSP.update(sp);
+            this.FillTableSP(1);
+            MsgBox.alert(this, "Chỉnh sửa sản phẩm " + txtMaSanPhamSP.getText() + " thành công!");
+        }
+    }
+
+    public void DeleteSP() {
+        if (indexSP == -1) {
+            MsgBox.alert(this, "Vui lòng chọn sản phẩm!");
+        } else {
+            String maSanPhamSP = String.valueOf(tblSanPhamSP.getValueAt(indexSP, 0));
+            listSP = daoSP.selectBySanPhamInHoaDon(maSanPhamSP);
+            if (listSP.isEmpty()) {
+                String maSP = txtMaSanPhamSP.getText();
+                boolean n = MsgBox.confirm(this, "Bạn chắc chắn muốn xóa sản phẩm này không???");
+                if (n == true) {
+                    daoSP.delete(maSP);
+                    this.FillTableLSP(1);
+                    this.ResetSP();
+                    MsgBox.alert(this, "Xóa thành công sản phẩm " + maSP + " !");
+                } else {
+                    MsgBox.alert(this, "Đã hoàn tác lệnh xóa!");
+                }
+            } else {
+                MsgBox.alert(this, "Sản phẩm đang được sử dụng!\nKhông được xóa!");
+            }
+        }
+    }
+
+    public void ResetSP() {
+//        SanPham sp = new SanPham();
+//        this.SetFormSP(sp);
+        this.indexSP = -1;
+        txtTenSanPhamSP.setText("");
+        txtMaSanPhamSP.setText("");
+        txtSoLuongSP.setText("");
+        txtDonGiaSP.setText("");
+        cboDonViTinhSP.setSelectedIndex(0);
+        cboLoaiSP.setSelectedIndex(0);
+        cboTrangThaiSP.setSelectedIndex(0);
+        indexCboDonVi = -1;
+        indexCboLoai = -1;
+        this.UpdateStatusSP();
+        txtMaSanPhamSP.setEnabled(true);
+    }
+
+    public void EditSP() {
+        String msSP = (String) tblSanPhamSP.getValueAt(this.indexSP, 0);
+        SanPham sp = daoSP.SelectByID(msSP);
+        this.SetFormSP(sp);
+        txtMaSanPhamSP.setEnabled(false);
+    }
+
+    public void UpdateStatusSP() {
+        if (indexSP == -1) {
+            lblSuaSP.setEnabled(false);
+            lblThemSP.setEnabled(true);
+        } else {
+            lblSuaSP.setEnabled(true);
+            lblThemSP.setEnabled(false);
+        }
+    }
+
+    public boolean CheckSP(int mucDich) {
+        boolean kiemTraSP = true;
+        listSP = daoSP.SelectAll();
+        String maSP = txtMaSanPhamSP.getText();
+        if (txtMaSanPhamSP.getText().trim().isEmpty()) {
+            MsgBox.alert(this, "Vui lòng nhập mã sản phẩm!");
+            kiemTraSP = false;
+        } else if (txtTenSanPhamSP.getText().trim().isEmpty()) {
+            MsgBox.alert(this, "Vui lòng nhập tên sản phẩm!");
+            kiemTraSP = false;
+        } else {
+            for (int i = 0; i < listSP.size(); i++) {
+//              1 là insert
+                if (mucDich == 1) {
+                    if (maSP.equals(listSP.get(i).getMaSanPham())) {
+                        MsgBox.alert(this, "Mã sản phẩm đã tồn tại!");
+                        kiemTraSP = false;
+                    }
+                }
+            }
+        }
+        return kiemTraSP;
+    }
+
+    /*========================================================================*/
  /*6. Các hàm sử dụng chung cho LoaiSP:*/
- /*========================================================================*/
+    LoaiSanPhamDAO daoLSP = new LoaiSanPhamDAO();
+    int indexLSP = -1;
+    List<LoaiSanPham> listLSP = daoLSP.SelectAll();
+
+    public void FillTableLSP(int chon) {
+        DefaultTableModel model = (DefaultTableModel) tblLoaiSanPham.getModel();
+        model.setRowCount(0);
+        if (chon == 1) {
+            listLSP = daoLSP.SelectAll();
+        }
+        if (chon == 2) {
+            listLSP = daoLSP.selectByKeyWord(txtTimLoaiSP.getText());
+        }
+        Object rowData[] = new Object[3];
+        for (int i = 0; i < listLSP.size(); i++) {
+            rowData[0] = listLSP.get(i).getMaLoai();
+            rowData[1] = listLSP.get(i).getTenLoai();
+            rowData[2] = listLSP.get(i).getMoTa();
+            model.addRow(rowData);
+        }
+    }
+
+    public void TimLSP() {
+        if (txtTimLoaiSP.getText().isEmpty() || txtTimLoaiSP.getText().equals("Tìm Kiếm. . .")) {
+            this.FillTableLSP(1);
+        } else {
+            this.FillTableLSP(2);
+        }
+    }
+
+    public void SetFormLSP(LoaiSanPham lsp) {
+        txtMaLoai.setText(lsp.getMaLoai());
+        txtTenLoai.setText(lsp.getTenLoai());
+        txtMoTaLoai.setText(lsp.getMoTa());
+    }
+
+    public LoaiSanPham GetFormLSP() {
+        LoaiSanPham lsp = new LoaiSanPham();
+        lsp.setMaLoai(txtMaLoai.getText());
+        lsp.setTenLoai(txtTenLoai.getText());
+        lsp.setMoTa(txtMoTaLoai.getText());
+        return lsp;
+    }
+
+    public void InsertLSP() {
+        LoaiSanPham lsp = GetFormLSP();
+        if (CheckLSP(1) == true) {
+            daoLSP.insert(lsp);
+            this.FillTableLSP(1);
+            this.ResetLSP();
+            MsgBox.alert(this, "Thêm loại sản phẩm thành công!");
+        }
+    }
+
+    public void UpdateLSP() {
+        LoaiSanPham lsp = GetFormLSP();
+        if (CheckLSP(0) == true) {
+            daoLSP.update(lsp);
+            this.FillTableLSP(1);
+            MsgBox.alert(this, "Chỉnh sửa loại sản phẩm " + txtMaLoai.getText() + " thành công!");
+        }
+    }
+
+    public void DeleteLSP() {
+        if (indexLSP == -1) {
+            MsgBox.alert(this, "Vui lòng chọn loại sản phẩm!");
+        } else {
+            String maLoai = String.valueOf(tblLoaiSanPham.getValueAt(indexLSP, 0));
+            listLSP = daoLSP.selectByLoaiInSanPham(maLoai);
+            if (listLSP.isEmpty()) {
+                String maLSP = txtMaLoai.getText();
+                boolean n = MsgBox.confirm(this, "Bạn chắc chắn muốn xóa mã này không???");
+                if (n == true) {
+                    daoLSP.delete(maLSP);
+                    this.FillTableLSP(1);
+                    this.ResetLSP();
+                    MsgBox.alert(this, "Xóa thành công mã " + maLSP + " !");
+                } else {
+                    MsgBox.alert(this, "Đã hoàn tác lệnh xóa!");
+                }
+            } else {
+                MsgBox.alert(this, "Loại sản phẩm đang được sử dụng!\nKhông được xóa!");
+            }
+        }
+    }
+
+    public void ResetLSP() {
+        LoaiSanPham lsp = new LoaiSanPham();
+        this.SetFormLSP(lsp);
+        this.indexLSP = -1;
+        txtMaLoai.setText("");
+        txtTenLoai.setText("");
+        txtMoTaLoai.setText("");
+        this.UpdateStatusLSP();
+    }
+
+    public void EditLSP() {
+        String msLSP = (String) tblLoaiSanPham.getValueAt(this.indexLSP, 0);
+        LoaiSanPham lsp = daoLSP.SelectByID(msLSP);
+        this.SetFormLSP(lsp);
+        txtMaLoai.setEnabled(false);
+    }
+
+    public void UpdateStatusLSP() {
+        if (indexLSP == -1) {
+            lblSuaLoai.setEnabled(false);
+            lblThemLoai.setEnabled(true);
+        } else {
+            lblSuaLoai.setEnabled(true);
+            lblThemLoai.setEnabled(false);
+        }
+    }
+
+    public boolean CheckLSP(int mucDich) {
+        boolean kiemTraLSP = true;
+        listLSP = daoLSP.SelectAll();
+        String maLSP = txtMaLoai.getText();
+        if (txtMaLoai.getText().trim().isEmpty()) {
+            MsgBox.alert(this, "Vui lòng nhập Loại sản phẩm!");
+            kiemTraLSP = false;
+        } else if (txtTenLoai.getText().trim().isEmpty()) {
+            MsgBox.alert(this, "Vui lòng nhập tên Loại sản phẩm!");
+            kiemTraLSP = false;
+        } else {
+            for (int i = 0; i < listLSP.size(); i++) {
+//              1 là insert
+                if (mucDich == 1) {
+                    if (maLSP.equals(listLSP.get(i).getMaLoai())) {
+                        MsgBox.alert(this, "Mã Loại sản phẩm đã tồn tại!");
+                        kiemTraLSP = false;
+                    }
+                }
+            }
+        }
+        return kiemTraLSP;
+    }
+    /*========================================================================*/
  /*7. Các hàm sử dụng chung cho DonViTinh:*/
- /*========================================================================*/
+    DonViTinhDAO daoDVT = new DonViTinhDAO();
+    int indexDVT = -1;
+    List<DonViTinh> listDVT = daoDVT.SelectAll();
+
+    public void FillTableDVT(int chon) {
+        DefaultTableModel model = (DefaultTableModel) tblDonViTinh.getModel();
+        model.setRowCount(0);
+        if (chon == 1) {
+            listDVT = daoDVT.SelectAll();
+        }
+        if (chon == 2) {
+            listDVT = daoDVT.selectByKeyWord(txtTimKiemDV.getText());
+        }
+        Object rowData[] = new Object[3];
+        for (int i = 0; i < listDVT.size(); i++) {
+            rowData[0] = listDVT.get(i).getMaDonVi();
+            rowData[1] = listDVT.get(i).getTenDonVi();
+            rowData[2] = listDVT.get(i).getMoTa();
+            model.addRow(rowData);
+        }
+    }
+
+    public void TimDVT() {
+        if (txtTimKiemDV.getText().isEmpty() || txtTimKiemDV.getText().equals("Tìm Kiếm. . .")) {
+            this.FillTableDVT(1);
+        } else {
+            this.FillTableDVT(2);
+        }
+    }
+
+    public void SetFormDVT(DonViTinh dvt) {
+        txtMaDonViDV.setText(dvt.getMaDonVi());
+        txtTenDonViDV.setText(dvt.getTenDonVi());
+        txtMoTaDV.setText(dvt.getMoTa());
+    }
+
+    public DonViTinh GetFormDVT() {
+        DonViTinh dvt = new DonViTinh();
+        dvt.setMaDonVi(txtMaDonViDV.getText());
+        dvt.setTenDonVi(txtTenDonViDV.getText());
+        dvt.setMoTa(txtMoTaDV.getText());
+        return dvt;
+    }
+
+    public void InsertDVT() {
+        DonViTinh dvt = GetFormDVT();
+        if (CheckDVT(1) == true) {
+            daoDVT.insert(dvt);
+            this.FillTableDVT(1);
+            this.ResetDVT();
+            MsgBox.alert(this, "Thêm loại mới thành công!");
+        }
+    }
+
+    public void UpdateDVT() {
+        DonViTinh dvt = GetFormDVT();
+        if (CheckDVT(0) == true) {
+            daoDVT.update(dvt);
+            this.FillTableDVT(1);
+            MsgBox.alert(this, "Chỉnh sửa loại sản phẩm " + txtMaDonViDV.getText() + " thành công!");
+        }
+    }
+
+    public void DeleteDVT() {
+        if (indexDVT == -1) {
+            MsgBox.alert(this, "Vui lòng chọn đơn vị!");
+        } else {
+            String maDonVi = String.valueOf(tblDonViTinh.getValueAt(indexDVT, 0));
+            listDVT = daoDVT.selectByDonViInSanPham(maDonVi);
+            if (listDVT.isEmpty()) {
+                String maDVT = txtMaDonViDV.getText();
+                boolean n = MsgBox.confirm(this, "Bạn chắc chắn muốn xóa mã này không???");
+                if (n == true) {
+                    daoDVT.delete(maDVT);
+                    this.FillTableDVT(1);
+                    this.ResetDVT();
+                    MsgBox.alert(this, "Xóa thành công mã " + maDVT + " !");
+                } else {
+                    MsgBox.alert(this, "Đã hoàn tác lệnh xóa!");
+                }
+            } else {
+                MsgBox.alert(this, "Đơn vị đang được sử dụng!\nKhông được xóa!");
+            }
+        }
+    }
+
+    public void ResetDVT() {
+        DonViTinh dvt = new DonViTinh();
+        this.SetFormDVT(dvt);
+        this.indexDVT = -1;
+        txtMaDonViDV.setText("");
+        txtTenDonViDV.setText("");
+        txtMoTaDV.setText("");
+        this.UpdateStatusDVT();
+    }
+
+    public void EditDVT() {
+        String msDVT = (String) tblDonViTinh.getValueAt(this.indexDVT, 0);
+        DonViTinh dvt = daoDVT.SelectByID(msDVT);
+        this.SetFormDVT(dvt);
+        txtMaDonViDV.setEnabled(false);
+    }
+
+    public void UpdateStatusDVT() {
+        if (indexDVT == -1) {
+            lblSuaDV.setEnabled(false);
+            lblThemDV.setEnabled(true);
+        } else {
+            lblSuaDV.setEnabled(true);
+            lblThemDV.setEnabled(false);
+        }
+    }
+
+    public boolean CheckDVT(int mucDich) {
+        boolean kiemTraDVT = true;
+        listDVT = daoDVT.SelectAll();
+        String maDVT = txtMaDonViDV.getText();
+        if (txtMaDonViDV.getText().trim().isEmpty()) {
+            MsgBox.alert(this, "Vui lòng nhập đơn vị tính!");
+            kiemTraDVT = false;
+        } else if (txtTenDonViDV.getText().trim().isEmpty()) {
+            MsgBox.alert(this, "Vui lòng nhập tên đơn vị tính!");
+            kiemTraDVT = false;
+        } else {
+            for (int i = 0; i < listDVT.size(); i++) {
+//              1 là insert
+                if (mucDich == 1) {
+                    if (maDVT.equals(listDVT.get(i).getMaDonVi())) {
+                        MsgBox.alert(this, "Mã đơn vị tính đã tồn tại!");
+                        kiemTraDVT = false;
+                    }
+                }
+            }
+        }
+        return kiemTraDVT;
+    }
+    /*========================================================================*/
  /*8. Các hàm sử dụng chung cho LapHD:*/
     KhachHangDAO khachHangHD = new KhachHangDAO();
     List<KhachHang> listKHHD;
@@ -791,7 +1283,7 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
         }
     }
 
-    public void ChonHoaDon() {        
+    public void ChonHoaDon() {
         DefaultTableModel modelHDCT = (DefaultTableModel) tblThongTinHDCT.getModel();
         modelHDCT.setRowCount(0);
         DecimalFormat decimalFormat = new DecimalFormat("#.##");
@@ -849,7 +1341,7 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
         txtTimKiemHDCT.nextFocus();
         this.FillDanhSachHDCT(1);
     }
-    
+
     public void XoaHoaDon() throws SQLException {
         if (tblThongTinHDCT.getRowCount() != 0) {
             boolean chon = MsgBox.confirm(this, "Bạn chắn chắn muốn xóa HD này?");
@@ -1167,7 +1659,6 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
         jMenu1 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(1370, 774));
         setMinimumSize(new java.awt.Dimension(1370, 774));
         setUndecorated(true);
         setResizable(false);
@@ -1950,7 +2441,7 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
                             .addGroup(pnlThongTinNhanVienLayout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(txtMaNV, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 208, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 194, Short.MAX_VALUE)
                                 .addComponent(lblResetNV))))
                     .addGroup(pnlThongTinNhanVienLayout.createSequentialGroup()
                         .addGroup(pnlThongTinNhanVienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -2026,8 +2517,8 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
                         .addGroup(pnlThongTinNhanVienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(pnlThongTinNhanVienLayout.createSequentialGroup()
                                 .addComponent(lblDiaChiNV, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 113, Short.MAX_VALUE))
-                            .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 147, Short.MAX_VALUE)))
+                                .addGap(0, 87, Short.MAX_VALUE))
+                            .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 121, Short.MAX_VALUE)))
                     .addComponent(lblResetNV))
                 .addGap(52, 52, 52)
                 .addGroup(pnlThongTinNhanVienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -2221,7 +2712,7 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
                             .addComponent(txtTimCV)
                             .addComponent(lblTimCV, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 497, Short.MAX_VALUE)))
+                        .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 482, Short.MAX_VALUE)))
                 .addContainerGap())
         );
 
@@ -2378,7 +2869,7 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
                             .addComponent(txtTimKiemTK)
                             .addComponent(lblTimKiemTK, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane11, javax.swing.GroupLayout.DEFAULT_SIZE, 497, Short.MAX_VALUE)))
+                        .addComponent(jScrollPane11, javax.swing.GroupLayout.DEFAULT_SIZE, 482, Short.MAX_VALUE)))
                 .addContainerGap())
         );
 
@@ -2487,10 +2978,27 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        tblSanPhamSP.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblSanPhamSPMouseClicked(evt);
+            }
+        });
         jScrollPane9.setViewportView(tblSanPhamSP);
 
-        txtTimKiemSanPhamSP.setForeground(new java.awt.Color(204, 204, 204));
         txtTimKiemSanPhamSP.setText("Tìm Kiếm . . .");
+        txtTimKiemSanPhamSP.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtTimKiemSanPhamSPFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtTimKiemSanPhamSPFocusLost(evt);
+            }
+        });
+        txtTimKiemSanPhamSP.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtTimKiemSanPhamSPKeyReleased(evt);
+            }
+        });
 
         lblTimKiemSanPhamSP.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTimKiemSanPhamSP.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/software/icon/searching.png"))); // NOI18N
@@ -2524,6 +3032,9 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
         lblThemSP.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lblThemSP.setOpaque(true);
         lblThemSP.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblThemSPMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 lblThemSPMouseEntered(evt);
             }
@@ -2542,6 +3053,9 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
         lblSuaSP.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lblSuaSP.setOpaque(true);
         lblSuaSP.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblSuaSPMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 lblSuaSPMouseEntered(evt);
             }
@@ -2560,6 +3074,9 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
         lblXoaSP.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lblXoaSP.setOpaque(true);
         lblXoaSP.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblXoaSPMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 lblXoaSPMouseEntered(evt);
             }
@@ -2571,8 +3088,18 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
         lblResetSP.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblResetSP.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/software/icon/refresh.png"))); // NOI18N
         lblResetSP.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblResetSP.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblResetSPMouseClicked(evt);
+            }
+        });
 
         cboDonViTinhSP.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "---Chọn Đơn Vị---" }));
+        cboDonViTinhSP.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cboDonViTinhSPActionPerformed(evt);
+            }
+        });
 
         lblTitleThongTinSP.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         lblTitleThongTinSP.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -2624,7 +3151,7 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
                             .addComponent(lblSuaSP, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(18, 18, 18)
                             .addComponent(lblThemSP, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(66, Short.MAX_VALUE))
+                .addContainerGap(60, Short.MAX_VALUE))
         );
         pnlThongTinSanPhamLayout.setVerticalGroup(
             pnlThongTinSanPhamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2725,6 +3252,9 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
         lblThemLoai.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lblThemLoai.setOpaque(true);
         lblThemLoai.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblThemLoaiMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 lblThemLoaiMouseEntered(evt);
             }
@@ -2743,6 +3273,9 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
         lblSuaLoai.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lblSuaLoai.setOpaque(true);
         lblSuaLoai.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblSuaLoaiMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 lblSuaLoaiMouseEntered(evt);
             }
@@ -2761,6 +3294,9 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
         lblXoaLoai.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lblXoaLoai.setOpaque(true);
         lblXoaLoai.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblXoaLoaiMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 lblXoaLoaiMouseEntered(evt);
             }
@@ -2772,6 +3308,11 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
         lblResetLoai.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblResetLoai.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/software/icon/refresh.png"))); // NOI18N
         lblResetLoai.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblResetLoai.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblResetLoaiMouseClicked(evt);
+            }
+        });
 
         lblTitleThongTinLoai.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         lblTitleThongTinLoai.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -2808,7 +3349,7 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addComponent(lblThemLoai, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jScrollPane16))
-                        .addGap(0, 60, Short.MAX_VALUE)))
+                        .addGap(0, 48, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         pnlThongTinLoaiSanPhamLayout.setVerticalGroup(
@@ -2854,14 +3395,31 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        tblLoaiSanPham.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblLoaiSanPhamMouseClicked(evt);
+            }
+        });
         jScrollPane12.setViewportView(tblLoaiSanPham);
 
         lblTimLoaiSP.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTimLoaiSP.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/software/icon/searching.png"))); // NOI18N
         lblTimLoaiSP.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-        txtTimLoaiSP.setForeground(new java.awt.Color(204, 204, 204));
         txtTimLoaiSP.setText("Tìm Kiếm . . .");
+        txtTimLoaiSP.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtTimLoaiSPFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtTimLoaiSPFocusLost(evt);
+            }
+        });
+        txtTimLoaiSP.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtTimLoaiSPKeyReleased(evt);
+            }
+        });
 
         javax.swing.GroupLayout pnlDanhMucLoaiLayout = new javax.swing.GroupLayout(pnlDanhMucLoai);
         pnlDanhMucLoai.setLayout(pnlDanhMucLoaiLayout);
@@ -2922,6 +3480,9 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
         lblThemDV.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lblThemDV.setOpaque(true);
         lblThemDV.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblThemDVMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 lblThemDVMouseEntered(evt);
             }
@@ -2940,6 +3501,9 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
         lblSuaDV.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lblSuaDV.setOpaque(true);
         lblSuaDV.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblSuaDVMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 lblSuaDVMouseEntered(evt);
             }
@@ -2958,6 +3522,9 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
         lblXoaDV.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lblXoaDV.setOpaque(true);
         lblXoaDV.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblXoaDVMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 lblXoaDVMouseEntered(evt);
             }
@@ -2969,6 +3536,11 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
         lblResetDV.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblResetDV.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/software/icon/refresh.png"))); // NOI18N
         lblResetDV.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lblResetDV.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblResetDVMouseClicked(evt);
+            }
+        });
 
         lblTitleThongTinDonVi.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         lblTitleThongTinDonVi.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -3004,7 +3576,7 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(lblThemDV, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollPane14))
-                .addContainerGap(66, Short.MAX_VALUE))
+                .addContainerGap(58, Short.MAX_VALUE))
         );
         pnlThongTinDonViTinhDVLayout.setVerticalGroup(
             pnlThongTinDonViTinhDVLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3048,14 +3620,31 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        tblDonViTinh.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblDonViTinhMouseClicked(evt);
+            }
+        });
         jScrollPane13.setViewportView(tblDonViTinh);
 
         lblTimKiemDV.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTimKiemDV.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/software/icon/searching.png"))); // NOI18N
         lblTimKiemDV.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-        txtTimKiemDV.setForeground(new java.awt.Color(204, 204, 204));
         txtTimKiemDV.setText("Tìm Kiếm . . .");
+        txtTimKiemDV.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtTimKiemDVFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtTimKiemDVFocusLost(evt);
+            }
+        });
+        txtTimKiemDV.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtTimKiemDVKeyReleased(evt);
+            }
+        });
 
         javax.swing.GroupLayout pnlDanhMucDonViLayout = new javax.swing.GroupLayout(pnlDanhMucDonVi);
         pnlDanhMucDonVi.setLayout(pnlDanhMucDonViLayout);
@@ -3425,7 +4014,7 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
                                 .addGap(0, 0, 0)
                                 .addComponent(txtPhanTramGiam, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(lblTienGiamHD, javax.swing.GroupLayout.DEFAULT_SIZE, 77, Short.MAX_VALUE)
+                                .addComponent(lblTienGiamHD, javax.swing.GroupLayout.DEFAULT_SIZE, 76, Short.MAX_VALUE)
                                 .addGap(0, 0, 0)
                                 .addComponent(lblThanhTienGiamHD, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlThongTinHoaDonTamLayout.createSequentialGroup()
@@ -3485,7 +4074,7 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
                         .addComponent(lblTienGiamHD, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(txtPhanTramGiam, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 16, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(pnlThongTinHoaDonTamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(lblSoLuongHD, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -3756,9 +4345,7 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
                                 .addGroup(pnlXemHoaDonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(txtNgayLapHDCT)
                                     .addComponent(lblTienDcGiamHDCT, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlXemHoaDonLayout.createSequentialGroup()
-                                .addGap(0, 0, 0)
-                                .addComponent(lblResetHDCT, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(lblResetHDCT, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlXemHoaDonLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(pnlXemHoaDonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -3791,14 +4378,10 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
                         .addComponent(jScrollPane4))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlXemHoaDonLayout.createSequentialGroup()
                         .addGroup(pnlXemHoaDonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(pnlXemHoaDonLayout.createSequentialGroup()
-                                .addComponent(lblResetHDCT, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, 0))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlXemHoaDonLayout.createSequentialGroup()
-                                .addGap(0, 0, 0)
-                                .addGroup(pnlXemHoaDonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtMaHoaDonHDCT, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(lblMaThuNganHDCT1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(lblResetHDCT, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlXemHoaDonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(txtMaHoaDonHDCT, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(lblMaThuNganHDCT1, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGroup(pnlXemHoaDonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(pnlXemHoaDonLayout.createSequentialGroup()
                                 .addGroup(pnlXemHoaDonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -3941,7 +4524,7 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(lblThemKH, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(txtSdtKH, javax.swing.GroupLayout.Alignment.LEADING))
-                .addContainerGap(75, Short.MAX_VALUE))
+                .addContainerGap(67, Short.MAX_VALUE))
         );
         pnlThongTinKHLayout.setVerticalGroup(
             pnlThongTinKHLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -4089,7 +4672,7 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
                         .addComponent(lblNamDT, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(cboNamDT, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 463, Short.MAX_VALUE))
+                        .addGap(0, 461, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlDoanhThuLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(lblTongDoanhThu, javax.swing.GroupLayout.PREFERRED_SIZE, 430, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -4109,7 +4692,7 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane17, javax.swing.GroupLayout.PREFERRED_SIZE, 486, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lblTongDoanhThu, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
+                .addComponent(lblTongDoanhThu, javax.swing.GroupLayout.DEFAULT_SIZE, 26, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -4385,22 +4968,38 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
 
     private void lblSanPhamIconMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblSanPhamIconMouseClicked
         if (evt.getClickCount() == 2) {
+//            List<NhanVien> list = NhanVienDangNhap();
+//            if (list.get(0).getMaChucVu().equals("3")) {
+//                MsgBox.alert(this, "Bạn là thu ngân không xóa đc hóa đơn đã lập.\nVui lòng liên hệ Admin hoặc Quản lý để xóa HD này!!!");
+//                return;
+//            }
             this.TrieuHoiCard(pnlChinh, "sanPham");
             manHinhHienThi = 2;
             this.ManHinhHienThi();
             this.TrangThaiDanhMucCon(lblDanhMucSanPham, lblDanhMucLoai, lblDanhMucDonVi);
             this.TrieuHoiCard(pnlDanhMucConSP, "danhMucSanPham");
+            this.FillCboDVT();
+            this.FillCboL();
+            this.FillTableSP(1);
         }
 
     }//GEN-LAST:event_lblSanPhamIconMouseClicked
 
     private void lblSanPhamMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblSanPhamMouseClicked
         if (evt.getClickCount() == 2) {
+//            List<NhanVien> list = NhanVienDangNhap();
+//            if (list.get(0).getMaChucVu().equals(maCV)) {
+//                MsgBox.alert(this, thongBao);
+//                return;
+//            }
             this.TrieuHoiCard(pnlChinh, "sanPham");
             manHinhHienThi = 2;
             this.ManHinhHienThi();
             this.TrangThaiDanhMucCon(lblDanhMucSanPham, lblDanhMucLoai, lblDanhMucDonVi);
             this.TrieuHoiCard(pnlDanhMucConSP, "danhMucSanPham");
+            this.FillCboDVT();
+            this.FillCboL();
+            this.FillTableSP(1);
         }
     }//GEN-LAST:event_lblSanPhamMouseClicked
 
@@ -4672,6 +5271,9 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
         if (evt.getClickCount() == 2) {
             this.TrangThaiDanhMucCon(lblDanhMucSanPham, lblDanhMucLoai, lblDanhMucDonVi);
             this.TrieuHoiCard(pnlDanhMucConSP, "danhMucSanPham");
+            this.FillCboDVT();
+            this.FillCboL();
+            this.FillTableSP(1);
         }
     }//GEN-LAST:event_lblDanhMucSanPhamMouseClicked
 
@@ -4679,6 +5281,7 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
         if (evt.getClickCount() == 2) {
             this.TrangThaiDanhMucCon(lblDanhMucLoai, lblDanhMucSanPham, lblDanhMucDonVi);
             this.TrieuHoiCard(pnlDanhMucConSP, "danhMucLoai");
+            this.FillTableLSP(1);
         }
     }//GEN-LAST:event_lblDanhMucLoaiMouseClicked
 
@@ -4686,6 +5289,7 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
         if (evt.getClickCount() == 2) {
             this.TrangThaiDanhMucCon(lblDanhMucDonVi, lblDanhMucSanPham, lblDanhMucLoai);
             this.TrieuHoiCard(pnlDanhMucConSP, "danhMucDonVi");
+            this.FillTableDVT(1);
         }
     }//GEN-LAST:event_lblDanhMucDonViMouseClicked
 
@@ -5099,6 +5703,131 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
         this.ResetHoaDonDangXem();
     }//GEN-LAST:event_lblResetHDCTMouseClicked
 
+    private void lblXoaDVMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblXoaDVMouseClicked
+        this.DeleteDVT();
+    }//GEN-LAST:event_lblXoaDVMouseClicked
+
+    private void lblSuaDVMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblSuaDVMouseClicked
+        this.UpdateDVT();
+    }//GEN-LAST:event_lblSuaDVMouseClicked
+
+    private void lblThemDVMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblThemDVMouseClicked
+        this.InsertDVT();
+    }//GEN-LAST:event_lblThemDVMouseClicked
+
+    private void tblDonViTinhMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblDonViTinhMouseClicked
+        if (evt.getClickCount() == 2) {
+            indexDVT = tblDonViTinh.getSelectedRow();
+            this.EditDVT();
+            this.UpdateStatusDVT();
+        }
+    }//GEN-LAST:event_tblDonViTinhMouseClicked
+
+    private void lblResetDVMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblResetDVMouseClicked
+        this.ResetDVT();
+    }//GEN-LAST:event_lblResetDVMouseClicked
+
+    private void lblThemLoaiMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblThemLoaiMouseClicked
+        this.InsertLSP();
+    }//GEN-LAST:event_lblThemLoaiMouseClicked
+
+    private void lblSuaLoaiMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblSuaLoaiMouseClicked
+        this.UpdateLSP();
+    }//GEN-LAST:event_lblSuaLoaiMouseClicked
+
+    private void lblResetLoaiMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblResetLoaiMouseClicked
+        this.ResetLSP();
+    }//GEN-LAST:event_lblResetLoaiMouseClicked
+
+    private void lblXoaLoaiMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblXoaLoaiMouseClicked
+        this.DeleteLSP();
+    }//GEN-LAST:event_lblXoaLoaiMouseClicked
+
+    private void tblLoaiSanPhamMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblLoaiSanPhamMouseClicked
+        if (evt.getClickCount() == 2) {
+            indexLSP = tblLoaiSanPham.getSelectedRow();
+            this.EditLSP();
+            this.UpdateStatusLSP();
+        }
+    }//GEN-LAST:event_tblLoaiSanPhamMouseClicked
+
+    private void txtTimKiemDVFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtTimKiemDVFocusGained
+        if (txtTimKiemDV.getText().equals("Tìm Kiếm . . .")) {
+            txtTimKiemDV.setText(null);
+        }
+    }//GEN-LAST:event_txtTimKiemDVFocusGained
+
+    private void txtTimKiemDVFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtTimKiemDVFocusLost
+        if (txtTimKiemDV.getText().isEmpty()) {
+            txtTimKiemDV.setText("Tìm Kiếm . . .");
+        }
+    }//GEN-LAST:event_txtTimKiemDVFocusLost
+
+    private void txtTimLoaiSPFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtTimLoaiSPFocusGained
+        if (txtTimLoaiSP.getText().equals("Tìm Kiếm . . .")) {
+            txtTimLoaiSP.setText(null);
+        }
+    }//GEN-LAST:event_txtTimLoaiSPFocusGained
+
+    private void txtTimLoaiSPFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtTimLoaiSPFocusLost
+        if (txtTimLoaiSP.getText().isEmpty()) {
+            txtTimLoaiSP.setText("Tìm Kiếm . . .");
+        }
+    }//GEN-LAST:event_txtTimLoaiSPFocusLost
+
+    private void txtTimKiemSanPhamSPFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtTimKiemSanPhamSPFocusGained
+        if (txtTimKiemSanPhamSP.getText().equals("Tìm Kiếm . . .")) {
+            txtTimKiemSanPhamSP.setText(null);
+        }
+
+    }//GEN-LAST:event_txtTimKiemSanPhamSPFocusGained
+
+    private void txtTimKiemSanPhamSPFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtTimKiemSanPhamSPFocusLost
+        if (txtTimKiemSanPhamSP.getText().isEmpty()) {
+            txtTimKiemSanPhamSP.setText("Tìm Kiếm . . .");
+        }
+    }//GEN-LAST:event_txtTimKiemSanPhamSPFocusLost
+
+    private void txtTimKiemSanPhamSPKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTimKiemSanPhamSPKeyReleased
+
+    }//GEN-LAST:event_txtTimKiemSanPhamSPKeyReleased
+
+    private void txtTimKiemDVKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTimKiemDVKeyReleased
+        this.TimDVT();
+    }//GEN-LAST:event_txtTimKiemDVKeyReleased
+
+    private void txtTimLoaiSPKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTimLoaiSPKeyReleased
+        this.TimLSP();
+    }//GEN-LAST:event_txtTimLoaiSPKeyReleased
+
+    private void cboDonViTinhSPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboDonViTinhSPActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cboDonViTinhSPActionPerformed
+
+    private void lblThemSPMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblThemSPMouseClicked
+        this.InsertSP();
+    }//GEN-LAST:event_lblThemSPMouseClicked
+
+    private void tblSanPhamSPMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblSanPhamSPMouseClicked
+        if (evt.getClickCount() == 2) {
+            indexSP = tblSanPhamSP.getSelectedRow();
+            this.EditSP();
+            this.UpdateStatusSP();
+        }
+    }//GEN-LAST:event_tblSanPhamSPMouseClicked
+
+    private void lblSuaSPMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblSuaSPMouseClicked
+        this.UpdateSP();
+    }//GEN-LAST:event_lblSuaSPMouseClicked
+
+    private void lblXoaSPMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblXoaSPMouseClicked
+        this.DeleteSP();
+    }//GEN-LAST:event_lblXoaSPMouseClicked
+
+    private void lblResetSPMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblResetSPMouseClicked
+        this.ResetSP();
+    }//GEN-LAST:event_lblResetSPMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -5434,6 +6163,6 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
 ||                       `=---='                       ||
 ||                                                     ||
 ||        Đức Phật Phù Hộ - Không Bao Giờ Có Bug       ||
-||                                                     ||
+||               Nam Mô A Di Đà Phật!!!                ||
 ///////////////////////////////////////////////////////*/
 }

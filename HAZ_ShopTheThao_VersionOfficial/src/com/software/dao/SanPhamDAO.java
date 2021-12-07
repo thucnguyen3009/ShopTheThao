@@ -96,12 +96,17 @@ public class SanPhamDAO extends SoftwareDAO<SanPham, String> {
         String sql = "SELECT * FROM SanPham WHERE TenSP LIKE ? OR MaSP LIKE ?";
         return SelectBySQL(sql, "%" + keyword + "%", "%" + keyword + "%");
     }
-
+    
     public List<SanPham> SelectByIDS(String ID) {
         List<SanPham> list = this.SelectBySQL(SELECT_BY_ID_SQL, ID);
         if (list.isEmpty()) {
             return null;
         }
         return list;
+    }
+    
+    public List<SanPham> selectBySanPhamInHoaDon(String maSP) {
+        String sql = "SELECT * FROM SanPham WHERE MaSP = ? and MaSP in (select MaSP from ChiTietHoaDon)";
+        return this.SelectBySQL(sql, maSP);
     }
 }

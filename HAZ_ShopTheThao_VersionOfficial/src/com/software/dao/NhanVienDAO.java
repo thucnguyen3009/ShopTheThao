@@ -113,4 +113,13 @@ public class NhanVienDAO extends SoftwareDAO<NhanVien, String> {
         }
         return list;
     }
+    
+    public List<NhanVien> SelectByGmail(String Gmail) {
+        String sql = "SELECT * FROM NHANVIEN WHERE GMAIL = ?";
+        List<NhanVien> list = this.SelectBySQL(sql, Gmail);
+        if (list.isEmpty()) {
+            return null;
+        }
+        return list;
+    }
 }

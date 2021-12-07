@@ -45,7 +45,7 @@ public class LoginDialog extends javax.swing.JFrame {
 
     public boolean ValidateFormLogin() {
         String isPhone = "^[0]+[3_5_7-9]+[0-9]{8}";
-        String isPassWord = "^[a-zA-Z_0-9]{8,}";
+        String isPassWord = "^.{8,}";
         if (txtUser.getText().equals("Số Điện Thoại") || txtUser.getText().isEmpty()) {
             MsgBox.alert(this, "Vui lòng nhập Username");
             return false;
@@ -57,6 +57,7 @@ public class LoginDialog extends javax.swing.JFrame {
             return false;
         } else if (!pwdPass.getText().matches(isPassWord)) {
             MsgBox.alert(this, "Mật khẩu không hợp lệ!\nMật khẩu ít nhất 8 ký tự");
+            return false;
         }
         return true;
     }

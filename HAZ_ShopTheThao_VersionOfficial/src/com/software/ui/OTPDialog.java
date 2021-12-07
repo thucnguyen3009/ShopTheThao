@@ -4,10 +4,21 @@
 //* Class: IT16301
 package com.software.ui;
 
+import com.software.jdbcHelper.MailSender;
 import com.software.jdbcHelper.XImage;
+import static com.software.ui.ForgotPasswordDialog.randomInt;
 import java.awt.Color;
+import java.util.Properties;
+import javax.mail.Message;
+import javax.mail.PasswordAuthentication;
+import javax.mail.Session;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
+import javax.swing.JTextField;
+import javax.swing.Timer;
 
 /**
  *
@@ -23,6 +34,110 @@ public class OTPDialog extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         lblTitle.requestFocus();
         this.setIconImage(XImage.getAppIcon());
+        setTime();
+    }
+
+    int second = 60;
+    Thread t;
+    Timer timer;
+
+    public void GuiMail() {
+        for (int i = 1; i < 2; i++) {
+            double randomDouble = Math.random();
+            randomDouble = randomDouble * 1000000 + 1;
+            randomInt = (int) randomDouble;
+        }
+        try {
+            String taiKhoan = "hotroshopbingbong@gmail.com";
+            String matKhau = "Bingbong123@";
+
+            Properties prop = new Properties();
+            prop.put("mail.smtp.host", "smtp.gmail.com");
+            prop.put("mail.smtp.port", "587");
+            prop.put("mail.smtp.auth", "true");
+            prop.put("mail.smtp.starttls.enable", "true");
+
+            Session session = Session.getDefaultInstance(prop, new javax.mail.Authenticator() {
+                @Override
+                protected PasswordAuthentication getPasswordAuthentication() {
+                    return new PasswordAuthentication(taiKhoan, matKhau);
+                }
+            });
+
+            String from = "hotroshopbingbong@gmail.com";
+            String to = ForgotPasswordDialog.mailTo;
+            String subject = "Mã xác nhận Bing Bong Shop ";
+            String body = "Mã xác nhận của bạn là : " + randomInt;
+
+            MimeMessage message = new MimeMessage(session);
+            message.setFrom(new InternetAddress(from));
+            message.setRecipients(
+                    Message.RecipientType.TO,
+                    InternetAddress.parse(to)
+            );
+            message.setSubject(subject);
+            message.setText(body);
+
+            //Transport.send(message);
+            MailSender.queue(message);
+
+            //JOptionPane.showMessageDialog(this, "Đã gởi mail thành công");
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, e.getMessage());
+            e.printStackTrace();
+            System.out.println(e);
+        }
+    }
+
+    public void setTime() {
+        timer = new Timer(1000, (e) -> {
+                second--;
+                lblTime.setText("00:" + String.valueOf(second));
+                if (second == 0) {
+                    ForgotPasswordDialog.randomInt = 0;
+                    lblTime.setText("Mã xác nhận đã hết hiệu lực!");
+                    timer.stop();
+                }
+        });
+        timer.start();
+
+//        t = new Thread(new Runnable() {
+//            @Override
+//            public void run() {
+//                try {
+//                    while (true) {
+//                        second--;
+//                        t.sleep(1000);  // interval duoc cung cap bang gia tri mili giay 
+//                        lblTime.setText("00:" + String.valueOf(second));
+//                        if (second == 0) {
+//                            ForgotPasswordDialog.randomInt = 0;
+//                            lblTime.setText("Mã xác nhận đã hết hiệu lực!");
+//                            break;
+//                        }
+//
+//                    }
+//                } catch (Exception e) {
+//                }
+//            }
+//        }
+//        );
+//        t.start();
+    }
+
+    boolean checkCode() {
+        String code = txtNumber1.getText() + txtNumber2.getText() + txtNumber3.getText() + txtNumber4.getText() + txtNumber5.getText() + txtNumber6.getText();
+        if (Integer.valueOf(code) != ForgotPasswordDialog.randomInt) {
+            JOptionPane.showMessageDialog(this, "Mã xác nhận chưa chính xác vui lòng kiểm tra lại !!!");
+            return false;
+        }
+        return true;
+    }
+
+    public void PasteCode(JTextField txtOne, JTextField txtTwo) {
+        if (txtOne.getText().length() == 1) {
+            txtOne.nextFocus();
+            txtTwo.requestFocus();
+        }
     }
 
     /**
@@ -108,16 +223,52 @@ public class OTPDialog extends javax.swing.JFrame {
         jPanel1.setOpaque(false);
 
         txtNumber1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        txtNumber1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtNumber1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtNumber1KeyReleased(evt);
+            }
+        });
 
         txtNumber2.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        txtNumber2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtNumber2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtNumber2KeyReleased(evt);
+            }
+        });
 
         txtNumber3.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        txtNumber3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtNumber3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtNumber3KeyReleased(evt);
+            }
+        });
 
         txtNumber4.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        txtNumber4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtNumber4.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtNumber4KeyReleased(evt);
+            }
+        });
 
         txtNumber5.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        txtNumber5.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtNumber5.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtNumber5KeyReleased(evt);
+            }
+        });
 
         txtNumber6.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        txtNumber6.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtNumber6.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtNumber6KeyReleased(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -160,6 +311,9 @@ public class OTPDialog extends javax.swing.JFrame {
         lblResendCode.setText("Resend Code");
         lblResendCode.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lblResendCode.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblResendCodeMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 lblResendCodeMouseEntered(evt);
             }
@@ -173,7 +327,7 @@ public class OTPDialog extends javax.swing.JFrame {
         lblTime.setForeground(new java.awt.Color(255, 0, 0));
         lblTime.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTime.setText("00:00");
-        getContentPane().add(lblTime, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 190, 105, 29));
+        getContentPane().add(lblTime, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 190, 500, 29));
 
         lblNen.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblNen.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/software/icon/background.jpg"))); // NOI18N
@@ -192,8 +346,10 @@ public class OTPDialog extends javax.swing.JFrame {
     }//GEN-LAST:event_lblBackMouseClicked
 
     private void lblConfirmMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblConfirmMouseClicked
-        this.dispose();
-        new ChangePassDialog().setVisible(true);
+        if (checkCode()) {
+            this.dispose();
+            new ChangePassDialog().setVisible(true);
+        }
     }//GEN-LAST:event_lblConfirmMouseClicked
 
     private void lblCloseMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCloseMouseEntered
@@ -221,6 +377,38 @@ public class OTPDialog extends javax.swing.JFrame {
         lblResendCode.setForeground(new Color(102, 102, 102));
         lblResendCode.setText("Resend Code");
     }//GEN-LAST:event_lblResendCodeMouseExited
+
+    private void txtNumber1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNumber1KeyReleased
+        this.PasteCode(txtNumber1, txtNumber2);
+    }//GEN-LAST:event_txtNumber1KeyReleased
+
+    private void txtNumber2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNumber2KeyReleased
+        this.PasteCode(txtNumber2, txtNumber3);
+    }//GEN-LAST:event_txtNumber2KeyReleased
+
+    private void txtNumber3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNumber3KeyReleased
+        this.PasteCode(txtNumber3, txtNumber4);
+    }//GEN-LAST:event_txtNumber3KeyReleased
+
+    private void txtNumber4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNumber4KeyReleased
+        this.PasteCode(txtNumber4, txtNumber5);
+    }//GEN-LAST:event_txtNumber4KeyReleased
+
+    private void txtNumber5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNumber5KeyReleased
+        this.PasteCode(txtNumber5, txtNumber6);
+    }//GEN-LAST:event_txtNumber5KeyReleased
+
+    private void txtNumber6KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNumber6KeyReleased
+        this.PasteCode(txtNumber6, txtNumber6);
+        lblConfirm.requestFocus();
+    }//GEN-LAST:event_txtNumber6KeyReleased
+
+    private void lblResendCodeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblResendCodeMouseClicked
+        timer.stop();
+        second = 60;
+        GuiMail();
+        setTime();
+    }//GEN-LAST:event_lblResendCodeMouseClicked
 
     /**
      * @param args the command line arguments

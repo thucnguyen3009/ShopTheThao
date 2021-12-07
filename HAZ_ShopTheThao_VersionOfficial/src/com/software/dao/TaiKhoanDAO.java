@@ -11,13 +11,14 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TaiKhoanDAO extends SoftwareDAO<TaiKhoan, String>{
+public class TaiKhoanDAO extends SoftwareDAO<TaiKhoan, String> {
 
     String INSERT_SQL = "INSERT INTO TaiKhoan (SoDienThoai, Pass) VALUES (?, ?)";
     String UPDATE_SQL = "UPDATE TaiKhoan SET Pass = ? WHERE SoDienThoai = ?";
     String DELETE_SQL = "DELETE FROM TaiKhoan WHERE SoDienThoai = ?";
     String SELECT_ALL_SQL = "SELECT * FROM TaiKhoan";
     String SELECT_BY_ID_SQL = "SELECT * FROM TaiKhoan WHERE SoDienThoai = ?";
+
     @Override
     public void insert(TaiKhoan entity) {
         try {
@@ -73,6 +74,13 @@ public class TaiKhoanDAO extends SoftwareDAO<TaiKhoan, String>{
             return list;
         } catch (SQLException e) {
             throw new RuntimeException(e);
+        }
+    }
+
+    public void updatePass(String pass, String soDienThoai) {
+        try {
+            XJdbc.update(UPDATE_SQL, pass, soDienThoai);
+        } catch (SQLException ex) {
         }
     }
 }

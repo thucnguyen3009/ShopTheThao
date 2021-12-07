@@ -25,9 +25,6 @@
   </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
-    <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-      <Dimension value="[1370, 774]"/>
-    </Property>
     <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
       <Dimension value="[1370, 774]"/>
     </Property>
@@ -1078,7 +1075,7 @@
                                               <Group type="102" attributes="0">
                                                   <EmptySpace max="-2" attributes="0"/>
                                                   <Component id="txtMaNV" min="-2" pref="210" max="-2" attributes="0"/>
-                                                  <EmptySpace pref="208" max="32767" attributes="0"/>
+                                                  <EmptySpace pref="194" max="32767" attributes="0"/>
                                                   <Component id="lblResetNV" min="-2" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
@@ -1179,9 +1176,9 @@
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Group type="102" alignment="0" attributes="0">
                                                   <Component id="lblDiaChiNV" min="-2" pref="34" max="-2" attributes="0"/>
-                                                  <EmptySpace min="0" pref="113" max="32767" attributes="0"/>
+                                                  <EmptySpace min="0" pref="87" max="32767" attributes="0"/>
                                               </Group>
-                                              <Component id="jScrollPane7" pref="147" max="32767" attributes="0"/>
+                                              <Component id="jScrollPane7" pref="121" max="32767" attributes="0"/>
                                           </Group>
                                       </Group>
                                       <Component id="lblResetNV" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -1504,7 +1501,7 @@
                                           <Component id="lblTimCV" pref="32" max="32767" attributes="0"/>
                                       </Group>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jScrollPane8" pref="497" max="32767" attributes="0"/>
+                                      <Component id="jScrollPane8" pref="482" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
@@ -1818,7 +1815,7 @@
                                           <Component id="lblTimKiemTK" alignment="1" min="-2" pref="32" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jScrollPane11" pref="497" max="32767" attributes="0"/>
+                                      <Component id="jScrollPane11" pref="482" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
@@ -2352,16 +2349,21 @@
                               </Table>
                             </Property>
                           </Properties>
+                          <Events>
+                            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tblSanPhamSPMouseClicked"/>
+                          </Events>
                         </Component>
                       </SubComponents>
                     </Container>
                     <Component class="javax.swing.JTextField" name="txtTimKiemSanPhamSP">
                       <Properties>
-                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="cc" green="cc" red="cc" type="rgb"/>
-                        </Property>
                         <Property name="text" type="java.lang.String" value="T&#xec;m Ki&#x1ebf;m . . ."/>
                       </Properties>
+                      <Events>
+                        <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="txtTimKiemSanPhamSPFocusGained"/>
+                        <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="txtTimKiemSanPhamSPFocusLost"/>
+                        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtTimKiemSanPhamSPKeyReleased"/>
+                      </Events>
                     </Component>
                     <Component class="javax.swing.JLabel" name="lblTimKiemSanPhamSP">
                       <Properties>
@@ -2427,7 +2429,7 @@
                                           </Group>
                                       </Group>
                                   </Group>
-                                  <EmptySpace pref="66" max="32767" attributes="0"/>
+                                  <EmptySpace pref="60" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -2559,6 +2561,7 @@
                             <Property name="opaque" type="boolean" value="true"/>
                           </Properties>
                           <Events>
+                            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblThemSPMouseClicked"/>
                             <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblThemSPMouseEntered"/>
                             <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblThemSPMouseExited"/>
                           </Events>
@@ -2590,6 +2593,7 @@
                             <Property name="opaque" type="boolean" value="true"/>
                           </Properties>
                           <Events>
+                            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblSuaSPMouseClicked"/>
                             <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblSuaSPMouseEntered"/>
                             <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblSuaSPMouseExited"/>
                           </Events>
@@ -2621,6 +2625,7 @@
                             <Property name="opaque" type="boolean" value="true"/>
                           </Properties>
                           <Events>
+                            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblXoaSPMouseClicked"/>
                             <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblXoaSPMouseEntered"/>
                             <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblXoaSPMouseExited"/>
                           </Events>
@@ -2635,6 +2640,9 @@
                               <Color id="Hand Cursor"/>
                             </Property>
                           </Properties>
+                          <Events>
+                            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblResetSPMouseClicked"/>
+                          </Events>
                         </Component>
                         <Component class="javax.swing.JComboBox" name="cboDonViTinhSP">
                           <Properties>
@@ -2644,6 +2652,9 @@
                               </StringArray>
                             </Property>
                           </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cboDonViTinhSPActionPerformed"/>
+                          </Events>
                           <AuxValues>
                             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                           </AuxValues>
@@ -2794,7 +2805,7 @@
                                               </Group>
                                               <Component id="jScrollPane16" max="32767" attributes="0"/>
                                           </Group>
-                                          <EmptySpace min="0" pref="60" max="32767" attributes="0"/>
+                                          <EmptySpace min="0" pref="48" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
@@ -2891,6 +2902,7 @@
                             <Property name="opaque" type="boolean" value="true"/>
                           </Properties>
                           <Events>
+                            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblThemLoaiMouseClicked"/>
                             <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblThemLoaiMouseEntered"/>
                             <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblThemLoaiMouseExited"/>
                           </Events>
@@ -2922,6 +2934,7 @@
                             <Property name="opaque" type="boolean" value="true"/>
                           </Properties>
                           <Events>
+                            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblSuaLoaiMouseClicked"/>
                             <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblSuaLoaiMouseEntered"/>
                             <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblSuaLoaiMouseExited"/>
                           </Events>
@@ -2953,6 +2966,7 @@
                             <Property name="opaque" type="boolean" value="true"/>
                           </Properties>
                           <Events>
+                            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblXoaLoaiMouseClicked"/>
                             <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblXoaLoaiMouseEntered"/>
                             <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblXoaLoaiMouseExited"/>
                           </Events>
@@ -2967,6 +2981,9 @@
                               <Color id="Hand Cursor"/>
                             </Property>
                           </Properties>
+                          <Events>
+                            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblResetLoaiMouseClicked"/>
+                          </Events>
                         </Component>
                         <Component class="javax.swing.JLabel" name="lblTitleThongTinLoai">
                           <Properties>
@@ -3011,6 +3028,9 @@
                               </Table>
                             </Property>
                           </Properties>
+                          <Events>
+                            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tblLoaiSanPhamMouseClicked"/>
+                          </Events>
                         </Component>
                       </SubComponents>
                     </Container>
@@ -3027,11 +3047,13 @@
                     </Component>
                     <Component class="javax.swing.JTextField" name="txtTimLoaiSP">
                       <Properties>
-                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="cc" green="cc" red="cc" type="rgb"/>
-                        </Property>
                         <Property name="text" type="java.lang.String" value="T&#xec;m Ki&#x1ebf;m . . ."/>
                       </Properties>
+                      <Events>
+                        <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="txtTimLoaiSPFocusGained"/>
+                        <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="txtTimLoaiSPFocusLost"/>
+                        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtTimLoaiSPKeyReleased"/>
+                      </Events>
                     </Component>
                   </SubComponents>
                 </Container>
@@ -3131,7 +3153,7 @@
                                       </Group>
                                       <Component id="jScrollPane14" max="32767" attributes="0"/>
                                   </Group>
-                                  <EmptySpace pref="66" max="32767" attributes="0"/>
+                                  <EmptySpace pref="58" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -3223,6 +3245,7 @@
                             <Property name="opaque" type="boolean" value="true"/>
                           </Properties>
                           <Events>
+                            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblThemDVMouseClicked"/>
                             <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblThemDVMouseEntered"/>
                             <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblThemDVMouseExited"/>
                           </Events>
@@ -3254,6 +3277,7 @@
                             <Property name="opaque" type="boolean" value="true"/>
                           </Properties>
                           <Events>
+                            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblSuaDVMouseClicked"/>
                             <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblSuaDVMouseEntered"/>
                             <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblSuaDVMouseExited"/>
                           </Events>
@@ -3285,6 +3309,7 @@
                             <Property name="opaque" type="boolean" value="true"/>
                           </Properties>
                           <Events>
+                            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblXoaDVMouseClicked"/>
                             <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblXoaDVMouseEntered"/>
                             <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblXoaDVMouseExited"/>
                           </Events>
@@ -3299,6 +3324,9 @@
                               <Color id="Hand Cursor"/>
                             </Property>
                           </Properties>
+                          <Events>
+                            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblResetDVMouseClicked"/>
+                          </Events>
                         </Component>
                         <Component class="javax.swing.JLabel" name="lblTitleThongTinDonVi">
                           <Properties>
@@ -3343,6 +3371,9 @@
                               </Table>
                             </Property>
                           </Properties>
+                          <Events>
+                            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tblDonViTinhMouseClicked"/>
+                          </Events>
                         </Component>
                       </SubComponents>
                     </Container>
@@ -3359,11 +3390,13 @@
                     </Component>
                     <Component class="javax.swing.JTextField" name="txtTimKiemDV">
                       <Properties>
-                        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                          <Color blue="cc" green="cc" red="cc" type="rgb"/>
-                        </Property>
                         <Property name="text" type="java.lang.String" value="T&#xec;m Ki&#x1ebf;m . . ."/>
                       </Properties>
+                      <Events>
+                        <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="txtTimKiemDVFocusGained"/>
+                        <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="txtTimKiemDVFocusLost"/>
+                        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txtTimKiemDVKeyReleased"/>
+                      </Events>
                     </Component>
                   </SubComponents>
                 </Container>
@@ -3576,7 +3609,7 @@
                                           <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                                           <Component id="txtPhanTramGiam" min="-2" pref="179" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="lblTienGiamHD" pref="77" max="32767" attributes="0"/>
+                                          <Component id="lblTienGiamHD" pref="76" max="32767" attributes="0"/>
                                           <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                                           <Component id="lblThanhTienGiamHD" min="-2" pref="205" max="-2" attributes="0"/>
                                       </Group>
@@ -3658,7 +3691,7 @@
                               </Group>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jLabel1" pref="16" max="32767" attributes="0"/>
+                          <Component id="jLabel1" max="32767" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Component id="lblSoLuongHD" alignment="0" max="32767" attributes="0"/>
@@ -4059,10 +4092,7 @@
                                           <Component id="lblTienDcGiamHDCT" max="32767" attributes="0"/>
                                       </Group>
                                   </Group>
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                                      <Component id="lblResetHDCT" min="-2" pref="29" max="-2" attributes="0"/>
-                                  </Group>
+                                  <Component id="lblResetHDCT" alignment="1" min="-2" pref="29" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
@@ -4108,16 +4138,10 @@
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="lblResetHDCT" min="-2" pref="31" max="-2" attributes="0"/>
-                                      <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="txtMaHoaDonHDCT" alignment="0" min="-2" pref="29" max="-2" attributes="0"/>
-                                          <Component id="lblMaThuNganHDCT1" alignment="0" min="-2" pref="29" max="-2" attributes="0"/>
-                                      </Group>
+                                  <Component id="lblResetHDCT" alignment="0" min="-2" pref="31" max="-2" attributes="0"/>
+                                  <Group type="103" alignment="1" groupAlignment="0" attributes="0">
+                                      <Component id="txtMaHoaDonHDCT" alignment="0" min="-2" pref="29" max="-2" attributes="0"/>
+                                      <Component id="lblMaThuNganHDCT1" alignment="0" min="-2" pref="29" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <Group type="103" groupAlignment="0" attributes="0">
@@ -4581,7 +4605,7 @@
                               </Group>
                               <Component id="txtSdtKH" alignment="0" max="32767" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="75" max="32767" attributes="0"/>
+                          <EmptySpace pref="67" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -4830,7 +4854,7 @@
                               <Component id="lblNamDT" min="-2" pref="54" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="cboNamDT" min="-2" pref="133" max="-2" attributes="0"/>
-                              <EmptySpace min="0" pref="463" max="32767" attributes="0"/>
+                              <EmptySpace min="0" pref="461" max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
@@ -4856,7 +4880,7 @@
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="jScrollPane17" min="-2" pref="486" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="lblTongDoanhThu" pref="36" max="32767" attributes="0"/>
+                      <Component id="lblTongDoanhThu" pref="26" max="32767" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
