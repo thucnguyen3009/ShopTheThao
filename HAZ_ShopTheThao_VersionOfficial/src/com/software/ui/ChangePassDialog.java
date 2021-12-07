@@ -3,10 +3,17 @@
 //* Class: IT16301
 package com.software.ui;
 
+import com.software.dao.NhanVienDAO;
+import com.software.dao.TaiKhoanDAO;
+import com.software.entity.NhanVien;
+import com.software.jdbcHelper.MsgBox;
 import com.software.jdbcHelper.XImage;
 import java.awt.Color;
+import java.util.List;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+import javax.swing.JPasswordField;
 
 /**
  *
@@ -17,13 +24,76 @@ public class ChangePassDialog extends javax.swing.JFrame {
     /**
      * Creates new form ForgotPasswordDialog
      */
+    int demPass = 0, demConfirm = 0;
+    int clickFirstPass = 0, clickFirstConfirm = 0;
+
     public ChangePassDialog() {
         initComponents();
         this.setLocationRelativeTo(null);
         lblTitle.requestFocus();
-        txtPass.setBackground(new java.awt.Color(0, 0, 1, 0));
-        txtConfirm.setBackground(new java.awt.Color(0, 0, 1, 0));
+        pwdPass.setBackground(new java.awt.Color(0, 0, 1, 0));
+        pwdConfirm.setBackground(new java.awt.Color(0, 0, 1, 0));
         this.setIconImage(XImage.getAppIcon());
+        pwdPass.setEchoChar((char) 0);
+        pwdConfirm.setEchoChar((char) 0);
+    }
+
+    public void clickPasswordField(int click, JPasswordField PwField, JLabel lblLabel, int index) {
+        if (click == 0) {
+            PwField.setText("");
+            lblLabel.setIcon(new ImageIcon(getClass().getResource("/com/software/icon/hidden.png")));
+            lblLabel.setEnabled(true);
+            PwField.setEchoChar('●');
+            index = 0;
+        }
+        click++;
+    }
+
+    public void clickHide(JPasswordField PwField, JLabel lblLabel, int index, String chuoi) {
+        if (!PwField.getText().equals(chuoi)) {
+            if (index % 2 != 0) {
+                lblLabel.setIcon(new ImageIcon(getClass().getResource("/com/software/icon/hidden.png")));
+                PwField.setEchoChar('●');
+            } else {
+                lblLabel.setIcon(new ImageIcon(getClass().getResource("/com/software/icon/view.png")));
+                PwField.setEchoChar((char) 0);
+            }
+            index++;
+        }
+    }
+
+    public boolean CheckForm() {
+        String isPassWord = "^.{8,}";
+        boolean check = true;
+        if (pwdPass.getText().isEmpty() || pwdPass.getText().equals("Mật Khẩu")) {
+            MsgBox.alert(this, "Vui lòng nhập mật khẩu!");
+            check = false;
+        } else if (pwdConfirm.getText().isEmpty() || pwdConfirm.getText().equals("Xác Nhận Mật Khẩu")) {
+            MsgBox.alert(this, "Vui lòng xác nhận mật khẩu!");
+            check = false;
+        } else if (!pwdPass.getText().matches(isPassWord)) {
+            MsgBox.alert(this, "Mật khẩu không hợp lệ!\nMật khẩu ít nhất 8 ký tự");
+            check = false;
+        } else if (!pwdConfirm.getText().equals(pwdPass.getText())) {
+            MsgBox.alert(this, "Xác nhận mật khẩu không đúng\nVui lòng kiểm tra lại!");
+            check = false;
+        }
+        return check;
+    }
+
+    public void UpdatePass() {
+        TaiKhoanDAO tkDAO = new TaiKhoanDAO();
+        NhanVienDAO nvDAO = new NhanVienDAO();
+        List<NhanVien> listNV = nvDAO.SelectAll();
+        String soDienThoai = null;
+        for (int i = 0; i < listNV.size(); i++) {
+            if (ForgotPasswordDialog.mailTo.equals(listNV.get(i).getGmail())) {
+                soDienThoai = listNV.get(i).getSoDienThoai();
+                break;
+            }
+        }
+        tkDAO.updatePass(pwdPass.getText(), soDienThoai);
+        MsgBox.alert(this, "Đổi mật khẩu thành công!");
     }
 
     /**
@@ -40,10 +110,10 @@ public class ChangePassDialog extends javax.swing.JFrame {
         lblLoiPass = new javax.swing.JLabel();
         lblPass = new javax.swing.JLabel();
         lblConfirmPass = new javax.swing.JLabel();
-        txtPass = new javax.swing.JPasswordField();
+        pwdPass = new javax.swing.JPasswordField();
         lblAnHienPass = new javax.swing.JLabel();
         lblAnHienConfirm = new javax.swing.JLabel();
-        txtConfirm = new javax.swing.JPasswordField();
+        pwdConfirm = new javax.swing.JPasswordField();
         lblLoiConfirm = new javax.swing.JLabel();
         lblBack = new javax.swing.JLabel();
         lblConfirm = new javax.swing.JLabel();
@@ -70,21 +140,59 @@ public class ChangePassDialog extends javax.swing.JFrame {
         lblConfirmPass.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblConfirmPass.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/software/icon/confirmPass.png"))); // NOI18N
 
-        txtPass.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        txtPass.setText("Mật Khẩu Mới");
-        txtPass.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 4, 0, new java.awt.Color(0, 51, 255)));
+        pwdPass.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        pwdPass.setForeground(new java.awt.Color(102, 102, 255));
+        pwdPass.setText("Mật Khẩu");
+        pwdPass.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 4, 0, new java.awt.Color(0, 51, 255)));
+        pwdPass.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                pwdPassFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                pwdPassFocusLost(evt);
+            }
+        });
+        pwdPass.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                pwdPassMouseClicked(evt);
+            }
+        });
 
         lblAnHienPass.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblAnHienPass.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/software/icon/view.png"))); // NOI18N
         lblAnHienPass.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 4, 0, new java.awt.Color(0, 51, 255)));
+        lblAnHienPass.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblAnHienPassMouseClicked(evt);
+            }
+        });
 
         lblAnHienConfirm.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblAnHienConfirm.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/software/icon/view.png"))); // NOI18N
         lblAnHienConfirm.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 4, 0, new java.awt.Color(0, 51, 255)));
+        lblAnHienConfirm.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblAnHienConfirmMouseClicked(evt);
+            }
+        });
 
-        txtConfirm.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        txtConfirm.setText("Xác Nhận Mật Khẩu");
-        txtConfirm.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 4, 0, new java.awt.Color(0, 51, 255)));
+        pwdConfirm.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        pwdConfirm.setForeground(new java.awt.Color(102, 102, 255));
+        pwdConfirm.setText("Xác Nhận Mật Khẩu");
+        pwdConfirm.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 4, 0, new java.awt.Color(0, 51, 255)));
+        pwdConfirm.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                pwdConfirmFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                pwdConfirmFocusLost(evt);
+            }
+        });
+        pwdConfirm.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                pwdConfirmMouseClicked(evt);
+            }
+        });
 
         lblLoiConfirm.setForeground(new java.awt.Color(255, 0, 0));
 
@@ -101,13 +209,13 @@ public class ChangePassDialog extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtPass, javax.swing.GroupLayout.DEFAULT_SIZE, 305, Short.MAX_VALUE)
+                            .addComponent(pwdPass, javax.swing.GroupLayout.DEFAULT_SIZE, 305, Short.MAX_VALUE)
                             .addComponent(lblLoiPass, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(0, 0, 0)
-                        .addComponent(lblAnHienPass, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(lblAnHienPass, javax.swing.GroupLayout.DEFAULT_SIZE, 41, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtConfirm, javax.swing.GroupLayout.DEFAULT_SIZE, 302, Short.MAX_VALUE)
+                            .addComponent(pwdConfirm, javax.swing.GroupLayout.DEFAULT_SIZE, 302, Short.MAX_VALUE)
                             .addComponent(lblLoiConfirm, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(0, 0, 0)
                         .addComponent(lblAnHienConfirm, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -120,7 +228,7 @@ public class ChangePassDialog extends javax.swing.JFrame {
                 .addComponent(lblLoiPass, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(lblPass, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(txtPass)
+                    .addComponent(pwdPass)
                     .addComponent(lblAnHienPass, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblLoiConfirm, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -128,7 +236,7 @@ public class ChangePassDialog extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(lblConfirmPass, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(txtConfirm)
+                        .addComponent(pwdConfirm)
                         .addComponent(lblAnHienConfirm)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -193,8 +301,11 @@ public class ChangePassDialog extends javax.swing.JFrame {
     }//GEN-LAST:event_lblCloseMouseClicked
 
     private void lblConfirmMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblConfirmMouseClicked
-        this.dispose();
-        new LoginDialog().setVisible(true);
+        if (CheckForm() == true) {
+            this.UpdatePass();
+            this.dispose();
+            new LoginDialog().setVisible(true);
+        }
     }//GEN-LAST:event_lblConfirmMouseClicked
 
     private void lblBackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblBackMouseClicked
@@ -217,6 +328,56 @@ public class ChangePassDialog extends javax.swing.JFrame {
     private void lblConfirmMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblConfirmMouseExited
         lblConfirm.setBorder(null);
     }//GEN-LAST:event_lblConfirmMouseExited
+
+    private void pwdPassFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_pwdPassFocusGained
+        this.clickPasswordField(clickFirstPass, pwdPass, lblAnHienPass, demPass);
+        if (pwdPass.getText().equals("Mật Khẩu")) {
+            pwdPass.setText(null);
+        }
+    }//GEN-LAST:event_pwdPassFocusGained
+
+    private void pwdPassMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pwdPassMouseClicked
+        this.clickPasswordField(clickFirstPass, pwdPass, lblAnHienPass, demPass);
+    }//GEN-LAST:event_pwdPassMouseClicked
+
+    private void pwdConfirmMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pwdConfirmMouseClicked
+        this.clickPasswordField(clickFirstConfirm, pwdConfirm, lblAnHienConfirm, demConfirm);
+    }//GEN-LAST:event_pwdConfirmMouseClicked
+
+    private void pwdPassFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_pwdPassFocusLost
+        if (pwdPass.getText().isEmpty()) {
+            pwdPass.setText("Mật Khẩu");
+            lblAnHienPass.setIcon(new ImageIcon(getClass().getResource("/com/software/icon/view.png")));
+            pwdPass.setEchoChar((char) 0);
+            demPass = 0;
+            clickFirstPass = 0;
+        }
+    }//GEN-LAST:event_pwdPassFocusLost
+
+    private void pwdConfirmFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_pwdConfirmFocusGained
+        this.clickPasswordField(clickFirstConfirm, pwdConfirm, lblAnHienConfirm, demConfirm);
+        if (pwdConfirm.getText().equals("Nhập Lại Pass")) {
+            pwdConfirm.setText(null);
+        }
+    }//GEN-LAST:event_pwdConfirmFocusGained
+
+    private void pwdConfirmFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_pwdConfirmFocusLost
+        if (pwdConfirm.getText().isEmpty()) {
+            pwdConfirm.setText("Nhập Lại Pass");
+            lblAnHienConfirm.setIcon(new ImageIcon(getClass().getResource("/com/software/icon/view.png")));
+            pwdConfirm.setEchoChar((char) 0);
+            demConfirm = 0;
+            clickFirstConfirm = 0;
+        }
+    }//GEN-LAST:event_pwdConfirmFocusLost
+
+    private void lblAnHienPassMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblAnHienPassMouseClicked
+        this.clickHide(pwdPass, lblAnHienPass, demPass, "Mật Khẩu");
+    }//GEN-LAST:event_lblAnHienPassMouseClicked
+
+    private void lblAnHienConfirmMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblAnHienConfirmMouseClicked
+        this.clickHide(pwdConfirm, lblAnHienConfirm, demConfirm, "Xác Nhận Mật Khẩu");
+    }//GEN-LAST:event_lblAnHienConfirmMouseClicked
 
     /**
      * @param args the command line arguments
@@ -266,7 +427,7 @@ public class ChangePassDialog extends javax.swing.JFrame {
     private javax.swing.JLabel lblNen;
     private javax.swing.JLabel lblPass;
     private javax.swing.JLabel lblTitle;
-    private javax.swing.JPasswordField txtConfirm;
-    private javax.swing.JPasswordField txtPass;
+    private javax.swing.JPasswordField pwdConfirm;
+    private javax.swing.JPasswordField pwdPass;
     // End of variables declaration//GEN-END:variables
 }

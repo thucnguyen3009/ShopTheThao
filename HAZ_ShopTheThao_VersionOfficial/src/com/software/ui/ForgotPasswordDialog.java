@@ -3,10 +3,22 @@
 //* Class: IT16301
 package com.software.ui;
 
+import com.software.dao.NhanVienDAO;
+import com.software.entity.NhanVien;
+import com.software.jdbcHelper.MailSender;
+import com.software.jdbcHelper.MsgBox;
 import com.software.jdbcHelper.XImage;
 import java.awt.Color;
+import java.util.List;
+import java.util.Properties;
+import javax.mail.Message;
+import javax.mail.PasswordAuthentication;
+import javax.mail.Session;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -23,6 +35,82 @@ public class ForgotPasswordDialog extends javax.swing.JFrame {
         txtGmail.setBackground(new java.awt.Color(0, 0, 1, 0));
         lblTitle.requestFocus();
         this.setIconImage(XImage.getAppIcon());
+    }
+
+    static int randomInt;
+    static String mailTo = null;
+
+    public void GuiMail() {
+        for (int i = 1; i < 2; i++) {
+            double randomDouble = Math.random();
+            randomDouble = randomDouble * 1000000 + 1;
+            randomInt = (int) randomDouble;
+            if (String.valueOf(randomInt).length() < 6) {
+                i = 1;
+            } else {
+                break;
+            }
+        }
+        try {
+            String taiKhoan = "hotroshopbingbong@gmail.com";
+            String matKhau = "Bingbong123@";
+
+            Properties prop = new Properties();
+            prop.put("mail.smtp.host", "smtp.gmail.com");
+            prop.put("mail.smtp.port", "587");
+            prop.put("mail.smtp.auth", "true");
+            prop.put("mail.smtp.starttls.enable", "true");
+
+            Session session = Session.getDefaultInstance(prop, new javax.mail.Authenticator() {
+                @Override
+                protected PasswordAuthentication getPasswordAuthentication() {
+                    return new PasswordAuthentication(taiKhoan, matKhau);
+                }
+            });
+
+            String from = "hotroshopbingbong@gmail.com";
+            String to = txtGmail.getText();
+            String subject = "Mã xác nhận Bing Bong Shop ";
+            String body = "Mã xác nhận của bạn là : " + randomInt;
+
+            MimeMessage message = new MimeMessage(session);
+            message.setFrom(new InternetAddress(from));
+            message.setRecipients(
+                    Message.RecipientType.TO,
+                    InternetAddress.parse(to)
+            );
+            message.setSubject(subject);
+            message.setText(body);
+
+            //Transport.send(message);
+            MailSender.queue(message);
+
+            //JOptionPane.showMessageDialog(this, "Đã gởi mail thành công");
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, e.getMessage());
+            e.printStackTrace();
+            System.out.println(e);
+        }
+    }
+
+    boolean checkForm() {
+        boolean check = true;
+        int kiemTra = 0;
+        NhanVienDAO nvDAO = new NhanVienDAO();
+        List<NhanVien> listNV = nvDAO.SelectAll();
+        for (int i = 0; i < listNV.size(); i++) {
+            if (txtGmail.getText().equals(listNV.get(i).getGmail())) {
+                kiemTra = 1;
+                break;
+            }
+        }
+        if (kiemTra == 0) {
+            check = false;
+            MsgBox.alert(this, "Gmail chưa được đăng ký!\nVui lòng nhập lại!");
+        } else {
+            check = true;
+        }
+        return check;
     }
 
     /**
@@ -63,6 +151,14 @@ public class ForgotPasswordDialog extends javax.swing.JFrame {
         txtGmail.setForeground(new java.awt.Color(102, 102, 102));
         txtGmail.setText("Nhập Gmail");
         txtGmail.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 4, 0, new java.awt.Color(0, 51, 255)));
+        txtGmail.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtGmailFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtGmailFocusLost(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -152,8 +248,12 @@ public class ForgotPasswordDialog extends javax.swing.JFrame {
     }//GEN-LAST:event_lblCloseMouseClicked
 
     private void lblConfirmMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblConfirmMouseClicked
-        this.dispose();
-        new OTPDialog().setVisible(true);
+        if (checkForm() == true) {
+            this.GuiMail();
+            mailTo = txtGmail.getText().trim();
+            this.dispose();
+            new OTPDialog().setVisible(true);
+        }
     }//GEN-LAST:event_lblConfirmMouseClicked
 
     private void lblBackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblBackMouseClicked
@@ -176,6 +276,18 @@ public class ForgotPasswordDialog extends javax.swing.JFrame {
     private void lblConfirmMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblConfirmMouseExited
         lblConfirm.setBorder(null);
     }//GEN-LAST:event_lblConfirmMouseExited
+
+    private void txtGmailFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtGmailFocusGained
+        if (txtGmail.getText().equals("Nhập Gmail")) {
+            txtGmail.setText(null);
+        }
+    }//GEN-LAST:event_txtGmailFocusGained
+
+    private void txtGmailFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtGmailFocusLost
+        if (txtGmail.getText().isEmpty()) {
+            txtGmail.setText("Nhập Gmail");
+        }
+    }//GEN-LAST:event_txtGmailFocusLost
 
     /**
      * @param args the command line arguments
@@ -202,6 +314,7 @@ public class ForgotPasswordDialog extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(ForgotPasswordDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */

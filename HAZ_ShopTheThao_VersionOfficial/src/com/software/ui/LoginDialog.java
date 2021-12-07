@@ -233,7 +233,7 @@ public class LoginDialog extends javax.swing.JFrame {
         jPanel1.setOpaque(false);
 
         txtUser.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        txtUser.setForeground(new java.awt.Color(153, 153, 153));
+        txtUser.setForeground(new java.awt.Color(102, 102, 255));
         txtUser.setText("Số Điện Thoại");
         txtUser.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 4, 0, new java.awt.Color(0, 51, 255)));
         txtUser.addFocusListener(new java.awt.event.FocusAdapter() {
@@ -262,7 +262,7 @@ public class LoginDialog extends javax.swing.JFrame {
         lblPass.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/software/icon/smartphone.png"))); // NOI18N
 
         pwdPass.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        pwdPass.setForeground(new java.awt.Color(153, 153, 153));
+        pwdPass.setForeground(new java.awt.Color(102, 102, 255));
         pwdPass.setText("Mật Khẩu");
         pwdPass.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 4, 0, new java.awt.Color(0, 51, 255)));
         pwdPass.addFocusListener(new java.awt.event.FocusAdapter() {

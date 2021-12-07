@@ -75,4 +75,10 @@ public class TaiKhoanDAO extends SoftwareDAO<TaiKhoan, String>{
             throw new RuntimeException(e);
         }
     }
+    public void updatePass(String pass, String soDienThoai) {
+        try {
+            XJdbc.update(UPDATE_SQL, pass, soDienThoai);
+        } catch (SQLException ex) {
+        }
+    }
 }

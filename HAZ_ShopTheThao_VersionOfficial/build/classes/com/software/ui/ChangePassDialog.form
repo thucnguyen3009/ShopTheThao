@@ -66,15 +66,15 @@
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="txtPass" pref="305" max="32767" attributes="0"/>
+                              <Component id="pwdPass" pref="305" max="32767" attributes="0"/>
                               <Component id="lblLoiPass" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                          <Component id="lblAnHienPass" max="32767" attributes="0"/>
+                          <Component id="lblAnHienPass" pref="41" max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="txtConfirm" pref="302" max="32767" attributes="0"/>
+                              <Component id="pwdConfirm" pref="302" max="32767" attributes="0"/>
                               <Component id="lblLoiConfirm" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
@@ -92,7 +92,7 @@
                   <Component id="lblLoiPass" min="-2" pref="22" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                       <Component id="lblPass" max="32767" attributes="0"/>
-                      <Component id="txtPass" max="32767" attributes="0"/>
+                      <Component id="pwdPass" max="32767" attributes="0"/>
                       <Component id="lblAnHienPass" alignment="1" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
@@ -101,7 +101,7 @@
                   <Group type="103" groupAlignment="1" attributes="0">
                       <Component id="lblConfirmPass" min="-2" pref="34" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="txtConfirm" alignment="0" max="32767" attributes="0"/>
+                          <Component id="pwdConfirm" alignment="0" max="32767" attributes="0"/>
                           <Component id="lblAnHienConfirm" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -134,12 +134,15 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JPasswordField" name="txtPass">
+        <Component class="javax.swing.JPasswordField" name="pwdPass">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="14" style="0"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="M&#x1ead;t Kh&#x1ea9;u M&#x1edb;i"/>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="66" red="66" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="M&#x1ead;t Kh&#x1ea9;u"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.MatteColorBorderInfo">
                 <MatteColorBorder bottom="4" left="0" right="0" top="0">
@@ -148,6 +151,11 @@
               </Border>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="pwdPassFocusGained"/>
+            <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="pwdPassFocusLost"/>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="pwdPassMouseClicked"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="lblAnHienPass">
           <Properties>
@@ -163,6 +171,9 @@
               </Border>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblAnHienPassMouseClicked"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="lblAnHienConfirm">
           <Properties>
@@ -178,11 +189,17 @@
               </Border>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="lblAnHienConfirmMouseClicked"/>
+          </Events>
         </Component>
-        <Component class="javax.swing.JPasswordField" name="txtConfirm">
+        <Component class="javax.swing.JPasswordField" name="pwdConfirm">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="14" style="0"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="66" red="66" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="X&#xe1;c Nh&#x1ead;n M&#x1ead;t Kh&#x1ea9;u"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -193,6 +210,11 @@
               </Border>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="pwdConfirmFocusGained"/>
+            <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="pwdConfirmFocusLost"/>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="pwdConfirmMouseClicked"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="lblLoiConfirm">
           <Properties>

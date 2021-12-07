@@ -71,6 +71,7 @@ public class LoaiSanPhamDAO extends SoftwareDAO<LoaiSanPham, String> {
                 loaiSP.setMaLoai(rs.getString("MaLoai"));
                 loaiSP.setTenLoai(rs.getString("TenLoai"));
                 loaiSP.setMoTa(rs.getString("MoTa"));
+                list.add(loaiSP);
             }
             rs.getStatement().getConnection().close();
             return list;
@@ -80,7 +81,12 @@ public class LoaiSanPhamDAO extends SoftwareDAO<LoaiSanPham, String> {
     }
 
     public List<LoaiSanPham> selectByKeyWord(String keyword) {
-        String sql = "SELECT * FROM LoaiSanPham WHERE MaLoai LIKE ? OR TenLoai LIKE ?";
+        String sql = "SELECT * FROM LoaiSP WHERE MaLoai LIKE ? OR TenLoai LIKE ?";
         return SelectBySQL(sql, "%" + keyword + "%", "%" + keyword + "%");
+    }
+
+    public List<LoaiSanPham> selectByLoaiInSanPham(String maLSP) {
+        String sql = "SELECT * FROM LoaiSP WHERE MaLoai = ? and MaLoai in (select Loai from SanPham)";
+        return this.SelectBySQL(sql, maLSP);
     }
 }

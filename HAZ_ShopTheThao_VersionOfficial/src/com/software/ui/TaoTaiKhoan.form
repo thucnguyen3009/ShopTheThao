@@ -66,7 +66,7 @@
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="30" y="110" width="-1" height="30"/>
+          <AbsoluteConstraints x="30" y="110" width="130" height="30"/>
         </Constraint>
       </Constraints>
     </Component>
@@ -113,7 +113,6 @@
             <EmptyBorder/>
           </Border>
         </Property>
-        <Property name="opaque" type="boolean" value="false"/>
         <Property name="selected" type="boolean" value="true"/>
       </Properties>
       <Events>
@@ -142,7 +141,6 @@
             <EmptyBorder/>
           </Border>
         </Property>
-        <Property name="opaque" type="boolean" value="false"/>
         <Property name="selected" type="boolean" value="true"/>
       </Properties>
       <Events>

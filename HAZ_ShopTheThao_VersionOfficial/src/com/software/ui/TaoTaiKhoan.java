@@ -78,7 +78,7 @@ public class TaoTaiKhoan extends javax.swing.JFrame {
 
         jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel4.setText("Số điện thoại :");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, -1, 30));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 130, 30));
 
         jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel3.setText("Xác nhận mật khẩu : ");
@@ -93,7 +93,6 @@ public class TaoTaiKhoan extends javax.swing.JFrame {
         btnHoanTat.setForeground(new java.awt.Color(255, 255, 255));
         btnHoanTat.setText("Hoàn Tất");
         btnHoanTat.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        btnHoanTat.setOpaque(false);
         btnHoanTat.setSelected(true);
         btnHoanTat.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -107,7 +106,6 @@ public class TaoTaiKhoan extends javax.swing.JFrame {
         btnBack.setForeground(new java.awt.Color(255, 255, 255));
         btnBack.setText("Back");
         btnBack.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        btnBack.setOpaque(false);
         btnBack.setSelected(true);
         btnBack.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {

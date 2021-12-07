@@ -109,5 +109,8 @@ public class SanPhamDAO extends SoftwareDAO<SanPham, String> {
     public List<SanPham> SelectSanPhamDangKinhDoanh() {
         return this.SelectBySQL(SELECT_SP_DANGKINHDOANH);
     }
-    
+    public List<SanPham> selectBySanPhamInHoaDon(String maSP) {
+        String sql = "SELECT * FROM SanPham WHERE MaSP = ? and MaSP in (select MaSP from ChiTietHoaDon)";
+        return this.SelectBySQL(sql, maSP);
+    }
 }
