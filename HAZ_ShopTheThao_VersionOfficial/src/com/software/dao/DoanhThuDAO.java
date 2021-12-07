@@ -34,9 +34,9 @@ public class DoanhThuDAO {
         return list;
     }
 
-//    public List<Object[]> getDoanhThu() {
-//        sql = "{CALL sp_LuongNguoiHoc}";
-//        String[] cols = {"Nam", "SoLuong", "NgayDKDauTien", "NgayDKCuoiCung"};
-//        return this.getListOfArray(sql, cols);
-//    }
+    public List<Object[]> getDoanhThu(String ngayBatDau, String ngayKetThuc) {
+        sql = "{CALL sp_thongke(?,?)}";
+        String[] cols = {"Tổng Tiền Bán Được", "Tổng Giá Giảm", "Doanh Thu"};
+        return this.getListOfArray(sql, cols,ngayBatDau,ngayKetThuc);
+    }
 }
