@@ -96,6 +96,8 @@ public class ForgotPasswordDialog extends javax.swing.JFrame {
     boolean checkForm() {
         boolean check = true;
         int kiemTra = 0;
+//        String isGmailThuong = "[/^[A-Za-z0-9_.]{6,32}@([a-zA-Z0-9]{2,12})(.[a-zA-Z]{2,12})+$/]";
+        String isGmail= "(([a-zA-z]{3,})+[pP]+[cC]+[0-9]{5}+@fpt.edu.vn)|([a-zA-Z0-9]{6,30}+@gmail.com)";
         NhanVienDAO nvDAO = new NhanVienDAO();
         List<NhanVien> listNV = nvDAO.SelectAll();
         for (int i = 0; i < listNV.size(); i++) {
@@ -107,10 +109,14 @@ public class ForgotPasswordDialog extends javax.swing.JFrame {
         if (txtGmail.getText().isEmpty() || txtGmail.getText().equals("Nhập Gmail")) {
             check = false;
             MsgBox.alert(this, "Vui lòng nhập gmail của bạn!");
+        } else if(!txtGmail.getText().matches(isGmail)){
+            check = false;
+            MsgBox.alert(this, "Gmail chưa hợp lệ.\nVui lòng nhập lại!");
         } else if (kiemTra == 0) {
             check = false;
             MsgBox.alert(this, "Gmail chưa được đăng ký!\nVui lòng nhập lại!");
-        } else {
+        }
+        else {
             check = true;
         }
         return check;
@@ -252,6 +258,7 @@ public class ForgotPasswordDialog extends javax.swing.JFrame {
 
     private void lblConfirmMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblConfirmMouseClicked
         if (checkForm() == true) {
+            lblConfirm.requestFocus();
             this.GuiMail();
             mailTo = txtGmail.getText().trim();
             this.dispose();

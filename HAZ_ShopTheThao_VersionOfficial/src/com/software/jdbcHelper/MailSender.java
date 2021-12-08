@@ -32,6 +32,7 @@ public class MailSender extends Thread{
     }
 
     @Override
+    @SuppressWarnings("empty-statement")
     public void run() {
         while (true) {
             try {
@@ -40,10 +41,10 @@ public class MailSender extends Thread{
                         try {
                             MimeMessage mail = queue.remove(0);
                             Transport.send(mail);
-                            System.out.println("The mail was send !");
+//                            System.out.println("The mail was send !");
                         } catch (MessagingException e) {
-                            System.out.println("Unable to send mail !");
-                            System.out.println(e);
+//                            System.out.println("Unable to send mail !");
+//                            System.out.println(e);
                         }
                     } else {
                         queue.wait();
