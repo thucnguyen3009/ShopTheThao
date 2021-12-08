@@ -513,7 +513,6 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
     boolean isUpdate = false;
 
     public boolean checkForm() {
-
         NhanVien nv = getForm();
         if (isUpdate == false) {
             if (txtMaNV.getText().isEmpty()
@@ -682,7 +681,7 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
                         this.fillTableChucVu();
                         this.clearFormCV();
                     } catch (Exception e) {
-                        MsgBox.alert(this, "Nhân viên đã có thao tác đến dữ liệu hệ thống, không thể xóa!");
+                        MsgBox.alert(this, "Chức vụ đã có thao tác đến dữ liệu hệ thống, không thể xóa!");
                     }
                 }
                 break;
@@ -894,8 +893,6 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
     }
 
     public void ResetSP() {
-//        SanPham sp = new SanPham();
-//        this.SetFormSP(sp);
         this.indexSP = -1;
         txtTenSanPhamSP.setText("");
         txtMaSanPhamSP.setText("");

@@ -40,6 +40,7 @@ public class ForgotPasswordDialog extends javax.swing.JFrame {
     static int randomInt;
     static String mailTo = null;
 
+    @SuppressWarnings({"CallToPrintStackTrace", "UseSpecificCatch"})
     public void GuiMail() {
         for (int i = 1; i < 2; i++) {
             double randomDouble = Math.random();
@@ -89,7 +90,6 @@ public class ForgotPasswordDialog extends javax.swing.JFrame {
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, e.getMessage());
             e.printStackTrace();
-            System.out.println(e);
         }
     }
 
@@ -104,7 +104,10 @@ public class ForgotPasswordDialog extends javax.swing.JFrame {
                 break;
             }
         }
-        if (kiemTra == 0) {
+        if (txtGmail.getText().isEmpty() || txtGmail.getText().equals("Nhập Gmail")) {
+            check = false;
+            MsgBox.alert(this, "Vui lòng nhập gmail của bạn!");
+        } else if (kiemTra == 0) {
             check = false;
             MsgBox.alert(this, "Gmail chưa được đăng ký!\nVui lòng nhập lại!");
         } else {

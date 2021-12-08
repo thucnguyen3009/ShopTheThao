@@ -310,7 +310,7 @@ public class ChangePassDialog extends javax.swing.JFrame {
 
     private void lblBackMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblBackMouseClicked
         this.dispose();
-        new OTPDialog().setVisible(true);
+        new ForgotPasswordDialog().setVisible(true);
     }//GEN-LAST:event_lblBackMouseClicked
 
     private void lblCloseMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCloseMouseEntered

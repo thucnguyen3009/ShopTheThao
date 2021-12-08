@@ -5,6 +5,7 @@
 package com.software.ui;
 
 import com.software.jdbcHelper.MailSender;
+import com.software.jdbcHelper.MsgBox;
 import com.software.jdbcHelper.XImage;
 import static com.software.ui.ForgotPasswordDialog.randomInt;
 import java.awt.Color;
@@ -26,9 +27,9 @@ import javax.swing.Timer;
  */
 public class OTPDialog extends javax.swing.JFrame {
 
-    /**
-     * Creates new form OTPDialog
-     */
+    int second = 60;
+    Timer timer;
+
     public OTPDialog() {
         initComponents();
         this.setLocationRelativeTo(null);
@@ -37,10 +38,7 @@ public class OTPDialog extends javax.swing.JFrame {
         setTime();
     }
 
-    int second = 60;
-    Thread t;
-    Timer timer;
-
+    @SuppressWarnings({"UseSpecificCatch", "CallToPrintStackTrace"})
     public void GuiMail() {
         for (int i = 1; i < 2; i++) {
             double randomDouble = Math.random();
@@ -77,57 +75,33 @@ public class OTPDialog extends javax.swing.JFrame {
             );
             message.setSubject(subject);
             message.setText(body);
-
-            //Transport.send(message);
             MailSender.queue(message);
-
-            //JOptionPane.showMessageDialog(this, "Đã gởi mail thành công");
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, e.getMessage());
             e.printStackTrace();
-            System.out.println(e);
         }
     }
 
     public void setTime() {
         timer = new Timer(1000, (e) -> {
-                second--;
-                lblTime.setText("00:" + String.valueOf(second));
-                if (second == 0) {
-                    ForgotPasswordDialog.randomInt = 0;
-                    lblTime.setText("Mã xác nhận đã hết hiệu lực!");
-                    timer.stop();
-                }
+            second--;
+            lblTime.setText("00:" + String.valueOf(second));
+            if (second == 0) {
+                ForgotPasswordDialog.randomInt = 0;
+                lblTime.setText("Mã xác nhận đã hết hiệu lực!");
+                timer.stop();
+            }
         });
         timer.start();
-
-//        t = new Thread(new Runnable() {
-//            @Override
-//            public void run() {
-//                try {
-//                    while (true) {
-//                        second--;
-//                        t.sleep(1000);  // interval duoc cung cap bang gia tri mili giay 
-//                        lblTime.setText("00:" + String.valueOf(second));
-//                        if (second == 0) {
-//                            ForgotPasswordDialog.randomInt = 0;
-//                            lblTime.setText("Mã xác nhận đã hết hiệu lực!");
-//                            break;
-//                        }
-//
-//                    }
-//                } catch (Exception e) {
-//                }
-//            }
-//        }
-//        );
-//        t.start();
     }
 
     boolean checkCode() {
         String code = txtNumber1.getText() + txtNumber2.getText() + txtNumber3.getText() + txtNumber4.getText() + txtNumber5.getText() + txtNumber6.getText();
         if (Integer.valueOf(code) != ForgotPasswordDialog.randomInt) {
-            JOptionPane.showMessageDialog(this, "Mã xác nhận chưa chính xác vui lòng kiểm tra lại !!!");
+            MsgBox.alert(this, "Mã xác nhận chưa chính xác vui lòng kiểm tra lại!!!");
+            return false;
+        } else if (code.isEmpty()) {
+            MsgBox.alert(this, "Vui lòng nhập mã xác thực!!!");
             return false;
         }
         return true;
