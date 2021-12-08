@@ -559,6 +559,12 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
                 if (txtMaNV.getText().equals(dao.SelectAll().get(i).getMaNV())) {
                     JOptionPane.showMessageDialog(this, "Mã nhân viên không được phép trùng!", "Error", 1);
                     return false;
+                } else if (txtSoDienThoaiNV.getText().equals(dao.SelectAll().get(i).getSoDienThoai())) {
+                    JOptionPane.showMessageDialog(this, "Số điện thoại đã được sử dụng ! vui lòng chọn một số khác", "Error", 1);
+                    return false;
+                } else if (txtGmailNV.getText().equals(dao.SelectAll().get(i).getGmail())) {
+                    JOptionPane.showMessageDialog(this, "Email đã được sử dụng ! vui lòng chọn một số khác", "Error", 1);
+                    return false;
                 }
             }
         }
@@ -1764,7 +1770,6 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
             if (chon == true) {
                 Integer maHD = Integer.valueOf(txtMaHoaDonHDCT.getText());
                 @SuppressWarnings("UnnecessaryBoxing")
-//                Integer maHDCT = Integer.valueOf(this.maHDCT);
                 String maSP = null;
                 int sl = 0;
                 listSanPhamHDCT = sanPhamHDCT.SelectAll();
