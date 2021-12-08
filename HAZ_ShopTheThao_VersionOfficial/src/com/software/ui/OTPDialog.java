@@ -96,12 +96,17 @@ public class OTPDialog extends javax.swing.JFrame {
     }
 
     boolean checkCode() {
-        String code = txtNumber1.getText() + txtNumber2.getText() + txtNumber3.getText() + txtNumber4.getText() + txtNumber5.getText() + txtNumber6.getText();
-        if (Integer.valueOf(code) != ForgotPasswordDialog.randomInt) {
+        try {
+            String code = txtNumber1.getText() + txtNumber2.getText() + txtNumber3.getText() + txtNumber4.getText() + txtNumber5.getText() + txtNumber6.getText();
+            if (Integer.valueOf(code) != ForgotPasswordDialog.randomInt) {
+                MsgBox.alert(this, "Mã xác nhận chưa chính xác vui lòng kiểm tra lại!!!");
+                return false;
+            } else if (code.isEmpty()) {
+                MsgBox.alert(this, "Vui lòng nhập mã xác thực!!!");
+                return false;
+            }
+        } catch (NumberFormatException e) {
             MsgBox.alert(this, "Mã xác nhận chưa chính xác vui lòng kiểm tra lại!!!");
-            return false;
-        } else if (code.isEmpty()) {
-            MsgBox.alert(this, "Vui lòng nhập mã xác thực!!!");
             return false;
         }
         return true;
@@ -111,6 +116,11 @@ public class OTPDialog extends javax.swing.JFrame {
         if (txtOne.getText().length() == 1) {
             txtOne.nextFocus();
             txtTwo.requestFocus();
+        } else if (txtOne.getText().length() > 1) {
+            int index1 = txtOne.getText().charAt(0);
+            char kiTu = (char) index1;
+            txtOne.setText("");
+            txtOne.setText(String.valueOf(kiTu));
         }
     }
 
@@ -359,6 +369,34 @@ public class OTPDialog extends javax.swing.JFrame {
     }//GEN-LAST:event_lblResendCodeMouseExited
 
     private void txtNumber1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNumber1KeyReleased
+        if (txtNumber1.getText().trim().length() == 6) {
+            int index1 = txtNumber1.getText().trim().charAt(0);
+            int index2 = txtNumber1.getText().trim().charAt(1);
+            int index3 = txtNumber1.getText().trim().charAt(2);
+            int index4 = txtNumber1.getText().trim().charAt(3);
+            int index5 = txtNumber1.getText().trim().charAt(4);
+            int index6 = txtNumber1.getText().trim().charAt(5);
+            char kiTu1 = (char) index1;
+            char kiTu2 = (char) index2;
+            char kiTu3 = (char) index3;
+            char kiTu4 = (char) index4;
+            char kiTu5 = (char) index5;
+            char kiTu6 = (char) index6;
+            txtNumber1.setText("");
+            txtNumber2.setText("");
+            txtNumber3.setText("");
+            txtNumber4.setText("");
+            txtNumber5.setText("");
+            txtNumber6.setText("");
+            txtNumber1.setText(String.valueOf(kiTu1));
+            txtNumber2.setText(String.valueOf(kiTu2));
+            txtNumber3.setText(String.valueOf(kiTu3));
+            txtNumber4.setText(String.valueOf(kiTu4));
+            txtNumber5.setText(String.valueOf(kiTu5));
+            txtNumber6.setText(String.valueOf(kiTu6));
+            lblConfirm.requestFocus();
+            return;
+        }
         this.PasteCode(txtNumber1, txtNumber2);
     }//GEN-LAST:event_txtNumber1KeyReleased
 
