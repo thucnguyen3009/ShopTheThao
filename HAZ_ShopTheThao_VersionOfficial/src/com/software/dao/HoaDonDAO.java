@@ -19,6 +19,7 @@ public class HoaDonDAO extends SoftwareDAO<HoaDon, Integer> {
     String SELECT_ALL_SQL = "select hd.MaHD, hd.MaNV, hd.MaKH, hd.PhanTramGiam, IIF(LEN(CONVERT(nvarchar(2), DAY(hd.NgayLapHD)))=2,CONVERT(nvarchar(2), DAY(hd.NgayLapHD)),'0'+CONVERT(nvarchar(2), DAY(hd.NgayLapHD)))\n" +
 "+N'-'+IIF(LEN(CONVERT(nvarchar(2), MONTH(hd.NgayLapHD)))=2,CONVERT(nvarchar(2), MONTH(hd.NgayLapHD)),'0'+CONVERT(nvarchar(2), MONTH(hd.NgayLapHD)))\n" +
 "+N'-'+CONVERT(nvarchar(4), YEAR(hd.NgayLapHD)) AS N'NgayLapHD', hd.TrangThai, hd.GiaGiam, hd.ThanhTien from HDBan hd inner join KhachHang kh  on hd.MaKH = kh.MaKH inner join NhanVien nv on hd.MaNV = nv.MaNV";
+//    String SELECT_ALL_SQL = "select * from HDBan";
     String SELECT_BY_ID_SQL = "SELECT MaHD, MaNV, MaKH, PhanTramGiam,IIF(LEN(CONVERT(nvarchar(2), DAY(NgayLapHD)))=2,CONVERT(nvarchar(2), DAY(NgayLapHD)),'0'+CONVERT(nvarchar(2), DAY(NgayLapHD)))+N'-'+IIF(LEN(CONVERT(nvarchar(2), MONTH(NgayLapHD)))=2,CONVERT(nvarchar(2), MONTH(NgayLapHD)),'0'+CONVERT(nvarchar(2), MONTH(NgayLapHD)))+N'-'+CONVERT(nvarchar(4), YEAR(NgayLapHD)) AS N'NgayLapHD', TrangThai, GiaGiam, ThanhTien FROM HDBan WHERE MaHD = ?";
     String SELECT_BY_KEYWORD = "SELECT hd.MaHD, hd.MaNV, hd.MaKH, hd.PhanTramGiam, hd.NgayLapHD, hd.TrangThai, hd.GiaGiam, hd.ThanhTien from HDBan hd inner join KhachHang kh  on hd.MaKH = kh.MaKH inner join NhanVien nv on hd.MaNV = nv.MaNV where hd.MaHD LIKE ? OR kh.SoDT LIKE ?";
 
@@ -34,6 +35,7 @@ public class HoaDonDAO extends SoftwareDAO<HoaDon, Integer> {
                     entity.getGiaGiam(),
                     entity.getThanhTien());
         } catch (SQLException ex) {
+            System.out.println("LổiHD"+ex);
         }
     }
 
@@ -85,7 +87,7 @@ public class HoaDonDAO extends SoftwareDAO<HoaDon, Integer> {
                 hd.setMaNV(rs.getString("MaNV"));
                 hd.setMaKH(rs.getInt("MaKH"));
                 hd.setPhanTramGiam(rs.getInt("PhanTramGiam"));
-                hd.setNgayLapHD(rs.getString(5));
+                hd.setNgayLapHD(rs.getString("NgayLapHD"));
                 hd.setTrangThai(rs.getString("TrangThai"));
                 hd.setGiaGiam(rs.getDouble("GiaGiam"));
                 hd.setThanhTien(rs.getDouble("ThanhTien"));

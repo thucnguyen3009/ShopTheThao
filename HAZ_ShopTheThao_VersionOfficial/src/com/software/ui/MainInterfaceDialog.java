@@ -8,6 +8,13 @@
 //* Version: 1.0.0
 package com.software.ui;
 
+import com.itextpdf.text.Document;
+import com.itextpdf.text.Element;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.pdf.PdfPCell;
+import com.itextpdf.text.pdf.PdfPTable;
+import com.itextpdf.text.pdf.PdfWriter;
+import com.software.jdbcHelper.VNCharacterUtils;
 import com.software.dao.ChucVuDAO;
 import com.software.dao.DoanhThuDAO;
 import com.software.dao.DonViTinhDAO;
@@ -33,11 +40,16 @@ import com.software.jdbcHelper.XJdbc;
 import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Cursor;
+import java.awt.Desktop;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.DecimalFormat;
@@ -56,6 +68,7 @@ import javax.swing.JFileChooser;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JTable;
 import javax.swing.Timer;
 import javax.swing.table.DefaultTableModel;
 
@@ -1590,12 +1603,15 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
 
     public HoaDon getFormHoaDonHD() {
         HoaDon hd = new HoaDon();
-        hd.setMaHD(maHoaDonHD);
+        hd.setMaHD(TaoMaHoaDon());
         hd.setMaNV(nhanVienDangNhap.get(0).getMaNV());
         hd.setMaKH(Integer.valueOf(txtMaKhachHangHD.getText()));
         hd.setPhanTramGiam(Integer.valueOf(txtPhanTramGiam.getText()));
         hd.setGiaGiam(TinhTienGiam());
-        hd.setNgayLapHD(txtNgayLapHD.getText());
+        Date ngay = new Date();
+        SimpleDateFormat dinhDangNgay = new SimpleDateFormat("yyyy-MM-dd");
+        String ngayLapHD = dinhDangNgay.format(ngay);
+        hd.setNgayLapHD(ngayLapHD);
         hd.setTrangThai("Đã thanh toán");
         hd.setThanhTien(TienPhaiTra());
         return hd;
@@ -1603,7 +1619,7 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
 
     public void insertHoaDonHD() {
         HoaDon hd = getFormHoaDonHD();
-        if (true) {
+        if (KiemTraThanhToanHD() == true) {
             hoaDonHD.insert(hd);
             MsgBox.alert(this, "Thêm hóa đơn thành công!!!");
         }
@@ -1661,6 +1677,87 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
         }
     }
 
+    @SuppressWarnings("UseSpecificCatch")
+    public void XuatHoaDonPDF(String tenNV, String maNV, String tenKH, String soDT, String maHoaDon, String ngayLapHD, String phanTramGiam, String tienGiam, String tienPhaiThanhToan, JTable tblXuatHD) {
+        Document document = new Document() {
+        };
+        try {
+            document.setMargins(0, 0, 5, 5);
+            Paragraph paragraph1 = new Paragraph();
+            String paths = System.getProperty("user.dir") + "\\src\\com\\software\\invoice\\HoaDonTemp.pdf";
+            PdfWriter.getInstance((com.itextpdf.text.Document) document, new FileOutputStream(paths));
+            document.open();
+            paragraph1.setAlignment(Element.ALIGN_LEFT);
+            String nameNhanVien = VNCharacterUtils.removeAccent(tenNV);
+            String maSoNhanVien = VNCharacterUtils.removeAccent(maNV);
+            paragraph1.add("   SHOP THE THAO BINGBONG" + "\n   DC:  KV-Binh Thuong A, P.Long Tuyen, Q.Binh Thuy, TP.Can Tho\n   SDT:  090.777.3783\n");
+            paragraph1.add("────────────────────────────────────────────────────────────────\n\n");
+            paragraph1.add("   Ten Thu Ngan: " + nameNhanVien + "\n   MaSoNhanVien: " + maSoNhanVien + "\n");
+            document.add(paragraph1);
+            paragraph1 = new Paragraph();
+            paragraph1.setAlignment(Element.ALIGN_CENTER);
+            paragraph1.add("HOA DON BAN HANG");
+            document.add(paragraph1);
+            paragraph1 = new Paragraph();
+            paragraph1.setAlignment(Element.ALIGN_CENTER);
+            paragraph1.add("------------------------------------------------------------------------------\n\n");
+            document.add(paragraph1);
+            paragraph1 = new Paragraph();
+            String nameKH = VNCharacterUtils.removeAccent(tenKH);
+            paragraph1.add("                  MaSoHoaDon: " + maHoaDon + "\n");
+            paragraph1.add("                  Ten Khach Hang: " + nameKH + "          " + "So Dien Thoai: " + soDT + "\n");
+            paragraph1.add("                  Ngay Lap HD: " + ngayLapHD + "\n");
+            paragraph1.add("                  So Phan Tram Giam Gia Tren Toan HD: " + phanTramGiam + "%\n");
+            paragraph1.add("                  So Tien Duoc Giam: " + tienGiam + "VND\n\n");
+            document.add(paragraph1);
+            //Khởi tạo một table có 4 cột
+            PdfPTable table = new PdfPTable(4);
+            //Khởi tạo 4 ô header
+            PdfPCell header1 = new PdfPCell(new Paragraph("Ten San Pham"));
+            PdfPCell header2 = new PdfPCell(new Paragraph("SL"));
+            PdfPCell header3 = new PdfPCell(new Paragraph("Don Gia"));
+            PdfPCell header4 = new PdfPCell(new Paragraph("Thanh Tien"));
+            //Thêm 4 ô header vào table
+            table.addCell(header1);
+            table.addCell(header2);
+            table.addCell(header3);
+            table.addCell(header4);
+            for (int i = 0; i < tblXuatHD.getRowCount(); i++) {
+                String nameSP = VNCharacterUtils.removeAccent(String.valueOf(tblXuatHD.getValueAt(i, 1)));
+                PdfPCell data1 = new PdfPCell(new Paragraph(nameSP));
+                PdfPCell data2 = new PdfPCell(new Paragraph(String.valueOf(tblXuatHD.getValueAt(i, 2))));
+                PdfPCell data3 = new PdfPCell(new Paragraph(String.valueOf(tblXuatHD.getValueAt(i, 3))));
+                PdfPCell data4 = new PdfPCell(new Paragraph(String.valueOf(tblXuatHD.getValueAt(i, 4))));
+                table.addCell(data1);
+                table.addCell(data2);
+                table.addCell(data3);
+                table.addCell(data4);
+            }
+            document.add(table);
+            paragraph1 = new Paragraph();
+            paragraph1.setAlignment(Element.ALIGN_RIGHT);
+            paragraph1.add("Tien Phai Thanh Toan: " + tienPhaiThanhToan + "VND" + "                  " + "\n\n");
+            document.add(paragraph1);
+            paragraph1 = new Paragraph();
+            paragraph1.setAlignment(Element.ALIGN_CENTER);
+            paragraph1.add("------------------------------------------------------------------------------\n");
+            paragraph1.add("Cam on qui khach! \nXin chao va hen gap lai!");
+            document.add(paragraph1);
+            document.close();
+        } catch (Exception e) {
+        }
+    }
+
+    public void OpenHoaDonPDF() {
+        String paths = System.getProperty("user.dir") + "\\src\\com\\software\\invoice\\HoaDonTemp.pdf";
+        String newPaths = paths.replace("\\", "/");
+        String url = "file:///" + newPaths;
+        Desktop kiemTra = Desktop.getDesktop();
+        try {
+            kiemTra.browse(new URI(url));
+        } catch (URISyntaxException | IOException ex) {
+        }
+    }
     /*========================================================================*/
 
  /*9. Các hàm sử dụng chung cho XemHoaDon:*/
@@ -5949,11 +6046,15 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
 
     private void tblHoaDonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblHoaDonMouseClicked
         if (evt.getClickCount() == 2) {
-            indexHD = tblHoaDon.getSelectedRow();
-            soLuong = (int) tblHoaDon.getValueAt(indexHD, 2);
-            txtSoLuongHD.setText(String.valueOf(soLuong));
-            txtSoLuongHD.setEditable(true);
-            txtSoLuongHD.requestFocus();
+            if (indexHD != -1) {
+                MsgBox.alert(this, "Đang thao tác với 1 sản phẩm khác!!!");
+            } else {
+                indexHD = tblHoaDon.getSelectedRow();
+                soLuong = (int) tblHoaDon.getValueAt(indexHD, 2);
+                txtSoLuongHD.setText(String.valueOf(soLuong));
+                txtSoLuongHD.setEditable(true);
+                txtSoLuongHD.requestFocus();
+            }
         }
     }//GEN-LAST:event_tblHoaDonMouseClicked
 
@@ -5980,11 +6081,17 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
     }//GEN-LAST:event_lblGhiMouseClicked
 
     private void txtSoLuongHDFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtSoLuongHDFocusLost
-        if (indexHD != -1) {
-            if (KiemTraNhapSoLuongHD() == true) {
-                this.CapNhatSoLuongTamThoiTBLHD();
-            }
-        }
+//        if (indexHD != -1) {
+//            if (KiemTraNhapSoLuongHD() == true) {
+//                this.CapNhatSoLuongTamThoiTBLHD();
+//            }
+//        }
+        txtSoLuongHD.setText(null);
+        soLuong = 0;
+        soLuongNew = 0;
+        indexHD = -1;
+        txtSoLuongHD.setEditable(false);
+        lblGhi.requestFocus();
     }//GEN-LAST:event_txtSoLuongHDFocusLost
 
     private void txtPhanTramGiamFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtPhanTramGiamFocusLost
@@ -6007,13 +6114,39 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
     private void lblThanhToanMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblThanhToanMouseClicked
         lblThanhToan.requestFocus();
         try {
+            this.XuatHoaDonPDF(txtTenNhanVienHD.getText(),
+                    txtMaNhanVienHD.getText(),
+                    txtTenKhachHangHD.getText(),
+                    txtSdtKhachHangHD.getText(),
+                    String.valueOf(TaoMaHoaDon()),
+                    txtNgayLapHD.getText(),
+                    txtPhanTramGiam.getText(),
+                    lblThanhTienGiamHD.getText(),
+                    lblTongTienHD.getText(),
+                    tblHoaDon);
             this.ThanhToanHoaDonHD();
+            boolean chon = MsgBox.confirm(this, "Bạn có muốn in hóa đơn không?");
+            if (chon == true) {
+                this.OpenHoaDonPDF();
+            }
         } catch (SQLException ex) {
         }
     }//GEN-LAST:event_lblThanhToanMouseClicked
 
     private void lblInHDMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblInHDMouseClicked
-        MsgBox.alert(this, "Chức năng đang phát triển.\nVui lòng cảm thông. . .");
+        if (KiemTraThanhToanHD() == true) {
+            this.XuatHoaDonPDF(txtTenNhanVienHD.getText(),
+                    txtMaNhanVienHD.getText(),
+                    txtTenKhachHangHD.getText(),
+                    txtSdtKhachHangHD.getText(),
+                    String.valueOf(TaoMaHoaDon()),
+                    txtNgayLapHD.getText(),
+                    txtPhanTramGiam.getText(),
+                    lblThanhTienGiamHD.getText(),
+                    lblTongTienHD.getText(),
+                    tblHoaDon);
+            this.OpenHoaDonPDF();
+        }
     }//GEN-LAST:event_lblInHDMouseClicked
 
     private void txtTimSanPhamHDFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtTimSanPhamHDFocusGained
@@ -6082,7 +6215,21 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
     }//GEN-LAST:event_tblDanhSachHDCTMouseClicked
 
     private void lblInHDCTMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblInHDCTMouseClicked
-        MsgBox.alert(this, "Chức năng đang phát triển.\nVui lòng cảm thông. . .");
+        if (tblThongTinHDCT.getRowCount() != 0) {
+            this.XuatHoaDonPDF(txtTenThuNganHDCT.getText(),
+                    txtMaThuNganHDCT.getText(),
+                    txtTenKhachHangHDCT.getText(),
+                    txtSdtKhachHangHDCT.getText(),
+                    txtMaHoaDonHDCT.getText(),
+                    txtNgayLapHDCT.getText(),
+                    txtPhanTramGiamHDCT.getText(),
+                    lblTienDcGiamHDCT.getText(),
+                    lblTienPhaiTraHDCT.getText(),
+                    tblThongTinHDCT);
+            this.OpenHoaDonPDF();
+        } else {
+            MsgBox.alert(this, "Vui lòng chọn hóa đơn!!!");
+        }
     }//GEN-LAST:event_lblInHDCTMouseClicked
 
     private void lblXoaHDCTMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblXoaHDCTMouseClicked

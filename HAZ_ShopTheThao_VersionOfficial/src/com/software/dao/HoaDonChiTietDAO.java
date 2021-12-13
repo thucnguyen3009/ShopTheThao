@@ -30,6 +30,7 @@ public class HoaDonChiTietDAO extends SoftwareDAO<HoaDonChiTiet, Integer> {
                     entity.getSoLuong(),
                     entity.getDonGia());
         } catch (SQLException ex) {
+            System.out.println("LổiHDCT"+ex);
         }
     }
 
