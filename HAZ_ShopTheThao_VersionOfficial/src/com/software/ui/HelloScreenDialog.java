@@ -31,7 +31,7 @@ public class HelloScreenDialog extends javax.swing.JFrame {
     }
 
     public void LoadPrb() {
-        timer = new Timer(100, new ActionListener() {
+        timer = new Timer(60, new ActionListener() {
             @Override
             @SuppressWarnings("UnusedAssignment")
             public void actionPerformed(ActionEvent e) {

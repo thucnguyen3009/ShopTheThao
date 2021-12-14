@@ -9,6 +9,7 @@ import com.software.dao.NhanVienDAO;
 import com.software.dao.TaiKhoanDAO;
 import com.software.entity.NhanVien;
 import com.software.entity.TaiKhoan;
+import com.software.jdbcHelper.XImage;
 import java.util.List;
 import javax.swing.JOptionPane;
 
@@ -33,6 +34,8 @@ public class TaoTaiKhoan extends javax.swing.JFrame {
         this.setAlwaysOnTop(true);
         NhanVien nv = dao.SelectByID(manv);
         this.setForm(nv);
+        this.setTitle("Shop Thể Thao BingBong");
+        this.setIconImage(XImage.getAppIcon());
     }
 
     public void setForm(NhanVien nv) {
