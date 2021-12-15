@@ -6,9 +6,19 @@
 package com.software.ui;
 
 import com.software.dao.DoanhThuDAO;
+import com.software.jdbcHelper.MsgBox;
 import com.software.jdbcHelper.XImage;
+import java.text.DateFormat;
+import java.text.NumberFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.ImageIcon;
+import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -28,14 +38,63 @@ public class XemDoanhThu extends javax.swing.JFrame {
         this.setIconImage(XImage.getAppIcon());
     }
 
-    public void fillTableDiemChuyenDe() {
+    public boolean KiemTraNgay() {
+        if (txtNBD.getText().trim().isEmpty()) {
+            MsgBox.alert(this, "Vui lòng nhập ngày bắt đầu!!!");
+            txtNBD.requestFocus();
+            return false;
+        } else if (txtNKT.getText().trim().isEmpty()) {
+            MsgBox.alert(this, "Vui lòng nhập ngày kết thúc!!!");
+            txtNKT.requestFocus();
+            return false;
+        }
+        DateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+        sdf.setLenient(false);
+        try {
+            String date1 = txtNBD.getText().replace("/", "-");
+            String date2 = date1.replace(".", "-");
+            sdf.parse(date2);
+        } catch (ParseException e) {
+            MsgBox.alert(this, "Ngày bắt đầu không hợp lệ!\nVui lòng nhập ngày theo định dạng dd-MM-YYYY!");
+            txtNBD.requestFocus();
+            return false;
+        }
+        try {
+            String date1 = txtNKT.getText().replace("/", "-");
+            String date2 = date1.replace(".", "-");
+            sdf.parse(date2);
+        } catch (ParseException e) {
+            MsgBox.alert(this, "Ngày kết thúc không hợp lệ!\nVui lòng nhập ngày theo định dạng dd-MM-YYYY!");
+            txtNKT.requestFocus();
+            return false;
+        }
+        return true;
+    }
+
+    public String ChuyenNgay(JTextField txtField, String dinhDangBegin, String dinhDangEnd) throws ParseException {
+        String dateBD1 = txtField.getText().replace("/", "-");
+        String dateBD2 = dateBD1.replace(".", "-");
+        Date date = new SimpleDateFormat("dd-MM-yyyy").parse(dateBD2);
+        SimpleDateFormat f = new SimpleDateFormat("yyyy-MM-dd");
+        String kq = f.format(date);
+        return kq;
+    }
+
+    public void fillTableDiemChuyenDe() throws ParseException {
         DoanhThuDAO daoDT = new DoanhThuDAO();
         DefaultTableModel model = (DefaultTableModel) tblDoanhThu.getModel();
         model.setRowCount(0);
-        List<Object[]> list = daoDT.getDoanhThu(txtNBD.getText(), txtNKT.getText());
+        String ngayBD = ChuyenNgay(txtNBD, "dd-MM-yyyy", "yyyy-MM-dd");
+        String ngayKT = ChuyenNgay(txtNKT, "dd-MM-yyyy", "yyyy-MM-dd");
+        List<Object[]> list = daoDT.getDoanhThu(ngayBD, ngayKT);
         for (Object[] row : list) {
             model.addRow(new Object[]{row[0], row[1], row[2]});
         }
+        Locale localeVN = new Locale("vi", "VN");
+        NumberFormat currencyFormat = NumberFormat.getCurrencyInstance(localeVN);
+        tblDoanhThu.setValueAt(currencyFormat.format(tblDoanhThu.getValueAt(0, 0)), 0, 0);
+        tblDoanhThu.setValueAt(currencyFormat.format(tblDoanhThu.getValueAt(0, 1)), 0, 1);
+        tblDoanhThu.setValueAt(currencyFormat.format(tblDoanhThu.getValueAt(0, 2)), 0, 2);
     }
 
     /**
@@ -134,8 +193,13 @@ public class XemDoanhThu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnXemDTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnXemDTActionPerformed
-        fillTableDiemChuyenDe();
-        
+        if (KiemTraNgay() == true) {
+            try {
+                fillTableDiemChuyenDe();
+            } catch (ParseException ex) {
+                Logger.getLogger(XemDoanhThu.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
     }//GEN-LAST:event_btnXemDTActionPerformed
 
     private void lblCloseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCloseMouseClicked

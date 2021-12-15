@@ -1715,6 +1715,10 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
             this.insertHoaDonHD();
             this.insertHoaDonChiTietHD();
             this.ResetHD();
+            boolean chon = MsgBox.confirm(this, "Bạn có muốn in hóa đơn không?");
+            if (chon == true) {
+                this.OpenHoaDonPDF();
+            }
         }
     }
 
@@ -4520,14 +4524,6 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
                     .addGroup(pnlThongTinHoaDonTamLayout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(pnlThongTinHoaDonTamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlThongTinHoaDonTamLayout.createSequentialGroup()
-                                .addComponent(lblPhanTramGiamHD, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtPhanTramGiam, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(lblTienGiamHD, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(2, 2, 2)
-                                .addComponent(lblThanhTienGiamHD, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGroup(pnlThongTinHoaDonTamLayout.createSequentialGroup()
                                 .addGroup(pnlThongTinHoaDonTamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(lblTenKhachHangHD, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -4558,8 +4554,23 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
                                                     .addComponent(txtMaNhanVienHD, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))
                                                 .addGap(80, 80, 80))))))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlThongTinHoaDonTamLayout.createSequentialGroup()
+                                .addComponent(lblSoLuongHD, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtSoLuongHD, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(lblGhi, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(212, 212, 212))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlThongTinHoaDonTamLayout.createSequentialGroup()
                                 .addGap(0, 0, Short.MAX_VALUE)
                                 .addGroup(pnlThongTinHoaDonTamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlThongTinHoaDonTamLayout.createSequentialGroup()
+                                        .addComponent(lblPhanTramGiamHD, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(txtPhanTramGiam, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(lblTienGiamHD, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(lblThanhTienGiamHD, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlThongTinHoaDonTamLayout.createSequentialGroup()
                                         .addComponent(lblTC)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -4567,14 +4578,7 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlThongTinHoaDonTamLayout.createSequentialGroup()
                                         .addComponent(lblInHD, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(lblThanhToan, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlThongTinHoaDonTamLayout.createSequentialGroup()
-                                .addComponent(lblSoLuongHD, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtSoLuongHD, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(lblGhi, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(212, 212, 212)))))
+                                        .addComponent(lblThanhToan, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
                 .addContainerGap())
         );
         pnlThongTinHoaDonTamLayout.setVerticalGroup(
@@ -6110,10 +6114,6 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
                     lblTongTienHD.getText(),
                     tblHoaDon);
             this.ThanhToanHoaDonHD();
-            boolean chon = MsgBox.confirm(this, "Bạn có muốn in hóa đơn không?");
-            if (chon == true) {
-                this.OpenHoaDonPDF();
-            }
         } catch (SQLException ex) {
         }
     }//GEN-LAST:event_lblThanhToanMouseClicked
