@@ -16,7 +16,6 @@ import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
 import com.software.jdbcHelper.VNCharacterUtils;
 import com.software.dao.ChucVuDAO;
-import com.software.dao.DoanhThuDAO;
 import com.software.dao.DonViTinhDAO;
 import com.software.dao.HoaDonChiTietDAO;
 import com.software.dao.HoaDonDAO;
@@ -50,7 +49,6 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
@@ -965,7 +963,7 @@ public class MainInterfaceDialog extends javax.swing.JFrame {
         } else {
             try {
                 Integer sl = Integer.valueOf(txtSoLuongSP.getText());
-                if (sl <= 0) {
+                if (sl < 0) {
                     MsgBox.alert(this, "Vui lòng nhận số lượng lớn hơn 0!");
                     txtSoLuongSP.requestFocus();
                     kiemTraSP = false;
