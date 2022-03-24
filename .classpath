@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-16">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry including="**/*.java" kind="src" output="target/classes" path="HAZ_ShopTheThao_VersionOfficial/src">
+		<attributes>
+			<attribute name="optional" value="true"/>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="HAZ_ShopTheThao_VersionOfficial/lib/commons-beanutils-1.8.3.jar"/>
+	<classpathentry kind="lib" path="HAZ_ShopTheThao_VersionOfficial/lib/commons-collections-3.2.1-1.0.0.jar"/>
+	<classpathentry kind="lib" path="HAZ_ShopTheThao_VersionOfficial/lib/commons-digester-2.1.jar"/>
+	<classpathentry kind="lib" path="HAZ_ShopTheThao_VersionOfficial/lib/commons-logging-api-1.1.jar"/>
+	<classpathentry kind="lib" path="HAZ_ShopTheThao_VersionOfficial/lib/itext-2.1.7.jar"/>
+	<classpathentry kind="lib" path="HAZ_ShopTheThao_VersionOfficial/lib/itext-pdfa-5.4.0.jar"/>
+	<classpathentry kind="lib" path="HAZ_ShopTheThao_VersionOfficial/lib/itextpdf-5.3.4.jar"/>
+	<classpathentry kind="lib" path="HAZ_ShopTheThao_VersionOfficial/lib/jasperreports-6.10.0.jar"/>
+	<classpathentry kind="lib" path="HAZ_ShopTheThao_VersionOfficial/lib/jasperreports-fonts-6.10.0.jar"/>
+	<classpathentry kind="lib" path="HAZ_ShopTheThao_VersionOfficial/lib/javax.mail.jar"/>
+	<classpathentry kind="lib" path="HAZ_ShopTheThao_VersionOfficial/lib/mssql-jdbc-9.2.1.jre8.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Halo/Downloads/AbsoluteLayout-RELEASE130.jar"/>
+	<classpathentry kind="src" output="target/test-classes" path="src/test/java">
+		<attributes>
+			<attribute name="test" value="true"/>
+			<attribute name="optional" value="true"/>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER">
+		<attributes>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="output" path="target/classes"/>
+</classpath>
