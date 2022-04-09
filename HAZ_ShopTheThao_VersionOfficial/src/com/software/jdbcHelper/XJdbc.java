@@ -15,7 +15,7 @@ public class XJdbc {
 
     static Connection connection;
     static String driver = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
-    static String url = "jdbc:sqlserver://localhost; database = QuanLyShopTheThaoPingPong";//sai dấu 2 chấm thành 1 chấm :))
+    static String url = "jdbc:sqlserver://localhost; database=QuanLyShopTheThaoPingPong";//sai dấu 2 chấm thành 1 chấm :))
     public static String useSql = "sa";
     public static String passSql = "123";
 
