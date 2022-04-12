@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Feature" parallel="false">
+	<test name="TestKhachHang">
+		<classes>
+			<class name="com.test.KhachHang.TestThemKH" />
+			<class name="com.test.KhachHang.TestSuaKH" />
+			<class name="com.test.KhachHang.TestXoaKH" />
+			<class name="com.test.KhachHang.TestTimKH" />
+		</classes>
+	</test>
+</suite>

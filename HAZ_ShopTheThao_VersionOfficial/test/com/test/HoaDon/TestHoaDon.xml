@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Feature" parallel="false">
+	<test name="TestHoaDon">
+		<classes>
+			<class name="com.test.HoaDon.TestThemHoaDon" />
+			<class name="com.test.HoaDon.TestSuaHoaDon" />
+			<class name="com.test.HoaDon.TestXoaHDCT" />
+			<class name="com.test.HoaDon.TestTimHoaDon" />
+		</classes>
+	</test>
+</suite>

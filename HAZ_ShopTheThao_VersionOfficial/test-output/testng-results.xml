@@ -2,142 +2,16 @@
 <testng-results ignored="0" total="72" passed="72" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-04-12T18:27:18 ICT" name="testSP" finished-at="2022-04-12T18:27:23 ICT" duration-ms="5004">
+  <suite started-at="2022-04-12T18:48:59 ICT" name="testSP" finished-at="2022-04-12T18:49:03 ICT" duration-ms="4589">
     <groups>
     </groups>
-    <test started-at="2022-04-12T18:27:18 ICT" name="testSP" finished-at="2022-04-12T18:27:23 ICT" duration-ms="5004">
-      <class name="com.test.SanPham.testXoaSP">
-        <test-method is-config="true" signature="initialize()[pri:0, instance:com.test.SanPham.testXoaSP@74ea2410]" started-at="2022-04-12T18:27:20 ICT" name="initialize" finished-at="2022-04-12T18:27:20 ICT" duration-ms="1" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- initialize -->
-        <test-method is-config="true" signature="getSize()[pri:0, instance:com.test.SanPham.testXoaSP@74ea2410]" started-at="2022-04-12T18:27:20 ICT" name="getSize" finished-at="2022-04-12T18:27:20 ICT" duration-ms="95" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- getSize -->
-        <test-method signature="TestUpdateTenSP(java.lang.String,int)[pri:0, instance:com.test.SanPham.testXoaSP@74ea2410]" started-at="2022-04-12T18:27:20 ICT" name="TestUpdateTenSP" data-provider="db" finished-at="2022-04-12T18:27:20 ICT" duration-ms="201" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[6]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[1]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TestUpdateTenSP -->
-        <test-method is-config="true" signature="getSize()[pri:0, instance:com.test.SanPham.testXoaSP@74ea2410]" started-at="2022-04-12T18:27:20 ICT" name="getSize" finished-at="2022-04-12T18:27:20 ICT" duration-ms="25" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- getSize -->
-        <test-method signature="TestUpdateTenSP(java.lang.String,int)[pri:0, instance:com.test.SanPham.testXoaSP@74ea2410]" started-at="2022-04-12T18:27:20 ICT" name="TestUpdateTenSP" data-provider="db" finished-at="2022-04-12T18:27:20 ICT" duration-ms="52" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[7]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[1]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TestUpdateTenSP -->
-        <test-method is-config="true" signature="getSize()[pri:0, instance:com.test.SanPham.testXoaSP@74ea2410]" started-at="2022-04-12T18:27:20 ICT" name="getSize" finished-at="2022-04-12T18:27:20 ICT" duration-ms="23" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- getSize -->
-        <test-method signature="TestUpdateTenSP(java.lang.String,int)[pri:0, instance:com.test.SanPham.testXoaSP@74ea2410]" started-at="2022-04-12T18:27:20 ICT" name="TestUpdateTenSP" data-provider="db" finished-at="2022-04-12T18:27:21 ICT" duration-ms="122" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[8]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[1]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TestUpdateTenSP -->
-        <test-method is-config="true" signature="getSize()[pri:0, instance:com.test.SanPham.testXoaSP@74ea2410]" started-at="2022-04-12T18:27:21 ICT" name="getSize" finished-at="2022-04-12T18:27:21 ICT" duration-ms="14" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- getSize -->
-        <test-method signature="TestUpdateTenSP(java.lang.String,int)[pri:0, instance:com.test.SanPham.testXoaSP@74ea2410]" started-at="2022-04-12T18:27:21 ICT" name="TestUpdateTenSP" data-provider="db" finished-at="2022-04-12T18:27:21 ICT" duration-ms="82" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[100]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[0]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TestUpdateTenSP -->
-        <test-method is-config="true" signature="getSize()[pri:0, instance:com.test.SanPham.testXoaSP@74ea2410]" started-at="2022-04-12T18:27:21 ICT" name="getSize" finished-at="2022-04-12T18:27:21 ICT" duration-ms="13" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- getSize -->
-        <test-method signature="TestUpdateTenSP(java.lang.String,int)[pri:0, instance:com.test.SanPham.testXoaSP@74ea2410]" started-at="2022-04-12T18:27:21 ICT" name="TestUpdateTenSP" data-provider="db" finished-at="2022-04-12T18:27:21 ICT" duration-ms="73" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[1]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[0]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TestUpdateTenSP -->
-        <test-method is-config="true" signature="getSize()[pri:0, instance:com.test.SanPham.testXoaSP@74ea2410]" started-at="2022-04-12T18:27:21 ICT" name="getSize" finished-at="2022-04-12T18:27:21 ICT" duration-ms="62" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- getSize -->
-        <test-method signature="TestUpdateTenSP(java.lang.String,int)[pri:0, instance:com.test.SanPham.testXoaSP@74ea2410]" started-at="2022-04-12T18:27:21 ICT" name="TestUpdateTenSP" data-provider="db" finished-at="2022-04-12T18:27:21 ICT" duration-ms="23" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[3]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[0]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TestUpdateTenSP -->
-      </class> <!-- com.test.SanPham.testXoaSP -->
+    <test started-at="2022-04-12T18:48:59 ICT" name="testSP" finished-at="2022-04-12T18:49:03 ICT" duration-ms="4589">
       <class name="com.test.SanPham.testThemSP">
-        <test-method is-config="true" signature="initialize()[pri:0, instance:com.test.SanPham.testThemSP@15bb5034]" started-at="2022-04-12T18:27:18 ICT" name="initialize" finished-at="2022-04-12T18:27:18 ICT" duration-ms="11" status="PASS">
+        <test-method is-config="true" signature="initialize()[pri:0, instance:com.test.SanPham.testThemSP@4b741d6d]" started-at="2022-04-12T18:48:59 ICT" name="initialize" finished-at="2022-04-12T18:48:59 ICT" duration-ms="14" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initialize -->
-        <test-method signature="TestInsert(java.lang.String,java.lang.String,java.lang.Integer,java.lang.String,java.lang.String,java.lang.Double,java.lang.String,java.lang.String)[pri:0, instance:com.test.SanPham.testThemSP@15bb5034]" started-at="2022-04-12T18:27:18 ICT" name="TestInsert" data-provider="db" finished-at="2022-04-12T18:27:19 ICT" duration-ms="452" status="PASS">
+        <test-method signature="TestInsert(java.lang.String,java.lang.String,java.lang.Integer,java.lang.String,java.lang.String,java.lang.Double,java.lang.String,java.lang.String)[pri:0, instance:com.test.SanPham.testThemSP@4b741d6d]" started-at="2022-04-12T18:48:59 ICT" name="TestInsert" data-provider="db" finished-at="2022-04-12T18:49:00 ICT" duration-ms="995" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -183,7 +57,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestInsert -->
-        <test-method signature="TestInsert(java.lang.String,java.lang.String,java.lang.Integer,java.lang.String,java.lang.String,java.lang.Double,java.lang.String,java.lang.String)[pri:0, instance:com.test.SanPham.testThemSP@15bb5034]" started-at="2022-04-12T18:27:19 ICT" name="TestInsert" data-provider="db" finished-at="2022-04-12T18:27:19 ICT" duration-ms="36" status="PASS">
+        <test-method signature="TestInsert(java.lang.String,java.lang.String,java.lang.Integer,java.lang.String,java.lang.String,java.lang.Double,java.lang.String,java.lang.String)[pri:0, instance:com.test.SanPham.testThemSP@4b741d6d]" started-at="2022-04-12T18:49:00 ICT" name="TestInsert" data-provider="db" finished-at="2022-04-12T18:49:00 ICT" duration-ms="188" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -229,7 +103,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestInsert -->
-        <test-method signature="TestInsert(java.lang.String,java.lang.String,java.lang.Integer,java.lang.String,java.lang.String,java.lang.Double,java.lang.String,java.lang.String)[pri:0, instance:com.test.SanPham.testThemSP@15bb5034]" started-at="2022-04-12T18:27:19 ICT" name="TestInsert" data-provider="db" finished-at="2022-04-12T18:27:19 ICT" duration-ms="38" status="PASS">
+        <test-method signature="TestInsert(java.lang.String,java.lang.String,java.lang.Integer,java.lang.String,java.lang.String,java.lang.Double,java.lang.String,java.lang.String)[pri:0, instance:com.test.SanPham.testThemSP@4b741d6d]" started-at="2022-04-12T18:49:00 ICT" name="TestInsert" data-provider="db" finished-at="2022-04-12T18:49:00 ICT" duration-ms="90" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -275,7 +149,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestInsert -->
-        <test-method signature="TestInsert(java.lang.String,java.lang.String,java.lang.Integer,java.lang.String,java.lang.String,java.lang.Double,java.lang.String,java.lang.String)[pri:0, instance:com.test.SanPham.testThemSP@15bb5034]" started-at="2022-04-12T18:27:19 ICT" name="TestInsert" data-provider="db" finished-at="2022-04-12T18:27:19 ICT" duration-ms="44" status="PASS">
+        <test-method signature="TestInsert(java.lang.String,java.lang.String,java.lang.Integer,java.lang.String,java.lang.String,java.lang.Double,java.lang.String,java.lang.String)[pri:0, instance:com.test.SanPham.testThemSP@4b741d6d]" started-at="2022-04-12T18:49:00 ICT" name="TestInsert" data-provider="db" finished-at="2022-04-12T18:49:00 ICT" duration-ms="185" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -321,7 +195,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestInsert -->
-        <test-method signature="TestInsert(java.lang.String,java.lang.String,java.lang.Integer,java.lang.String,java.lang.String,java.lang.Double,java.lang.String,java.lang.String)[pri:0, instance:com.test.SanPham.testThemSP@15bb5034]" started-at="2022-04-12T18:27:19 ICT" name="TestInsert" data-provider="db" finished-at="2022-04-12T18:27:19 ICT" duration-ms="153" status="PASS">
+        <test-method signature="TestInsert(java.lang.String,java.lang.String,java.lang.Integer,java.lang.String,java.lang.String,java.lang.Double,java.lang.String,java.lang.String)[pri:0, instance:com.test.SanPham.testThemSP@4b741d6d]" started-at="2022-04-12T18:49:00 ICT" name="TestInsert" data-provider="db" finished-at="2022-04-12T18:49:00 ICT" duration-ms="68" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -368,16 +242,142 @@
           </reporter-output>
         </test-method> <!-- TestInsert -->
       </class> <!-- com.test.SanPham.testThemSP -->
-      <class name="com.test.SanPham.testXoaLoaiSP">
-        <test-method is-config="true" signature="initialize()[pri:0, instance:com.test.SanPham.testXoaLoaiSP@5d0bf09b]" started-at="2022-04-12T18:27:22 ICT" name="initialize" finished-at="2022-04-12T18:27:22 ICT" duration-ms="0" status="PASS">
+      <class name="com.test.SanPham.testXoaSP">
+        <test-method is-config="true" signature="initialize()[pri:0, instance:com.test.SanPham.testXoaSP@17f62e33]" started-at="2022-04-12T18:49:01 ICT" name="initialize" finished-at="2022-04-12T18:49:01 ICT" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initialize -->
-        <test-method is-config="true" signature="getSize()[pri:0, instance:com.test.SanPham.testXoaLoaiSP@5d0bf09b]" started-at="2022-04-12T18:27:22 ICT" name="getSize" finished-at="2022-04-12T18:27:22 ICT" duration-ms="13" status="PASS">
+        <test-method is-config="true" signature="getSize()[pri:0, instance:com.test.SanPham.testXoaSP@17f62e33]" started-at="2022-04-12T18:49:01 ICT" name="getSize" finished-at="2022-04-12T18:49:01 ICT" duration-ms="40" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getSize -->
-        <test-method signature="TestDelete(java.lang.String,int)[pri:0, instance:com.test.SanPham.testXoaLoaiSP@5d0bf09b]" started-at="2022-04-12T18:27:22 ICT" name="TestDelete" data-provider="db" finished-at="2022-04-12T18:27:22 ICT" duration-ms="23" status="PASS">
+        <test-method signature="TestUpdateTenSP(java.lang.String,int)[pri:0, instance:com.test.SanPham.testXoaSP@17f62e33]" started-at="2022-04-12T18:49:01 ICT" name="TestUpdateTenSP" data-provider="db" finished-at="2022-04-12T18:49:01 ICT" duration-ms="50" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[6]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestUpdateTenSP -->
+        <test-method is-config="true" signature="getSize()[pri:0, instance:com.test.SanPham.testXoaSP@17f62e33]" started-at="2022-04-12T18:49:01 ICT" name="getSize" finished-at="2022-04-12T18:49:01 ICT" duration-ms="25" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getSize -->
+        <test-method signature="TestUpdateTenSP(java.lang.String,int)[pri:0, instance:com.test.SanPham.testXoaSP@17f62e33]" started-at="2022-04-12T18:49:01 ICT" name="TestUpdateTenSP" data-provider="db" finished-at="2022-04-12T18:49:01 ICT" duration-ms="46" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[7]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestUpdateTenSP -->
+        <test-method is-config="true" signature="getSize()[pri:0, instance:com.test.SanPham.testXoaSP@17f62e33]" started-at="2022-04-12T18:49:01 ICT" name="getSize" finished-at="2022-04-12T18:49:01 ICT" duration-ms="47" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getSize -->
+        <test-method signature="TestUpdateTenSP(java.lang.String,int)[pri:0, instance:com.test.SanPham.testXoaSP@17f62e33]" started-at="2022-04-12T18:49:01 ICT" name="TestUpdateTenSP" data-provider="db" finished-at="2022-04-12T18:49:01 ICT" duration-ms="76" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[8]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestUpdateTenSP -->
+        <test-method is-config="true" signature="getSize()[pri:0, instance:com.test.SanPham.testXoaSP@17f62e33]" started-at="2022-04-12T18:49:01 ICT" name="getSize" finished-at="2022-04-12T18:49:01 ICT" duration-ms="51" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getSize -->
+        <test-method signature="TestUpdateTenSP(java.lang.String,int)[pri:0, instance:com.test.SanPham.testXoaSP@17f62e33]" started-at="2022-04-12T18:49:01 ICT" name="TestUpdateTenSP" data-provider="db" finished-at="2022-04-12T18:49:01 ICT" duration-ms="66" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[100]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[0]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestUpdateTenSP -->
+        <test-method is-config="true" signature="getSize()[pri:0, instance:com.test.SanPham.testXoaSP@17f62e33]" started-at="2022-04-12T18:49:01 ICT" name="getSize" finished-at="2022-04-12T18:49:01 ICT" duration-ms="24" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getSize -->
+        <test-method signature="TestUpdateTenSP(java.lang.String,int)[pri:0, instance:com.test.SanPham.testXoaSP@17f62e33]" started-at="2022-04-12T18:49:01 ICT" name="TestUpdateTenSP" data-provider="db" finished-at="2022-04-12T18:49:01 ICT" duration-ms="117" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[0]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestUpdateTenSP -->
+        <test-method is-config="true" signature="getSize()[pri:0, instance:com.test.SanPham.testXoaSP@17f62e33]" started-at="2022-04-12T18:49:01 ICT" name="getSize" finished-at="2022-04-12T18:49:02 ICT" duration-ms="24" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getSize -->
+        <test-method signature="TestUpdateTenSP(java.lang.String,int)[pri:0, instance:com.test.SanPham.testXoaSP@17f62e33]" started-at="2022-04-12T18:49:02 ICT" name="TestUpdateTenSP" data-provider="db" finished-at="2022-04-12T18:49:02 ICT" duration-ms="46" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[3]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[0]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestUpdateTenSP -->
+      </class> <!-- com.test.SanPham.testXoaSP -->
+      <class name="com.test.SanPham.testXoaLoaiSP">
+        <test-method is-config="true" signature="initialize()[pri:0, instance:com.test.SanPham.testXoaLoaiSP@793f29ff]" started-at="2022-04-12T18:49:02 ICT" name="initialize" finished-at="2022-04-12T18:49:02 ICT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initialize -->
+        <test-method is-config="true" signature="getSize()[pri:0, instance:com.test.SanPham.testXoaLoaiSP@793f29ff]" started-at="2022-04-12T18:49:02 ICT" name="getSize" finished-at="2022-04-12T18:49:02 ICT" duration-ms="22" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getSize -->
+        <test-method signature="TestDelete(java.lang.String,int)[pri:0, instance:com.test.SanPham.testXoaLoaiSP@793f29ff]" started-at="2022-04-12T18:49:02 ICT" name="TestDelete" data-provider="db" finished-at="2022-04-12T18:49:03 ICT" duration-ms="42" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -393,11 +393,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestDelete -->
-        <test-method is-config="true" signature="getSize()[pri:0, instance:com.test.SanPham.testXoaLoaiSP@5d0bf09b]" started-at="2022-04-12T18:27:22 ICT" name="getSize" finished-at="2022-04-12T18:27:22 ICT" duration-ms="51" status="PASS">
+        <test-method is-config="true" signature="getSize()[pri:0, instance:com.test.SanPham.testXoaLoaiSP@793f29ff]" started-at="2022-04-12T18:49:03 ICT" name="getSize" finished-at="2022-04-12T18:49:03 ICT" duration-ms="22" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getSize -->
-        <test-method signature="TestDelete(java.lang.String,int)[pri:0, instance:com.test.SanPham.testXoaLoaiSP@5d0bf09b]" started-at="2022-04-12T18:27:22 ICT" name="TestDelete" data-provider="db" finished-at="2022-04-12T18:27:22 ICT" duration-ms="23" status="PASS">
+        <test-method signature="TestDelete(java.lang.String,int)[pri:0, instance:com.test.SanPham.testXoaLoaiSP@793f29ff]" started-at="2022-04-12T18:49:03 ICT" name="TestDelete" data-provider="db" finished-at="2022-04-12T18:49:03 ICT" duration-ms="31" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -413,11 +413,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestDelete -->
-        <test-method is-config="true" signature="getSize()[pri:0, instance:com.test.SanPham.testXoaLoaiSP@5d0bf09b]" started-at="2022-04-12T18:27:22 ICT" name="getSize" finished-at="2022-04-12T18:27:22 ICT" duration-ms="54" status="PASS">
+        <test-method is-config="true" signature="getSize()[pri:0, instance:com.test.SanPham.testXoaLoaiSP@793f29ff]" started-at="2022-04-12T18:49:03 ICT" name="getSize" finished-at="2022-04-12T18:49:03 ICT" duration-ms="19" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getSize -->
-        <test-method signature="TestDelete(java.lang.String,int)[pri:0, instance:com.test.SanPham.testXoaLoaiSP@5d0bf09b]" started-at="2022-04-12T18:27:22 ICT" name="TestDelete" data-provider="db" finished-at="2022-04-12T18:27:22 ICT" duration-ms="25" status="PASS">
+        <test-method signature="TestDelete(java.lang.String,int)[pri:0, instance:com.test.SanPham.testXoaLoaiSP@793f29ff]" started-at="2022-04-12T18:49:03 ICT" name="TestDelete" data-provider="db" finished-at="2022-04-12T18:49:03 ICT" duration-ms="37" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -433,11 +433,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestDelete -->
-        <test-method is-config="true" signature="getSize()[pri:0, instance:com.test.SanPham.testXoaLoaiSP@5d0bf09b]" started-at="2022-04-12T18:27:22 ICT" name="getSize" finished-at="2022-04-12T18:27:22 ICT" duration-ms="52" status="PASS">
+        <test-method is-config="true" signature="getSize()[pri:0, instance:com.test.SanPham.testXoaLoaiSP@793f29ff]" started-at="2022-04-12T18:49:03 ICT" name="getSize" finished-at="2022-04-12T18:49:03 ICT" duration-ms="33" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getSize -->
-        <test-method signature="TestDelete(java.lang.String,int)[pri:0, instance:com.test.SanPham.testXoaLoaiSP@5d0bf09b]" started-at="2022-04-12T18:27:22 ICT" name="TestDelete" data-provider="db" finished-at="2022-04-12T18:27:22 ICT" duration-ms="24" status="PASS">
+        <test-method signature="TestDelete(java.lang.String,int)[pri:0, instance:com.test.SanPham.testXoaLoaiSP@793f29ff]" started-at="2022-04-12T18:49:03 ICT" name="TestDelete" data-provider="db" finished-at="2022-04-12T18:49:03 ICT" duration-ms="50" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -453,11 +453,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestDelete -->
-        <test-method is-config="true" signature="getSize()[pri:0, instance:com.test.SanPham.testXoaLoaiSP@5d0bf09b]" started-at="2022-04-12T18:27:22 ICT" name="getSize" finished-at="2022-04-12T18:27:22 ICT" duration-ms="67" status="PASS">
+        <test-method is-config="true" signature="getSize()[pri:0, instance:com.test.SanPham.testXoaLoaiSP@793f29ff]" started-at="2022-04-12T18:49:03 ICT" name="getSize" finished-at="2022-04-12T18:49:03 ICT" duration-ms="19" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getSize -->
-        <test-method signature="TestDelete(java.lang.String,int)[pri:0, instance:com.test.SanPham.testXoaLoaiSP@5d0bf09b]" started-at="2022-04-12T18:27:22 ICT" name="TestDelete" data-provider="db" finished-at="2022-04-12T18:27:22 ICT" duration-ms="73" status="PASS">
+        <test-method signature="TestDelete(java.lang.String,int)[pri:0, instance:com.test.SanPham.testXoaLoaiSP@793f29ff]" started-at="2022-04-12T18:49:03 ICT" name="TestDelete" data-provider="db" finished-at="2022-04-12T18:49:03 ICT" duration-ms="37" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -473,11 +473,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestDelete -->
-        <test-method is-config="true" signature="getSize()[pri:0, instance:com.test.SanPham.testXoaLoaiSP@5d0bf09b]" started-at="2022-04-12T18:27:22 ICT" name="getSize" finished-at="2022-04-12T18:27:22 ICT" duration-ms="12" status="PASS">
+        <test-method is-config="true" signature="getSize()[pri:0, instance:com.test.SanPham.testXoaLoaiSP@793f29ff]" started-at="2022-04-12T18:49:03 ICT" name="getSize" finished-at="2022-04-12T18:49:03 ICT" duration-ms="18" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getSize -->
-        <test-method signature="TestDelete(java.lang.String,int)[pri:0, instance:com.test.SanPham.testXoaLoaiSP@5d0bf09b]" started-at="2022-04-12T18:27:22 ICT" name="TestDelete" data-provider="db" finished-at="2022-04-12T18:27:22 ICT" duration-ms="23" status="PASS">
+        <test-method signature="TestDelete(java.lang.String,int)[pri:0, instance:com.test.SanPham.testXoaLoaiSP@793f29ff]" started-at="2022-04-12T18:49:03 ICT" name="TestDelete" data-provider="db" finished-at="2022-04-12T18:49:03 ICT" duration-ms="37" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -493,11 +493,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestDelete -->
-        <test-method is-config="true" signature="getSize()[pri:0, instance:com.test.SanPham.testXoaLoaiSP@5d0bf09b]" started-at="2022-04-12T18:27:22 ICT" name="getSize" finished-at="2022-04-12T18:27:22 ICT" duration-ms="57" status="PASS">
+        <test-method is-config="true" signature="getSize()[pri:0, instance:com.test.SanPham.testXoaLoaiSP@793f29ff]" started-at="2022-04-12T18:49:03 ICT" name="getSize" finished-at="2022-04-12T18:49:03 ICT" duration-ms="20" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getSize -->
-        <test-method signature="TestDelete(java.lang.String,int)[pri:0, instance:com.test.SanPham.testXoaLoaiSP@5d0bf09b]" started-at="2022-04-12T18:27:22 ICT" name="TestDelete" data-provider="db" finished-at="2022-04-12T18:27:23 ICT" duration-ms="69" status="PASS">
+        <test-method signature="TestDelete(java.lang.String,int)[pri:0, instance:com.test.SanPham.testXoaLoaiSP@793f29ff]" started-at="2022-04-12T18:49:03 ICT" name="TestDelete" data-provider="db" finished-at="2022-04-12T18:49:03 ICT" duration-ms="39" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -515,11 +515,11 @@
         </test-method> <!-- TestDelete -->
       </class> <!-- com.test.SanPham.testXoaLoaiSP -->
       <class name="com.test.SanPham.testCapNhatSP">
-        <test-method is-config="true" signature="initialize()[pri:0, instance:com.test.SanPham.testCapNhatSP@25ce9dc4]" started-at="2022-04-12T18:27:19 ICT" name="initialize" finished-at="2022-04-12T18:27:19 ICT" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="initialize()[pri:0, instance:com.test.SanPham.testCapNhatSP@74ea2410]" started-at="2022-04-12T18:49:00 ICT" name="initialize" finished-at="2022-04-12T18:49:00 ICT" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initialize -->
-        <test-method signature="TestUpdateTenSP(java.lang.String,java.lang.String,java.lang.Integer,java.lang.String,java.lang.String,java.lang.Double,java.lang.String,java.lang.String)[pri:0, instance:com.test.SanPham.testCapNhatSP@25ce9dc4]" started-at="2022-04-12T18:27:19 ICT" name="TestUpdateTenSP" data-provider="db" finished-at="2022-04-12T18:27:19 ICT" duration-ms="107" status="PASS">
+        <test-method signature="TestUpdateTenSP(java.lang.String,java.lang.String,java.lang.Integer,java.lang.String,java.lang.String,java.lang.Double,java.lang.String,java.lang.String)[pri:0, instance:com.test.SanPham.testCapNhatSP@74ea2410]" started-at="2022-04-12T18:49:00 ICT" name="TestUpdateTenSP" data-provider="db" finished-at="2022-04-12T18:49:00 ICT" duration-ms="77" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -565,7 +565,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestUpdateTenSP -->
-        <test-method signature="TestUpdateTenSP(java.lang.String,java.lang.String,java.lang.Integer,java.lang.String,java.lang.String,java.lang.Double,java.lang.String,java.lang.String)[pri:0, instance:com.test.SanPham.testCapNhatSP@25ce9dc4]" started-at="2022-04-12T18:27:19 ICT" name="TestUpdateTenSP" data-provider="db" finished-at="2022-04-12T18:27:19 ICT" duration-ms="128" status="PASS">
+        <test-method signature="TestUpdateTenSP(java.lang.String,java.lang.String,java.lang.Integer,java.lang.String,java.lang.String,java.lang.Double,java.lang.String,java.lang.String)[pri:0, instance:com.test.SanPham.testCapNhatSP@74ea2410]" started-at="2022-04-12T18:49:00 ICT" name="TestUpdateTenSP" data-provider="db" finished-at="2022-04-12T18:49:00 ICT" duration-ms="62" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -611,7 +611,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestUpdateTenSP -->
-        <test-method signature="TestUpdateTenSP(java.lang.String,java.lang.String,java.lang.Integer,java.lang.String,java.lang.String,java.lang.Double,java.lang.String,java.lang.String)[pri:0, instance:com.test.SanPham.testCapNhatSP@25ce9dc4]" started-at="2022-04-12T18:27:19 ICT" name="TestUpdateTenSP" data-provider="db" finished-at="2022-04-12T18:27:19 ICT" duration-ms="143" status="PASS">
+        <test-method signature="TestUpdateTenSP(java.lang.String,java.lang.String,java.lang.Integer,java.lang.String,java.lang.String,java.lang.Double,java.lang.String,java.lang.String)[pri:0, instance:com.test.SanPham.testCapNhatSP@74ea2410]" started-at="2022-04-12T18:49:00 ICT" name="TestUpdateTenSP" data-provider="db" finished-at="2022-04-12T18:49:01 ICT" duration-ms="57" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -657,7 +657,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestUpdateTenSP -->
-        <test-method signature="TestUpdateSoLuongSP(java.lang.String,java.lang.String,java.lang.Integer,java.lang.String,java.lang.String,java.lang.Double,java.lang.String,int)[pri:1, instance:com.test.SanPham.testCapNhatSP@25ce9dc4]" started-at="2022-04-12T18:27:19 ICT" name="TestUpdateSoLuongSP" data-provider="db1" finished-at="2022-04-12T18:27:19 ICT" duration-ms="56" status="PASS">
+        <test-method signature="TestUpdateSoLuongSP(java.lang.String,java.lang.String,java.lang.Integer,java.lang.String,java.lang.String,java.lang.Double,java.lang.String,int)[pri:1, instance:com.test.SanPham.testCapNhatSP@74ea2410]" started-at="2022-04-12T18:49:01 ICT" name="TestUpdateSoLuongSP" data-provider="db1" finished-at="2022-04-12T18:49:01 ICT" duration-ms="52" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -703,7 +703,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestUpdateSoLuongSP -->
-        <test-method signature="TestUpdateSoLuongSP(java.lang.String,java.lang.String,java.lang.Integer,java.lang.String,java.lang.String,java.lang.Double,java.lang.String,int)[pri:1, instance:com.test.SanPham.testCapNhatSP@25ce9dc4]" started-at="2022-04-12T18:27:19 ICT" name="TestUpdateSoLuongSP" data-provider="db1" finished-at="2022-04-12T18:27:20 ICT" duration-ms="197" status="PASS">
+        <test-method signature="TestUpdateSoLuongSP(java.lang.String,java.lang.String,java.lang.Integer,java.lang.String,java.lang.String,java.lang.Double,java.lang.String,int)[pri:1, instance:com.test.SanPham.testCapNhatSP@74ea2410]" started-at="2022-04-12T18:49:01 ICT" name="TestUpdateSoLuongSP" data-provider="db1" finished-at="2022-04-12T18:49:01 ICT" duration-ms="70" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -749,7 +749,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestUpdateSoLuongSP -->
-        <test-method signature="TestUpdateSoLuongSP(java.lang.String,java.lang.String,java.lang.Integer,java.lang.String,java.lang.String,java.lang.Double,java.lang.String,int)[pri:1, instance:com.test.SanPham.testCapNhatSP@25ce9dc4]" started-at="2022-04-12T18:27:20 ICT" name="TestUpdateSoLuongSP" data-provider="db1" finished-at="2022-04-12T18:27:20 ICT" duration-ms="70" status="PASS">
+        <test-method signature="TestUpdateSoLuongSP(java.lang.String,java.lang.String,java.lang.Integer,java.lang.String,java.lang.String,java.lang.Double,java.lang.String,int)[pri:1, instance:com.test.SanPham.testCapNhatSP@74ea2410]" started-at="2022-04-12T18:49:01 ICT" name="TestUpdateSoLuongSP" data-provider="db1" finished-at="2022-04-12T18:49:01 ICT" duration-ms="64" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -795,7 +795,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestUpdateSoLuongSP -->
-        <test-method signature="TestUpdateGiaSP(java.lang.String,java.lang.String,java.lang.Integer,java.lang.String,java.lang.String,java.lang.Double,java.lang.String,double)[pri:2, instance:com.test.SanPham.testCapNhatSP@25ce9dc4]" started-at="2022-04-12T18:27:20 ICT" name="TestUpdateGiaSP" data-provider="db2" finished-at="2022-04-12T18:27:20 ICT" duration-ms="156" status="PASS">
+        <test-method signature="TestUpdateGiaSP(java.lang.String,java.lang.String,java.lang.Integer,java.lang.String,java.lang.String,java.lang.Double,java.lang.String,double)[pri:2, instance:com.test.SanPham.testCapNhatSP@74ea2410]" started-at="2022-04-12T18:49:01 ICT" name="TestUpdateGiaSP" data-provider="db2" finished-at="2022-04-12T18:49:01 ICT" duration-ms="50" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -841,7 +841,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestUpdateGiaSP -->
-        <test-method signature="TestUpdateGiaSP(java.lang.String,java.lang.String,java.lang.Integer,java.lang.String,java.lang.String,java.lang.Double,java.lang.String,double)[pri:2, instance:com.test.SanPham.testCapNhatSP@25ce9dc4]" started-at="2022-04-12T18:27:20 ICT" name="TestUpdateGiaSP" data-provider="db2" finished-at="2022-04-12T18:27:20 ICT" duration-ms="58" status="PASS">
+        <test-method signature="TestUpdateGiaSP(java.lang.String,java.lang.String,java.lang.Integer,java.lang.String,java.lang.String,java.lang.Double,java.lang.String,double)[pri:2, instance:com.test.SanPham.testCapNhatSP@74ea2410]" started-at="2022-04-12T18:49:01 ICT" name="TestUpdateGiaSP" data-provider="db2" finished-at="2022-04-12T18:49:01 ICT" duration-ms="57" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -887,7 +887,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestUpdateGiaSP -->
-        <test-method signature="TestUpdateGiaSP(java.lang.String,java.lang.String,java.lang.Integer,java.lang.String,java.lang.String,java.lang.Double,java.lang.String,double)[pri:2, instance:com.test.SanPham.testCapNhatSP@25ce9dc4]" started-at="2022-04-12T18:27:20 ICT" name="TestUpdateGiaSP" data-provider="db2" finished-at="2022-04-12T18:27:20 ICT" duration-ms="189" status="PASS">
+        <test-method signature="TestUpdateGiaSP(java.lang.String,java.lang.String,java.lang.Integer,java.lang.String,java.lang.String,java.lang.Double,java.lang.String,double)[pri:2, instance:com.test.SanPham.testCapNhatSP@74ea2410]" started-at="2022-04-12T18:49:01 ICT" name="TestUpdateGiaSP" data-provider="db2" finished-at="2022-04-12T18:49:01 ICT" duration-ms="80" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -935,11 +935,11 @@
         </test-method> <!-- TestUpdateGiaSP -->
       </class> <!-- com.test.SanPham.testCapNhatSP -->
       <class name="com.test.SanPham.testCapNhatLoaiSP">
-        <test-method is-config="true" signature="initialize()[pri:0, instance:com.test.SanPham.testCapNhatLoaiSP@248e319b]" started-at="2022-04-12T18:27:22 ICT" name="initialize" finished-at="2022-04-12T18:27:22 ICT" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="initialize()[pri:0, instance:com.test.SanPham.testCapNhatLoaiSP@5d0bf09b]" started-at="2022-04-12T18:49:02 ICT" name="initialize" finished-at="2022-04-12T18:49:02 ICT" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initialize -->
-        <test-method signature="TestUpdate(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.test.SanPham.testCapNhatLoaiSP@248e319b]" started-at="2022-04-12T18:27:22 ICT" name="TestUpdate" data-provider="db" finished-at="2022-04-12T18:27:22 ICT" duration-ms="24" status="PASS">
+        <test-method signature="TestUpdate(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.test.SanPham.testCapNhatLoaiSP@5d0bf09b]" started-at="2022-04-12T18:49:02 ICT" name="TestUpdate" data-provider="db" finished-at="2022-04-12T18:49:02 ICT" duration-ms="33" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -965,7 +965,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestUpdate -->
-        <test-method signature="TestUpdate(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.test.SanPham.testCapNhatLoaiSP@248e319b]" started-at="2022-04-12T18:27:22 ICT" name="TestUpdate" data-provider="db" finished-at="2022-04-12T18:27:22 ICT" duration-ms="70" status="PASS">
+        <test-method signature="TestUpdate(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.test.SanPham.testCapNhatLoaiSP@5d0bf09b]" started-at="2022-04-12T18:49:02 ICT" name="TestUpdate" data-provider="db" finished-at="2022-04-12T18:49:02 ICT" duration-ms="40" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -991,7 +991,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestUpdate -->
-        <test-method signature="TestUpdate(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.test.SanPham.testCapNhatLoaiSP@248e319b]" started-at="2022-04-12T18:27:22 ICT" name="TestUpdate" data-provider="db" finished-at="2022-04-12T18:27:22 ICT" duration-ms="69" status="PASS">
+        <test-method signature="TestUpdate(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.test.SanPham.testCapNhatLoaiSP@5d0bf09b]" started-at="2022-04-12T18:49:02 ICT" name="TestUpdate" data-provider="db" finished-at="2022-04-12T18:49:02 ICT" duration-ms="43" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -1017,7 +1017,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestUpdate -->
-        <test-method signature="TestUpdate(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.test.SanPham.testCapNhatLoaiSP@248e319b]" started-at="2022-04-12T18:27:22 ICT" name="TestUpdate" data-provider="db" finished-at="2022-04-12T18:27:22 ICT" duration-ms="23" status="PASS">
+        <test-method signature="TestUpdate(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.test.SanPham.testCapNhatLoaiSP@5d0bf09b]" started-at="2022-04-12T18:49:02 ICT" name="TestUpdate" data-provider="db" finished-at="2022-04-12T18:49:02 ICT" duration-ms="32" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -1043,7 +1043,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestUpdate -->
-        <test-method signature="TestUpdate(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.test.SanPham.testCapNhatLoaiSP@248e319b]" started-at="2022-04-12T18:27:22 ICT" name="TestUpdate" data-provider="db" finished-at="2022-04-12T18:27:22 ICT" duration-ms="84" status="PASS">
+        <test-method signature="TestUpdate(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.test.SanPham.testCapNhatLoaiSP@5d0bf09b]" started-at="2022-04-12T18:49:02 ICT" name="TestUpdate" data-provider="db" finished-at="2022-04-12T18:49:02 ICT" duration-ms="45" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -1069,7 +1069,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestUpdate -->
-        <test-method signature="TestUpdate(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.test.SanPham.testCapNhatLoaiSP@248e319b]" started-at="2022-04-12T18:27:22 ICT" name="TestUpdate" data-provider="db" finished-at="2022-04-12T18:27:22 ICT" duration-ms="68" status="PASS">
+        <test-method signature="TestUpdate(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.test.SanPham.testCapNhatLoaiSP@5d0bf09b]" started-at="2022-04-12T18:49:02 ICT" name="TestUpdate" data-provider="db" finished-at="2022-04-12T18:49:02 ICT" duration-ms="39" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -1096,12 +1096,234 @@
           </reporter-output>
         </test-method> <!-- TestUpdate -->
       </class> <!-- com.test.SanPham.testCapNhatLoaiSP -->
-      <class name="com.test.SanPham.testThemLoaiSP">
-        <test-method is-config="true" signature="initialize()[pri:0, instance:com.test.SanPham.testThemLoaiSP@2af004b]" started-at="2022-04-12T18:27:21 ICT" name="initialize" finished-at="2022-04-12T18:27:21 ICT" duration-ms="0" status="PASS">
+      <class name="com.test.SanPham.testTimKiemSP">
+        <test-method is-config="true" signature="initialize()[pri:0, instance:com.test.SanPham.testTimKiemSP@2af004b]" started-at="2022-04-12T18:49:02 ICT" name="initialize" finished-at="2022-04-12T18:49:02 ICT" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initialize -->
-        <test-method signature="TestInsert(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.test.SanPham.testThemLoaiSP@2af004b]" started-at="2022-04-12T18:27:21 ICT" name="TestInsert" data-provider="db" finished-at="2022-04-12T18:27:21 ICT" duration-ms="23" status="PASS">
+        <test-method signature="TestSelectAll()[pri:0, instance:com.test.SanPham.testTimKiemSP@2af004b]" started-at="2022-04-12T18:49:02 ICT" name="TestSelectAll" finished-at="2022-04-12T18:49:02 ICT" duration-ms="24" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestSelectAll -->
+        <test-method signature="TestTimKiem(java.lang.String,java.lang.String)[pri:0, instance:com.test.SanPham.testTimKiemSP@2af004b]" started-at="2022-04-12T18:49:02 ICT" name="TestTimKiem" data-provider="db" finished-at="2022-04-12T18:49:02 ICT" duration-ms="29" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestTimKiem -->
+        <test-method signature="TestTimKiem(java.lang.String,java.lang.String)[pri:0, instance:com.test.SanPham.testTimKiemSP@2af004b]" started-at="2022-04-12T18:49:02 ICT" name="TestTimKiem" data-provider="db" finished-at="2022-04-12T18:49:02 ICT" duration-ms="40" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestTimKiem -->
+        <test-method signature="TestTimKiem(java.lang.String,java.lang.String)[pri:0, instance:com.test.SanPham.testTimKiemSP@2af004b]" started-at="2022-04-12T18:49:02 ICT" name="TestTimKiem" data-provider="db" finished-at="2022-04-12T18:49:02 ICT" duration-ms="27" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[3]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[3]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestTimKiem -->
+        <test-method signature="TestTimKiem(java.lang.String,java.lang.String)[pri:0, instance:com.test.SanPham.testTimKiemSP@2af004b]" started-at="2022-04-12T18:49:02 ICT" name="TestTimKiem" data-provider="db" finished-at="2022-04-12T18:49:02 ICT" duration-ms="30" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[100]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestTimKiem -->
+        <test-method signature="TestTimKiem(java.lang.String,java.lang.String)[pri:0, instance:com.test.SanPham.testTimKiemSP@2af004b]" started-at="2022-04-12T18:49:02 ICT" name="TestTimKiem" data-provider="db" finished-at="2022-04-12T18:49:02 ICT" duration-ms="30" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[1000]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestTimKiem -->
+        <test-method signature="testSPDangKinhDoanh()[pri:0, instance:com.test.SanPham.testTimKiemSP@2af004b]" started-at="2022-04-12T18:49:02 ICT" name="testSPDangKinhDoanh" finished-at="2022-04-12T18:49:02 ICT" duration-ms="29" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSPDangKinhDoanh -->
+        <test-method signature="TestTimKiemSPKey(java.lang.String,int)[pri:1, instance:com.test.SanPham.testTimKiemSP@2af004b]" started-at="2022-04-12T18:49:02 ICT" name="TestTimKiemSPKey" data-provider="db2" finished-at="2022-04-12T18:49:02 ICT" duration-ms="26" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestTimKiemSPKey -->
+        <test-method signature="TestTimKiemSPKey(java.lang.String,int)[pri:1, instance:com.test.SanPham.testTimKiemSP@2af004b]" started-at="2022-04-12T18:49:02 ICT" name="TestTimKiemSPKey" data-provider="db2" finished-at="2022-04-12T18:49:02 ICT" duration-ms="21" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestTimKiemSPKey -->
+        <test-method signature="TestTimKiemSPKey(java.lang.String,int)[pri:1, instance:com.test.SanPham.testTimKiemSP@2af004b]" started-at="2022-04-12T18:49:02 ICT" name="TestTimKiemSPKey" data-provider="db2" finished-at="2022-04-12T18:49:02 ICT" duration-ms="20" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[3]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestTimKiemSPKey -->
+        <test-method signature="TestTimKiemSPKey(java.lang.String,int)[pri:1, instance:com.test.SanPham.testTimKiemSP@2af004b]" started-at="2022-04-12T18:49:02 ICT" name="TestTimKiemSPKey" data-provider="db2" finished-at="2022-04-12T18:49:02 ICT" duration-ms="21" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[100]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[0]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestTimKiemSPKey -->
+        <test-method signature="TestTimKiemSPKey(java.lang.String,int)[pri:1, instance:com.test.SanPham.testTimKiemSP@2af004b]" started-at="2022-04-12T18:49:02 ICT" name="TestTimKiemSPKey" data-provider="db2" finished-at="2022-04-12T18:49:02 ICT" duration-ms="37" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[1000]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[0]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestTimKiemSPKey -->
+        <test-method signature="TestTimKiemSPKey(java.lang.String,int)[pri:1, instance:com.test.SanPham.testTimKiemSP@2af004b]" started-at="2022-04-12T18:49:02 ICT" name="TestTimKiemSPKey" data-provider="db2" finished-at="2022-04-12T18:49:02 ICT" duration-ms="19" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Giày]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestTimKiemSPKey -->
+        <test-method signature="TestTimKiemSPKey(java.lang.String,int)[pri:1, instance:com.test.SanPham.testTimKiemSP@2af004b]" started-at="2022-04-12T18:49:02 ICT" name="TestTimKiemSPKey" data-provider="db2" finished-at="2022-04-12T18:49:02 ICT" duration-ms="19" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Găng tay]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestTimKiemSPKey -->
+        <test-method signature="TestTimKiemSPKey(java.lang.String,int)[pri:1, instance:com.test.SanPham.testTimKiemSP@2af004b]" started-at="2022-04-12T18:49:02 ICT" name="TestTimKiemSPKey" data-provider="db2" finished-at="2022-04-12T18:49:02 ICT" duration-ms="19" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Khủng Long bạo chúa]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[0]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestTimKiemSPKey -->
+      </class> <!-- com.test.SanPham.testTimKiemSP -->
+      <class name="com.test.SanPham.testThemLoaiSP">
+        <test-method is-config="true" signature="initialize()[pri:0, instance:com.test.SanPham.testThemLoaiSP@248e319b]" started-at="2022-04-12T18:49:02 ICT" name="initialize" finished-at="2022-04-12T18:49:02 ICT" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initialize -->
+        <test-method signature="TestInsert(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.test.SanPham.testThemLoaiSP@248e319b]" started-at="2022-04-12T18:49:02 ICT" name="TestInsert" data-provider="db" finished-at="2022-04-12T18:49:02 ICT" duration-ms="39" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -1127,7 +1349,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestInsert -->
-        <test-method signature="TestInsert(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.test.SanPham.testThemLoaiSP@2af004b]" started-at="2022-04-12T18:27:21 ICT" name="TestInsert" data-provider="db" finished-at="2022-04-12T18:27:21 ICT" duration-ms="75" status="PASS">
+        <test-method signature="TestInsert(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.test.SanPham.testThemLoaiSP@248e319b]" started-at="2022-04-12T18:49:02 ICT" name="TestInsert" data-provider="db" finished-at="2022-04-12T18:49:02 ICT" duration-ms="32" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -1153,7 +1375,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestInsert -->
-        <test-method signature="TestInsert(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.test.SanPham.testThemLoaiSP@2af004b]" started-at="2022-04-12T18:27:21 ICT" name="TestInsert" data-provider="db" finished-at="2022-04-12T18:27:21 ICT" duration-ms="72" status="PASS">
+        <test-method signature="TestInsert(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.test.SanPham.testThemLoaiSP@248e319b]" started-at="2022-04-12T18:49:02 ICT" name="TestInsert" data-provider="db" finished-at="2022-04-12T18:49:02 ICT" duration-ms="34" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -1179,7 +1401,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestInsert -->
-        <test-method signature="TestInsert(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.test.SanPham.testThemLoaiSP@2af004b]" started-at="2022-04-12T18:27:21 ICT" name="TestInsert" data-provider="db" finished-at="2022-04-12T18:27:21 ICT" duration-ms="23" status="PASS">
+        <test-method signature="TestInsert(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.test.SanPham.testThemLoaiSP@248e319b]" started-at="2022-04-12T18:49:02 ICT" name="TestInsert" data-provider="db" finished-at="2022-04-12T18:49:02 ICT" duration-ms="31" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -1205,7 +1427,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestInsert -->
-        <test-method signature="TestInsert(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.test.SanPham.testThemLoaiSP@2af004b]" started-at="2022-04-12T18:27:21 ICT" name="TestInsert" data-provider="db" finished-at="2022-04-12T18:27:22 ICT" duration-ms="62" status="PASS">
+        <test-method signature="TestInsert(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.test.SanPham.testThemLoaiSP@248e319b]" started-at="2022-04-12T18:49:02 ICT" name="TestInsert" data-provider="db" finished-at="2022-04-12T18:49:02 ICT" duration-ms="53" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -1231,7 +1453,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestInsert -->
-        <test-method signature="TestInsert(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.test.SanPham.testThemLoaiSP@2af004b]" started-at="2022-04-12T18:27:22 ICT" name="TestInsert" data-provider="db" finished-at="2022-04-12T18:27:22 ICT" duration-ms="82" status="PASS">
+        <test-method signature="TestInsert(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.test.SanPham.testThemLoaiSP@248e319b]" started-at="2022-04-12T18:49:02 ICT" name="TestInsert" data-provider="db" finished-at="2022-04-12T18:49:02 ICT" duration-ms="32" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -1258,234 +1480,12 @@
           </reporter-output>
         </test-method> <!-- TestInsert -->
       </class> <!-- com.test.SanPham.testThemLoaiSP -->
-      <class name="com.test.SanPham.testTimKiemSP">
-        <test-method is-config="true" signature="initialize()[pri:0, instance:com.test.SanPham.testTimKiemSP@27406a17]" started-at="2022-04-12T18:27:21 ICT" name="initialize" finished-at="2022-04-12T18:27:21 ICT" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- initialize -->
-        <test-method signature="TestSelectAll()[pri:0, instance:com.test.SanPham.testTimKiemSP@27406a17]" started-at="2022-04-12T18:27:21 ICT" name="TestSelectAll" finished-at="2022-04-12T18:27:21 ICT" duration-ms="12" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TestSelectAll -->
-        <test-method signature="TestTimKiem(java.lang.String,java.lang.String)[pri:0, instance:com.test.SanPham.testTimKiemSP@27406a17]" started-at="2022-04-12T18:27:21 ICT" name="TestTimKiem" data-provider="db" finished-at="2022-04-12T18:27:21 ICT" duration-ms="12" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[1]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[1]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TestTimKiem -->
-        <test-method signature="TestTimKiem(java.lang.String,java.lang.String)[pri:0, instance:com.test.SanPham.testTimKiemSP@27406a17]" started-at="2022-04-12T18:27:21 ICT" name="TestTimKiem" data-provider="db" finished-at="2022-04-12T18:27:21 ICT" duration-ms="58" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[2]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[2]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TestTimKiem -->
-        <test-method signature="TestTimKiem(java.lang.String,java.lang.String)[pri:0, instance:com.test.SanPham.testTimKiemSP@27406a17]" started-at="2022-04-12T18:27:21 ICT" name="TestTimKiem" data-provider="db" finished-at="2022-04-12T18:27:21 ICT" duration-ms="60" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[3]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[3]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TestTimKiem -->
-        <test-method signature="TestTimKiem(java.lang.String,java.lang.String)[pri:0, instance:com.test.SanPham.testTimKiemSP@27406a17]" started-at="2022-04-12T18:27:21 ICT" name="TestTimKiem" data-provider="db" finished-at="2022-04-12T18:27:21 ICT" duration-ms="13" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[100]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TestTimKiem -->
-        <test-method signature="TestTimKiem(java.lang.String,java.lang.String)[pri:0, instance:com.test.SanPham.testTimKiemSP@27406a17]" started-at="2022-04-12T18:27:21 ICT" name="TestTimKiem" data-provider="db" finished-at="2022-04-12T18:27:21 ICT" duration-ms="13" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[1000]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TestTimKiem -->
-        <test-method signature="testSPDangKinhDoanh()[pri:0, instance:com.test.SanPham.testTimKiemSP@27406a17]" started-at="2022-04-12T18:27:21 ICT" name="testSPDangKinhDoanh" finished-at="2022-04-12T18:27:21 ICT" duration-ms="12" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testSPDangKinhDoanh -->
-        <test-method signature="TestTimKiemSPKey(java.lang.String,int)[pri:1, instance:com.test.SanPham.testTimKiemSP@27406a17]" started-at="2022-04-12T18:27:21 ICT" name="TestTimKiemSPKey" data-provider="db2" finished-at="2022-04-12T18:27:21 ICT" duration-ms="74" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[1]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[1]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TestTimKiemSPKey -->
-        <test-method signature="TestTimKiemSPKey(java.lang.String,int)[pri:1, instance:com.test.SanPham.testTimKiemSP@27406a17]" started-at="2022-04-12T18:27:21 ICT" name="TestTimKiemSPKey" data-provider="db2" finished-at="2022-04-12T18:27:21 ICT" duration-ms="50" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[2]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[1]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TestTimKiemSPKey -->
-        <test-method signature="TestTimKiemSPKey(java.lang.String,int)[pri:1, instance:com.test.SanPham.testTimKiemSP@27406a17]" started-at="2022-04-12T18:27:21 ICT" name="TestTimKiemSPKey" data-provider="db2" finished-at="2022-04-12T18:27:21 ICT" duration-ms="13" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[3]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[1]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TestTimKiemSPKey -->
-        <test-method signature="TestTimKiemSPKey(java.lang.String,int)[pri:1, instance:com.test.SanPham.testTimKiemSP@27406a17]" started-at="2022-04-12T18:27:21 ICT" name="TestTimKiemSPKey" data-provider="db2" finished-at="2022-04-12T18:27:21 ICT" duration-ms="12" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[100]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[0]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TestTimKiemSPKey -->
-        <test-method signature="TestTimKiemSPKey(java.lang.String,int)[pri:1, instance:com.test.SanPham.testTimKiemSP@27406a17]" started-at="2022-04-12T18:27:21 ICT" name="TestTimKiemSPKey" data-provider="db2" finished-at="2022-04-12T18:27:21 ICT" duration-ms="12" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[1000]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[0]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TestTimKiemSPKey -->
-        <test-method signature="TestTimKiemSPKey(java.lang.String,int)[pri:1, instance:com.test.SanPham.testTimKiemSP@27406a17]" started-at="2022-04-12T18:27:21 ICT" name="TestTimKiemSPKey" data-provider="db2" finished-at="2022-04-12T18:27:21 ICT" duration-ms="13" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Giày]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[1]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TestTimKiemSPKey -->
-        <test-method signature="TestTimKiemSPKey(java.lang.String,int)[pri:1, instance:com.test.SanPham.testTimKiemSP@27406a17]" started-at="2022-04-12T18:27:21 ICT" name="TestTimKiemSPKey" data-provider="db2" finished-at="2022-04-12T18:27:21 ICT" duration-ms="57" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Găng tay]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[2]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TestTimKiemSPKey -->
-        <test-method signature="TestTimKiemSPKey(java.lang.String,int)[pri:1, instance:com.test.SanPham.testTimKiemSP@27406a17]" started-at="2022-04-12T18:27:21 ICT" name="TestTimKiemSPKey" data-provider="db2" finished-at="2022-04-12T18:27:21 ICT" duration-ms="59" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Khủng Long bạo chúa]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[0]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TestTimKiemSPKey -->
-      </class> <!-- com.test.SanPham.testTimKiemSP -->
       <class name="com.test.SanPham.testTimKiemLoaiSP">
-        <test-method is-config="true" signature="initialize()[pri:0, instance:com.test.SanPham.testTimKiemLoaiSP@793f29ff]" started-at="2022-04-12T18:27:23 ICT" name="initialize" finished-at="2022-04-12T18:27:23 ICT" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="initialize()[pri:0, instance:com.test.SanPham.testTimKiemLoaiSP@3e8c3cb]" started-at="2022-04-12T18:49:03 ICT" name="initialize" finished-at="2022-04-12T18:49:03 ICT" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initialize -->
-        <test-method signature="TestFindById(java.lang.String,java.lang.String)[pri:0, instance:com.test.SanPham.testTimKiemLoaiSP@793f29ff]" started-at="2022-04-12T18:27:23 ICT" name="TestFindById" data-provider="db" finished-at="2022-04-12T18:27:23 ICT" duration-ms="12" status="PASS">
+        <test-method signature="TestFindById(java.lang.String,java.lang.String)[pri:0, instance:com.test.SanPham.testTimKiemLoaiSP@3e8c3cb]" started-at="2022-04-12T18:49:03 ICT" name="TestFindById" data-provider="db" finished-at="2022-04-12T18:49:03 ICT" duration-ms="37" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -1501,7 +1501,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestFindById -->
-        <test-method signature="TestFindById(java.lang.String,java.lang.String)[pri:0, instance:com.test.SanPham.testTimKiemLoaiSP@793f29ff]" started-at="2022-04-12T18:27:23 ICT" name="TestFindById" data-provider="db" finished-at="2022-04-12T18:27:23 ICT" duration-ms="11" status="PASS">
+        <test-method signature="TestFindById(java.lang.String,java.lang.String)[pri:0, instance:com.test.SanPham.testTimKiemLoaiSP@3e8c3cb]" started-at="2022-04-12T18:49:03 ICT" name="TestFindById" data-provider="db" finished-at="2022-04-12T18:49:03 ICT" duration-ms="21" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -1517,7 +1517,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestFindById -->
-        <test-method signature="TestFindById(java.lang.String,java.lang.String)[pri:0, instance:com.test.SanPham.testTimKiemLoaiSP@793f29ff]" started-at="2022-04-12T18:27:23 ICT" name="TestFindById" data-provider="db" finished-at="2022-04-12T18:27:23 ICT" duration-ms="13" status="PASS">
+        <test-method signature="TestFindById(java.lang.String,java.lang.String)[pri:0, instance:com.test.SanPham.testTimKiemLoaiSP@3e8c3cb]" started-at="2022-04-12T18:49:03 ICT" name="TestFindById" data-provider="db" finished-at="2022-04-12T18:49:03 ICT" duration-ms="19" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -1533,7 +1533,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestFindById -->
-        <test-method signature="TestFindById(java.lang.String,java.lang.String)[pri:0, instance:com.test.SanPham.testTimKiemLoaiSP@793f29ff]" started-at="2022-04-12T18:27:23 ICT" name="TestFindById" data-provider="db" finished-at="2022-04-12T18:27:23 ICT" duration-ms="66" status="PASS">
+        <test-method signature="TestFindById(java.lang.String,java.lang.String)[pri:0, instance:com.test.SanPham.testTimKiemLoaiSP@3e8c3cb]" started-at="2022-04-12T18:49:03 ICT" name="TestFindById" data-provider="db" finished-at="2022-04-12T18:49:03 ICT" duration-ms="22" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -1549,7 +1549,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestFindById -->
-        <test-method signature="TestFindById(java.lang.String,java.lang.String)[pri:0, instance:com.test.SanPham.testTimKiemLoaiSP@793f29ff]" started-at="2022-04-12T18:27:23 ICT" name="TestFindById" data-provider="db" finished-at="2022-04-12T18:27:23 ICT" duration-ms="54" status="PASS">
+        <test-method signature="TestFindById(java.lang.String,java.lang.String)[pri:0, instance:com.test.SanPham.testTimKiemLoaiSP@3e8c3cb]" started-at="2022-04-12T18:49:03 ICT" name="TestFindById" data-provider="db" finished-at="2022-04-12T18:49:03 ICT" duration-ms="21" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -1565,7 +1565,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestFindById -->
-        <test-method signature="TestFindById(java.lang.String,java.lang.String)[pri:0, instance:com.test.SanPham.testTimKiemLoaiSP@793f29ff]" started-at="2022-04-12T18:27:23 ICT" name="TestFindById" data-provider="db" finished-at="2022-04-12T18:27:23 ICT" duration-ms="12" status="PASS">
+        <test-method signature="TestFindById(java.lang.String,java.lang.String)[pri:0, instance:com.test.SanPham.testTimKiemLoaiSP@3e8c3cb]" started-at="2022-04-12T18:49:03 ICT" name="TestFindById" data-provider="db" finished-at="2022-04-12T18:49:03 ICT" duration-ms="20" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -1581,7 +1581,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestFindById -->
-        <test-method signature="TestFindByKeyword(java.lang.String,int)[pri:0, instance:com.test.SanPham.testTimKiemLoaiSP@793f29ff]" started-at="2022-04-12T18:27:23 ICT" name="TestFindByKeyword" data-provider="db2" finished-at="2022-04-12T18:27:23 ICT" duration-ms="12" status="PASS">
+        <test-method signature="TestFindByKeyword(java.lang.String,int)[pri:0, instance:com.test.SanPham.testTimKiemLoaiSP@3e8c3cb]" started-at="2022-04-12T18:49:03 ICT" name="TestFindByKeyword" data-provider="db2" finished-at="2022-04-12T18:49:03 ICT" duration-ms="34" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -1597,7 +1597,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestFindByKeyword -->
-        <test-method signature="TestFindByKeyword(java.lang.String,int)[pri:0, instance:com.test.SanPham.testTimKiemLoaiSP@793f29ff]" started-at="2022-04-12T18:27:23 ICT" name="TestFindByKeyword" data-provider="db2" finished-at="2022-04-12T18:27:23 ICT" duration-ms="13" status="PASS">
+        <test-method signature="TestFindByKeyword(java.lang.String,int)[pri:0, instance:com.test.SanPham.testTimKiemLoaiSP@3e8c3cb]" started-at="2022-04-12T18:49:03 ICT" name="TestFindByKeyword" data-provider="db2" finished-at="2022-04-12T18:49:03 ICT" duration-ms="27" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -1613,7 +1613,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestFindByKeyword -->
-        <test-method signature="TestFindByKeyword(java.lang.String,int)[pri:0, instance:com.test.SanPham.testTimKiemLoaiSP@793f29ff]" started-at="2022-04-12T18:27:23 ICT" name="TestFindByKeyword" data-provider="db2" finished-at="2022-04-12T18:27:23 ICT" duration-ms="14" status="PASS">
+        <test-method signature="TestFindByKeyword(java.lang.String,int)[pri:0, instance:com.test.SanPham.testTimKiemLoaiSP@3e8c3cb]" started-at="2022-04-12T18:49:03 ICT" name="TestFindByKeyword" data-provider="db2" finished-at="2022-04-12T18:49:03 ICT" duration-ms="26" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -1629,7 +1629,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestFindByKeyword -->
-        <test-method signature="TestFindByKeyword(java.lang.String,int)[pri:0, instance:com.test.SanPham.testTimKiemLoaiSP@793f29ff]" started-at="2022-04-12T18:27:23 ICT" name="TestFindByKeyword" data-provider="db2" finished-at="2022-04-12T18:27:23 ICT" duration-ms="74" status="PASS">
+        <test-method signature="TestFindByKeyword(java.lang.String,int)[pri:0, instance:com.test.SanPham.testTimKiemLoaiSP@3e8c3cb]" started-at="2022-04-12T18:49:03 ICT" name="TestFindByKeyword" data-provider="db2" finished-at="2022-04-12T18:49:03 ICT" duration-ms="39" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -1645,7 +1645,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestFindByKeyword -->
-        <test-method signature="TestFindByKeyword(java.lang.String,int)[pri:0, instance:com.test.SanPham.testTimKiemLoaiSP@793f29ff]" started-at="2022-04-12T18:27:23 ICT" name="TestFindByKeyword" data-provider="db2" finished-at="2022-04-12T18:27:23 ICT" duration-ms="74" status="PASS">
+        <test-method signature="TestFindByKeyword(java.lang.String,int)[pri:0, instance:com.test.SanPham.testTimKiemLoaiSP@3e8c3cb]" started-at="2022-04-12T18:49:03 ICT" name="TestFindByKeyword" data-provider="db2" finished-at="2022-04-12T18:49:03 ICT" duration-ms="18" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -1661,7 +1661,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestFindByKeyword -->
-        <test-method signature="TestFindByKeyword(java.lang.String,int)[pri:0, instance:com.test.SanPham.testTimKiemLoaiSP@793f29ff]" started-at="2022-04-12T18:27:23 ICT" name="TestFindByKeyword" data-provider="db2" finished-at="2022-04-12T18:27:23 ICT" duration-ms="12" status="PASS">
+        <test-method signature="TestFindByKeyword(java.lang.String,int)[pri:0, instance:com.test.SanPham.testTimKiemLoaiSP@3e8c3cb]" started-at="2022-04-12T18:49:03 ICT" name="TestFindByKeyword" data-provider="db2" finished-at="2022-04-12T18:49:03 ICT" duration-ms="16" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -1677,11 +1677,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestFindByKeyword -->
-        <test-method signature="TestSelectAll()[pri:0, instance:com.test.SanPham.testTimKiemLoaiSP@793f29ff]" started-at="2022-04-12T18:27:23 ICT" name="TestSelectAll" finished-at="2022-04-12T18:27:23 ICT" duration-ms="10" status="PASS">
+        <test-method signature="TestSelectAll()[pri:0, instance:com.test.SanPham.testTimKiemLoaiSP@3e8c3cb]" started-at="2022-04-12T18:49:03 ICT" name="TestSelectAll" finished-at="2022-04-12T18:49:03 ICT" duration-ms="15" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestSelectAll -->
-        <test-method signature="TestSelectByLoaiInSanPham(java.lang.String,int)[pri:0, instance:com.test.SanPham.testTimKiemLoaiSP@793f29ff]" started-at="2022-04-12T18:27:23 ICT" name="TestSelectByLoaiInSanPham" data-provider="db3" finished-at="2022-04-12T18:27:23 ICT" duration-ms="72" status="PASS">
+        <test-method signature="TestSelectByLoaiInSanPham(java.lang.String,int)[pri:0, instance:com.test.SanPham.testTimKiemLoaiSP@3e8c3cb]" started-at="2022-04-12T18:49:03 ICT" name="TestSelectByLoaiInSanPham" data-provider="db3" finished-at="2022-04-12T18:49:03 ICT" duration-ms="17" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -1697,7 +1697,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestSelectByLoaiInSanPham -->
-        <test-method signature="TestSelectByLoaiInSanPham(java.lang.String,int)[pri:0, instance:com.test.SanPham.testTimKiemLoaiSP@793f29ff]" started-at="2022-04-12T18:27:23 ICT" name="TestSelectByLoaiInSanPham" data-provider="db3" finished-at="2022-04-12T18:27:23 ICT" duration-ms="63" status="PASS">
+        <test-method signature="TestSelectByLoaiInSanPham(java.lang.String,int)[pri:0, instance:com.test.SanPham.testTimKiemLoaiSP@3e8c3cb]" started-at="2022-04-12T18:49:03 ICT" name="TestSelectByLoaiInSanPham" data-provider="db3" finished-at="2022-04-12T18:49:03 ICT" duration-ms="20" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -1713,7 +1713,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestSelectByLoaiInSanPham -->
-        <test-method signature="TestSelectByLoaiInSanPham(java.lang.String,int)[pri:0, instance:com.test.SanPham.testTimKiemLoaiSP@793f29ff]" started-at="2022-04-12T18:27:23 ICT" name="TestSelectByLoaiInSanPham" data-provider="db3" finished-at="2022-04-12T18:27:23 ICT" duration-ms="12" status="PASS">
+        <test-method signature="TestSelectByLoaiInSanPham(java.lang.String,int)[pri:0, instance:com.test.SanPham.testTimKiemLoaiSP@3e8c3cb]" started-at="2022-04-12T18:49:03 ICT" name="TestSelectByLoaiInSanPham" data-provider="db3" finished-at="2022-04-12T18:49:03 ICT" duration-ms="15" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -1729,7 +1729,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestSelectByLoaiInSanPham -->
-        <test-method signature="TestSelectByLoaiInSanPham(java.lang.String,int)[pri:0, instance:com.test.SanPham.testTimKiemLoaiSP@793f29ff]" started-at="2022-04-12T18:27:23 ICT" name="TestSelectByLoaiInSanPham" data-provider="db3" finished-at="2022-04-12T18:27:23 ICT" duration-ms="12" status="PASS">
+        <test-method signature="TestSelectByLoaiInSanPham(java.lang.String,int)[pri:0, instance:com.test.SanPham.testTimKiemLoaiSP@3e8c3cb]" started-at="2022-04-12T18:49:03 ICT" name="TestSelectByLoaiInSanPham" data-provider="db3" finished-at="2022-04-12T18:49:03 ICT" duration-ms="20" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -1745,7 +1745,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestSelectByLoaiInSanPham -->
-        <test-method signature="TestSelectByLoaiInSanPham(java.lang.String,int)[pri:0, instance:com.test.SanPham.testTimKiemLoaiSP@793f29ff]" started-at="2022-04-12T18:27:23 ICT" name="TestSelectByLoaiInSanPham" data-provider="db3" finished-at="2022-04-12T18:27:23 ICT" duration-ms="11" status="PASS">
+        <test-method signature="TestSelectByLoaiInSanPham(java.lang.String,int)[pri:0, instance:com.test.SanPham.testTimKiemLoaiSP@3e8c3cb]" started-at="2022-04-12T18:49:03 ICT" name="TestSelectByLoaiInSanPham" data-provider="db3" finished-at="2022-04-12T18:49:03 ICT" duration-ms="15" status="PASS">
           <params>
             <param index="0">
               <value>
