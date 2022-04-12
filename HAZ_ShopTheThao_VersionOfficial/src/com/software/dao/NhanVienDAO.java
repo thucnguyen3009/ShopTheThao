@@ -53,7 +53,7 @@ public class NhanVienDAO extends SoftwareDAO<NhanVien, String> {
 	}
 
 	public List<NhanVien> selectByKeyWord(String keyword) {
-		String sql = "SELECT * FROM NHANVIEN WHERE HOTEN LIKE ?";
+		String sql = "SELECT * FROM NHANVIEN WHERE TENNV LIKE ?";
 		return SelectBySQL(sql, "%" + keyword + "%");
 	}
 
@@ -115,56 +115,99 @@ public class NhanVienDAO extends SoftwareDAO<NhanVien, String> {
 	// Check
 	public String checkTimKiemMaNV(String manv) {
 		NhanVien nv = SelectByID(manv);
-
-		if (nv != null) {
-			return "Tìm thấy!";
+		if (!manv.isEmpty()) {
+			if (nv != null) {
+				return "Tìm thấy!";
+			}
 		} else {
-			return "Nhân viên không tồn tại!";
+			return "Mã nhân viên không được bỏ trống!";
 		}
+		return "Nhân viên không tồn tại!";
+
 	}
 
 	public String checkTimKiemSdt(String sdt) {
 		List<NhanVien> nv = SelectBySDT(sdt);
 
-		if (nv != null) {
+		if (!sdt.isEmpty()) {
+			if (nv != null) {
+				return "Tìm thấy!";
+			}
+		} else {
+			return "Mã nhân viên không được bỏ trống!";
+		}
+		return "Nhân viên không tồn tại!";
+
+	}
+
+	public String checkTimKiemTenNV(String hoTen) {
+		List<NhanVien> list = selectByKeyWord(hoTen);
+		if (list != null && list.size() > 0) {
 			return "Tìm thấy!";
 		} else {
-			return "Nhân viên không tồn tại!";
+			return "Không tìm thấy!";
 		}
+
 	}
 
-	//check Them Nhan Vien
-	public String checkThemNhanVien(String manv, String sdt, NhanVien nv) {
-		NhanVien tim = SelectByID(manv);
+	// check Them Nhan Vien
+	public String checkThemNhanVien(String maNV, String tenNV, String sdt, String diaChi, String cmnd, boolean gioiTinh,
+			String maChucVu, String gmail, String path) {
+		NhanVien nv = new NhanVien(maNV, tenNV, sdt, diaChi, cmnd, gioiTinh, maChucVu, gmail, path);
+		NhanVien tim = SelectByID(maNV);
 		List<NhanVien> tim2 = SelectBySDT(sdt);
-		if (tim == null && tim2 == null) {
-			insert(nv);
-			return "Thêm thành công!";
+
+		if (!maNV.isEmpty() && !sdt.isEmpty() && !tenNV.isEmpty() && !gmail.isEmpty() && !diaChi.isEmpty()
+				&& !cmnd.isEmpty() && !maChucVu.isEmpty() && !path.isEmpty()) {
+			if (tim == null && tim2 == null) {
+				insert(nv);
+				tim = SelectByID(maNV);
+				if (tim != null) {
+					return "Thêm thành công!";
+				}
+			}
 		} else {
-			return "Thêm thất bại!";
+			return "Không được bỏ trống!";
 		}
+		return "Thêm thất bại!";
 	}
 
-	public String checkCapNhatNhanVien(String manv, String sdt, NhanVien nv) {
-		NhanVien tim = SelectByID(manv);
+	public String checkCapNhatNhanVien(String maNV, String tenNV, String sdt, String diaChi, String cmnd,
+			boolean gioiTinh, String maChucVu, String gmail, String path) {
+		NhanVien nv = new NhanVien(maNV, tenNV, sdt, diaChi, cmnd, gioiTinh, maChucVu, gmail, path);
+		NhanVien tim = SelectByID(maNV);
 		List<NhanVien> tim2 = SelectBySDT(sdt);
-		if (tim != null && tim2 != null) {
-			update(nv);
-			return "Cập nhật thành công!";
+
+		if (!maNV.isEmpty() && !sdt.isEmpty() && !tenNV.isEmpty() && !gmail.isEmpty() && !diaChi.isEmpty()
+				&& !cmnd.isEmpty() && !maChucVu.isEmpty() && !path.isEmpty()) {
+			if (tim != null && tim2 != null) {
+				update(nv);
+				return "Cập nhật thành công!";
+			}
 		} else {
-			return "Cập nhật thất bại!";
+			return "Không được bỏ trống!";
 		}
+		return "Cập nhật thất bại!";
 	}
 
-	public String checkXoaNhanVien(String manv) {
+	public String checkXoaNhanVien(String manv, boolean confirmRemove) {
 		NhanVien tim = SelectByID(manv);
 
 		if (tim != null) {
-			delete(manv);
-			return "Xóa thành công!";
-		} else {
-			return "Xóa thất bại!";
+			if (confirmRemove == true) {
+				delete(manv);
+				tim = SelectByID(manv);
+				if (tim == null) {
+					return "Xóa thành công!";
+				}
+			}else {
+				return "Nhân viên chưa được xóa!";
+			}
+		}else {
+			return "Nhân viên không tồn tại!";
 		}
+		return "Xóa thất bại!";
+
 	}
 	// Check
 
