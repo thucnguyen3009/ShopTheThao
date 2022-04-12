@@ -4,6 +4,7 @@
 //* Class: IT16301
 package com.software.dao;
 
+import com.software.entity.ChucVu;
 import com.software.entity.DonViTinh;
 import com.software.jdbcHelper.XJdbc;
 import java.sql.ResultSet;
@@ -89,4 +90,62 @@ public class DonViTinhDAO extends SoftwareDAO<DonViTinh, String> {
         String sql = "SELECT * FROM DonViTinh WHERE MaDonVi = ? and MaDonVi in (select DonViTinh from SanPham)";
         return this.SelectBySQL(sql, maDVT);
     }
+    
+    //Check
+    public String CheckThemDonViTinh(String maDVT, String tenDVT, String moTa) {
+    	DonViTinh dvt = new DonViTinh(maDVT, tenDVT, moTa);
+    	DonViTinh list = SelectByID(maDVT);
+    	if (!maDVT.isEmpty() || !tenDVT.isEmpty()) {
+			if (list == null) {
+				insert(dvt);
+				list = SelectByID(maDVT);
+				if(list != null) {
+					return "Thêm thành công";
+				}
+			}
+		}
+		return "Thêm thất bại";
+    }
+    //
+	public String checkSuaDonViTinh(String maDVT, String tenDVT, String moTa) {
+		DonViTinh dvt = new DonViTinh(maDVT, tenDVT, moTa);
+    	DonViTinh list = SelectByID(maDVT);
+
+		if (!maDVT.isEmpty() || !tenDVT.isEmpty()) {
+			if (list != null) {
+				update(dvt);
+				if(!tenDVT.equalsIgnoreCase(list.getTenDonVi()) && !moTa.equalsIgnoreCase(list.getMoTa())) {
+					return "Sửa thành công";
+				}else {
+					return "Dữ liệu chưa thay đổi";
+				}
+			}
+		}
+		return "Sửa thất bại";
+	}
+	//
+	public String checkXoaDonViTinh(String maDVT, boolean luaChon) {
+		DonViTinh list = SelectByID(maDVT);
+			if (list != null) {
+				if(luaChon == true) {
+					delete(maDVT);
+					list = SelectByID(maDVT);
+					if(list == null) {
+						return "Xóa thành công";
+					}
+				}else {
+					return "Dữ liệu chưa được xóa";
+				}
+			}
+		return "Xóa thất bại";
+	}
+	//
+	public String checkTimDonViTinh(String maDVT ) {
+		DonViTinh list = SelectByID(maDVT);
+		if(list != null) {
+			return "Tìm thành công";
+		}
+		return "Đơn vị tính không tồn tại";
+	}
+    
 }

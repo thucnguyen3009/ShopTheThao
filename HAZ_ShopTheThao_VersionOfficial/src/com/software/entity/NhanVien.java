@@ -104,4 +104,11 @@ public class NhanVien {
         this.path = path;
     }
 
+	@Override
+	public String toString() {
+		return "NhanVien [maNV=" + maNV + ", tenNV=" + tenNV + ", soDienThoai=" + soDienThoai + ", diaChi=" + diaChi
+				+ ", cmnd=" + cmnd + ", gioiTinh=" + gioiTinh + ", maChucVu=" + maChucVu + ", gmail=" + gmail
+				+ ", path=" + path + "]";
+	}
+    
 }

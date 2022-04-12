@@ -86,15 +86,93 @@ public class TaiKhoanDAO extends SoftwareDAO<TaiKhoan, String> {
 		}
 	}
 
-	public boolean CheckLogin(String username, String password) {
+	// Check Login
+	public String CheckLogin(String username, String password) {
 		TaiKhoan ac = SelectByID(username);
-		if (ac == null)
-			return false;
-		else if (ac.getSoDienThoai().equals(username) && !ac.getMatKhau().equals(password))
-			return false;
-		else if (!ac.getSoDienThoai().equals(username) && ac.getMatKhau().equals(password))
-			return false;
-		else
-			return true;
+		if (!username.isEmpty() && !password.isEmpty()) {
+			if (ac != null) {
+				if (ac.getSoDienThoai().equalsIgnoreCase(username) && ac.getMatKhau().equals(password)) {
+					return "Đăng nhập thành công";
+				}
+			}
+		}
+		return "Đăng nhập thất bại";
 	}
+
+	// Check DangKy
+	public String checkDangKy(String username, String password) {
+		TaiKhoan tk = new TaiKhoan(username, password);
+		TaiKhoan timKiem = SelectByID(username);
+
+		NhanVienDAO dao = new NhanVienDAO();
+		List<NhanVien> nv = dao.SelectBySDT(username);
+
+		if (!username.isEmpty() && !password.isEmpty()) {
+			if (nv != null) {
+				if (timKiem == null) {
+					insert(tk);
+					timKiem = SelectByID(username);
+					if (timKiem != null) {
+						return "Đăng ký thành công!";
+					}
+				}
+			} else {
+				return "SDT Nhân Viên này không tồn tại";
+			}
+		}
+		return "Đăng ký thất bại!";
+	}
+
+	// Check update account
+	public String checkCapNhatTaiKhoan(String username, String password, String confirmPass,
+			boolean confirmChangePass) {
+		TaiKhoan timKiem = SelectByID(username);
+		String isPassWord = "^.{8,}";
+		if (timKiem != null) {
+			if (confirmChangePass == true) {
+				if (confirmPass.equals(password) && password.matches(isPassWord)) {
+					update(timKiem);
+					return "Cập nhật thành công!";
+				}
+			} else {
+				return "Tài khoản chưa cập nhật!";
+			}
+		}
+		return "Cập nhật thất bại!";
+
+	}
+
+	// check Xoa Tai Khoan
+	public String checkXoaTaiKhoan(String username, boolean cofirmRemove) {
+		TaiKhoan timKiem = SelectByID(username);
+		if (!username.isEmpty()) {
+			if (timKiem != null) {
+				if (cofirmRemove == true) {
+					delete(username);
+					return "Xóa thành công!";
+				}else {
+					return "Tài khoản chưa được xóa!";
+				}
+			}else {
+				return "Tài khoản không tồn tại!";
+			}
+		}
+		return "Xóa thất bại!";
+
+	}
+
+	// Check Tim kiếm User
+	public String checkTimKiemTK(String username) {
+		TaiKhoan timKiem = SelectByID(username);
+
+		if (!username.isEmpty()) {
+			if (timKiem != null) {
+				return "Tìm thấy!";
+			}
+		} else {
+			return "Vui lòng nhập Username";
+		}
+		return "Tài khoản không tồn tại!";
+	}
+	// Check
 }
