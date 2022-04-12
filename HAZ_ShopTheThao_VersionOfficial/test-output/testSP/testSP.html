@@ -1,0 +1,439 @@
+<html>
+<head>
+<title>TestNG:  testSP</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>testSP</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>72/0/0</td>
+</tr><tr>
+<td>Started on:</td><td>Tue Apr 12 18:27:18 ICT 2022</td>
+</tr>
+<tr><td>Total time:</td><td>5 seconds (5004 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.test.SanPham.testTimKiemSP.TestTimKiemSPKey()'><b>TestTimKiemSPKey</b><br>Test class: com.test.SanPham.testTimKiemSP<br>Parameters: G?ng tay, 2</td>
+<td></td>
+<td>0</td>
+<td>com.test.SanPham.testTimKiemSP@27406a17</td></tr>
+<tr>
+<td title='com.test.SanPham.testTimKiemSP.TestTimKiemSPKey()'><b>TestTimKiemSPKey</b><br>Test class: com.test.SanPham.testTimKiemSP<br>Parameters: 1000, 0</td>
+<td></td>
+<td>0</td>
+<td>com.test.SanPham.testTimKiemSP@27406a17</td></tr>
+<tr>
+<td title='com.test.SanPham.testCapNhatSP.TestUpdateTenSP()'><b>TestUpdateTenSP</b><br>Test class: com.test.SanPham.testCapNhatSP<br>Parameters: 6, G?ng tay th??ng (H?ng), 200, 5, 2, 15000.0, ?ang Kinh Doanh, G?ng tay th??ng (H?ng)</td>
+<td></td>
+<td>0</td>
+<td>com.test.SanPham.testCapNhatSP@25ce9dc4</td></tr>
+<tr>
+<td title='com.test.SanPham.testTimKiemLoaiSP.TestFindByKeyword()'><b>TestFindByKeyword</b><br>Test class: com.test.SanPham.testTimKiemLoaiSP<br>Parameters: Lamboghini, 0</td>
+<td></td>
+<td>0</td>
+<td>com.test.SanPham.testTimKiemLoaiSP@793f29ff</td></tr>
+<tr>
+<td title='com.test.SanPham.testThemSP.TestInsert()'><b>TestInsert</b><br>Test class: com.test.SanPham.testThemSP<br>Parameters: 8, G?ng tay chóng n?ng (Xanh), 200, 5, 2, 15000.0, ?ang Kinh Doanh, 8</td>
+<td></td>
+<td>0</td>
+<td>com.test.SanPham.testThemSP@15bb5034</td></tr>
+<tr>
+<td title='com.test.SanPham.testTimKiemSP.TestTimKiemSPKey()'><b>TestTimKiemSPKey</b><br>Test class: com.test.SanPham.testTimKiemSP<br>Parameters: Giày, 1</td>
+<td></td>
+<td>0</td>
+<td>com.test.SanPham.testTimKiemSP@27406a17</td></tr>
+<tr>
+<td title='com.test.SanPham.testXoaLoaiSP.TestDelete()'><b>TestDelete</b><br>Test class: com.test.SanPham.testXoaLoaiSP<br>Parameters: 6, 1</td>
+<td></td>
+<td>0</td>
+<td>com.test.SanPham.testXoaLoaiSP@5d0bf09b</td></tr>
+<tr>
+<td title='com.test.SanPham.testTimKiemLoaiSP.TestFindById()'><b>TestFindById</b><br>Test class: com.test.SanPham.testTimKiemLoaiSP<br>Parameters: 1, 1</td>
+<td></td>
+<td>0</td>
+<td>com.test.SanPham.testTimKiemLoaiSP@793f29ff</td></tr>
+<tr>
+<td title='com.test.SanPham.testCapNhatLoaiSP.TestUpdate()'><b>TestUpdate</b><br>Test class: com.test.SanPham.testCapNhatLoaiSP<br>Parameters: 0pds, Qu?n jean, , </td>
+<td></td>
+<td>0</td>
+<td>com.test.SanPham.testCapNhatLoaiSP@248e319b</td></tr>
+<tr>
+<td title='com.test.SanPham.testThemLoaiSP.TestInsert()'><b>TestInsert</b><br>Test class: com.test.SanPham.testThemLoaiSP<br>Parameters: 5, Qu?n jean, , Ph? Ki?n</td>
+<td></td>
+<td>0</td>
+<td>com.test.SanPham.testThemLoaiSP@2af004b</td></tr>
+<tr>
+<td title='com.test.SanPham.testXoaLoaiSP.TestDelete()'><b>TestDelete</b><br>Test class: com.test.SanPham.testXoaLoaiSP<br>Parameters: 8, 1</td>
+<td></td>
+<td>0</td>
+<td>com.test.SanPham.testXoaLoaiSP@5d0bf09b</td></tr>
+<tr>
+<td title='com.test.SanPham.testXoaSP.TestUpdateTenSP()'><b>TestUpdateTenSP</b><br>Test class: com.test.SanPham.testXoaSP<br>Parameters: 1, 0</td>
+<td></td>
+<td>0</td>
+<td>com.test.SanPham.testXoaSP@74ea2410</td></tr>
+<tr>
+<td title='com.test.SanPham.testThemLoaiSP.TestInsert()'><b>TestInsert</b><br>Test class: com.test.SanPham.testThemLoaiSP<br>Parameters: 6, Dây chuy?n, , Dây chuy?n</td>
+<td></td>
+<td>0</td>
+<td>com.test.SanPham.testThemLoaiSP@2af004b</td></tr>
+<tr>
+<td title='com.test.SanPham.testTimKiemLoaiSP.TestSelectAll()'><b>TestSelectAll</b><br>Test class: com.test.SanPham.testTimKiemLoaiSP</td>
+<td></td>
+<td>0</td>
+<td>com.test.SanPham.testTimKiemLoaiSP@793f29ff</td></tr>
+<tr>
+<td title='com.test.SanPham.testCapNhatSP.TestUpdateSoLuongSP()'><b>TestUpdateSoLuongSP</b><br>Test class: com.test.SanPham.testCapNhatSP<br>Parameters: 6, G?ng tay th??ng (H?ng), 150, 5, 2, 15000.0, ?ang Kinh Doanh, 150</td>
+<td></td>
+<td>0</td>
+<td>com.test.SanPham.testCapNhatSP@25ce9dc4</td></tr>
+<tr>
+<td title='com.test.SanPham.testTimKiemLoaiSP.TestFindByKeyword()'><b>TestFindByKeyword</b><br>Test class: com.test.SanPham.testTimKiemLoaiSP<br>Parameters: 3, 1</td>
+<td></td>
+<td>0</td>
+<td>com.test.SanPham.testTimKiemLoaiSP@793f29ff</td></tr>
+<tr>
+<td title='com.test.SanPham.testCapNhatSP.TestUpdateTenSP()'><b>TestUpdateTenSP</b><br>Test class: com.test.SanPham.testCapNhatSP<br>Parameters: 7, G?ng tay th??ng (??), 200, 5, 2, 15000.0, ?ang Kinh Doanh, G?ng tay th??ng (??)</td>
+<td></td>
+<td>0</td>
+<td>com.test.SanPham.testCapNhatSP@25ce9dc4</td></tr>
+<tr>
+<td title='com.test.SanPham.testTimKiemLoaiSP.TestFindById()'><b>TestFindById</b><br>Test class: com.test.SanPham.testTimKiemLoaiSP<br>Parameters: 4, 4</td>
+<td></td>
+<td>0</td>
+<td>com.test.SanPham.testTimKiemLoaiSP@793f29ff</td></tr>
+<tr>
+<td title='com.test.SanPham.testTimKiemLoaiSP.TestFindByKeyword()'><b>TestFindByKeyword</b><br>Test class: com.test.SanPham.testTimKiemLoaiSP<br>Parameters: 2, 1</td>
+<td></td>
+<td>0</td>
+<td>com.test.SanPham.testTimKiemLoaiSP@793f29ff</td></tr>
+<tr>
+<td title='com.test.SanPham.testCapNhatSP.TestUpdateSoLuongSP()'><b>TestUpdateSoLuongSP</b><br>Test class: com.test.SanPham.testCapNhatSP<br>Parameters: 8, G?ng tay th??ng (Xanh), 300, 5, 2, 15000.0, ?ang Kinh Doanh, 300</td>
+<td></td>
+<td>0</td>
+<td>com.test.SanPham.testCapNhatSP@25ce9dc4</td></tr>
+<tr>
+<td title='com.test.SanPham.testTimKiemLoaiSP.TestFindByKeyword()'><b>TestFindByKeyword</b><br>Test class: com.test.SanPham.testTimKiemLoaiSP<br>Parameters: ?, 2</td>
+<td></td>
+<td>0</td>
+<td>com.test.SanPham.testTimKiemLoaiSP@793f29ff</td></tr>
+<tr>
+<td title='com.test.SanPham.testTimKiemLoaiSP.TestFindById()'><b>TestFindById</b><br>Test class: com.test.SanPham.testTimKiemLoaiSP<br>Parameters: 5, 5</td>
+<td></td>
+<td>0</td>
+<td>com.test.SanPham.testTimKiemLoaiSP@793f29ff</td></tr>
+<tr>
+<td title='com.test.SanPham.testXoaSP.TestUpdateTenSP()'><b>TestUpdateTenSP</b><br>Test class: com.test.SanPham.testXoaSP<br>Parameters: 8, 1</td>
+<td></td>
+<td>0</td>
+<td>com.test.SanPham.testXoaSP@74ea2410</td></tr>
+<tr>
+<td title='com.test.SanPham.testTimKiemLoaiSP.TestFindByKeyword()'><b>TestFindByKeyword</b><br>Test class: com.test.SanPham.testTimKiemLoaiSP<br>Parameters: Ph?, 1</td>
+<td></td>
+<td>0</td>
+<td>com.test.SanPham.testTimKiemLoaiSP@793f29ff</td></tr>
+<tr>
+<td title='com.test.SanPham.testCapNhatLoaiSP.TestUpdate()'><b>TestUpdate</b><br>Test class: com.test.SanPham.testCapNhatLoaiSP<br>Parameters: 9, Áo th? thao, , Áo th? thao</td>
+<td></td>
+<td>0</td>
+<td>com.test.SanPham.testCapNhatLoaiSP@248e319b</td></tr>
+<tr>
+<td title='com.test.SanPham.testXoaLoaiSP.TestDelete()'><b>TestDelete</b><br>Test class: com.test.SanPham.testXoaLoaiSP<br>Parameters: 5, 0</td>
+<td></td>
+<td>0</td>
+<td>com.test.SanPham.testXoaLoaiSP@5d0bf09b</td></tr>
+<tr>
+<td title='com.test.SanPham.testTimKiemSP.TestTimKiemSPKey()'><b>TestTimKiemSPKey</b><br>Test class: com.test.SanPham.testTimKiemSP<br>Parameters: 3, 1</td>
+<td></td>
+<td>0</td>
+<td>com.test.SanPham.testTimKiemSP@27406a17</td></tr>
+<tr>
+<td title='com.test.SanPham.testCapNhatSP.TestUpdateSoLuongSP()'><b>TestUpdateSoLuongSP</b><br>Test class: com.test.SanPham.testCapNhatSP<br>Parameters: 7, G?ng tay th??ng (??), 690, 5, 2, 15000.0, ?ang Kinh Doanh, 690</td>
+<td></td>
+<td>0</td>
+<td>com.test.SanPham.testCapNhatSP@25ce9dc4</td></tr>
+<tr>
+<td title='com.test.SanPham.testTimKiemSP.TestTimKiem()'><b>TestTimKiem</b><br>Test class: com.test.SanPham.testTimKiemSP<br>Parameters: 1, 1</td>
+<td></td>
+<td>0</td>
+<td>com.test.SanPham.testTimKiemSP@27406a17</td></tr>
+<tr>
+<td title='com.test.SanPham.testTimKiemSP.TestTimKiem()'><b>TestTimKiem</b><br>Test class: com.test.SanPham.testTimKiemSP<br>Parameters: 2, 2</td>
+<td></td>
+<td>0</td>
+<td>com.test.SanPham.testTimKiemSP@27406a17</td></tr>
+<tr>
+<td title='com.test.SanPham.testTimKiemSP.TestTimKiem()'><b>TestTimKiem</b><br>Test class: com.test.SanPham.testTimKiemSP<br>Parameters: 100, </td>
+<td></td>
+<td>0</td>
+<td>com.test.SanPham.testTimKiemSP@27406a17</td></tr>
+<tr>
+<td title='com.test.SanPham.testXoaSP.TestUpdateTenSP()'><b>TestUpdateTenSP</b><br>Test class: com.test.SanPham.testXoaSP<br>Parameters: 6, 1</td>
+<td></td>
+<td>0</td>
+<td>com.test.SanPham.testXoaSP@74ea2410</td></tr>
+<tr>
+<td title='com.test.SanPham.testTimKiemLoaiSP.TestFindById()'><b>TestFindById</b><br>Test class: com.test.SanPham.testTimKiemLoaiSP<br>Parameters: 10, </td>
+<td></td>
+<td>0</td>
+<td>com.test.SanPham.testTimKiemLoaiSP@793f29ff</td></tr>
+<tr>
+<td title='com.test.SanPham.testTimKiemLoaiSP.TestSelectByLoaiInSanPham()'><b>TestSelectByLoaiInSanPham</b><br>Test class: com.test.SanPham.testTimKiemLoaiSP<br>Parameters: 4, 1</td>
+<td></td>
+<td>0</td>
+<td>com.test.SanPham.testTimKiemLoaiSP@793f29ff</td></tr>
+<tr>
+<td title='com.test.SanPham.testTimKiemLoaiSP.TestSelectByLoaiInSanPham()'><b>TestSelectByLoaiInSanPham</b><br>Test class: com.test.SanPham.testTimKiemLoaiSP<br>Parameters: 5, 1</td>
+<td></td>
+<td>0</td>
+<td>com.test.SanPham.testTimKiemLoaiSP@793f29ff</td></tr>
+<tr>
+<td title='com.test.SanPham.testThemSP.TestInsert()'><b>TestInsert</b><br>Test class: com.test.SanPham.testThemSP<br>Parameters: 10, G?ng tay chóng n?ng (Tím), 200, 100, 2, 15000.0, ?ang Kinh Doanh, </td>
+<td></td>
+<td>0</td>
+<td>com.test.SanPham.testThemSP@15bb5034</td></tr>
+<tr>
+<td title='com.test.SanPham.testTimKiemSP.TestTimKiemSPKey()'><b>TestTimKiemSPKey</b><br>Test class: com.test.SanPham.testTimKiemSP<br>Parameters: 100, 0</td>
+<td></td>
+<td>0</td>
+<td>com.test.SanPham.testTimKiemSP@27406a17</td></tr>
+<tr>
+<td title='com.test.SanPham.testThemLoaiSP.TestInsert()'><b>TestInsert</b><br>Test class: com.test.SanPham.testThemLoaiSP<br>Parameters: 8, Bông tai, , Bông tai</td>
+<td></td>
+<td>0</td>
+<td>com.test.SanPham.testThemLoaiSP@2af004b</td></tr>
+<tr>
+<td title='com.test.SanPham.testCapNhatLoaiSP.TestUpdate()'><b>TestUpdate</b><br>Test class: com.test.SanPham.testCapNhatLoaiSP<br>Parameters: 8, Nh?n, EldenRing, Nh?n</td>
+<td></td>
+<td>0</td>
+<td>com.test.SanPham.testCapNhatLoaiSP@248e319b</td></tr>
+<tr>
+<td title='com.test.SanPham.testXoaLoaiSP.TestDelete()'><b>TestDelete</b><br>Test class: com.test.SanPham.testXoaLoaiSP<br>Parameters: 100, 0</td>
+<td></td>
+<td>0</td>
+<td>com.test.SanPham.testXoaLoaiSP@5d0bf09b</td></tr>
+<tr>
+<td title='com.test.SanPham.testXoaSP.TestUpdateTenSP()'><b>TestUpdateTenSP</b><br>Test class: com.test.SanPham.testXoaSP<br>Parameters: 3, 0</td>
+<td></td>
+<td>0</td>
+<td>com.test.SanPham.testXoaSP@74ea2410</td></tr>
+<tr>
+<td title='com.test.SanPham.testCapNhatSP.TestUpdateGiaSP()'><b>TestUpdateGiaSP</b><br>Test class: com.test.SanPham.testCapNhatSP<br>Parameters: 6, G?ng tay th??ng (H?ng), 150, 5, 2, 10000.0, ?ang Kinh Doanh, 10000.0</td>
+<td></td>
+<td>0</td>
+<td>com.test.SanPham.testCapNhatSP@25ce9dc4</td></tr>
+<tr>
+<td title='com.test.SanPham.testTimKiemLoaiSP.TestSelectByLoaiInSanPham()'><b>TestSelectByLoaiInSanPham</b><br>Test class: com.test.SanPham.testTimKiemLoaiSP<br>Parameters: 2, 1</td>
+<td></td>
+<td>0</td>
+<td>com.test.SanPham.testTimKiemLoaiSP@793f29ff</td></tr>
+<tr>
+<td title='com.test.SanPham.testXoaLoaiSP.TestDelete()'><b>TestDelete</b><br>Test class: com.test.SanPham.testXoaLoaiSP<br>Parameters: 10, 0</td>
+<td></td>
+<td>0</td>
+<td>com.test.SanPham.testXoaLoaiSP@5d0bf09b</td></tr>
+<tr>
+<td title='com.test.SanPham.testCapNhatLoaiSP.TestUpdate()'><b>TestUpdate</b><br>Test class: com.test.SanPham.testCapNhatLoaiSP<br>Parameters: 100, Qu?n jean, , </td>
+<td></td>
+<td>0</td>
+<td>com.test.SanPham.testCapNhatLoaiSP@248e319b</td></tr>
+<tr>
+<td title='com.test.SanPham.testTimKiemSP.TestTimKiem()'><b>TestTimKiem</b><br>Test class: com.test.SanPham.testTimKiemSP<br>Parameters: 1000, </td>
+<td></td>
+<td>0</td>
+<td>com.test.SanPham.testTimKiemSP@27406a17</td></tr>
+<tr>
+<td title='com.test.SanPham.testXoaSP.TestUpdateTenSP()'><b>TestUpdateTenSP</b><br>Test class: com.test.SanPham.testXoaSP<br>Parameters: 7, 1</td>
+<td></td>
+<td>0</td>
+<td>com.test.SanPham.testXoaSP@74ea2410</td></tr>
+<tr>
+<td title='com.test.SanPham.testTimKiemSP.TestTimKiemSPKey()'><b>TestTimKiemSPKey</b><br>Test class: com.test.SanPham.testTimKiemSP<br>Parameters: 2, 1</td>
+<td></td>
+<td>0</td>
+<td>com.test.SanPham.testTimKiemSP@27406a17</td></tr>
+<tr>
+<td title='com.test.SanPham.testThemLoaiSP.TestInsert()'><b>TestInsert</b><br>Test class: com.test.SanPham.testThemLoaiSP<br>Parameters: 9, Qu?n ?ùi, , Qu?n ?ùi</td>
+<td></td>
+<td>0</td>
+<td>com.test.SanPham.testThemLoaiSP@2af004b</td></tr>
+<tr>
+<td title='com.test.SanPham.testThemSP.TestInsert()'><b>TestInsert</b><br>Test class: com.test.SanPham.testThemSP<br>Parameters: 6, G?ng tay chóng n?ng (H?ng) , 200, 5, 2, 15000.0, ?ang Kinh Doanh, 6</td>
+<td></td>
+<td>0</td>
+<td>com.test.SanPham.testThemSP@15bb5034</td></tr>
+<tr>
+<td title='com.test.SanPham.testTimKiemSP.TestTimKiemSPKey()'><b>TestTimKiemSPKey</b><br>Test class: com.test.SanPham.testTimKiemSP<br>Parameters: Kh?ng Long b?o chúa, 0</td>
+<td></td>
+<td>0</td>
+<td>com.test.SanPham.testTimKiemSP@27406a17</td></tr>
+<tr>
+<td title='com.test.SanPham.testXoaLoaiSP.TestDelete()'><b>TestDelete</b><br>Test class: com.test.SanPham.testXoaLoaiSP<br>Parameters: 9, 1</td>
+<td></td>
+<td>0</td>
+<td>com.test.SanPham.testXoaLoaiSP@5d0bf09b</td></tr>
+<tr>
+<td title='com.test.SanPham.testCapNhatSP.TestUpdateGiaSP()'><b>TestUpdateGiaSP</b><br>Test class: com.test.SanPham.testCapNhatSP<br>Parameters: 8, G?ng tay th??ng (Xanh), 300, 5, 2, 13000.0, ?ang Kinh Doanh, 13000.0</td>
+<td></td>
+<td>0</td>
+<td>com.test.SanPham.testCapNhatSP@25ce9dc4</td></tr>
+<tr>
+<td title='com.test.SanPham.testTimKiemSP.testSPDangKinhDoanh()'><b>testSPDangKinhDoanh</b><br>Test class: com.test.SanPham.testTimKiemSP</td>
+<td></td>
+<td>0</td>
+<td>com.test.SanPham.testTimKiemSP@27406a17</td></tr>
+<tr>
+<td title='com.test.SanPham.testTimKiemSP.TestTimKiem()'><b>TestTimKiem</b><br>Test class: com.test.SanPham.testTimKiemSP<br>Parameters: 3, 3</td>
+<td></td>
+<td>0</td>
+<td>com.test.SanPham.testTimKiemSP@27406a17</td></tr>
+<tr>
+<td title='com.test.SanPham.testCapNhatSP.TestUpdateTenSP()'><b>TestUpdateTenSP</b><br>Test class: com.test.SanPham.testCapNhatSP<br>Parameters: 8, G?ng tay th??ng (Xanh), 200, 5, 2, 15000.0, ?ang Kinh Doanh, G?ng tay th??ng (Xanh)</td>
+<td></td>
+<td>0</td>
+<td>com.test.SanPham.testCapNhatSP@25ce9dc4</td></tr>
+<tr>
+<td title='com.test.SanPham.testTimKiemLoaiSP.TestSelectByLoaiInSanPham()'><b>TestSelectByLoaiInSanPham</b><br>Test class: com.test.SanPham.testTimKiemLoaiSP<br>Parameters: 3, 0</td>
+<td></td>
+<td>0</td>
+<td>com.test.SanPham.testTimKiemLoaiSP@793f29ff</td></tr>
+<tr>
+<td title='com.test.SanPham.testTimKiemLoaiSP.TestSelectByLoaiInSanPham()'><b>TestSelectByLoaiInSanPham</b><br>Test class: com.test.SanPham.testTimKiemLoaiSP<br>Parameters: 1, 1</td>
+<td></td>
+<td>0</td>
+<td>com.test.SanPham.testTimKiemLoaiSP@793f29ff</td></tr>
+<tr>
+<td title='com.test.SanPham.testTimKiemSP.TestTimKiemSPKey()'><b>TestTimKiemSPKey</b><br>Test class: com.test.SanPham.testTimKiemSP<br>Parameters: 1, 1</td>
+<td></td>
+<td>0</td>
+<td>com.test.SanPham.testTimKiemSP@27406a17</td></tr>
+<tr>
+<td title='com.test.SanPham.testTimKiemLoaiSP.TestFindById()'><b>TestFindById</b><br>Test class: com.test.SanPham.testTimKiemLoaiSP<br>Parameters: 2, 2</td>
+<td></td>
+<td>0</td>
+<td>com.test.SanPham.testTimKiemLoaiSP@793f29ff</td></tr>
+<tr>
+<td title='com.test.SanPham.testCapNhatSP.TestUpdateGiaSP()'><b>TestUpdateGiaSP</b><br>Test class: com.test.SanPham.testCapNhatSP<br>Parameters: 7, G?ng tay th??ng (??), 690, 5, 2, 12000.0, ?ang Kinh Doanh, 12000.0</td>
+<td></td>
+<td>0</td>
+<td>com.test.SanPham.testCapNhatSP@25ce9dc4</td></tr>
+<tr>
+<td title='com.test.SanPham.testTimKiemLoaiSP.TestFindById()'><b>TestFindById</b><br>Test class: com.test.SanPham.testTimKiemLoaiSP<br>Parameters: 3, 3</td>
+<td></td>
+<td>0</td>
+<td>com.test.SanPham.testTimKiemLoaiSP@793f29ff</td></tr>
+<tr>
+<td title='com.test.SanPham.testThemSP.TestInsert()'><b>TestInsert</b><br>Test class: com.test.SanPham.testThemSP<br>Parameters: 7, G?ng tay chóng n?ng (??), 200, 5, 2, 15000.0, ?ang Kinh Doanh, 7</td>
+<td></td>
+<td>0</td>
+<td>com.test.SanPham.testThemSP@15bb5034</td></tr>
+<tr>
+<td title='com.test.SanPham.testCapNhatLoaiSP.TestUpdate()'><b>TestUpdate</b><br>Test class: com.test.SanPham.testCapNhatLoaiSP<br>Parameters: 7, Dây Chuy?n, , Dây Chuy?n</td>
+<td></td>
+<td>0</td>
+<td>com.test.SanPham.testCapNhatLoaiSP@248e319b</td></tr>
+<tr>
+<td title='com.test.SanPham.testThemLoaiSP.TestInsert()'><b>TestInsert</b><br>Test class: com.test.SanPham.testThemLoaiSP<br>Parameters: 7, Nh?n, , Nh?n</td>
+<td></td>
+<td>0</td>
+<td>com.test.SanPham.testThemLoaiSP@2af004b</td></tr>
+<tr>
+<td title='com.test.SanPham.testCapNhatLoaiSP.TestUpdate()'><b>TestUpdate</b><br>Test class: com.test.SanPham.testCapNhatLoaiSP<br>Parameters: 6, ?? ng?, Pijama, ?? ng?</td>
+<td></td>
+<td>0</td>
+<td>com.test.SanPham.testCapNhatLoaiSP@248e319b</td></tr>
+<tr>
+<td title='com.test.SanPham.testThemLoaiSP.TestInsert()'><b>TestInsert</b><br>Test class: com.test.SanPham.testThemLoaiSP<br>Parameters: 6, Qu?n jean, , Dây chuy?n</td>
+<td></td>
+<td>0</td>
+<td>com.test.SanPham.testThemLoaiSP@2af004b</td></tr>
+<tr>
+<td title='com.test.SanPham.testTimKiemSP.TestSelectAll()'><b>TestSelectAll</b><br>Test class: com.test.SanPham.testTimKiemSP</td>
+<td></td>
+<td>0</td>
+<td>com.test.SanPham.testTimKiemSP@27406a17</td></tr>
+<tr>
+<td title='com.test.SanPham.testThemSP.TestInsert()'><b>TestInsert</b><br>Test class: com.test.SanPham.testThemSP<br>Parameters: 9, G?ng tay chóng n?ng (?en), 200, 5, 9, 15000.0, ?ang Kinh Doanh, </td>
+<td></td>
+<td>0</td>
+<td>com.test.SanPham.testThemSP@15bb5034</td></tr>
+<tr>
+<td title='com.test.SanPham.testXoaLoaiSP.TestDelete()'><b>TestDelete</b><br>Test class: com.test.SanPham.testXoaLoaiSP<br>Parameters: 7, 1</td>
+<td></td>
+<td>0</td>
+<td>com.test.SanPham.testXoaLoaiSP@5d0bf09b</td></tr>
+<tr>
+<td title='com.test.SanPham.testXoaSP.TestUpdateTenSP()'><b>TestUpdateTenSP</b><br>Test class: com.test.SanPham.testXoaSP<br>Parameters: 100, 0</td>
+<td></td>
+<td>0</td>
+<td>com.test.SanPham.testXoaSP@74ea2410</td></tr>
+<tr>
+<td title='com.test.SanPham.testTimKiemLoaiSP.TestFindByKeyword()'><b>TestFindByKeyword</b><br>Test class: com.test.SanPham.testTimKiemLoaiSP<br>Parameters: 1, 1</td>
+<td></td>
+<td>0</td>
+<td>com.test.SanPham.testTimKiemLoaiSP@793f29ff</td></tr>
+</table><p>
+</body>
+</html>

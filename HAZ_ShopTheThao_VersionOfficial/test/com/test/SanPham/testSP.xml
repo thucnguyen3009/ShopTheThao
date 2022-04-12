@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="testSP" parallel="false">
+	<test name="testSP">
+		<classes>
+			<class name="com.test.SanPham.testThemSP" />
+			<class name="com.test.SanPham.testCapNhatSP" />
+			<class name="com.test.SanPham.testXoaSP" />
+			<class name="com.test.SanPham.testTimKiemSP" />
+			<class name="com.test.SanPham.testThemLoaiSP" />
+			<class name="com.test.SanPham.testCapNhatLoaiSP" />
+			<class name="com.test.SanPham.testXoaLoaiSP" />
+			<class name="com.test.SanPham.testTimKiemLoaiSP" />
+		</classes>
+	</test>
+</suite>

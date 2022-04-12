@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [testSP]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="testSP(failed)">
+    <classes>
+      <class name="com.test.SanPham.testXoaSP">
+        <methods>
+          <include name="getSize"/>
+          <include name="TestUpdateTenSP" invocation-numbers="0 1 2"/>
+          <include name="initialize"/>
+        </methods>
+      </class> <!-- com.test.SanPham.testXoaSP -->
+    </classes>
+  </test> <!-- testSP(failed) -->
+</suite> <!-- Failed suite [testSP] -->
