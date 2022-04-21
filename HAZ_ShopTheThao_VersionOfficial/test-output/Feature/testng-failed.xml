@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Feature]">
-  <test thread-count="5" name="TestKhachHang(failed)">
+  <test thread-count="5" name="TestHoaDon(failed)">
     <classes>
-      <class name="com.test.KhachHang.TestTimKH">
+      <class name="com.test.HoaDon.TestXoaHDCT">
         <methods>
-          <include name="findKHbyKey" invocation-numbers="0"/>
-          <include name="initialize"/>
+          <include name="deleteHDCTbyID" invocation-numbers="0"/>
           <include name="setListSize1"/>
+          <include name="initialize"/>
         </methods>
-      </class> <!-- com.test.KhachHang.TestTimKH -->
+      </class> <!-- com.test.HoaDon.TestXoaHDCT -->
     </classes>
-  </test> <!-- TestKhachHang(failed) -->
+  </test> <!-- TestHoaDon(failed) -->
 </suite> <!-- Failed suite [Feature] -->

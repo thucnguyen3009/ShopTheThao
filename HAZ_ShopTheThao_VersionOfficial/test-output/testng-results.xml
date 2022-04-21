@@ -1,1143 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="72" passed="72" failed="0" skipped="0">
+<testng-results ignored="0" total="30" passed="29" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-04-12T18:48:59 ICT" name="testSP" finished-at="2022-04-12T18:49:03 ICT" duration-ms="4589">
+  <suite started-at="2022-04-18T22:06:04 ICT" name="Feature" finished-at="2022-04-18T22:06:17 ICT" duration-ms="13336">
     <groups>
     </groups>
-    <test started-at="2022-04-12T18:48:59 ICT" name="testSP" finished-at="2022-04-12T18:49:03 ICT" duration-ms="4589">
-      <class name="com.test.SanPham.testThemSP">
-        <test-method is-config="true" signature="initialize()[pri:0, instance:com.test.SanPham.testThemSP@4b741d6d]" started-at="2022-04-12T18:48:59 ICT" name="initialize" finished-at="2022-04-12T18:48:59 ICT" duration-ms="14" status="PASS">
+    <test started-at="2022-04-18T22:06:04 ICT" name="TestHoaDon" finished-at="2022-04-18T22:06:17 ICT" duration-ms="13336">
+      <class name="com.test.HoaDon.TestSuaHoaDon">
+        <test-method is-config="true" signature="initialize()[pri:0, instance:com.test.HoaDon.TestSuaHoaDon@2af004b]" started-at="2022-04-18T22:06:11 ICT" name="initialize" finished-at="2022-04-18T22:06:11 ICT" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initialize -->
-        <test-method signature="TestInsert(java.lang.String,java.lang.String,java.lang.Integer,java.lang.String,java.lang.String,java.lang.Double,java.lang.String,java.lang.String)[pri:0, instance:com.test.SanPham.testThemSP@4b741d6d]" started-at="2022-04-12T18:48:59 ICT" name="TestInsert" data-provider="db" finished-at="2022-04-12T18:49:00 ICT" duration-ms="995" status="PASS">
+        <test-method signature="updatetHD(java.lang.Integer,java.lang.String,java.lang.Integer,java.lang.Integer,java.lang.Double,java.lang.String,java.lang.String,java.lang.Double,java.lang.Boolean)[pri:1, instance:com.test.HoaDon.TestSuaHoaDon@2af004b]" started-at="2022-04-18T22:06:11 ICT" name="updatetHD" data-provider="dbhd" finished-at="2022-04-18T22:06:11 ICT" duration-ms="128" status="PASS">
           <params>
             <param index="0">
-              <value>
-                <![CDATA[6]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Găng tay chóng nắng (Hồng) ]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[200]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[5]]>
-              </value>
-            </param>
-            <param index="4">
               <value>
                 <![CDATA[2]]>
               </value>
             </param>
-            <param index="5">
-              <value>
-                <![CDATA[15000.0]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[Đang Kinh Doanh]]>
-              </value>
-            </param>
-            <param index="7">
-              <value>
-                <![CDATA[6]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TestInsert -->
-        <test-method signature="TestInsert(java.lang.String,java.lang.String,java.lang.Integer,java.lang.String,java.lang.String,java.lang.Double,java.lang.String,java.lang.String)[pri:0, instance:com.test.SanPham.testThemSP@4b741d6d]" started-at="2022-04-12T18:49:00 ICT" name="TestInsert" data-provider="db" finished-at="2022-04-12T18:49:00 ICT" duration-ms="188" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[7]]>
-              </value>
-            </param>
             <param index="1">
-              <value>
-                <![CDATA[Găng tay chóng nắng (Đỏ)]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[200]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[5]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[2]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[15000.0]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[Đang Kinh Doanh]]>
-              </value>
-            </param>
-            <param index="7">
-              <value>
-                <![CDATA[7]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TestInsert -->
-        <test-method signature="TestInsert(java.lang.String,java.lang.String,java.lang.Integer,java.lang.String,java.lang.String,java.lang.Double,java.lang.String,java.lang.String)[pri:0, instance:com.test.SanPham.testThemSP@4b741d6d]" started-at="2022-04-12T18:49:00 ICT" name="TestInsert" data-provider="db" finished-at="2022-04-12T18:49:00 ICT" duration-ms="90" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[8]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Găng tay chóng nắng (Xanh)]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[200]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[5]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[2]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[15000.0]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[Đang Kinh Doanh]]>
-              </value>
-            </param>
-            <param index="7">
-              <value>
-                <![CDATA[8]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TestInsert -->
-        <test-method signature="TestInsert(java.lang.String,java.lang.String,java.lang.Integer,java.lang.String,java.lang.String,java.lang.Double,java.lang.String,java.lang.String)[pri:0, instance:com.test.SanPham.testThemSP@4b741d6d]" started-at="2022-04-12T18:49:00 ICT" name="TestInsert" data-provider="db" finished-at="2022-04-12T18:49:00 ICT" duration-ms="185" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[9]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Găng tay chóng nắng (Đen)]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[200]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[5]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[9]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[15000.0]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[Đang Kinh Doanh]]>
-              </value>
-            </param>
-            <param index="7">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TestInsert -->
-        <test-method signature="TestInsert(java.lang.String,java.lang.String,java.lang.Integer,java.lang.String,java.lang.String,java.lang.Double,java.lang.String,java.lang.String)[pri:0, instance:com.test.SanPham.testThemSP@4b741d6d]" started-at="2022-04-12T18:49:00 ICT" name="TestInsert" data-provider="db" finished-at="2022-04-12T18:49:00 ICT" duration-ms="68" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[10]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Găng tay chóng nắng (Tím)]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[200]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[100]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[2]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[15000.0]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[Đang Kinh Doanh]]>
-              </value>
-            </param>
-            <param index="7">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TestInsert -->
-      </class> <!-- com.test.SanPham.testThemSP -->
-      <class name="com.test.SanPham.testXoaSP">
-        <test-method is-config="true" signature="initialize()[pri:0, instance:com.test.SanPham.testXoaSP@17f62e33]" started-at="2022-04-12T18:49:01 ICT" name="initialize" finished-at="2022-04-12T18:49:01 ICT" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- initialize -->
-        <test-method is-config="true" signature="getSize()[pri:0, instance:com.test.SanPham.testXoaSP@17f62e33]" started-at="2022-04-12T18:49:01 ICT" name="getSize" finished-at="2022-04-12T18:49:01 ICT" duration-ms="40" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- getSize -->
-        <test-method signature="TestUpdateTenSP(java.lang.String,int)[pri:0, instance:com.test.SanPham.testXoaSP@17f62e33]" started-at="2022-04-12T18:49:01 ICT" name="TestUpdateTenSP" data-provider="db" finished-at="2022-04-12T18:49:01 ICT" duration-ms="50" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[6]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[1]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TestUpdateTenSP -->
-        <test-method is-config="true" signature="getSize()[pri:0, instance:com.test.SanPham.testXoaSP@17f62e33]" started-at="2022-04-12T18:49:01 ICT" name="getSize" finished-at="2022-04-12T18:49:01 ICT" duration-ms="25" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- getSize -->
-        <test-method signature="TestUpdateTenSP(java.lang.String,int)[pri:0, instance:com.test.SanPham.testXoaSP@17f62e33]" started-at="2022-04-12T18:49:01 ICT" name="TestUpdateTenSP" data-provider="db" finished-at="2022-04-12T18:49:01 ICT" duration-ms="46" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[7]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[1]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TestUpdateTenSP -->
-        <test-method is-config="true" signature="getSize()[pri:0, instance:com.test.SanPham.testXoaSP@17f62e33]" started-at="2022-04-12T18:49:01 ICT" name="getSize" finished-at="2022-04-12T18:49:01 ICT" duration-ms="47" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- getSize -->
-        <test-method signature="TestUpdateTenSP(java.lang.String,int)[pri:0, instance:com.test.SanPham.testXoaSP@17f62e33]" started-at="2022-04-12T18:49:01 ICT" name="TestUpdateTenSP" data-provider="db" finished-at="2022-04-12T18:49:01 ICT" duration-ms="76" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[8]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[1]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TestUpdateTenSP -->
-        <test-method is-config="true" signature="getSize()[pri:0, instance:com.test.SanPham.testXoaSP@17f62e33]" started-at="2022-04-12T18:49:01 ICT" name="getSize" finished-at="2022-04-12T18:49:01 ICT" duration-ms="51" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- getSize -->
-        <test-method signature="TestUpdateTenSP(java.lang.String,int)[pri:0, instance:com.test.SanPham.testXoaSP@17f62e33]" started-at="2022-04-12T18:49:01 ICT" name="TestUpdateTenSP" data-provider="db" finished-at="2022-04-12T18:49:01 ICT" duration-ms="66" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[100]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[0]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TestUpdateTenSP -->
-        <test-method is-config="true" signature="getSize()[pri:0, instance:com.test.SanPham.testXoaSP@17f62e33]" started-at="2022-04-12T18:49:01 ICT" name="getSize" finished-at="2022-04-12T18:49:01 ICT" duration-ms="24" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- getSize -->
-        <test-method signature="TestUpdateTenSP(java.lang.String,int)[pri:0, instance:com.test.SanPham.testXoaSP@17f62e33]" started-at="2022-04-12T18:49:01 ICT" name="TestUpdateTenSP" data-provider="db" finished-at="2022-04-12T18:49:01 ICT" duration-ms="117" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[1]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[0]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TestUpdateTenSP -->
-        <test-method is-config="true" signature="getSize()[pri:0, instance:com.test.SanPham.testXoaSP@17f62e33]" started-at="2022-04-12T18:49:01 ICT" name="getSize" finished-at="2022-04-12T18:49:02 ICT" duration-ms="24" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- getSize -->
-        <test-method signature="TestUpdateTenSP(java.lang.String,int)[pri:0, instance:com.test.SanPham.testXoaSP@17f62e33]" started-at="2022-04-12T18:49:02 ICT" name="TestUpdateTenSP" data-provider="db" finished-at="2022-04-12T18:49:02 ICT" duration-ms="46" status="PASS">
-          <params>
-            <param index="0">
               <value>
                 <![CDATA[3]]>
               </value>
             </param>
-            <param index="1">
-              <value>
-                <![CDATA[0]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TestUpdateTenSP -->
-      </class> <!-- com.test.SanPham.testXoaSP -->
-      <class name="com.test.SanPham.testXoaLoaiSP">
-        <test-method is-config="true" signature="initialize()[pri:0, instance:com.test.SanPham.testXoaLoaiSP@793f29ff]" started-at="2022-04-12T18:49:02 ICT" name="initialize" finished-at="2022-04-12T18:49:02 ICT" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- initialize -->
-        <test-method is-config="true" signature="getSize()[pri:0, instance:com.test.SanPham.testXoaLoaiSP@793f29ff]" started-at="2022-04-12T18:49:02 ICT" name="getSize" finished-at="2022-04-12T18:49:02 ICT" duration-ms="22" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- getSize -->
-        <test-method signature="TestDelete(java.lang.String,int)[pri:0, instance:com.test.SanPham.testXoaLoaiSP@793f29ff]" started-at="2022-04-12T18:49:02 ICT" name="TestDelete" data-provider="db" finished-at="2022-04-12T18:49:03 ICT" duration-ms="42" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[6]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[1]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TestDelete -->
-        <test-method is-config="true" signature="getSize()[pri:0, instance:com.test.SanPham.testXoaLoaiSP@793f29ff]" started-at="2022-04-12T18:49:03 ICT" name="getSize" finished-at="2022-04-12T18:49:03 ICT" duration-ms="22" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- getSize -->
-        <test-method signature="TestDelete(java.lang.String,int)[pri:0, instance:com.test.SanPham.testXoaLoaiSP@793f29ff]" started-at="2022-04-12T18:49:03 ICT" name="TestDelete" data-provider="db" finished-at="2022-04-12T18:49:03 ICT" duration-ms="31" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[7]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[1]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TestDelete -->
-        <test-method is-config="true" signature="getSize()[pri:0, instance:com.test.SanPham.testXoaLoaiSP@793f29ff]" started-at="2022-04-12T18:49:03 ICT" name="getSize" finished-at="2022-04-12T18:49:03 ICT" duration-ms="19" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- getSize -->
-        <test-method signature="TestDelete(java.lang.String,int)[pri:0, instance:com.test.SanPham.testXoaLoaiSP@793f29ff]" started-at="2022-04-12T18:49:03 ICT" name="TestDelete" data-provider="db" finished-at="2022-04-12T18:49:03 ICT" duration-ms="37" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[8]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[1]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TestDelete -->
-        <test-method is-config="true" signature="getSize()[pri:0, instance:com.test.SanPham.testXoaLoaiSP@793f29ff]" started-at="2022-04-12T18:49:03 ICT" name="getSize" finished-at="2022-04-12T18:49:03 ICT" duration-ms="33" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- getSize -->
-        <test-method signature="TestDelete(java.lang.String,int)[pri:0, instance:com.test.SanPham.testXoaLoaiSP@793f29ff]" started-at="2022-04-12T18:49:03 ICT" name="TestDelete" data-provider="db" finished-at="2022-04-12T18:49:03 ICT" duration-ms="50" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[9]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[1]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TestDelete -->
-        <test-method is-config="true" signature="getSize()[pri:0, instance:com.test.SanPham.testXoaLoaiSP@793f29ff]" started-at="2022-04-12T18:49:03 ICT" name="getSize" finished-at="2022-04-12T18:49:03 ICT" duration-ms="19" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- getSize -->
-        <test-method signature="TestDelete(java.lang.String,int)[pri:0, instance:com.test.SanPham.testXoaLoaiSP@793f29ff]" started-at="2022-04-12T18:49:03 ICT" name="TestDelete" data-provider="db" finished-at="2022-04-12T18:49:03 ICT" duration-ms="37" status="PASS">
-          <params>
-            <param index="0">
+            <param index="2">
               <value>
                 <![CDATA[100]]>
               </value>
             </param>
-            <param index="1">
+            <param index="3">
               <value>
                 <![CDATA[0]]>
               </value>
             </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TestDelete -->
-        <test-method is-config="true" signature="getSize()[pri:0, instance:com.test.SanPham.testXoaLoaiSP@793f29ff]" started-at="2022-04-12T18:49:03 ICT" name="getSize" finished-at="2022-04-12T18:49:03 ICT" duration-ms="18" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- getSize -->
-        <test-method signature="TestDelete(java.lang.String,int)[pri:0, instance:com.test.SanPham.testXoaLoaiSP@793f29ff]" started-at="2022-04-12T18:49:03 ICT" name="TestDelete" data-provider="db" finished-at="2022-04-12T18:49:03 ICT" duration-ms="37" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[10]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[0]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TestDelete -->
-        <test-method is-config="true" signature="getSize()[pri:0, instance:com.test.SanPham.testXoaLoaiSP@793f29ff]" started-at="2022-04-12T18:49:03 ICT" name="getSize" finished-at="2022-04-12T18:49:03 ICT" duration-ms="20" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- getSize -->
-        <test-method signature="TestDelete(java.lang.String,int)[pri:0, instance:com.test.SanPham.testXoaLoaiSP@793f29ff]" started-at="2022-04-12T18:49:03 ICT" name="TestDelete" data-provider="db" finished-at="2022-04-12T18:49:03 ICT" duration-ms="39" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[5]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[0]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TestDelete -->
-      </class> <!-- com.test.SanPham.testXoaLoaiSP -->
-      <class name="com.test.SanPham.testCapNhatSP">
-        <test-method is-config="true" signature="initialize()[pri:0, instance:com.test.SanPham.testCapNhatSP@74ea2410]" started-at="2022-04-12T18:49:00 ICT" name="initialize" finished-at="2022-04-12T18:49:00 ICT" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- initialize -->
-        <test-method signature="TestUpdateTenSP(java.lang.String,java.lang.String,java.lang.Integer,java.lang.String,java.lang.String,java.lang.Double,java.lang.String,java.lang.String)[pri:0, instance:com.test.SanPham.testCapNhatSP@74ea2410]" started-at="2022-04-12T18:49:00 ICT" name="TestUpdateTenSP" data-provider="db" finished-at="2022-04-12T18:49:00 ICT" duration-ms="77" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[6]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Găng tay thường (Hồng)]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[200]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[5]]>
-              </value>
-            </param>
             <param index="4">
               <value>
-                <![CDATA[2]]>
+                <![CDATA[0.0]]>
               </value>
             </param>
             <param index="5">
               <value>
-                <![CDATA[15000.0]]>
+                <![CDATA[2021-10-14]]>
               </value>
             </param>
             <param index="6">
               <value>
-                <![CDATA[Đang Kinh Doanh]]>
+                <![CDATA[Đã thanh toán]]>
               </value>
             </param>
             <param index="7">
               <value>
-                <![CDATA[Găng tay thường (Hồng)]]>
+                <![CDATA[315000.0]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[false]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TestUpdateTenSP -->
-        <test-method signature="TestUpdateTenSP(java.lang.String,java.lang.String,java.lang.Integer,java.lang.String,java.lang.String,java.lang.Double,java.lang.String,java.lang.String)[pri:0, instance:com.test.SanPham.testCapNhatSP@74ea2410]" started-at="2022-04-12T18:49:00 ICT" name="TestUpdateTenSP" data-provider="db" finished-at="2022-04-12T18:49:00 ICT" duration-ms="62" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[7]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Găng tay thường (Đỏ)]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[200]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[5]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[2]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[15000.0]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[Đang Kinh Doanh]]>
-              </value>
-            </param>
-            <param index="7">
-              <value>
-                <![CDATA[Găng tay thường (Đỏ)]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TestUpdateTenSP -->
-        <test-method signature="TestUpdateTenSP(java.lang.String,java.lang.String,java.lang.Integer,java.lang.String,java.lang.String,java.lang.Double,java.lang.String,java.lang.String)[pri:0, instance:com.test.SanPham.testCapNhatSP@74ea2410]" started-at="2022-04-12T18:49:00 ICT" name="TestUpdateTenSP" data-provider="db" finished-at="2022-04-12T18:49:01 ICT" duration-ms="57" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[8]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Găng tay thường (Xanh)]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[200]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[5]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[2]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[15000.0]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[Đang Kinh Doanh]]>
-              </value>
-            </param>
-            <param index="7">
-              <value>
-                <![CDATA[Găng tay thường (Xanh)]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TestUpdateTenSP -->
-        <test-method signature="TestUpdateSoLuongSP(java.lang.String,java.lang.String,java.lang.Integer,java.lang.String,java.lang.String,java.lang.Double,java.lang.String,int)[pri:1, instance:com.test.SanPham.testCapNhatSP@74ea2410]" started-at="2022-04-12T18:49:01 ICT" name="TestUpdateSoLuongSP" data-provider="db1" finished-at="2022-04-12T18:49:01 ICT" duration-ms="52" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[6]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Găng tay thường (Hồng)]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[150]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[5]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[2]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[15000.0]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[Đang Kinh Doanh]]>
-              </value>
-            </param>
-            <param index="7">
-              <value>
-                <![CDATA[150]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TestUpdateSoLuongSP -->
-        <test-method signature="TestUpdateSoLuongSP(java.lang.String,java.lang.String,java.lang.Integer,java.lang.String,java.lang.String,java.lang.Double,java.lang.String,int)[pri:1, instance:com.test.SanPham.testCapNhatSP@74ea2410]" started-at="2022-04-12T18:49:01 ICT" name="TestUpdateSoLuongSP" data-provider="db1" finished-at="2022-04-12T18:49:01 ICT" duration-ms="70" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[7]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Găng tay thường (Đỏ)]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[690]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[5]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[2]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[15000.0]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[Đang Kinh Doanh]]>
-              </value>
-            </param>
-            <param index="7">
-              <value>
-                <![CDATA[690]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TestUpdateSoLuongSP -->
-        <test-method signature="TestUpdateSoLuongSP(java.lang.String,java.lang.String,java.lang.Integer,java.lang.String,java.lang.String,java.lang.Double,java.lang.String,int)[pri:1, instance:com.test.SanPham.testCapNhatSP@74ea2410]" started-at="2022-04-12T18:49:01 ICT" name="TestUpdateSoLuongSP" data-provider="db1" finished-at="2022-04-12T18:49:01 ICT" duration-ms="64" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[8]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Găng tay thường (Xanh)]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[300]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[5]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[2]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[15000.0]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[Đang Kinh Doanh]]>
-              </value>
-            </param>
-            <param index="7">
-              <value>
-                <![CDATA[300]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TestUpdateSoLuongSP -->
-        <test-method signature="TestUpdateGiaSP(java.lang.String,java.lang.String,java.lang.Integer,java.lang.String,java.lang.String,java.lang.Double,java.lang.String,double)[pri:2, instance:com.test.SanPham.testCapNhatSP@74ea2410]" started-at="2022-04-12T18:49:01 ICT" name="TestUpdateGiaSP" data-provider="db2" finished-at="2022-04-12T18:49:01 ICT" duration-ms="50" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[6]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Găng tay thường (Hồng)]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[150]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[5]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[2]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[10000.0]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[Đang Kinh Doanh]]>
-              </value>
-            </param>
-            <param index="7">
-              <value>
-                <![CDATA[10000.0]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TestUpdateGiaSP -->
-        <test-method signature="TestUpdateGiaSP(java.lang.String,java.lang.String,java.lang.Integer,java.lang.String,java.lang.String,java.lang.Double,java.lang.String,double)[pri:2, instance:com.test.SanPham.testCapNhatSP@74ea2410]" started-at="2022-04-12T18:49:01 ICT" name="TestUpdateGiaSP" data-provider="db2" finished-at="2022-04-12T18:49:01 ICT" duration-ms="57" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[7]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Găng tay thường (Đỏ)]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[690]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[5]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[2]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[12000.0]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[Đang Kinh Doanh]]>
-              </value>
-            </param>
-            <param index="7">
-              <value>
-                <![CDATA[12000.0]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TestUpdateGiaSP -->
-        <test-method signature="TestUpdateGiaSP(java.lang.String,java.lang.String,java.lang.Integer,java.lang.String,java.lang.String,java.lang.Double,java.lang.String,double)[pri:2, instance:com.test.SanPham.testCapNhatSP@74ea2410]" started-at="2022-04-12T18:49:01 ICT" name="TestUpdateGiaSP" data-provider="db2" finished-at="2022-04-12T18:49:01 ICT" duration-ms="80" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[8]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Găng tay thường (Xanh)]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[300]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[5]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[2]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[13000.0]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[Đang Kinh Doanh]]>
-              </value>
-            </param>
-            <param index="7">
-              <value>
-                <![CDATA[13000.0]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TestUpdateGiaSP -->
-      </class> <!-- com.test.SanPham.testCapNhatSP -->
-      <class name="com.test.SanPham.testCapNhatLoaiSP">
-        <test-method is-config="true" signature="initialize()[pri:0, instance:com.test.SanPham.testCapNhatLoaiSP@5d0bf09b]" started-at="2022-04-12T18:49:02 ICT" name="initialize" finished-at="2022-04-12T18:49:02 ICT" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- initialize -->
-        <test-method signature="TestUpdate(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.test.SanPham.testCapNhatLoaiSP@5d0bf09b]" started-at="2022-04-12T18:49:02 ICT" name="TestUpdate" data-provider="db" finished-at="2022-04-12T18:49:02 ICT" duration-ms="33" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[6]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Đồ ngủ]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[Pijama]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[Đồ ngủ]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TestUpdate -->
-        <test-method signature="TestUpdate(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.test.SanPham.testCapNhatLoaiSP@5d0bf09b]" started-at="2022-04-12T18:49:02 ICT" name="TestUpdate" data-provider="db" finished-at="2022-04-12T18:49:02 ICT" duration-ms="40" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[7]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Dây Chuyền]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[Dây Chuyền]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TestUpdate -->
-        <test-method signature="TestUpdate(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.test.SanPham.testCapNhatLoaiSP@5d0bf09b]" started-at="2022-04-12T18:49:02 ICT" name="TestUpdate" data-provider="db" finished-at="2022-04-12T18:49:02 ICT" duration-ms="43" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[8]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Nhẫn]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[EldenRing]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[Nhẫn]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TestUpdate -->
-        <test-method signature="TestUpdate(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.test.SanPham.testCapNhatLoaiSP@5d0bf09b]" started-at="2022-04-12T18:49:02 ICT" name="TestUpdate" data-provider="db" finished-at="2022-04-12T18:49:02 ICT" duration-ms="32" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[9]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Áo thể thao]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[Áo thể thao]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TestUpdate -->
-        <test-method signature="TestUpdate(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.test.SanPham.testCapNhatLoaiSP@5d0bf09b]" started-at="2022-04-12T18:49:02 ICT" name="TestUpdate" data-provider="db" finished-at="2022-04-12T18:49:02 ICT" duration-ms="45" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[100]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Quần jean]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TestUpdate -->
-        <test-method signature="TestUpdate(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.test.SanPham.testCapNhatLoaiSP@5d0bf09b]" started-at="2022-04-12T18:49:02 ICT" name="TestUpdate" data-provider="db" finished-at="2022-04-12T18:49:02 ICT" duration-ms="39" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[0pds]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Quần jean]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TestUpdate -->
-      </class> <!-- com.test.SanPham.testCapNhatLoaiSP -->
-      <class name="com.test.SanPham.testTimKiemSP">
-        <test-method is-config="true" signature="initialize()[pri:0, instance:com.test.SanPham.testTimKiemSP@2af004b]" started-at="2022-04-12T18:49:02 ICT" name="initialize" finished-at="2022-04-12T18:49:02 ICT" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- initialize -->
-        <test-method signature="TestSelectAll()[pri:0, instance:com.test.SanPham.testTimKiemSP@2af004b]" started-at="2022-04-12T18:49:02 ICT" name="TestSelectAll" finished-at="2022-04-12T18:49:02 ICT" duration-ms="24" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TestSelectAll -->
-        <test-method signature="TestTimKiem(java.lang.String,java.lang.String)[pri:0, instance:com.test.SanPham.testTimKiemSP@2af004b]" started-at="2022-04-12T18:49:02 ICT" name="TestTimKiem" data-provider="db" finished-at="2022-04-12T18:49:02 ICT" duration-ms="29" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[1]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[1]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TestTimKiem -->
-        <test-method signature="TestTimKiem(java.lang.String,java.lang.String)[pri:0, instance:com.test.SanPham.testTimKiemSP@2af004b]" started-at="2022-04-12T18:49:02 ICT" name="TestTimKiem" data-provider="db" finished-at="2022-04-12T18:49:02 ICT" duration-ms="40" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[2]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[2]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TestTimKiem -->
-        <test-method signature="TestTimKiem(java.lang.String,java.lang.String)[pri:0, instance:com.test.SanPham.testTimKiemSP@2af004b]" started-at="2022-04-12T18:49:02 ICT" name="TestTimKiem" data-provider="db" finished-at="2022-04-12T18:49:02 ICT" duration-ms="27" status="PASS">
+        </test-method> <!-- updatetHD -->
+        <test-method signature="updatetHD(java.lang.Integer,java.lang.String,java.lang.Integer,java.lang.Integer,java.lang.Double,java.lang.String,java.lang.String,java.lang.Double,java.lang.Boolean)[pri:1, instance:com.test.HoaDon.TestSuaHoaDon@2af004b]" started-at="2022-04-18T22:06:11 ICT" name="updatetHD" data-provider="dbhd" finished-at="2022-04-18T22:06:12 ICT" duration-ms="780" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -1149,391 +74,46 @@
                 <![CDATA[3]]>
               </value>
             </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TestTimKiem -->
-        <test-method signature="TestTimKiem(java.lang.String,java.lang.String)[pri:0, instance:com.test.SanPham.testTimKiemSP@2af004b]" started-at="2022-04-12T18:49:02 ICT" name="TestTimKiem" data-provider="db" finished-at="2022-04-12T18:49:02 ICT" duration-ms="30" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[100]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TestTimKiem -->
-        <test-method signature="TestTimKiem(java.lang.String,java.lang.String)[pri:0, instance:com.test.SanPham.testTimKiemSP@2af004b]" started-at="2022-04-12T18:49:02 ICT" name="TestTimKiem" data-provider="db" finished-at="2022-04-12T18:49:02 ICT" duration-ms="30" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[1000]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TestTimKiem -->
-        <test-method signature="testSPDangKinhDoanh()[pri:0, instance:com.test.SanPham.testTimKiemSP@2af004b]" started-at="2022-04-12T18:49:02 ICT" name="testSPDangKinhDoanh" finished-at="2022-04-12T18:49:02 ICT" duration-ms="29" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testSPDangKinhDoanh -->
-        <test-method signature="TestTimKiemSPKey(java.lang.String,int)[pri:1, instance:com.test.SanPham.testTimKiemSP@2af004b]" started-at="2022-04-12T18:49:02 ICT" name="TestTimKiemSPKey" data-provider="db2" finished-at="2022-04-12T18:49:02 ICT" duration-ms="26" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[1]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[1]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TestTimKiemSPKey -->
-        <test-method signature="TestTimKiemSPKey(java.lang.String,int)[pri:1, instance:com.test.SanPham.testTimKiemSP@2af004b]" started-at="2022-04-12T18:49:02 ICT" name="TestTimKiemSPKey" data-provider="db2" finished-at="2022-04-12T18:49:02 ICT" duration-ms="21" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[2]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[1]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TestTimKiemSPKey -->
-        <test-method signature="TestTimKiemSPKey(java.lang.String,int)[pri:1, instance:com.test.SanPham.testTimKiemSP@2af004b]" started-at="2022-04-12T18:49:02 ICT" name="TestTimKiemSPKey" data-provider="db2" finished-at="2022-04-12T18:49:02 ICT" duration-ms="20" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[3]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[1]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TestTimKiemSPKey -->
-        <test-method signature="TestTimKiemSPKey(java.lang.String,int)[pri:1, instance:com.test.SanPham.testTimKiemSP@2af004b]" started-at="2022-04-12T18:49:02 ICT" name="TestTimKiemSPKey" data-provider="db2" finished-at="2022-04-12T18:49:02 ICT" duration-ms="21" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[100]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[0]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TestTimKiemSPKey -->
-        <test-method signature="TestTimKiemSPKey(java.lang.String,int)[pri:1, instance:com.test.SanPham.testTimKiemSP@2af004b]" started-at="2022-04-12T18:49:02 ICT" name="TestTimKiemSPKey" data-provider="db2" finished-at="2022-04-12T18:49:02 ICT" duration-ms="37" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[1000]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[0]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TestTimKiemSPKey -->
-        <test-method signature="TestTimKiemSPKey(java.lang.String,int)[pri:1, instance:com.test.SanPham.testTimKiemSP@2af004b]" started-at="2022-04-12T18:49:02 ICT" name="TestTimKiemSPKey" data-provider="db2" finished-at="2022-04-12T18:49:02 ICT" duration-ms="19" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Giày]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[1]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TestTimKiemSPKey -->
-        <test-method signature="TestTimKiemSPKey(java.lang.String,int)[pri:1, instance:com.test.SanPham.testTimKiemSP@2af004b]" started-at="2022-04-12T18:49:02 ICT" name="TestTimKiemSPKey" data-provider="db2" finished-at="2022-04-12T18:49:02 ICT" duration-ms="19" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Găng tay]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[2]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TestTimKiemSPKey -->
-        <test-method signature="TestTimKiemSPKey(java.lang.String,int)[pri:1, instance:com.test.SanPham.testTimKiemSP@2af004b]" started-at="2022-04-12T18:49:02 ICT" name="TestTimKiemSPKey" data-provider="db2" finished-at="2022-04-12T18:49:02 ICT" duration-ms="19" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Khủng Long bạo chúa]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[0]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TestTimKiemSPKey -->
-      </class> <!-- com.test.SanPham.testTimKiemSP -->
-      <class name="com.test.SanPham.testThemLoaiSP">
-        <test-method is-config="true" signature="initialize()[pri:0, instance:com.test.SanPham.testThemLoaiSP@248e319b]" started-at="2022-04-12T18:49:02 ICT" name="initialize" finished-at="2022-04-12T18:49:02 ICT" duration-ms="1" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- initialize -->
-        <test-method signature="TestInsert(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.test.SanPham.testThemLoaiSP@248e319b]" started-at="2022-04-12T18:49:02 ICT" name="TestInsert" data-provider="db" finished-at="2022-04-12T18:49:02 ICT" duration-ms="39" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[6]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Dây chuyền]]>
-              </value>
-            </param>
             <param index="2">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[Dây chuyền]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TestInsert -->
-        <test-method signature="TestInsert(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.test.SanPham.testThemLoaiSP@248e319b]" started-at="2022-04-12T18:49:02 ICT" name="TestInsert" data-provider="db" finished-at="2022-04-12T18:49:02 ICT" duration-ms="32" status="PASS">
-          <params>
-            <param index="0">
               <value>
                 <![CDATA[7]]>
               </value>
             </param>
-            <param index="1">
-              <value>
-                <![CDATA[Nhẫn]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
             <param index="3">
               <value>
-                <![CDATA[Nhẫn]]>
+                <![CDATA[0]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[0.0]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[2021-11-15]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[Đã thanh toán]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[3240000.0]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[true]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TestInsert -->
-        <test-method signature="TestInsert(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.test.SanPham.testThemLoaiSP@248e319b]" started-at="2022-04-12T18:49:02 ICT" name="TestInsert" data-provider="db" finished-at="2022-04-12T18:49:02 ICT" duration-ms="34" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[8]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Bông tai]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[Bông tai]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TestInsert -->
-        <test-method signature="TestInsert(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.test.SanPham.testThemLoaiSP@248e319b]" started-at="2022-04-12T18:49:02 ICT" name="TestInsert" data-provider="db" finished-at="2022-04-12T18:49:02 ICT" duration-ms="31" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[9]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Quần đùi]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[Quần đùi]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TestInsert -->
-        <test-method signature="TestInsert(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.test.SanPham.testThemLoaiSP@248e319b]" started-at="2022-04-12T18:49:02 ICT" name="TestInsert" data-provider="db" finished-at="2022-04-12T18:49:02 ICT" duration-ms="53" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[6]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Quần jean]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[Dây chuyền]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TestInsert -->
-        <test-method signature="TestInsert(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.test.SanPham.testThemLoaiSP@248e319b]" started-at="2022-04-12T18:49:02 ICT" name="TestInsert" data-provider="db" finished-at="2022-04-12T18:49:02 ICT" duration-ms="32" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[5]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Quần jean]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[Phụ Kiện]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TestInsert -->
-      </class> <!-- com.test.SanPham.testThemLoaiSP -->
-      <class name="com.test.SanPham.testTimKiemLoaiSP">
-        <test-method is-config="true" signature="initialize()[pri:0, instance:com.test.SanPham.testTimKiemLoaiSP@3e8c3cb]" started-at="2022-04-12T18:49:03 ICT" name="initialize" finished-at="2022-04-12T18:49:03 ICT" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- initialize -->
-        <test-method signature="TestFindById(java.lang.String,java.lang.String)[pri:0, instance:com.test.SanPham.testTimKiemLoaiSP@3e8c3cb]" started-at="2022-04-12T18:49:03 ICT" name="TestFindById" data-provider="db" finished-at="2022-04-12T18:49:03 ICT" duration-ms="37" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[1]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[1]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TestFindById -->
-        <test-method signature="TestFindById(java.lang.String,java.lang.String)[pri:0, instance:com.test.SanPham.testTimKiemLoaiSP@3e8c3cb]" started-at="2022-04-12T18:49:03 ICT" name="TestFindById" data-provider="db" finished-at="2022-04-12T18:49:03 ICT" duration-ms="21" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[2]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[2]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TestFindById -->
-        <test-method signature="TestFindById(java.lang.String,java.lang.String)[pri:0, instance:com.test.SanPham.testTimKiemLoaiSP@3e8c3cb]" started-at="2022-04-12T18:49:03 ICT" name="TestFindById" data-provider="db" finished-at="2022-04-12T18:49:03 ICT" duration-ms="19" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[3]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[3]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TestFindById -->
-        <test-method signature="TestFindById(java.lang.String,java.lang.String)[pri:0, instance:com.test.SanPham.testTimKiemLoaiSP@3e8c3cb]" started-at="2022-04-12T18:49:03 ICT" name="TestFindById" data-provider="db" finished-at="2022-04-12T18:49:03 ICT" duration-ms="22" status="PASS">
+        </test-method> <!-- updatetHD -->
+        <test-method signature="updatetHD(java.lang.Integer,java.lang.String,java.lang.Integer,java.lang.Integer,java.lang.Double,java.lang.String,java.lang.String,java.lang.Double,java.lang.Boolean)[pri:1, instance:com.test.HoaDon.TestSuaHoaDon@2af004b]" started-at="2022-04-18T22:06:12 ICT" name="updatetHD" data-provider="dbhd" finished-at="2022-04-18T22:06:12 ICT" duration-ms="51" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -1542,46 +122,100 @@
             </param>
             <param index="1">
               <value>
-                <![CDATA[4]]>
+                <![CDATA[3]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[0]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[0.0]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[2021-12-15]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[Đã thanh toán]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[1030000.0]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[true]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TestFindById -->
-        <test-method signature="TestFindById(java.lang.String,java.lang.String)[pri:0, instance:com.test.SanPham.testTimKiemLoaiSP@3e8c3cb]" started-at="2022-04-12T18:49:03 ICT" name="TestFindById" data-provider="db" finished-at="2022-04-12T18:49:03 ICT" duration-ms="21" status="PASS">
+        </test-method> <!-- updatetHD -->
+        <test-method signature="updatetHD(java.lang.Integer,java.lang.String,java.lang.Integer,java.lang.Integer,java.lang.Double,java.lang.String,java.lang.String,java.lang.Double,java.lang.Boolean)[pri:1, instance:com.test.HoaDon.TestSuaHoaDon@2af004b]" started-at="2022-04-18T22:06:12 ICT" name="updatetHD" data-provider="dbhd" finished-at="2022-04-18T22:06:13 ICT" duration-ms="839" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[5]]>
+                <![CDATA[100]]>
               </value>
             </param>
             <param index="1">
-              <value>
-                <![CDATA[5]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TestFindById -->
-        <test-method signature="TestFindById(java.lang.String,java.lang.String)[pri:0, instance:com.test.SanPham.testTimKiemLoaiSP@3e8c3cb]" started-at="2022-04-12T18:49:03 ICT" name="TestFindById" data-provider="db" finished-at="2022-04-12T18:49:03 ICT" duration-ms="20" status="PASS">
-          <params>
-            <param index="0">
               <value>
                 <![CDATA[10]]>
               </value>
             </param>
-            <param index="1">
+            <param index="2">
               <value>
-                <![CDATA[]]>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[0]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[0.0]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[2021-09-13]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[Đã thanh toán]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[1030000.0]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[false]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TestFindById -->
-        <test-method signature="TestFindByKeyword(java.lang.String,int)[pri:0, instance:com.test.SanPham.testTimKiemLoaiSP@3e8c3cb]" started-at="2022-04-12T18:49:03 ICT" name="TestFindByKeyword" data-provider="db2" finished-at="2022-04-12T18:49:03 ICT" duration-ms="34" status="PASS">
+        </test-method> <!-- updatetHD -->
+        <test-method signature="updatetHDCT(java.lang.Integer,java.lang.Integer,java.lang.String,java.lang.Integer,java.lang.Double,java.lang.Boolean)[pri:2, instance:com.test.HoaDon.TestSuaHoaDon@2af004b]" started-at="2022-04-18T22:06:13 ICT" name="updatetHDCT" data-provider="dbhdct" finished-at="2022-04-18T22:06:13 ICT" duration-ms="81" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -1593,11 +227,31 @@
                 <![CDATA[1]]>
               </value>
             </param>
+            <param index="2">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[80000.0]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[true]]>
+              </value>
+            </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TestFindByKeyword -->
-        <test-method signature="TestFindByKeyword(java.lang.String,int)[pri:0, instance:com.test.SanPham.testTimKiemLoaiSP@3e8c3cb]" started-at="2022-04-12T18:49:03 ICT" name="TestFindByKeyword" data-provider="db2" finished-at="2022-04-12T18:49:03 ICT" duration-ms="27" status="PASS">
+        </test-method> <!-- updatetHDCT -->
+        <test-method signature="updatetHDCT(java.lang.Integer,java.lang.Integer,java.lang.String,java.lang.Integer,java.lang.Double,java.lang.Boolean)[pri:2, instance:com.test.HoaDon.TestSuaHoaDon@2af004b]" started-at="2022-04-18T22:06:13 ICT" name="updatetHDCT" data-provider="dbhdct" finished-at="2022-04-18T22:06:13 ICT" duration-ms="159" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -1609,11 +263,31 @@
                 <![CDATA[1]]>
               </value>
             </param>
+            <param index="2">
+              <value>
+                <![CDATA[3]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[950000.0]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[true]]>
+              </value>
+            </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TestFindByKeyword -->
-        <test-method signature="TestFindByKeyword(java.lang.String,int)[pri:0, instance:com.test.SanPham.testTimKiemLoaiSP@3e8c3cb]" started-at="2022-04-12T18:49:03 ICT" name="TestFindByKeyword" data-provider="db2" finished-at="2022-04-12T18:49:03 ICT" duration-ms="26" status="PASS">
+        </test-method> <!-- updatetHDCT -->
+        <test-method signature="updatetHDCT(java.lang.Integer,java.lang.Integer,java.lang.String,java.lang.Integer,java.lang.Double,java.lang.Boolean)[pri:2, instance:com.test.HoaDon.TestSuaHoaDon@2af004b]" started-at="2022-04-18T22:06:13 ICT" name="updatetHDCT" data-provider="dbhdct" finished-at="2022-04-18T22:06:13 ICT" duration-ms="63" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -1622,98 +296,34 @@
             </param>
             <param index="1">
               <value>
-                <![CDATA[1]]>
+                <![CDATA[2]]>
               </value>
             </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TestFindByKeyword -->
-        <test-method signature="TestFindByKeyword(java.lang.String,int)[pri:0, instance:com.test.SanPham.testTimKiemLoaiSP@3e8c3cb]" started-at="2022-04-12T18:49:03 ICT" name="TestFindByKeyword" data-provider="db2" finished-at="2022-04-12T18:49:03 ICT" duration-ms="39" status="PASS">
-          <params>
-            <param index="0">
+            <param index="2">
               <value>
-                <![CDATA[Phụ]]>
+                <![CDATA[4]]>
               </value>
             </param>
-            <param index="1">
-              <value>
-                <![CDATA[1]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TestFindByKeyword -->
-        <test-method signature="TestFindByKeyword(java.lang.String,int)[pri:0, instance:com.test.SanPham.testTimKiemLoaiSP@3e8c3cb]" started-at="2022-04-12T18:49:03 ICT" name="TestFindByKeyword" data-provider="db2" finished-at="2022-04-12T18:49:03 ICT" duration-ms="18" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[ụ]]>
-              </value>
-            </param>
-            <param index="1">
+            <param index="3">
               <value>
                 <![CDATA[2]]>
               </value>
             </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TestFindByKeyword -->
-        <test-method signature="TestFindByKeyword(java.lang.String,int)[pri:0, instance:com.test.SanPham.testTimKiemLoaiSP@3e8c3cb]" started-at="2022-04-12T18:49:03 ICT" name="TestFindByKeyword" data-provider="db2" finished-at="2022-04-12T18:49:03 ICT" duration-ms="16" status="PASS">
-          <params>
-            <param index="0">
+            <param index="4">
               <value>
-                <![CDATA[Lamboghini]]>
+                <![CDATA[150000.0]]>
               </value>
             </param>
-            <param index="1">
+            <param index="5">
               <value>
-                <![CDATA[0]]>
+                <![CDATA[true]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TestFindByKeyword -->
-        <test-method signature="TestSelectAll()[pri:0, instance:com.test.SanPham.testTimKiemLoaiSP@3e8c3cb]" started-at="2022-04-12T18:49:03 ICT" name="TestSelectAll" finished-at="2022-04-12T18:49:03 ICT" duration-ms="15" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TestSelectAll -->
-        <test-method signature="TestSelectByLoaiInSanPham(java.lang.String,int)[pri:0, instance:com.test.SanPham.testTimKiemLoaiSP@3e8c3cb]" started-at="2022-04-12T18:49:03 ICT" name="TestSelectByLoaiInSanPham" data-provider="db3" finished-at="2022-04-12T18:49:03 ICT" duration-ms="17" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[1]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[1]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TestSelectByLoaiInSanPham -->
-        <test-method signature="TestSelectByLoaiInSanPham(java.lang.String,int)[pri:0, instance:com.test.SanPham.testTimKiemLoaiSP@3e8c3cb]" started-at="2022-04-12T18:49:03 ICT" name="TestSelectByLoaiInSanPham" data-provider="db3" finished-at="2022-04-12T18:49:03 ICT" duration-ms="20" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[2]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[1]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TestSelectByLoaiInSanPham -->
-        <test-method signature="TestSelectByLoaiInSanPham(java.lang.String,int)[pri:0, instance:com.test.SanPham.testTimKiemLoaiSP@3e8c3cb]" started-at="2022-04-12T18:49:03 ICT" name="TestSelectByLoaiInSanPham" data-provider="db3" finished-at="2022-04-12T18:49:03 ICT" duration-ms="15" status="PASS">
+        </test-method> <!-- updatetHDCT -->
+        <test-method signature="updatetHDCT(java.lang.Integer,java.lang.Integer,java.lang.String,java.lang.Integer,java.lang.Double,java.lang.Boolean)[pri:2, instance:com.test.HoaDon.TestSuaHoaDon@2af004b]" started-at="2022-04-18T22:06:13 ICT" name="updatetHDCT" data-provider="dbhdct" finished-at="2022-04-18T22:06:13 ICT" duration-ms="166" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -1722,18 +332,499 @@
             </param>
             <param index="1">
               <value>
+                <![CDATA[100]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[5]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[15000.0]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[false]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- updatetHDCT -->
+      </class> <!-- com.test.HoaDon.TestSuaHoaDon -->
+      <class name="com.test.HoaDon.TestThemHoaDon">
+        <test-method is-config="true" signature="initialize()[pri:0, instance:com.test.HoaDon.TestThemHoaDon@2cf3d63b]" started-at="2022-04-18T22:06:04 ICT" name="initialize" finished-at="2022-04-18T22:06:04 ICT" duration-ms="14" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initialize -->
+        <test-method is-config="true" signature="setListSize1()[pri:0, instance:com.test.HoaDon.TestThemHoaDon@2cf3d63b]" started-at="2022-04-18T22:06:04 ICT" name="setListSize1" finished-at="2022-04-18T22:06:05 ICT" duration-ms="1081" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setListSize1 -->
+        <test-method signature="insertHD(java.lang.Integer,java.lang.String,java.lang.Integer,java.lang.Integer,java.lang.Double,java.lang.String,java.lang.String,java.lang.Double,java.lang.Integer)[pri:1, instance:com.test.HoaDon.TestThemHoaDon@2cf3d63b]" started-at="2022-04-18T22:06:05 ICT" name="insertHD" data-provider="dbhd" finished-at="2022-04-18T22:06:05 ICT" duration-ms="232" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[6]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[3]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[0]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[0.0]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[2021-12-15]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[Đã thanh toán]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[1030000.0]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
                 <![CDATA[1]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TestSelectByLoaiInSanPham -->
-        <test-method signature="TestSelectByLoaiInSanPham(java.lang.String,int)[pri:0, instance:com.test.SanPham.testTimKiemLoaiSP@3e8c3cb]" started-at="2022-04-12T18:49:03 ICT" name="TestSelectByLoaiInSanPham" data-provider="db3" finished-at="2022-04-12T18:49:03 ICT" duration-ms="20" status="PASS">
+        </test-method> <!-- insertHD -->
+        <test-method is-config="true" signature="setListSize1()[pri:0, instance:com.test.HoaDon.TestThemHoaDon@2cf3d63b]" started-at="2022-04-18T22:06:05 ICT" name="setListSize1" finished-at="2022-04-18T22:06:05 ICT" duration-ms="73" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setListSize1 -->
+        <test-method signature="insertHD(java.lang.Integer,java.lang.String,java.lang.Integer,java.lang.Integer,java.lang.Double,java.lang.String,java.lang.String,java.lang.Double,java.lang.Integer)[pri:1, instance:com.test.HoaDon.TestThemHoaDon@2cf3d63b]" started-at="2022-04-18T22:06:05 ICT" name="insertHD" data-provider="dbhd" finished-at="2022-04-18T22:06:06 ICT" duration-ms="175" status="PASS">
           <params>
             <param index="0">
               <value>
+                <![CDATA[6]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[3]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[0]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[0.0]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[2021-12-15]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[Đã thanh toán]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[1030000.0]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[0]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- insertHD -->
+        <test-method is-config="true" signature="setListSize1()[pri:0, instance:com.test.HoaDon.TestThemHoaDon@2cf3d63b]" started-at="2022-04-18T22:06:06 ICT" name="setListSize1" finished-at="2022-04-18T22:06:06 ICT" duration-ms="58" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setListSize1 -->
+        <test-method signature="insertHD(java.lang.Integer,java.lang.String,java.lang.Integer,java.lang.Integer,java.lang.Double,java.lang.String,java.lang.String,java.lang.Double,java.lang.Integer)[pri:1, instance:com.test.HoaDon.TestThemHoaDon@2cf3d63b]" started-at="2022-04-18T22:06:06 ICT" name="insertHD" data-provider="dbhd" finished-at="2022-04-18T22:06:07 ICT" duration-ms="860" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[7]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[3]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[0]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[0.0]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[2021-12-15]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[Đã thanh toán]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[1030000.0]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- insertHD -->
+        <test-method is-config="true" signature="setListSize1()[pri:0, instance:com.test.HoaDon.TestThemHoaDon@2cf3d63b]" started-at="2022-04-18T22:06:07 ICT" name="setListSize1" finished-at="2022-04-18T22:06:07 ICT" duration-ms="148" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setListSize1 -->
+        <test-method signature="insertHDCT(java.lang.Integer,java.lang.Integer,java.lang.String,java.lang.Integer,java.lang.Double,java.lang.Integer)[pri:2, instance:com.test.HoaDon.TestThemHoaDon@2cf3d63b]" started-at="2022-04-18T22:06:07 ICT" name="insertHDCT" data-provider="dbct" finished-at="2022-04-18T22:06:07 ICT" duration-ms="153" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[7]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[13]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[15000.0]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- insertHDCT -->
+        <test-method is-config="true" signature="setListSize1()[pri:0, instance:com.test.HoaDon.TestThemHoaDon@2cf3d63b]" started-at="2022-04-18T22:06:07 ICT" name="setListSize1" finished-at="2022-04-18T22:06:07 ICT" duration-ms="56" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setListSize1 -->
+        <test-method signature="insertHDCT(java.lang.Integer,java.lang.Integer,java.lang.String,java.lang.Integer,java.lang.Double,java.lang.Integer)[pri:2, instance:com.test.HoaDon.TestThemHoaDon@2cf3d63b]" started-at="2022-04-18T22:06:07 ICT" name="insertHDCT" data-provider="dbct" finished-at="2022-04-18T22:06:08 ICT" duration-ms="707" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[7]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[14]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[15000.0]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- insertHDCT -->
+        <test-method is-config="true" signature="setListSize1()[pri:0, instance:com.test.HoaDon.TestThemHoaDon@2cf3d63b]" started-at="2022-04-18T22:06:08 ICT" name="setListSize1" finished-at="2022-04-18T22:06:08 ICT" duration-ms="66" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setListSize1 -->
+        <test-method signature="insertHDCT(java.lang.Integer,java.lang.Integer,java.lang.String,java.lang.Integer,java.lang.Double,java.lang.Integer)[pri:2, instance:com.test.HoaDon.TestThemHoaDon@2cf3d63b]" started-at="2022-04-18T22:06:08 ICT" name="insertHDCT" data-provider="dbct" finished-at="2022-04-18T22:06:08 ICT" duration-ms="72" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[7]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[15]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[3]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[15000.0]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- insertHDCT -->
+        <test-method is-config="true" signature="setListSize1()[pri:0, instance:com.test.HoaDon.TestThemHoaDon@2cf3d63b]" started-at="2022-04-18T22:06:08 ICT" name="setListSize1" finished-at="2022-04-18T22:06:08 ICT" duration-ms="746" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setListSize1 -->
+        <test-method signature="insertHDCT(java.lang.Integer,java.lang.Integer,java.lang.String,java.lang.Integer,java.lang.Double,java.lang.Integer)[pri:2, instance:com.test.HoaDon.TestThemHoaDon@2cf3d63b]" started-at="2022-04-18T22:06:08 ICT" name="insertHDCT" data-provider="dbct" finished-at="2022-04-18T22:06:09 ICT" duration-ms="60" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[7]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[16]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[4]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[15000.0]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- insertHDCT -->
+        <test-method is-config="true" signature="setListSize1()[pri:0, instance:com.test.HoaDon.TestThemHoaDon@2cf3d63b]" started-at="2022-04-18T22:06:09 ICT" name="setListSize1" finished-at="2022-04-18T22:06:09 ICT" duration-ms="103" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setListSize1 -->
+        <test-method signature="insertHDCT(java.lang.Integer,java.lang.Integer,java.lang.String,java.lang.Integer,java.lang.Double,java.lang.Integer)[pri:2, instance:com.test.HoaDon.TestThemHoaDon@2cf3d63b]" started-at="2022-04-18T22:06:09 ICT" name="insertHDCT" data-provider="dbct" finished-at="2022-04-18T22:06:09 ICT" duration-ms="801" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[7]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[17]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
                 <![CDATA[5]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[15000.0]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- insertHDCT -->
+        <test-method is-config="true" signature="setListSize1()[pri:0, instance:com.test.HoaDon.TestThemHoaDon@2cf3d63b]" started-at="2022-04-18T22:06:09 ICT" name="setListSize1" finished-at="2022-04-18T22:06:10 ICT" duration-ms="75" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setListSize1 -->
+        <test-method signature="insertHDCT(java.lang.Integer,java.lang.Integer,java.lang.String,java.lang.Integer,java.lang.Double,java.lang.Integer)[pri:2, instance:com.test.HoaDon.TestThemHoaDon@2cf3d63b]" started-at="2022-04-18T22:06:10 ICT" name="insertHDCT" data-provider="dbct" finished-at="2022-04-18T22:06:10 ICT" duration-ms="800" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[7]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[17]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[5]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[15000.0]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[0]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- insertHDCT -->
+        <test-method is-config="true" signature="setListSize1()[pri:0, instance:com.test.HoaDon.TestThemHoaDon@2cf3d63b]" started-at="2022-04-18T22:06:10 ICT" name="setListSize1" finished-at="2022-04-18T22:06:11 ICT" duration-ms="821" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setListSize1 -->
+        <test-method signature="insertHDCT(java.lang.Integer,java.lang.Integer,java.lang.String,java.lang.Integer,java.lang.Double,java.lang.Integer)[pri:2, instance:com.test.HoaDon.TestThemHoaDon@2cf3d63b]" started-at="2022-04-18T22:06:11 ICT" name="insertHDCT" data-provider="dbct" finished-at="2022-04-18T22:06:11 ICT" duration-ms="50" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[7]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[17]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[10]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[15000.0]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[0]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- insertHDCT -->
+      </class> <!-- com.test.HoaDon.TestThemHoaDon -->
+      <class name="com.test.HoaDon.TestXoaHDCT">
+        <test-method is-config="true" signature="initialize()[pri:0, instance:com.test.HoaDon.TestXoaHDCT@248e319b]" started-at="2022-04-18T22:06:13 ICT" name="initialize" finished-at="2022-04-18T22:06:13 ICT" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initialize -->
+        <test-method is-config="true" signature="setListSize1()[pri:0, instance:com.test.HoaDon.TestXoaHDCT@248e319b]" started-at="2022-04-18T22:06:13 ICT" name="setListSize1" finished-at="2022-04-18T22:06:13 ICT" duration-ms="28" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setListSize1 -->
+        <test-method signature="deleteHDCTbyID(java.lang.Integer,java.lang.Integer)[pri:1, instance:com.test.HoaDon.TestXoaHDCT@248e319b]" started-at="2022-04-18T22:06:13 ICT" name="deleteHDCTbyID" data-provider="dbct" finished-at="2022-04-18T22:06:14 ICT" duration-ms="30" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[13]]>
               </value>
             </param>
             <param index="1">
@@ -1742,14 +833,61 @@
               </value>
             </param>
           </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [17] but found [16]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [17] but found [16]
+at org.testng.Assert.fail(Assert.java:99)
+at org.testng.Assert.failNotEquals(Assert.java:1037)
+at org.testng.Assert.assertEqualsImpl(Assert.java:140)
+at org.testng.Assert.assertEquals(Assert.java:122)
+at org.testng.Assert.assertEquals(Assert.java:617)
+at com.test.HoaDon.TestXoaHDCT.deleteHDCTbyID(TestXoaHDCT.java:46)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TestSelectByLoaiInSanPham -->
-        <test-method signature="TestSelectByLoaiInSanPham(java.lang.String,int)[pri:0, instance:com.test.SanPham.testTimKiemLoaiSP@3e8c3cb]" started-at="2022-04-12T18:49:03 ICT" name="TestSelectByLoaiInSanPham" data-provider="db3" finished-at="2022-04-12T18:49:03 ICT" duration-ms="15" status="PASS">
+        </test-method> <!-- deleteHDCTbyID -->
+        <test-method is-config="true" signature="setListSize1()[pri:0, instance:com.test.HoaDon.TestXoaHDCT@248e319b]" started-at="2022-04-18T22:06:14 ICT" name="setListSize1" finished-at="2022-04-18T22:06:14 ICT" duration-ms="76" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setListSize1 -->
+        <test-method signature="deleteHDCTbyID(java.lang.Integer,java.lang.Integer)[pri:1, instance:com.test.HoaDon.TestXoaHDCT@248e319b]" started-at="2022-04-18T22:06:14 ICT" name="deleteHDCTbyID" data-provider="dbct" finished-at="2022-04-18T22:06:14 ICT" duration-ms="25" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[3]]>
+                <![CDATA[100]]>
               </value>
             </param>
             <param index="1">
@@ -1760,8 +898,214 @@
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TestSelectByLoaiInSanPham -->
-      </class> <!-- com.test.SanPham.testTimKiemLoaiSP -->
-    </test> <!-- testSP -->
-  </suite> <!-- testSP -->
+        </test-method> <!-- deleteHDCTbyID -->
+        <test-method is-config="true" signature="setListSize1()[pri:0, instance:com.test.HoaDon.TestXoaHDCT@248e319b]" started-at="2022-04-18T22:06:14 ICT" name="setListSize1" finished-at="2022-04-18T22:06:14 ICT" duration-ms="772" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setListSize1 -->
+        <test-method signature="deleteHDCTbyMaHD(java.lang.Integer,java.lang.Boolean)[pri:2, instance:com.test.HoaDon.TestXoaHDCT@248e319b]" started-at="2022-04-18T22:06:14 ICT" name="deleteHDCTbyMaHD" data-provider="dbcts" finished-at="2022-04-18T22:06:14 ICT" duration-ms="105" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[7]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[true]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteHDCTbyMaHD -->
+        <test-method is-config="true" signature="setListSize1()[pri:0, instance:com.test.HoaDon.TestXoaHDCT@248e319b]" started-at="2022-04-18T22:06:14 ICT" name="setListSize1" finished-at="2022-04-18T22:06:15 ICT" duration-ms="78" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setListSize1 -->
+        <test-method signature="deleteHDCTbyMaHD(java.lang.Integer,java.lang.Boolean)[pri:2, instance:com.test.HoaDon.TestXoaHDCT@248e319b]" started-at="2022-04-18T22:06:15 ICT" name="deleteHDCTbyMaHD" data-provider="dbcts" finished-at="2022-04-18T22:06:15 ICT" duration-ms="162" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[100]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[false]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteHDCTbyMaHD -->
+      </class> <!-- com.test.HoaDon.TestXoaHDCT -->
+      <class name="com.test.HoaDon.TestTimHoaDon">
+        <test-method is-config="true" signature="initialize()[pri:0, instance:com.test.HoaDon.TestTimHoaDon@3e8c3cb]" started-at="2022-04-18T22:06:15 ICT" name="initialize" finished-at="2022-04-18T22:06:15 ICT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initialize -->
+        <test-method is-config="true" signature="setListSize1()[pri:0, instance:com.test.HoaDon.TestTimHoaDon@3e8c3cb]" started-at="2022-04-18T22:06:15 ICT" name="setListSize1" finished-at="2022-04-18T22:06:15 ICT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setListSize1 -->
+        <test-method signature="findHDbyMaHD(java.lang.Integer,java.lang.Boolean)[pri:1, instance:com.test.HoaDon.TestTimHoaDon@3e8c3cb]" started-at="2022-04-18T22:06:15 ICT" name="findHDbyMaHD" data-provider="dbhd" finished-at="2022-04-18T22:06:15 ICT" duration-ms="20" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[3]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[true]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- findHDbyMaHD -->
+        <test-method is-config="true" signature="setListSize1()[pri:0, instance:com.test.HoaDon.TestTimHoaDon@3e8c3cb]" started-at="2022-04-18T22:06:15 ICT" name="setListSize1" finished-at="2022-04-18T22:06:15 ICT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setListSize1 -->
+        <test-method signature="findHDbyMaHD(java.lang.Integer,java.lang.Boolean)[pri:1, instance:com.test.HoaDon.TestTimHoaDon@3e8c3cb]" started-at="2022-04-18T22:06:15 ICT" name="findHDbyMaHD" data-provider="dbhd" finished-at="2022-04-18T22:06:15 ICT" duration-ms="704" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[100]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[false]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- findHDbyMaHD -->
+        <test-method is-config="true" signature="setListSize1()[pri:0, instance:com.test.HoaDon.TestTimHoaDon@3e8c3cb]" started-at="2022-04-18T22:06:15 ICT" name="setListSize1" finished-at="2022-04-18T22:06:15 ICT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setListSize1 -->
+        <test-method signature="findHDbyKey(java.lang.String,java.lang.Boolean)[pri:2, instance:com.test.HoaDon.TestTimHoaDon@3e8c3cb]" started-at="2022-04-18T22:06:15 ICT" name="findHDbyKey" data-provider="dbHdKey" finished-at="2022-04-18T22:06:16 ICT" duration-ms="116" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[0978215902]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[true]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- findHDbyKey -->
+        <test-method is-config="true" signature="setListSize1()[pri:0, instance:com.test.HoaDon.TestTimHoaDon@3e8c3cb]" started-at="2022-04-18T22:06:16 ICT" name="setListSize1" finished-at="2022-04-18T22:06:16 ICT" duration-ms="2" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setListSize1 -->
+        <test-method signature="findHDbyKey(java.lang.String,java.lang.Boolean)[pri:2, instance:com.test.HoaDon.TestTimHoaDon@3e8c3cb]" started-at="2022-04-18T22:06:16 ICT" name="findHDbyKey" data-provider="dbHdKey" finished-at="2022-04-18T22:06:16 ICT" duration-ms="873" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[100]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[false]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- findHDbyKey -->
+        <test-method signature="findHDCTbyID(java.lang.Integer,java.lang.Boolean)[pri:3, instance:com.test.HoaDon.TestTimHoaDon@3e8c3cb]" started-at="2022-04-18T22:06:16 ICT" name="findHDCTbyID" data-provider="dbHdctID" finished-at="2022-04-18T22:06:17 ICT" duration-ms="57" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[3]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[true]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- findHDCTbyID -->
+        <test-method is-config="true" signature="setListSize1()[pri:0, instance:com.test.HoaDon.TestTimHoaDon@3e8c3cb]" started-at="2022-04-18T22:06:16 ICT" name="setListSize1" finished-at="2022-04-18T22:06:16 ICT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setListSize1 -->
+        <test-method is-config="true" signature="setListSize1()[pri:0, instance:com.test.HoaDon.TestTimHoaDon@3e8c3cb]" started-at="2022-04-18T22:06:17 ICT" name="setListSize1" finished-at="2022-04-18T22:06:17 ICT" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setListSize1 -->
+        <test-method signature="findHDCTbyID(java.lang.Integer,java.lang.Boolean)[pri:3, instance:com.test.HoaDon.TestTimHoaDon@3e8c3cb]" started-at="2022-04-18T22:06:17 ICT" name="findHDCTbyID" data-provider="dbHdctID" finished-at="2022-04-18T22:06:17 ICT" duration-ms="28" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[100]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[false]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- findHDCTbyID -->
+        <test-method is-config="true" signature="setListSize1()[pri:0, instance:com.test.HoaDon.TestTimHoaDon@3e8c3cb]" started-at="2022-04-18T22:06:17 ICT" name="setListSize1" finished-at="2022-04-18T22:06:17 ICT" duration-ms="2" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setListSize1 -->
+        <test-method signature="findHDCTbyMaHD(java.lang.Integer,java.lang.Boolean)[pri:4, instance:com.test.HoaDon.TestTimHoaDon@3e8c3cb]" started-at="2022-04-18T22:06:17 ICT" name="findHDCTbyMaHD" data-provider="dbHdctID" finished-at="2022-04-18T22:06:17 ICT" duration-ms="707" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[3]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[true]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- findHDCTbyMaHD -->
+        <test-method is-config="true" signature="setListSize1()[pri:0, instance:com.test.HoaDon.TestTimHoaDon@3e8c3cb]" started-at="2022-04-18T22:06:17 ICT" name="setListSize1" finished-at="2022-04-18T22:06:17 ICT" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setListSize1 -->
+        <test-method signature="findHDCTbyMaHD(java.lang.Integer,java.lang.Boolean)[pri:4, instance:com.test.HoaDon.TestTimHoaDon@3e8c3cb]" started-at="2022-04-18T22:06:17 ICT" name="findHDCTbyMaHD" data-provider="dbHdctID" finished-at="2022-04-18T22:06:17 ICT" duration-ms="29" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[100]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[false]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- findHDCTbyMaHD -->
+      </class> <!-- com.test.HoaDon.TestTimHoaDon -->
+    </test> <!-- TestHoaDon -->
+  </suite> <!-- Feature -->
 </testng-results>
