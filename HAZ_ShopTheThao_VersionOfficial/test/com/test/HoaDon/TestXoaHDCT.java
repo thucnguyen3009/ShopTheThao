@@ -37,7 +37,7 @@ public class TestXoaHDCT {
 		listSizeHDCT1 = listHDCT.size();
 	}
 
-	@Test(dataProvider = "dbct", priority = 1)
+	@Test(dataProvider = "dbct", priority = 0)
 	public void deleteHDCTbyID(Integer maHDCT, Integer result) {
 		chiTietDAO.delete(maHDCT);
 		listHDCT = chiTietDAO.SelectAll();

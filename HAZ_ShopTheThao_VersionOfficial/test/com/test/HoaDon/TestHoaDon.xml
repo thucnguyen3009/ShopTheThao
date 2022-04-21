@@ -4,7 +4,12 @@
 		<classes>
 			<class name="com.test.HoaDon.TestThemHoaDon" />
 			<class name="com.test.HoaDon.TestSuaHoaDon" />
-			<class name="com.test.HoaDon.TestXoaHDCT" />
+			<class name="com.test.HoaDon.TestXoaHDCT">
+				<methods>
+					 <include name="deleteHDCTbyID"/>
+					<!--<include name="deleteHDCTbyMaHD"/>-->
+				</methods>
+			</class>
 			<class name="com.test.HoaDon.TestTimHoaDon" />
 		</classes>
 	</test>

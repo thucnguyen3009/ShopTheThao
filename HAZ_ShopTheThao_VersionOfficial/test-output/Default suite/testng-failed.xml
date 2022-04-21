@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.test.DonViTinh.TestDonViTinh">
+      <class name="com.test.HoaDon.TestXoaHDCT">
         <methods>
-          <include name="testXoaDonViTinh" invocation-numbers="0"/>
-          <include name="testTimDonViTinh" invocation-numbers="0"/>
-          <include name="testDVT"/>
+          <include name="deleteHDCTbyID" invocation-numbers="0"/>
+          <include name="setListSize1"/>
+          <include name="initialize"/>
         </methods>
-      </class> <!-- com.test.DonViTinh.TestDonViTinh -->
+      </class> <!-- com.test.HoaDon.TestXoaHDCT -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
